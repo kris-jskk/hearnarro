@@ -1,0 +1,176 @@
+........................................................................ [ 51%]
+.............FFFF......sssssFFF..F..................................     [100%]
+=================================== FAILURES ===================================
+_____________ test_reading_order_golden[academic_01_seahelm_audio] _____________
+
+name = 'academic_01_seahelm_audio'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_01_seahelm_audio (academic): 0.9493 < 0.95
+E       assert 0.9493087557603687 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+----------------------------- Captured stdout call -----------------------------
+academic_01_seahelm_audio	academic	0.9493
+________________ test_reading_order_golden[academic_02_memduet] ________________
+
+name = 'academic_02_memduet'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_02_memduet (academic): 0.7619 < 0.95
+E       assert 0.7619047619047619 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+----------------------------- Captured stdout call -----------------------------
+academic_02_memduet	academic	0.7619
+___________ test_reading_order_golden[academic_03_pruned_reasoning] ____________
+
+name = 'academic_03_pruned_reasoning'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_03_pruned_reasoning (academic): 0.8969 < 0.95
+E       assert 0.8968609865470852 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+----------------------------- Captured stdout call -----------------------------
+academic_03_pruned_reasoning	academic	0.8969
+____________ test_reading_order_golden[academic_04_legislative_xml] ____________
+
+name = 'academic_04_legislative_xml'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_04_legislative_xml (academic): 0.9421 < 0.95
+E       assert 0.9421487603305785 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+----------------------------- Captured stdout call -----------------------------
+academic_04_legislative_xml	academic	0.9421
+________________ test_reading_order_golden[tables_01_pfn_bayes] ________________
+
+name = 'tables_01_pfn_bayes'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_01_pfn_bayes (tables): 0.9258 < 0.95
+E       assert 0.92578125 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+----------------------------- Captured stdout call -----------------------------
+tables_01_pfn_bayes	tables	0.9258
+____________ test_reading_order_golden[tables_02_non_gaussian_sem] _____________
+
+name = 'tables_02_non_gaussian_sem'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_02_non_gaussian_sem (tables): 0.9133 < 0.95
+E       assert 0.9132947976878613 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+----------------------------- Captured stdout call -----------------------------
+tables_02_non_gaussian_sem	tables	0.9133
+____________ test_reading_order_golden[tables_03_copula_subspaces] _____________
+
+name = 'tables_03_copula_subspaces'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_03_copula_subspaces (tables): 0.8267 < 0.95
+E       assert 0.8266666666666667 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+----------------------------- Captured stdout call -----------------------------
+tables_03_copula_subspaces	tables	0.8267
+___________________________ test_reading_order_mean ____________________________
+
+    def test_reading_order_mean() -> None:
+        scored = [e["name"] for e in ENTRIES if _skip_reason(e) is None]
+        if not scored:
+            pytest.skip("no scoreable fixtures")
+        scores = [_score(n) for n in scored]
+        mean = sum(scores) / len(scores)
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+>       assert mean >= MEAN_MIN, f"mean {mean:.4f} < {MEAN_MIN}"
+E       AssertionError: mean 0.9427 < 0.97
+E       assert 0.9427457616867527 >= 0.97
+
+tests/test_ing4_reading_order_golden.py:82: AssertionError
+----------------------------- Captured stdout call -----------------------------
+mean over 15 fixtures: 0.9427
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_01_seahelm_audio]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_02_memduet]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_03_pruned_reasoning]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_04_legislative_xml]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_01_pfn_bayes]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_02_non_gaussian_sem]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_03_copula_subspaces]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_mean - Ass...
+8 failed, 127 passed, 5 skipped, 5 warnings in 3.70s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

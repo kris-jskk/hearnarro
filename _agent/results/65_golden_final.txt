@@ -1,0 +1,18 @@
+.academic_01_seahelm_audio	academic	0.9493
+Facademic_02_memduet	academic	0.7619
+Facademic_03_pruned_reasoning	academic	0.8969
+Facademic_04_legislative_xml	academic	0.9421
+Facademic_05_sparse_autoencoders	academic	0.9671
+.report_01_zero_trust	report	1.0000
+.report_02_patch_mgmt	report	1.0000
+.report_03_ssdf	report	1.0000
+.report_04_rmf	report	1.0000
+.report_05_controls	report	1.0000
+.ssssstables_01_pfn_bayes	tables	0.9258
+Ftables_02_non_gaussian_sem	tables	0.9133
+Ftables_03_copula_subspaces	tables	0.8267
+Ftables_04_markov_kernel	tables	0.9581
+.tables_05_decomposing_learner	tables	1.0000
+.mean over 15 fixtures: 0.9427
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+8 failed, 9 passed, 5 skipped, 5 warnings in 3.67s

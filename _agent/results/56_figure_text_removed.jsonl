@@ -1,0 +1,280 @@
+{"fixture": "academic_02_memduet", "page": 0, "type": "heading", "matched_expected": true, "text": "Fast Accurate"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "ReMemR1 79.60%"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "LycheeMemory (−G) 79.34%"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "90"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "heading", "matched_expected": true, "text": "MemDuet (Ours) 84.20%"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "1×"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "50.0×"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "80"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "29.7× 25.2× 4.0×"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "Average accuracy (%)"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "InfMem 76.82%"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "70"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "MemAgent 78.73%"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "60"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "50"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "Qwen2.5-1M-7B 40.63%"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "0.04×"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "40"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "DS-Distill-14B 32.42%"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "table", "matched_expected": true, "text": "0.33×"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "30"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "20"}
+{"fixture": "academic_02_memduet", "page": 0, "type": "body", "matched_expected": true, "text": "0 500 1000 1500 Average time (s / question)"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "Overall Inference Workflow"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "Long Document (in chunks, in order) c 1 c 2 c 3 c T ··· ···"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "c₁ for initialization Later chunks processed by speculative workflow"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "system1 system2"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "q Query"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "What is the main contribution … ?"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "Predictions for each chunk"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "(under the same mₜ)"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "c i c i+1 c i+2"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "Query q"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "SKIP"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "SKIP"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "Small"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "Large"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "UPDATE"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "Current Memory mₜ"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "LM"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "LM"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "ALL UPDATE candidates ci"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "c i+k−2"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "SKIP"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "…"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "c i c i+1 c i+k−1"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "Current Memorymt"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "k chunks (in document order)"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "c j"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "heading", "matched_expected": true, "text": "UPDATE"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "Start from q and c₁ to initialize memory, then process"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "later chunks speculatively."}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "Continue to"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "Earliest accepted"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "Acceptance results (for each candidate)"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "next step (next window …)"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "chunk Overwrite Memory mt+1"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "ci t"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "*"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "earlier"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "c i+2"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "accept"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "c i+3"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "reject"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "c i+4"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "accept"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "* = ci+2"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "ci t"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "… eventually produce final answer"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "c i+5"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "accept"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "Speculative acceptance:"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "c j later"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "reject"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "ver"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "αt,i = min(1,"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "( UPDATE |q,ci,mt)"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "( UPDATE |q,ci,mt))"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "πθ"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "Resume from the chunk"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "sel"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "πφ"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "immediately after the"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "Accept if ξt,i ≤ αt,i."}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "committed chunk."}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "ci t"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "mt+1 : Earliest accepted chunk"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "table", "matched_expected": true, "text": "Legend: : document chunkc i : current memory mt : UPDATE candidate ci : updated memory"}
+{"fixture": "academic_02_memduet", "page": 2, "type": "body", "matched_expected": true, "text": "*"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "Stage 1: System 1 Supervised Warm-up"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Non-supporting q, c, m SKIP"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "System 1"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "(SLM)"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Gold, before q, c, m UPDATE"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Gold, after q, c, m′ SKIP"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Trainable"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "LoRA only"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "LI = LwCE + λpair Lpair"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "update System 1 only"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "Stage 2: System 2 Reinforcement Learning"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Chunks Chunk 1 Chunk 2"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "Output"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "System 1"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "System 2"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Update Memory"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "(SLM)"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "(LLM)"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "q,c,m"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "⋮ Chunk K"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Frozen"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Trainable"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Answer"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "q,c,m"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "GT Answer Reward Advantages GRPO"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "update System 2 only"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "Stage 3: Joint policy optimization"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Chunks Chunk 1 Chunk 2"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "Output"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "System 1"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "System 2"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Update Memory"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "(SLM)"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "heading", "matched_expected": true, "text": "(LLM)"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "q,c,m"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "equation", "matched_expected": true, "text": "⋮"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "⋮ Chunk K"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Trainable"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Trainable"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "Answer"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "q,c,m"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "GT Answer Reward Advantages Joint update"}
+{"fixture": "academic_02_memduet", "page": 3, "type": "body", "matched_expected": true, "text": "update both systems"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "DS-Qwen-1.5B DS-Qwen-14B"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "DS-Qwen-7B OpenThinker3-7B"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "DS-Llama-8B"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "100"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "AIME25 Non-Termination (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "AIME25 Accuracy (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "75"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "40"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "50"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "20"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "25"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "0"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "0"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "Dense 10 50 60 70 Sparsity (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 0, "type": "body", "matched_expected": true, "text": "Dense 10 50 60 70 Sparsity (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "heading", "matched_expected": true, "text": "Pruned LRMs: Reasoning Divergence"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "Q MATH-500, level 5 f(x) = 3x4 + 5x2 −9x −2 and g(x) = f(x −1)."}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "What is the sum of the coefficients of g?"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "50"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "A DS-Qwen-7B, OBC 60% sparse"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "Sparsity (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "< think > The sum of the coefficients is g(1) = f(0) = −2 correct"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "60"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "Wait, let me expand f(x −1) ... −12x −10x −9x = (−21)x overthinking ..."}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "So, the sum is 8."}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "70"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "Wait, perhaps I made a mistake in the expansion."}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "↺ repeated 583 times hits 16k cap"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "Answer present (conclusive) First answer position: median, IQR (~tokens) Faded: n < 30"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "DS-Qwen-1.5B"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "DS-Qwen-7B"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "DS-Qwen-14B"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "33.8 n=71"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "34.8 n=23"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "38.5 n=13"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~2.0k"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~3.5k"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~5.4k 39.2 n=51"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "37.3 n=201"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "41.4 n=58"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~0.8k"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~2.1k"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~1.9k"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "48.0 n=198"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "31.3 n=201"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "n=260"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~1.1k"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~0.7k"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "~0.4k"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "0 20 40"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "0 20 40 % of non-termination traces (bars) / % of trace length (position)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "table", "matched_expected": true, "text": "0 20 40"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "DS-Qwen-7B DS-Qwen-14B 16K tokens 65K tokens"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "100"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "60"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "Non-termination rate (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "75"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "40"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "Accuracy (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "50"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "20"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "25"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "0"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "0"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "Dense 10 50 60 70 Sparsity (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 2, "type": "body", "matched_expected": true, "text": "Dense 10 50 60 70 Sparsity (%)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "User: Given 0≤x,y,z≤1, solve: x/(1+y+zx) + y/(1+z+xy) + z/(1+x+yz) = 3/(x+y+z)"}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "heading", "matched_expected": true, "text": "Model:"}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "Alright, I'm trying to solve this equation: x/(1+y+zx) +"}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "y/(1+z+xy) + z/(1+x+yz) = 3/(x+y+z)."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "..."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "Wait, then that solution is x = y = z =1."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "..."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "Alternatively, let me set x=1, y=0, z=0."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "Wait, maybe the only solution is x=y=z=1."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "Wait, perhaps there is another solution."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "Wait, let me try x= y= z= 1."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "..."}
+{"fixture": "academic_03_pruned_reasoning", "page": 3, "type": "body", "matched_expected": true, "text": "PROGRESS CYCLIC"}
+{"fixture": "academic_05_sparse_autoencoders", "page": 2, "type": "body", "matched_expected": true, "text": "Dictionary design Which feature object is obtained?"}
+{"fixture": "academic_05_sparse_autoencoders", "page": 2, "type": "body", "matched_expected": true, "text": "Feature operation What is done with the features?"}
+{"fixture": "academic_05_sparse_autoencoders", "page": 2, "type": "body", "matched_expected": true, "text": "Sparsity allocation; geometry Training objective and coverage Inference and activation site Functional alternatives"}
+{"fixture": "academic_05_sparse_autoencoders", "page": 2, "type": "body", "matched_expected": true, "text": "Describe / characterize Predict / diagnose Trace dependencies Edit / construct"}
+{"fixture": "academic_05_sparse_autoencoders", "page": 2, "type": "body", "matched_expected": true, "text": "NLP function Which objective defines success?"}
+{"fixture": "academic_05_sparse_autoencoders", "page": 2, "type": "body", "matched_expected": true, "text": "Linguistic distinctions Knowledge / retrieval Reasoning, instruction, adaptation Behavioral regulation"}
+{"fixture": "academic_05_sparse_autoencoders", "page": 2, "type": "body", "matched_expected": true, "text": "Specify the comparison: feature object + operation + NLP objective Retain model/version, activation site, data, supervision, feature selection, and intervention protocol."}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "heading", "matched_expected": true, "text": "Gaussian features, log-uniform Ψ"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "n ≥ 1024 (magnified)"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "0.12"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "0.4"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "0.11"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "Prior-data NLL"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "0.3"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "1024 2048 4096 0.10"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "0.2"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "0.1"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "4 16 64 256 1024 4096 Number of revealed data points (n)"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "PFN large MILE (MCLMC), 24 chains Oracle (true task)"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "heading", "matched_expected": true, "text": "Gaussian features, uniform Ψ"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "heading", "matched_expected": true, "text": "SCM features, uniform Ψ"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "n ≥ 1024 (magnified)"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "n ≥ 1024 (magnified)"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "0.12"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "0.12"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "0.11"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "0.11"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "1024 2048 4096 0.10"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "table", "matched_expected": true, "text": "1024 2048 4096"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "4 16 64 256 1024 4096 Number of revealed data points (n)"}
+{"fixture": "tables_01_pfn_bayes", "page": 2, "type": "body", "matched_expected": true, "text": "4 16 64 256 1024 4096 Number of revealed data points (n)"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "list", "matched_expected": true, "text": "– Identifiable only up to the Markov"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "body", "matched_expected": true, "text": "equivalence class (e.g., PC, GES)"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "list", "matched_expected": true, "text": "– LiNGAM family (ICA-, Direct-,"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "body", "matched_expected": true, "text": "Opt-LiNGAM) – Continuous optimization (NOTIME)"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "table", "matched_expected": true, "text": "– Greedy DAG search – Continuous optimization (NOTEARS,"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "table", "matched_expected": true, "text": "GOLEM, DAGMA) – Top-down and bottom-up conditional"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "table", "matched_expected": true, "text": "variance methods"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "table", "matched_expected": true, "text": "– Methods from the cell above and the"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "table", "matched_expected": true, "text": "cell to the left apply – Entropy-based ordering (ETPIA)"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "heading", "matched_expected": true, "text": "– Top-down and bottom-up"}
+{"fixture": "tables_02_non_gaussian_sem", "page": 2, "type": "heading", "matched_expected": true, "text": "conditional risk methods (ours)"}
+{"fixture": "report_01_zero_trust", "page": 2, "type": "body", "matched_expected": true, "text": "Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST."}
+{"fixture": "report_01_zero_trust", "page": 2, "type": "body", "matched_expected": true, "text": "Many NIST cybersecurity publications, other than the ones noted above, are available at https://csrc.nist.gov/publications."}
+{"fixture": "report_02_patch_mgmt", "page": 2, "type": "body", "matched_expected": true, "text": "Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST."}
+{"fixture": "report_02_patch_mgmt", "page": 2, "type": "body", "matched_expected": true, "text": "Many NIST cybersecurity publications, other than the ones noted above, are available at https://csrc.nist.gov/publications."}
+{"fixture": "report_03_ssdf", "page": 2, "type": "body", "matched_expected": true, "text": "Organizations are encouraged to review all draft publications during public comment periods and provide feedback to NIST."}
+{"fixture": "report_03_ssdf", "page": 2, "type": "body", "matched_expected": true, "text": "Many NIST cybersecurity publications, other than the ones noted above, are available at https://csrc.nist.gov/publications."}
+{"fixture": "report_04_rmf", "page": 0, "type": "body", "matched_expected": true, "text": "This publication contains comprehensive updates to the Risk Management Framework."}
+{"fixture": "report_04_rmf", "page": 0, "type": "body", "matched_expected": true, "text": "The updates include an alignment with the constructs in the NIST Cybersecurity Framework; the integration of privacy risk management processes; an alignment with system life cycle security engineering processes; and the incorporation of supply chain risk management processes."}
+{"fixture": "report_04_rmf", "page": 0, "type": "body", "matched_expected": true, "text": "Organizations can use the frameworks and processes in a complementary manner within the RMF to effectively manage security and privacy risks to organizational operations and assets, individuals, other organizations, and the Nation."}
+{"fixture": "report_04_rmf", "page": 0, "type": "body", "matched_expected": true, "text": "Revision 2 includes a set of organization-wide RMF tasks that are designed to prepare information system owners to conduct system-level risk management activities."}
+{"fixture": "report_04_rmf", "page": 0, "type": "body", "matched_expected": true, "text": "The intent is to increase the effectiveness, efficiency, and cost-effectiveness of the RMF by establishing a closer connection to the organization’s missions and business functions and improving the communications among senior leaders, managers, and operational personnel."}
+{"fixture": "report_04_rmf", "page": 2, "type": "body", "matched_expected": true, "text": "Certain commercial entities, equipment, or materials may be identified in this document to describe an experimental procedure or concept adequately."}
+{"fixture": "report_04_rmf", "page": 2, "type": "body", "matched_expected": true, "text": "Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose."}
+{"fixture": "report_04_rmf", "page": 2, "type": "body", "matched_expected": true, "text": "There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities."}
+{"fixture": "report_04_rmf", "page": 2, "type": "body", "matched_expected": true, "text": "The information in this publication, including concepts, practices, and methodologies, may be used by federal agencies even before the completion of such companion publications."}
+{"fixture": "report_04_rmf", "page": 2, "type": "body", "matched_expected": true, "text": "Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative."}
+{"fixture": "report_04_rmf", "page": 2, "type": "body", "matched_expected": true, "text": "For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST."}
+{"fixture": "report_04_rmf", "page": 2, "type": "body", "matched_expected": true, "text": "Organizations are encouraged to review draft publications during the designated public comment periods and provide feedback to NIST."}
+{"fixture": "report_04_rmf", "page": 2, "type": "body", "matched_expected": true, "text": "Many NIST publications, other than the ones noted above, are available at https://csrc.nist.gov/publications."}
+{"fixture": "report_05_controls", "page": 2, "type": "body", "matched_expected": true, "text": "Certain commercial entities, equipment, or materials may be identified in this document to describe an experimental procedure or concept adequately."}
+{"fixture": "report_05_controls", "page": 2, "type": "body", "matched_expected": true, "text": "Such identification is not intended to imply recommendation or endorsement by NIST, nor is it intended to imply that the entities, materials, or equipment are necessarily the best available for the purpose."}
+{"fixture": "report_05_controls", "page": 2, "type": "body", "matched_expected": true, "text": "There may be references in this publication to other publications currently under development by NIST in accordance with its assigned statutory responsibilities."}
+{"fixture": "report_05_controls", "page": 2, "type": "body", "matched_expected": true, "text": "The information in this publication, including concepts, practices, and methodologies may be used by federal agencies even before the completion of such companion publications."}
+{"fixture": "report_05_controls", "page": 2, "type": "body", "matched_expected": true, "text": "Thus, until each publication is completed, current requirements, guidelines, and procedures, where they exist, remain operative."}
+{"fixture": "report_05_controls", "page": 2, "type": "body", "matched_expected": true, "text": "For planning and transition purposes, federal agencies may wish to closely follow the development of these new publications by NIST."}
+{"fixture": "report_05_controls", "page": 2, "type": "body", "matched_expected": true, "text": "Organizations are encouraged to review draft publications during the designated public comment periods and provide feedback to NIST."}
+{"fixture": "report_05_controls", "page": 2, "type": "body", "matched_expected": true, "text": "Many NIST publications, other than the ones noted above, are available at https://csrc.nist.gov/publications."}

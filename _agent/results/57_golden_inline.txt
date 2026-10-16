@@ -1,0 +1,24 @@
+.academic_01_seahelm_audio	academic	0.9493
+Facademic_02_memduet	academic	0.7106
+Facademic_03_pruned_reasoning	academic	0.8117
+Facademic_04_legislative_xml	academic	0.9421
+Facademic_05_sparse_autoencoders	academic	0.9539
+.report_01_zero_trust	report	1.0000
+.report_02_patch_mgmt	report	1.0000
+.report_03_ssdf	report	1.0000
+.report_04_rmf	report	1.0000
+.report_05_controls	report	1.0000
+.ssssstables_01_pfn_bayes	tables	0.6797
+Ftables_02_non_gaussian_sem	tables	0.8150
+Ftables_03_copula_subspaces	tables	0.6578
+Ftables_04_markov_kernel	tables	0.7853
+Ftables_05_decomposing_learner	tables	0.9250
+Fmean over 15 fixtures: 0.8820
+___________________________ test_reading_order_mean ____________________________
+    def test_reading_order_mean() -> None:
+        mean = sum(scores) / len(scores)
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+>       assert mean >= MEAN_MIN, f"mean {mean:.4f} < {MEAN_MIN}"
+E       AssertionError: mean 0.8820 < 0.97
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_mean - Ass...
+10 failed, 7 passed, 5 skipped, 5 warnings in 3.72s

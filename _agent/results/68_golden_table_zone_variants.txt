@@ -1,0 +1,76 @@
+### zones, any-size growth, no Table-caption filter (was 67)
+.academic_01_seahelm_audio	academic	0.9816
+.academic_02_memduet	academic	0.7766
+Facademic_03_pruned_reasoning	academic	0.8117
+Facademic_04_legislative_xml	academic	0.9421
+Facademic_05_sparse_autoencoders	academic	0.9539
+.report_01_zero_trust	report	1.0000
+.report_02_patch_mgmt	report	1.0000
+.report_03_ssdf	report	1.0000
+.report_04_rmf	report	1.0000
+.report_05_controls	report	1.0000
+.ssssstables_01_pfn_bayes	tables	0.8945
+Ftables_02_non_gaussian_sem	tables	0.9249
+Ftables_03_copula_subspaces	tables	0.8267
+Ftables_04_markov_kernel	tables	0.9581
+.tables_05_decomposing_learner	tables	1.0000
+.mean over 15 fixtures: 0.9380
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+7 failed, 10 passed, 5 skipped, 5 warnings in 3.64s
+### table zones, any-size growth
+.academic_01_seahelm_audio	academic	0.9585
+.academic_02_memduet	academic	0.7619
+Facademic_03_pruned_reasoning	academic	0.8117
+Facademic_04_legislative_xml	academic	0.9421
+Facademic_05_sparse_autoencoders	academic	0.9671
+.report_01_zero_trust	report	1.0000
+.report_02_patch_mgmt	report	1.0000
+.report_03_ssdf	report	1.0000
+.report_04_rmf	report	1.0000
+.report_05_controls	report	1.0000
+.ssssstables_01_pfn_bayes	tables	0.9258
+Ftables_02_non_gaussian_sem	tables	0.9133
+Ftables_03_copula_subspaces	tables	0.8267
+Ftables_04_markov_kernel	tables	0.9581
+.tables_05_decomposing_learner	tables	1.0000
+.mean over 15 fixtures: 0.9377
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+7 failed, 10 passed, 5 skipped, 5 warnings in 3.65s
+### table zones, growth limited to blocks <= 200 chars
+.academic_01_seahelm_audio	academic	0.9585
+.academic_02_memduet	academic	0.7619
+Facademic_03_pruned_reasoning	academic	0.8655
+Facademic_04_legislative_xml	academic	0.9421
+Facademic_05_sparse_autoencoders	academic	0.9671
+.report_01_zero_trust	report	1.0000
+.report_02_patch_mgmt	report	1.0000
+.report_03_ssdf	report	1.0000
+.report_04_rmf	report	1.0000
+.report_05_controls	report	1.0000
+.ssssstables_01_pfn_bayes	tables	0.9258
+Ftables_02_non_gaussian_sem	tables	0.9133
+Ftables_03_copula_subspaces	tables	0.8267
+Ftables_04_markov_kernel	tables	0.9581
+.tables_05_decomposing_learner	tables	1.0000
+.mean over 15 fixtures: 0.9413
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+7 failed, 10 passed, 5 skipped, 5 warnings in 3.66s
+### table zones excluding zones with a Figure caption (was 62)
+.academic_01_seahelm_audio	academic	0.9585
+.academic_02_memduet	academic	0.7619
+Facademic_03_pruned_reasoning	academic	0.8655
+Facademic_04_legislative_xml	academic	0.9421
+Facademic_05_sparse_autoencoders	academic	0.9671
+.report_01_zero_trust	report	1.0000
+.report_02_patch_mgmt	report	1.0000
+.report_03_ssdf	report	1.0000
+.report_04_rmf	report	1.0000
+.report_05_controls	report	1.0000
+.ssssstables_01_pfn_bayes	tables	0.9258
+Ftables_02_non_gaussian_sem	tables	0.9133
+Ftables_03_copula_subspaces	tables	0.8267
+Ftables_04_markov_kernel	tables	0.9581
+.tables_05_decomposing_learner	tables	1.0000
+.mean over 15 fixtures: 0.9413
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+7 failed, 10 passed, 5 skipped, 5 warnings in 3.67s

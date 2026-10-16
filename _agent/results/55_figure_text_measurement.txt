@@ -1,0 +1,19 @@
+fixture	actual_segs	fig_internal_actual	expected_removed	fig_unmatched	score_before	score_fig_removed
+academic_01_seahelm_audio	218	0	0	0	0.9493	0.9493
+academic_02_memduet	276	132	132	0	0.7619	0.8652
+academic_03_pruned_reasoning	223	79	79	0	0.8969	0.9653
+academic_04_legislative_xml	124	0	0	0	0.9421	0.9421
+academic_05_sparse_autoencoders	153	7	7	0	0.9671	0.9793
+tables_01_pfn_bayes	263	24	24	0	0.9258	0.9181
+tables_02_non_gaussian_sem	173	11	11	0	0.9133	0.9877
+tables_03_copula_subspaces	241	0	0	0	0.8800	0.8800
+tables_04_markov_kernel	208	0	0	0	0.8796	0.8796
+tables_05_decomposing_learner	120	0	0	0	1.0000	1.0000
+report_01_zero_trust	58	2	2	0	1.0000	1.0000
+report_02_patch_mgmt	65	2	2	0	1.0000	1.0000
+report_03_ssdf	58	2	2	0	1.0000	1.0000
+report_04_rmf	60	13	13	0	1.0000	1.0000
+report_05_controls	54	8	8	0	1.0000	1.0000
+mean (15 fixtures)					0.9411	0.9578
+pass (>=0.95)					7/15	9/15
+definition: segment's logical block has every source raw block >=80% (area) inside a figure region; region = stage-1 image bbox, or bbox of a transitive union of touching/overlapping get_drawings() rects with area in [2%, 80%) of the page; caption-typed blocks never count. Expected removal: one-to-one, same-page match preferred, whitespace-collapsed text equality.
