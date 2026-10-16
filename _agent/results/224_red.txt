@@ -1,0 +1,169 @@
+FFFFFFFFFF                                                               [100%]
+=================================== FAILURES ===================================
+____ test_ing1_parse_progress_pages_done_reaches_page_count_documents_table ____
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-40/test_ing1_parse_progress_pages0')
+
+    async def test_ing1_parse_progress_pages_done_reaches_page_count_documents_table(
+        tmp_path: Path,
+    ) -> None:
+        async with client_for(tmp_path) as client:
+            doc_id = (await upload(client, REPORT_PDF)).json()["id"]
+            seen: list[dict[str, Any]] = []
+            deadline = time.monotonic() + READY_TIMEOUT_S
+            while True:
+                body = (await client.get(f"/documents/{doc_id}")).json()
+                seen.append(body)
+                if body["status"] in ("ready", "failed"):
+                    break
+                assert time.monotonic() < deadline
+                await asyncio.sleep(0.02)
+>           done = [b["pages_done"] for b in seen]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_api_documents.py:240: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0x10c19d0f0>
+
+>   done = [b["pages_done"] for b in seen]
+            ^^^^^^^^^^^^^^^
+E   KeyError: 'pages_done'
+
+tests/test_api_documents.py:240: KeyError
+__________ test_ing1_failed_document_carries_parse_ms_documents_table __________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-40/test_ing1_failed_document_carr0')
+
+    async def test_ing1_failed_document_carries_parse_ms_documents_table(tmp_path: Path) -> None:
+        async with client_for(tmp_path) as client:
+            resp = await upload(client, Path("broken.pdf"), b"%PDF-1.4\nthis is not a pdf body\n")
+            doc = await wait_settled(client, resp.json()["id"])
+            assert doc["status"] == "failed"
+>           assert isinstance(doc["parse_ms"], int) and doc["parse_ms"] >= 0
+                              ^^^^^^^^^^^^^^^
+E           KeyError: 'parse_ms'
+
+tests/test_api_documents.py:262: KeyError
+________ test_ing1_page_progress_writes_every_10_pages_and_last[242-25] ________
+
+total = 242, expected_writes = 25
+
+    @pytest.mark.parametrize(
+        ("total", "expected_writes"),
+        [(242, 25), (4, 1), (10, 1), (11, 2), (30, 3), (1, 1)],
+    )
+    def test_ing1_page_progress_writes_every_10_pages_and_last(
+        total: int, expected_writes: int
+    ) -> None:
+>       from hearnarro.storage.jobs import PageProgress
+E       ImportError: cannot import name 'PageProgress' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:273: ImportError
+_________ test_ing1_page_progress_writes_every_10_pages_and_last[4-1] __________
+
+total = 4, expected_writes = 1
+
+    @pytest.mark.parametrize(
+        ("total", "expected_writes"),
+        [(242, 25), (4, 1), (10, 1), (11, 2), (30, 3), (1, 1)],
+    )
+    def test_ing1_page_progress_writes_every_10_pages_and_last(
+        total: int, expected_writes: int
+    ) -> None:
+>       from hearnarro.storage.jobs import PageProgress
+E       ImportError: cannot import name 'PageProgress' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:273: ImportError
+_________ test_ing1_page_progress_writes_every_10_pages_and_last[10-1] _________
+
+total = 10, expected_writes = 1
+
+    @pytest.mark.parametrize(
+        ("total", "expected_writes"),
+        [(242, 25), (4, 1), (10, 1), (11, 2), (30, 3), (1, 1)],
+    )
+    def test_ing1_page_progress_writes_every_10_pages_and_last(
+        total: int, expected_writes: int
+    ) -> None:
+>       from hearnarro.storage.jobs import PageProgress
+E       ImportError: cannot import name 'PageProgress' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:273: ImportError
+_________ test_ing1_page_progress_writes_every_10_pages_and_last[11-2] _________
+
+total = 11, expected_writes = 2
+
+    @pytest.mark.parametrize(
+        ("total", "expected_writes"),
+        [(242, 25), (4, 1), (10, 1), (11, 2), (30, 3), (1, 1)],
+    )
+    def test_ing1_page_progress_writes_every_10_pages_and_last(
+        total: int, expected_writes: int
+    ) -> None:
+>       from hearnarro.storage.jobs import PageProgress
+E       ImportError: cannot import name 'PageProgress' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:273: ImportError
+_________ test_ing1_page_progress_writes_every_10_pages_and_last[30-3] _________
+
+total = 30, expected_writes = 3
+
+    @pytest.mark.parametrize(
+        ("total", "expected_writes"),
+        [(242, 25), (4, 1), (10, 1), (11, 2), (30, 3), (1, 1)],
+    )
+    def test_ing1_page_progress_writes_every_10_pages_and_last(
+        total: int, expected_writes: int
+    ) -> None:
+>       from hearnarro.storage.jobs import PageProgress
+E       ImportError: cannot import name 'PageProgress' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:273: ImportError
+_________ test_ing1_page_progress_writes_every_10_pages_and_last[1-1] __________
+
+total = 1, expected_writes = 1
+
+    @pytest.mark.parametrize(
+        ("total", "expected_writes"),
+        [(242, 25), (4, 1), (10, 1), (11, 2), (30, 3), (1, 1)],
+    )
+    def test_ing1_page_progress_writes_every_10_pages_and_last(
+        total: int, expected_writes: int
+    ) -> None:
+>       from hearnarro.storage.jobs import PageProgress
+E       ImportError: cannot import name 'PageProgress' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:273: ImportError
+____________ test_ing1_extract_pages_calls_on_page_after_each_page _____________
+
+    def test_ing1_extract_pages_calls_on_page_after_each_page() -> None:
+        calls: list[tuple[int, int]] = []
+>       pages = extract_pages(REPORT_PDF, ocr=False, on_page=lambda d, t: calls.append((d, t)))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: extract_pages() got an unexpected keyword argument 'on_page'
+
+tests/test_ing1_extract.py:398: TypeError
+________ test_ing1_ingest_passes_on_page_through_and_none_is_unchanged _________
+
+    def test_ing1_ingest_passes_on_page_through_and_none_is_unchanged() -> None:
+        from hearnarro.ingestion.pipeline import ingest
+    
+        calls: list[tuple[int, int]] = []
+>       with_cb = ingest(REPORT_PDF, ocr=False, on_page=lambda d, t: calls.append((d, t)))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: ingest() got an unexpected keyword argument 'on_page'
+
+tests/test_ing1_extract.py:407: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_api_documents.py::test_ing1_parse_progress_pages_done_reaches_page_count_documents_table
+FAILED tests/test_api_documents.py::test_ing1_failed_document_carries_parse_ms_documents_table
+FAILED tests/test_api_documents.py::test_ing1_page_progress_writes_every_10_pages_and_last[242-25]
+FAILED tests/test_api_documents.py::test_ing1_page_progress_writes_every_10_pages_and_last[4-1]
+FAILED tests/test_api_documents.py::test_ing1_page_progress_writes_every_10_pages_and_last[10-1]
+FAILED tests/test_api_documents.py::test_ing1_page_progress_writes_every_10_pages_and_last[11-2]
+FAILED tests/test_api_documents.py::test_ing1_page_progress_writes_every_10_pages_and_last[30-3]
+FAILED tests/test_api_documents.py::test_ing1_page_progress_writes_every_10_pages_and_last[1-1]
+FAILED tests/test_ing1_extract.py::test_ing1_extract_pages_calls_on_page_after_each_page
+FAILED tests/test_ing1_extract.py::test_ing1_ingest_passes_on_page_through_and_none_is_unchanged
+10 failed, 46 deselected in 0.59s

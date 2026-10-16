@@ -1,0 +1,57 @@
+== A: DB at 0001, then upgrade head ==
+$ HEARNARRO_DATA_DIR=$A alembic -c alembic.ini upgrade 0001
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 0001, Initial schema: the D7 DDL verbatim (ING-1; documents, blocks, sections, segments,
+audio_cache, settings).
+$ sqlite3 PRAGMA table_info(documents) at 0001
+0|id|INTEGER|0||1
+1|title|TEXT|1||0
+2|filename|TEXT|1||0
+3|sha256|TEXT|1||0
+4|page_count|INTEGER|0||0
+5|status|TEXT|1||0
+6|fail_reason|TEXT|0||0
+7|voice_id|TEXT|0||0
+8|speed|REAL|0||0
+9|position_segment_id|INTEGER|0||0
+10|position_offset_ms|INTEGER|0|0|0
+11|created_at|TEXT|1||0
+12|last_opened_at|TEXT|0||0
+$ HEARNARRO_DATA_DIR=$A alembic -c alembic.ini upgrade head
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade 0001 -> 0002, Parse progress and duration on documents: pages_done, parse_ms (ING-1).
+exit=0
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+0002 (head)
+$ sqlite3 PRAGMA table_info(documents) after head
+0|id|INTEGER|0||1
+1|title|TEXT|1||0
+2|filename|TEXT|1||0
+3|sha256|TEXT|1||0
+4|page_count|INTEGER|0||0
+5|status|TEXT|1||0
+6|fail_reason|TEXT|0||0
+7|voice_id|TEXT|0||0
+8|speed|REAL|0||0
+9|position_segment_id|INTEGER|0||0
+10|position_offset_ms|INTEGER|0|0|0
+11|created_at|TEXT|1||0
+12|last_opened_at|TEXT|0||0
+13|pages_done|INTEGER|1|0|0
+14|parse_ms|INTEGER|0||0
+
+== B: empty DB, upgrade head ==
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 0001, Initial schema: the D7 DDL verbatim (ING-1; documents, blocks, sections, segments,
+audio_cache, settings).
+INFO  [alembic.runtime.migration] Running upgrade 0001 -> 0002, Parse progress and duration on documents: pages_done, parse_ms (ING-1).
+exit=0
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+0002 (head)
+13|pages_done|INTEGER|1|0|0
+14|parse_ms|INTEGER|0||0

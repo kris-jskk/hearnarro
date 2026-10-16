@@ -1,0 +1,4 @@
+# word scores: 170_smoke_run.txt (first table, before) vs 227_smoke.txt (after); fixture word
+$ diff before after
+diff exit=0 (0 = identical)
+      15

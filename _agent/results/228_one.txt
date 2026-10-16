@@ -1,0 +1,26 @@
+$ .venv/bin/python scripts/m1_smoke.py --base-url http://127.0.0.1:58750 --one tests/fixtures/pdfs/academic_01_seahelm_audio.pdf
+uploaded academic_01_seahelm_audio.pdf: id=1 (HTTP 200, already stored)
+status=ready pages=4 title='SEA-HELM Audio: Evaluating Multilingual ASR-LLM Pipeline Performance'
+pages: 4  parse_ms: 307  pages/s: 13.0
+segments: 214 total; first 20:
+   0 [heading ] SEA-HELM Audio: Evaluating Multilingual ASR-LLM Pipeline Performance
+   1 [heading ] Across SEA-HELM Subsets
+   2 [heading ] Yixian Tan, Aulia Adila, Jonathan Heng, Kunat Pipatanakul, Donghang Wu, Anocha
+   3 [heading ] Sutaveephamochanon
+   4 [heading ] AI Singapore, Singapore
+   5 [heading ] Abstract
+   6 [body    ] We introduce SEA-HELM Audio, a Southeast Asian (SEA) multilingual evaluation framework that extends the text-based SEA-HELM benchmark to assess performance degradation in cascaded automatic speech recognition and large language model (ASR–LLM) pipelines.
+   7 [body    ] Using synthesized speech, we compare speech-input and text-input performance across five languages—Chinese, English, Malay, Indonesian, and Tamil—on multiple-choice reasoning and instruction-following tasks.
+   8 [body    ] We evaluate open-weight and commercial ASR–LLM systems using identical verifiers and quantify the speech gap as the difference between text and speech accuracy.
+   9 [body    ] Results show substantial degradation, with accuracy drops of 9.00–18.50 percentage points for multiple-choice reasoning and 20.00–42.86 points for instruction following.
+  10 [body    ] Tamil exhibits the largest degradation, exceeding 40 percentage points.
+  11 [body    ] Our findings highlight the limitations of text-only benchmarks in predicting voice-agent reliability and demonstrate the value of SEA- HELM Audio for evaluating multilingual voice-agent systems.
+  12 [body    ] Index Terms: automatic speech recognition, multilingual evaluation, spoken language understanding, SEA-HELM Audio
+  13 [heading ] 1. Introduction
+  14 [body    ] As artificial intelligence systems transition from text-based interfaces to conversational voice-enabled agents, evaluating the end-to-end accuracy of cascaded speech-language stacks has become a critical research priority.
+  15 [body    ] While text-based Large Language Models (LLMs) continue to achieve high benchmark scores, deploying these models within voice pipelines introduces acoustic transcription errors, phonetic ambiguities, and domain-specific degradation.
+  16 [body    ] Quantifying this degradation, specifically measuring the accuracy penalty a user incurs by speaking rather than typing, is essential for understanding realworld agent reliability across diverse tasks.
+  17 [body    ] Existing spoken language model benchmarks, such as VoiceBench [1], evaluate capabilities including speech recognition, reasoning, and instruction following through spoken inputs.
+  18 [body    ] However, their predominantly English-language evaluation settings provide limited insight into how voice-agent systems perform on Southeast Asian languages and tasks.
+  19 [body    ] In particular, it remains unclear to what extent transcription errors alter task-critical information and how these errors affect downstream task performance, especially in the context of Southeast Asian languages.
+exit=0
