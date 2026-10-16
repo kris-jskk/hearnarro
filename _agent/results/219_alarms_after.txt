@@ -1,0 +1,82 @@
+before: segments=1945 ligature_artifacts=106 single_letter_segments=26
+after: segments=1862 ligature_artifacts=0 single_letter_segments=9
+artifacts left: []
+single-letter segments after: [(40, 9, 'body', '1'), (219, 20, 'body', '2'), (417, 32, 'body', '3'), (609, 46, 'body', '4'), (697, 53, 'body', '5'), (848, 62, 'body', '6'), (1091, 76, 'body', '7'), (1405, 98, 'body', '8'), (1482, 104, 'body', '9')]
+
+== first 12 segments after
+0 1 heading 'THE 3 ALARMS'
+1 1 body 'A Simple System to Transform Your Health, Wealth, and Relationships Forever'
+2 1 heading 'ERIC PARTAKER'
+3 2 body 'Copyright © 2020 by Eric Partaker'
+4 2 body 'All rights reserved.'
+5 2 footnote 'No part of this book may be reproduced in any form or by any electronic or mechanical means, including informa'
+6 2 footnote 'Published by Partaker International Limited'
+7 2 footnote 'ISBN: 978-0-9903785-2-5'
+8 5 body 'To my amazing wife Gisele and my incredible boys, Alex and Leo.'
+9 5 body 'I love you forever.'
+10 6 heading 'PREFACE'
+11 6 heading 'DEAR READER,'
+
+== drop cap P (page with 'roductivity')
+847 61 body 'The real prize was who I had to become to win it, all driven by shooting for a goal that initially seemed out '
+848 62 body '6'
+849 62 heading 'PRODUCTIVITY EXECUTION'
+850 62 body 'Productivity isn’t just about planning; it’s also about execution.'
+851 62 body 'To be truly productive, you have to be able to implement the plan you’ve made.'
+852 62 body 'But far too often, we focus on the wrong tasks and end up wasting time and energy.'
+
+== certified
+524 39 body 'Desperate to learn more about behavior design and how it ties into habit formation, I reached out to him and completed a coaching certification and apprenticeship he was offering.'
+531 39 body 'I quickly pored over his books, completed his coaching certification, and joined his mastermind.'
+1859 134 body 'Eric is also a certified High-Performance Coach from the High- Performance Institute, and he completed a coaching certification and apprenticeship with Professor BJ Fogg, who leads Stanford University’s Behavior Design Lab.'
+
+== chapter opener first sentences
+42 9 'In 2010, I flew from Spain to London with my friend and coll'
+221 20 'As an entrepreneur and executive coach, I often give talks a'
+245 21 'If you don’t make a plan for yourself, you’re going to the s'
+317 25 'One of the most impactful things Neil taught me was to exami'
+329 26 'If you were to continue the “I have to” sentence in your hea'
+335 26 'If you can just get yourself to start, often you’ll get abso'
+370 28 'If you begin working out, you’ll have more energy at work an'
+396 29 'If you find yourself relating to any of this, if your health'
+419 32 'In 2018, Elon Musk told The New York Times he works 120 hour'
+455 34 'If you don’t have time for the things you enjoy, you aren’t '
+456 34 'If you aren’t spending time with loved ones, you aren’t thri'
+457 34 'If you fill your body with junk food because you don’t have '
+489 36 'If you are physically healthy, you are more likely to perfor'
+490 36 'If your relationship with your spouse is strong, you will pr'
+513 38 'If you could push this button and instantly get a significan'
+550 40 'At 6:30 a.m., the first alarm goes off: “World Fitness Champ'
+581 44 'Over the past twenty years, I have immersed myself in the fi'
+611 46 'After my near-death experience, I desperately wanted to chan'
+699 53 'If you’re anything like me, you’ve looked in the mirror plen'
+715 54 'One of the secrets to performing at a peak level is to strin'
+722 54 'If you want to be more productive, you need to literally des'
+743 55 'If you don’t get a good night’s sleep, you won’t be able to '
+804 59 'One of the reasons I like to interact with people in the aft'
+982 69 'If you can replicate and understand rap, he explained, conve'
+987 69 'One of the most important things I learned about improving m'
+998 70 'If you master the habit of single-tasking and aren’t constan'
+1093 76 'Despite all our identity and productivity improvements, thin'
+1271 87 'One of them is a person’s ability to adapt boldly to change.'
+1277 87 'In 2018, the UK restaurant industry started to take a beatin'
+1306 89 'One of the first things you can do is make sure you have res'
+1376 94 'If you’re doing it right, you will be spilling your guts to '
+1407 98 'In Parts 1 and 2, we covered why peak performance is a worth'
+1413 98 'If you’re not completely following what I mean, go ahead and'
+1484 104 'At 6:30 a.m., the first alarm on my phone goes off: World Fi'
+1523 107 'One of the first nuggets my research yielded was the effect '
+1551 109 'At 9:00 a.m., the next alarm goes off on my phone.'
+1606 113 'At 6:30 p.m., the most important alarm of all goes off: Worl'
+1669 118 'For each of the three domains, answer these questions:'
+1678 119 'Becoming world class is not reserved for the elite.'
+1706 122 'One of the most common questions I get is, “Eric, can you co'
+1709 122 'If you would like to receive a collection of practical insig'
+1726 124 'While writing this book, I spoke on many stages about the co'
+
+== words in brief
+Fulfilled 0
+efficiently 2
+effects 3
+difficult 8
+flow 4

@@ -1,0 +1,72 @@
+........................FFF............................................. [ 52%]
+...........................F.F..................................         [100%]
+=================================== FAILURES ===================================
+________________ test_ing2_ligature_glyph_names_map_to_letters _________________
+
+    def test_ing2_ligature_glyph_names_map_to_letters() -> None:
+>       from hearnarro.ingestion.extract import ligature_text
+E       ImportError: cannot import name 'ligature_text' from 'hearnarro.ingestion.extract' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/ingestion/extract.py)
+
+tests/test_ing1_extract.py:361: ImportError
+___________ test_ing2_truetype_code_to_glyph_name_from_cmap_and_post ___________
+
+    def test_ing2_truetype_code_to_glyph_name_from_cmap_and_post() -> None:
+>       from hearnarro.ingestion.extract import truetype_glyph_names
+E       ImportError: cannot import name 'truetype_glyph_names' from 'hearnarro.ingestion.extract' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/ingestion/extract.py)
+
+tests/test_ing1_extract.py:372: ImportError
+__________ test_ing2_ligature_repair_replaces_only_mapped_punctuation __________
+
+    def test_ing2_ligature_repair_replaces_only_mapped_punctuation() -> None:
+>       from hearnarro.ingestion.extract import repair_ligature
+E       ImportError: cannot import name 'repair_ligature' from 'hearnarro.ingestion.extract' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/ingestion/extract.py)
+
+tests/test_ing1_extract.py:381: ImportError
+_______________ test_ing3_drop_cap_joins_the_paragraph_it_opens ________________
+
+    def test_ing3_drop_cap_joins_the_paragraph_it_opens() -> None:
+        pages = classify_pages(
+            [make_page(0, _filler(0, 0)), _drop_cap_page("P", "roductivity isn't just about")]
+        )
+        cap, para = pages[1].blocks
+>       assert cap.type not in READ_TYPES
+E       AssertionError: assert 'heading' not in {'body', 'caption', 'equation', 'heading', 'list', 'table'}
+E        +  where 'heading' = Block(page=1, index=0, bbox=BBox(x0=36, y0=238.5, x1=60, y1=289.5), lines=[Line(spans=[Span(text='P', bbox=BBox(x0=36,...)], bbox=BBox(x0=36, y0=238.5, x1=60, y1=289.5), dir=(1.0, 0.0))], type='heading', ocr=False, inline=False, lead=False).type
+
+tests/test_ing2_classify.py:611: AssertionError
+_________ test_ing3_body_typed_contents_with_page_number_blocks_is_toc _________
+
+    def test_ing3_body_typed_contents_with_page_number_blocks_is_toc() -> None:
+        entries = [
+            ("Preface", 60), ("ix", 310), ("Part 1", 60), ("1. Dying at 35,000 feet", 52),
+            ("3", 312), ("2. Peak Performance Traps", 52), ("14", 308),
+        ]  # fmt: skip
+        toc = [make_block(1, 0, ["CONTENTS"], x0=170, y0=72, width=60, size=10.0)]
+        for i, (text, x0) in enumerate(entries):
+            toc.append(make_block(1, 1 + i, [text], x0=x0, y0=128 + 14 * (i // 2 * 2), width=40))
+        back = [
+            make_block(2, 0, ["Acknowledgments"], x0=60, y0=54, width=200),
+            make_block(2, 1, ["127"], x0=303, y0=54, width=10),
+        ]
+        dedication = [
+            make_block(3, 0, ["To my amazing wife and my incredible boys, Alex and Leo."], y0=180),
+            make_block(3, 1, ["I love you forever."], x0=149, y0=203, width=120),
+        ]
+        pages = classify_pages(
+            [make_page(0, _filler(0, 0)), make_page(1, toc), make_page(2, back),
+             make_page(3, dedication)]
+        )  # fmt: skip
+>       assert _types(pages[1]) == ["toc"] * 8
+E       AssertionError: assert ['body', 'bod..., 'body', ...] == ['toc', 'toc'...', 'toc', ...]
+E         
+E         At index 0 diff: 'body' != 'toc'
+E         Use -v to get more diff
+
+tests/test_ing2_classify.py:645: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing1_extract.py::test_ing2_ligature_glyph_names_map_to_letters
+FAILED tests/test_ing1_extract.py::test_ing2_truetype_code_to_glyph_name_from_cmap_and_post
+FAILED tests/test_ing1_extract.py::test_ing2_ligature_repair_replaces_only_mapped_punctuation
+FAILED tests/test_ing2_classify.py::test_ing3_drop_cap_joins_the_paragraph_it_opens
+FAILED tests/test_ing2_classify.py::test_ing3_body_typed_contents_with_page_number_blocks_is_toc
+5 failed, 131 passed in 0.13s
