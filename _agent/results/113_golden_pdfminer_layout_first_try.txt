@@ -1,0 +1,350 @@
+.academic_01_seahelm_audio	academic	0.2614	excluded actual=7 expected=41
+Facademic_02_memduet	academic	0.5982	excluded actual=21 expected=26
+Facademic_03_pruned_reasoning	academic	0.1071	excluded actual=9 expected=32
+Facademic_04_legislative_xml	academic	0.6949	excluded actual=0 expected=3
+Facademic_05_sparse_autoencoders	academic	0.8478	excluded actual=2 expected=7
+Freport_01_zero_trust	report	0.6429	excluded actual=6 expected=0
+Freport_02_patch_mgmt	report	0.6190	excluded actual=6 expected=0
+Freport_03_ssdf	report	0.6964	excluded actual=6 expected=0
+Freport_04_rmf	report	0.8298	excluded actual=0 expected=0
+Freport_05_controls	report	0.7609	excluded actual=0 expected=0
+Fssssstables_01_pfn_bayes	tables	0.4218	excluded actual=51 expected=69
+Ftables_02_non_gaussian_sem	tables	0.5391	excluded actual=18 expected=21
+Ftables_03_copula_subspaces	tables	-0.3228	excluded actual=176 expected=66
+Ftables_04_markov_kernel	tables	-0.4190	excluded actual=88 expected=78
+Ftables_05_decomposing_learner	tables	0.7692	excluded actual=33 expected=28
+Fmean over 15 fixtures: 0.4698
+F
+=================================== FAILURES ===================================
+_____________ test_reading_order_golden[academic_01_seahelm_audio] _____________
+
+name = 'academic_01_seahelm_audio'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_01_seahelm_audio (academic): 0.2614 < 0.95
+E       assert 0.26136363636363635 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+________________ test_reading_order_golden[academic_02_memduet] ________________
+
+name = 'academic_02_memduet'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_02_memduet (academic): 0.5982 < 0.95
+E       assert 0.5982142857142857 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+___________ test_reading_order_golden[academic_03_pruned_reasoning] ____________
+
+name = 'academic_03_pruned_reasoning'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_03_pruned_reasoning (academic): 0.1071 < 0.95
+E       assert 0.1071428571428571 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+____________ test_reading_order_golden[academic_04_legislative_xml] ____________
+
+name = 'academic_04_legislative_xml'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_04_legislative_xml (academic): 0.6949 < 0.95
+E       assert 0.6949152542372881 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+__________ test_reading_order_golden[academic_05_sparse_autoencoders] __________
+
+name = 'academic_05_sparse_autoencoders'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_05_sparse_autoencoders (academic): 0.8478 < 0.95
+E       assert 0.8478260869565217 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+_______________ test_reading_order_golden[report_01_zero_trust] ________________
+
+name = 'report_01_zero_trust'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: report_01_zero_trust (report): 0.6429 < 0.95
+E       assert 0.6428571428571428 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+_______________ test_reading_order_golden[report_02_patch_mgmt] ________________
+
+name = 'report_02_patch_mgmt'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: report_02_patch_mgmt (report): 0.6190 < 0.95
+E       assert 0.6190476190476191 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+__________________ test_reading_order_golden[report_03_ssdf] ___________________
+
+name = 'report_03_ssdf'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: report_03_ssdf (report): 0.6964 < 0.95
+E       assert 0.6964285714285714 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+___________________ test_reading_order_golden[report_04_rmf] ___________________
+
+name = 'report_04_rmf'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: report_04_rmf (report): 0.8298 < 0.95
+E       assert 0.8297872340425532 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+________________ test_reading_order_golden[report_05_controls] _________________
+
+name = 'report_05_controls'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: report_05_controls (report): 0.7609 < 0.95
+E       assert 0.7608695652173914 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+________________ test_reading_order_golden[tables_01_pfn_bayes] ________________
+
+name = 'tables_01_pfn_bayes'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_01_pfn_bayes (tables): 0.4218 < 0.95
+E       assert 0.4217687074829932 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+____________ test_reading_order_golden[tables_02_non_gaussian_sem] _____________
+
+name = 'tables_02_non_gaussian_sem'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_02_non_gaussian_sem (tables): 0.5391 < 0.95
+E       assert 0.5390625 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+____________ test_reading_order_golden[tables_03_copula_subspaces] _____________
+
+name = 'tables_03_copula_subspaces'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_03_copula_subspaces (tables): -0.3228 < 0.95
+E       assert -0.32283464566929143 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+______________ test_reading_order_golden[tables_04_markov_kernel] ______________
+
+name = 'tables_04_markov_kernel'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_04_markov_kernel (tables): -0.4190 < 0.95
+E       assert -0.4190476190476191 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+___________ test_reading_order_golden[tables_05_decomposing_learner] ___________
+
+name = 'tables_05_decomposing_learner'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score, excl_actual, excl_expected = _score(name)
+        print(
+            f"{name}\t{entry['class']}\t{score:.4f}"
+            f"\texcluded actual={excl_actual} expected={excl_expected}"
+        )
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_05_decomposing_learner (tables): 0.7692 < 0.95
+E       assert 0.7692307692307692 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:80: AssertionError
+___________________________ test_reading_order_mean ____________________________
+
+    def test_reading_order_mean() -> None:
+        scored = [e["name"] for e in ENTRIES if _skip_reason(e) is None]
+        if not scored:
+            pytest.skip("no scoreable fixtures")
+        scores = [_score(n)[0] for n in scored]
+        mean = sum(scores) / len(scores)
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+>       assert mean >= MEAN_MIN, f"mean {mean:.4f} < {MEAN_MIN}"
+E       AssertionError: mean 0.4698 < 0.97
+E       assert 0.46977546433364786 >= 0.97
+
+tests/test_ing4_reading_order_golden.py:93: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_01_seahelm_audio]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_02_memduet]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_03_pruned_reasoning]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_04_legislative_xml]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_05_sparse_autoencoders]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[report_01_zero_trust]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[report_02_patch_mgmt]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[report_03_ssdf]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[report_04_rmf]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[report_05_controls]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_01_pfn_bayes]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_02_non_gaussian_sem]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_03_copula_subspaces]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_04_markov_kernel]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_05_decomposing_learner]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_mean - Ass...
+16 failed, 1 passed, 5 skipped in 3.39s

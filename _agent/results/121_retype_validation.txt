@@ -1,0 +1,22 @@
+academic_01_seahelm_audio.expected.jsonl	217 segs	VALID	texts+pages IDENTICAL	{'body': 121, 'heading': 45, 'list': 10, 'table': 41}
+academic_02_memduet.expected.jsonl	138 segs	VALID	texts+pages IDENTICAL	{'body': 84, 'caption': 9, 'equation': 26, 'footnote': 2, 'heading': 13, 'list': 4}
+academic_03_pruned_reasoning.expected.jsonl	144 segs	VALID	texts+pages IDENTICAL	{'body': 100, 'caption': 4, 'equation': 16, 'footnote': 1, 'heading': 7, 'table': 16}
+academic_04_legislative_xml.expected.jsonl	121 segs	VALID	texts+pages IDENTICAL	{'body': 105, 'caption': 2, 'footnote': 3, 'heading': 8, 'table': 3}
+academic_05_sparse_autoencoders.expected.jsonl	145 segs	VALID	texts+pages IDENTICAL	{'body': 121, 'caption': 3, 'equation': 5, 'heading': 14, 'table': 2}
+report_01_zero_trust.expected.jsonl	56 segs	VALID	texts+pages IDENTICAL	{'body': 38, 'heading': 18}
+report_02_patch_mgmt.expected.jsonl	63 segs	VALID	texts+pages IDENTICAL	{'body': 41, 'heading': 22}
+report_03_ssdf.expected.jsonl	56 segs	VALID	texts+pages IDENTICAL	{'body': 37, 'heading': 19}
+report_04_rmf.expected.jsonl	47 segs	VALID	texts+pages IDENTICAL	{'body': 33, 'heading': 14}
+report_05_controls.expected.jsonl	46 segs	VALID	texts+pages IDENTICAL	{'body': 32, 'heading': 14}
+scanned_01_seahelm_audio.expected.jsonl	98 segs	VALID	texts+pages IDENTICAL	{'body': 65, 'heading': 28, 'list': 5}
+scanned_02_pruned_reasoning.expected.jsonl	60 segs	VALID	texts+pages IDENTICAL	{'body': 54, 'heading': 6}
+scanned_03_zero_trust.expected.jsonl	13 segs	VALID	texts+pages IDENTICAL	{'heading': 13}
+scanned_04_copula_subspaces.expected.jsonl	75 segs	VALID	texts+pages IDENTICAL	{'body': 58, 'equation': 1, 'footnote': 5, 'list': 11}
+scanned_05_markov_kernel.expected.jsonl	85 segs	VALID	texts+pages IDENTICAL	{'body': 47, 'equation': 34, 'heading': 4}
+tables_01_pfn_bayes.expected.jsonl	216 segs	VALID	texts+pages IDENTICAL	{'body': 125, 'caption': 4, 'equation': 69, 'heading': 14, 'list': 4}
+tables_02_non_gaussian_sem.expected.jsonl	149 segs	VALID	texts+pages IDENTICAL	{'body': 111, 'caption': 3, 'equation': 21, 'heading': 14}
+tables_03_copula_subspaces.expected.jsonl	193 segs	VALID	texts+pages IDENTICAL	{'body': 110, 'equation': 66, 'footnote': 5, 'list': 12}
+tables_04_markov_kernel.expected.jsonl	183 segs	VALID	texts+pages IDENTICAL	{'body': 100, 'equation': 78, 'heading': 5}
+tables_05_decomposing_learner.expected.jsonl	119 segs	VALID	texts+pages IDENTICAL	{'body': 69, 'caption': 5, 'equation': 28, 'heading': 9, 'list': 8}
+
+20/20 valid; 20/20 texts+pages identical to HEAD

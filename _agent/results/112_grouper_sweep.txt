@@ -1,0 +1,11 @@
+{} ['academic_01_seahelm_audio', 'academic_02_memduet', 'academic_03_pruned_reasoning', 'academic_04_legislative_xml', 'academic_05_sparse_autoencoders', 'tables_01_pfn_bayes', 'tables_02_non_gaussian_sem', 'tables_03_copula_subspaces', 'tables_04_markov_kernel', 'tables_05_decomposing_learner', 'report_01_zero_trust', 'report_02_patch_mgmt', 'report_03_ssdf', 'report_04_rmf', 'report_05_controls'] mean=0.6756 0.51 0.80 0.78 0.85 0.95 0.50 0.70 0.49 0.31 0.65 0.64 0.62 0.68 0.83 0.83
+{"BLOCK_GAP": 0.8}  mean=0.6442 0.48 0.71 0.78 0.85 0.89 0.52 0.68 0.46 0.33 0.55 0.62 0.60 0.66 0.77 0.76
+{"LINE_MAX_GAP": 4.0}  mean=0.6288 0.37 0.71 0.75 0.85 0.89 0.52 0.66 0.41 0.30 0.55 0.62 0.60 0.66 0.77 0.76
+{"BLOCK_GAP": 0.5}  mean=0.6963 0.51 0.80 0.78 0.85 0.95 0.50 0.70 0.49 0.31 0.65 0.75 0.71 0.79 0.83 0.83
+{"BLOCK_GAP": 0.3}  mean=0.6504 0.52 0.74 0.78 0.85 0.95 0.50 0.70 0.43 -0.31 0.70 0.75 0.71 0.79 0.83 0.83
+{"BLOCK_GAP": 0.3, "BLOCK_SIZE_RATIO": 1.1}  mean=0.6504 0.52 0.74 0.78 0.85 0.95 0.50 0.70 0.43 -0.31 0.70 0.75 0.68 0.73 0.91 0.83
+{"BLOCK_ALIGN": null, "TABLE_TEXT_FALLBACK": false}  mean=0.6963 0.51 0.80 0.78 0.85 0.95 0.50 0.70 0.49 0.31 0.65 0.75 0.71 0.79 0.83 0.83
+{"TABLE_TEXT_FALLBACK": false}  mean=0.6126 0.35 0.50 0.66 0.81 0.74 0.44 0.63 0.11 0.15 0.74 0.75 0.87 0.79 0.83 0.83
+{"BLOCK_ALIGN": null}  mean=0.6908 0.70 0.80 0.80 0.85 0.96 0.50 0.70 0.49 0.31 0.65 0.64 0.62 0.68 0.83 0.83
+{} ['academic_01_seahelm_audio', 'academic_02_memduet', 'academic_03_pruned_reasoning', 'academic_04_legislative_xml', 'academic_05_sparse_autoencoders', 'tables_01_pfn_bayes', 'tables_02_non_gaussian_sem', 'tables_03_copula_subspaces', 'tables_04_markov_kernel', 'tables_05_decomposing_learner', 'report_01_zero_trust', 'report_02_patch_mgmt', 'report_03_ssdf', 'report_04_rmf', 'report_05_controls'] mean=0.6174 0.64 0.50 0.69 0.81 0.75 0.44 0.63 0.11 0.15 0.74 0.68 0.78 0.68 0.83 0.85
+{"SPACE_GAP": 0.25}  mean=0.4117 0.38 0.07 0.39 0.20 0.25 0.38 0.46 0.10 0.06 0.07 0.68 0.78 0.68 0.83 0.85

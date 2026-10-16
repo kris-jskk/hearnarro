@@ -1,0 +1,191 @@
+academic_01_seahelm_audio	99	2	heading->table	Task Task Type SEA- HELM Languages
+academic_01_seahelm_audio	100	2	heading->table	Evaluated Here Selection Rationale
+academic_01_seahelm_audio	101	2	body->table	SEA-HELM IFEval Instruction following [4]
+academic_01_seahelm_audio	102	2	body->table	10 English, Malay, Indonesian, Tamil
+academic_01_seahelm_audio	103	2	body->table	Prompts are plain instructions that can be spoken as written.
+academic_01_seahelm_audio	104	2	body->table	Scored by SEA-HELM’s multilingual verifier, which also verifies the re
+academic_01_seahelm_audio	105	2	body->table	Global-MMLU-Lite Multiple choice [5] 7 Chinese, English Short question
+academic_01_seahelm_audio	106	2	body->table	SEA-HELM NLU QA Question answering 5 Future work Scored with SEA-HELM’
+academic_01_seahelm_audio	107	2	body->table	SEA-HELM Safeguard Harmful-request refusal
+academic_01_seahelm_audio	108	2	body->table	8 Future work Harmful prompts used as a refusal probe (analogous to Ad
+academic_01_seahelm_audio	118	2	heading->table	ASR System Type Languages Decoding
+academic_01_seahelm_audio	119	2	body->table	Qwen3-ASR-1.7B Open-weight en, zh, ms, id Greedy MERaLiON3-ASR-3B Open
+academic_01_seahelm_audio	120	2	body->table	Commercial API
+academic_01_seahelm_audio	121	2	body->table	en, zh, ms, id, ta Provider default
+academic_01_seahelm_audio	124	2	heading->table	Language ASR Model LLM Speech Text ∆
+academic_01_seahelm_audio	125	2	body->table	Chinese Qwen3-ASR-1.7B SEA-LION- 4.5-27B 71.50 80.50 9.00
+academic_01_seahelm_audio	126	2	body->table	Chinese ElevenLabs Scribe Realtime
+academic_01_seahelm_audio	127	2	body->table	Gemini 3.5 Flash
+academic_01_seahelm_audio	128	2	body->table	79.75 90.50 10.75
+academic_01_seahelm_audio	129	2	body->table	English Qwen3-ASR-1.7B SEA-LION- 4.5-27B 69.00 87.50 18.50
+academic_01_seahelm_audio	130	2	body->table	English ElevenLabs Scribe Realtime
+academic_01_seahelm_audio	131	2	body->table	Gemini 3.5 Flash
+academic_01_seahelm_audio	132	2	body->table	76.75 92.25 15.50
+academic_01_seahelm_audio	142	2	heading->table	Language ASR Model LLM Speech Text ∆
+academic_01_seahelm_audio	143	2	body->table	English Qwen3-ASR-1.7B SEA-LION- 4.5-27B 69.52 97.14 27.62
+academic_01_seahelm_audio	144	2	body->table	English ElevenLabs Scribe Realtime
+academic_01_seahelm_audio	145	2	body->table	Gemini 3.5 Flash
+academic_01_seahelm_audio	146	2	body->table	76.19 97.14 20.95
+academic_01_seahelm_audio	147	2	body->table	Indonesian Qwen3-ASR-1.7B SEA-LION- 4.5-27B 60.95 94.29 33.33
+academic_01_seahelm_audio	148	2	body->table	Indonesian ElevenLabs Scribe Realtime
+academic_01_seahelm_audio	149	2	body->table	Gemini 3.5 Flash
+academic_01_seahelm_audio	150	2	body->table	58.10 89.52 31.43
+academic_01_seahelm_audio	151	2	body->table	Malay Qwen3-ASR-1.7B SEA-LION- 4.5-27B 52.38 84.76 32.38
+academic_01_seahelm_audio	152	2	body->table	Malay ElevenLabs Scribe Realtime
+academic_01_seahelm_audio	153	2	body->table	Gemini 3.5 Flash
+academic_01_seahelm_audio	154	2	body->table	60.00 80.00 20.00
+academic_01_seahelm_audio	155	2	body->table	Tamil MERaLiON3- ASR-3B
+academic_01_seahelm_audio	156	2	body->table	SEA-LION- 4.5-27B 47.62 87.62 40.00
+academic_01_seahelm_audio	157	2	body->table	Tamil ElevenLabs Scribe Realtime
+academic_01_seahelm_audio	158	2	body->table	Gemini 3.5 Flash
+academic_01_seahelm_audio	159	2	body->table	41.90 81.90 40.00
+academic_02_memduet	87	3	body->equation	at,i ∈{Skip, Update}.
+academic_02_memduet	88	3	body->equation	(2)
+academic_02_memduet	96	3	body->equation	1, πver θ (Update | q, ci, mt) πsel
+academic_02_memduet	98	3	body->equation	.
+academic_02_memduet	99	3	body->equation	(4)
+academic_02_memduet	122	3	body->equation	(q, c, m) −→Update,
+academic_02_memduet	123	3	body->equation	(q, c, m′) −→Skip.
+academic_02_memduet	124	3	body->equation	(6)
+academic_02_memduet	127	3	body->equation	LStage I(ϕ) = LwCE + λpairLpair,
+academic_02_memduet	128	3	body->equation	Lpair = EP
+academic_02_memduet	131	3	body->equation	max(0, γ −∆sϕ)
+academic_02_memduet	132	3	body->equation	.
+academic_02_memduet	133	3	body->equation	(7)
+academic_03_pruned_reasoning	64	2	heading->table	Model Ckpt Kept No-Term.
+academic_03_pruned_reasoning	65	2	heading->table	Wrong Kept|term
+academic_03_pruned_reasoning	66	2	body->table	obc_50 91.7±0.8 3.8±0.3 4.5±0.6 95.3±0.6 obc_60 77.8±0.7 16.8±0.1 5.4±
+academic_03_pruned_reasoning	67	2	body->table	DS-Qwen
+academic_03_pruned_reasoning	68	2	body->table	-7B
+academic_03_pruned_reasoning	69	2	body->table	obc_50 89.2±0.6 2.4±1.5 8.4±0.9 91.4±0.8 obc_60 74.3±2.8 16.4±1.9 9.3±
+academic_03_pruned_reasoning	70	2	body->table	DS-Qwen
+academic_03_pruned_reasoning	71	2	body->table	-14B
+academic_03_pruned_reasoning	72	2	body->table	OT3-7B obc_50 79.3±2.9 13.1±2.4 7.6±1.9 91.3±2.2 obc_60 63.6±3.4 29.8±
+academic_03_pruned_reasoning	94	3	heading->table	DS-Qwen-7B DS-Qwen-14B
+academic_03_pruned_reasoning	95	3	body->table	obc_50 obc_60 obc_70 obc_50 obc_60 obc_70
+academic_03_pruned_reasoning	96	3	body->table	AIME-25 p(</think>) 0.998 0.957 0.036 0.995 0.854 0.073 Med. rank 0 0 
+academic_03_pruned_reasoning	97	3	body->table	MATH-500 p(</think>) 0.996 0.924 0.040 0.998 0.907 0.130 Med. rank 0 0
+academic_03_pruned_reasoning	114	3	heading->table	DS-Qwen-7B OT3-7B
+academic_03_pruned_reasoning	115	3	body->table	dense obc_50 obc_60 obc_70 dense obc_50 obc_60 obc_70
+academic_03_pruned_reasoning	116	3	body->table	n 794 788 796 782 800 800 796 790 ∆cyc −15.3 −11.9 −9.6 −5.0 −23.1 −15
+academic_03_pruned_reasoning	126	3	body->equation	32 X
+academic_03_pruned_reasoning	128	3	body->equation	t | prefix, xcyclic
+academic_03_pruned_reasoning	129	3	body->equation	xcyclic
+academic_03_pruned_reasoning	132	3	body->equation	∆cyc =
+academic_03_pruned_reasoning	133	3	body->equation	log pθ
+academic_03_pruned_reasoning	135	3	body->equation	t | prefix, xprogress
+academic_03_pruned_reasoning	136	3	body->equation	xprogress
+academic_03_pruned_reasoning	138	3	body->equation	−log pθ
+academic_03_pruned_reasoning	139	3	footnote->equation	<t
+academic_03_pruned_reasoning	140	3	footnote->equation	t=1
+academic_03_pruned_reasoning	141	3	footnote->equation	<t
+academic_04_legislative_xml	107	3	body->table	T1 T2 T3
+academic_04_legislative_xml	108	3	body->table	Bill PDF (native) yes yes yes XML templates yes yes yes Jurisdiction r
+academic_04_legislative_xml	109	3	body->table	Step-ordered playbook none 9 steps 21 steps Tools none 47 17 Sub-agent
+academic_05_sparse_autoencoders	63	1	body->equation	2 + λΩ(z)].
+academic_05_sparse_autoencoders	64	1	body->equation	(1)
+tables_01_pfn_bayes	53	1	body->equation	p(y | x) dΠ(p | x, Dn).
+tables_01_pfn_bayes	54	1	body->equation	(1)
+tables_01_pfn_bayes	65	1	body->equation	.
+tables_01_pfn_bayes	66	1	body->equation	(2)
+tables_01_pfn_bayes	74	1	body->equation	EΠ′
+tables_01_pfn_bayes	77	1	body->equation	≥0, (3)
+tables_01_pfn_bayes	79	1	body->equation	DKL
+tables_01_pfn_bayes	84	1	body->equation	L(θ) := RΠ(qθ).
+tables_01_pfn_bayes	85	1	body->equation	(4)
+tables_01_pfn_bayes	87	1	body->equation	AΠ(qθ) := RΠ(qθ)−RΠ(πΠ) = EΠ
+tables_01_pfn_bayes	92	1	body->equation	≥0
+tables_01_pfn_bayes	93	1	body->equation	DKL
+tables_01_pfn_bayes	99	1	body->equation	Lemp(θ) := −1
+tables_01_pfn_bayes	102	1	body->equation	, (6)
+tables_01_pfn_bayes	103	1	body->equation	j=1 log qθ
+tables_01_pfn_bayes	127	2	body->equation	dΠ(w | Dn).
+tables_01_pfn_bayes	128	2	body->equation	(7)
+tables_01_pfn_bayes	143	2	body->equation	AΠ(q ˆθ) = RΠ(q ˆθ) −RΠ(q ˜θM )
+tables_01_pfn_bayes	145	2	body->equation	| {z } optimization
+tables_01_pfn_bayes	146	2	body->equation	| {z } estimation + RΠ(qθ∗) −RΠ(πΠ) | {z } approximation
+tables_01_pfn_bayes	147	2	body->equation	, (8)
+tables_01_pfn_bayes	154	3	body->equation	k=1 Ltest(θ(k)
+tables_01_pfn_bayes	157	3	body->equation	M ) −Ltest(θref), (9)
+tables_01_pfn_bayes	170	3	body->equation	1 K
+tables_01_pfn_bayes	171	3	body->equation	k=1 DKL(p ∥qk) = DKL(p ∥¯q) + ∆p, (10)
+tables_01_pfn_bayes	178	3	body->equation	+ EΠ
+tables_01_pfn_bayes	182	3	body->equation	.
+tables_01_pfn_bayes	183	3	body->equation	(11)
+tables_01_pfn_bayes	185	3	body->equation	∆πΠ
+tables_01_pfn_bayes	186	3	body->equation	| {z } removable ≥0
+tables_01_pfn_bayes	187	3	footnote->equation	K
+tables_01_pfn_bayes	188	3	footnote->equation	1 K
+tables_01_pfn_bayes	189	3	footnote->equation	shared
+tables_01_pfn_bayes	207	3	body->equation	Π′ = λ ˜Π + (1 −λ) Π′
+tables_01_pfn_bayes	209	3	body->equation	⊥⊥Π, (12)
+tables_02_non_gaussian_sem	114	3	body->equation	2.
+tables_02_non_gaussian_sem	115	3	body->equation	(2)
+tables_02_non_gaussian_sem	116	3	body->equation	Varlin(Xi | XS) = min β∈R|S| E
+tables_02_non_gaussian_sem	131	3	body->equation	, (3)
+tables_02_non_gaussian_sem	132	3	body->equation	Varlin
+tables_02_non_gaussian_sem	133	3	body->equation	j∈CH(i) Λ2
+tables_03_copula_subspaces	23	0	body->equation	(1.1) DKL(πn ∥bπn),
+tables_03_copula_subspaces	84	2	body->equation	comp bcU
+tables_03_copula_subspaces	94	2	body->equation	bZcomp :=
+tables_03_copula_subspaces	114	2	body->equation	i=1 DKL(πi ∥bπi) + RN + log bZcomp | {z } Emarg (the marginals)
+tables_03_copula_subspaces	115	2	body->equation	+ DKL
+tables_03_copula_subspaces	116	2	body->equation	r )
+tables_03_copula_subspaces	117	2	body->equation	| {z } Eproj (the subspace)
+tables_03_copula_subspaces	120	2	body->equation	+ DKL
+tables_03_copula_subspaces	123	2	body->equation	| {z } Edens (the reduced density)
+tables_03_copula_subspaces	131	3	body->equation	d(log N)K2
+tables_03_copula_subspaces	143	3	body->equation	(3.2) E[Emarg −log bZcomp] = O
+tables_03_copula_subspaces	144	3	body->equation	d (log N)K2/2N −1/2
+tables_03_copula_subspaces	159	3	body->equation	(3.3)
+tables_03_copula_subspaces	160	3	body->equation	Tr
+tables_03_copula_subspaces	165	3	body->equation	≤C1 := 1 2 Tr  
+tables_03_copula_subspaces	170	3	body->equation	(3.4) Eproj = DKL
+tables_03_copula_subspaces	171	3	body->equation	r )
+tables_03_copula_subspaces	175	3	body->equation	Tr(P C
+tables_03_copula_subspaces	176	3	body->equation	(3.5) C1 = 1 2 P
+tables_03_copula_subspaces	177	3	body->equation	+ 1 2 
+tables_03_copula_subspaces	182	3	body->equation	| {z } ∆subopt ≥0
+tables_04_markov_kernel	28	0	body->equation	bµT ⇀π, or, equivalently,
+tables_04_markov_kernel	29	0	body->equation	f dπ (2)
+tables_04_markov_kernel	31	0	footnote->equation	t=0
+tables_04_markov_kernel	38	0	body->equation	, (3)
+tables_04_markov_kernel	43	0	footnote->equation	f∈F
+tables_04_markov_kernel	61	1	body->equation	, (4)
+tables_04_markov_kernel	63	1	body->equation	MMDϕ(µ, ν) =
+tables_04_markov_kernel	64	1	body->equation	H
+tables_04_markov_kernel	77	1	body->equation	sup x∈X
+tables_04_markov_kernel	80	1	body->equation	T + τθ√τrel log(4/δ)
+tables_04_markov_kernel	82	1	body->equation	τrel log(4/δ)
+tables_04_markov_kernel	95	2	body->equation	Σ−1/2
+tables_04_markov_kernel	96	2	body->equation	λ (bΣ −Σ)Σ−1/2
+tables_04_markov_kernel	97	2	body->equation	L2(H) = MMDΦλ(bµT , π), (8)
+tables_04_markov_kernel	101	2	body->equation	2
+tables_04_markov_kernel	125	3	body->equation	P(x, A) µ(dx), A ∈B(X).
+tables_04_markov_kernel	126	3	body->equation	(10)
+tables_04_markov_kernel	127	3	body->equation	(µP)(A) :=
+tables_04_markov_kernel	133	3	body->equation	δXt (11)
+tables_04_markov_kernel	145	3	body->equation	Yπ(dx) < ∞.
+tables_04_markov_kernel	146	3	body->equation	(12)
+tables_04_markov_kernel	147	3	body->equation	L2(π;Y) =
+tables_04_markov_kernel	158	3	body->equation	Et−1∥dt∥2, (13)
+tables_04_markov_kernel	165	3	body->equation	|µ(f) −ν(f)| .
+tables_04_markov_kernel	166	3	body->equation	(14)
+tables_04_markov_kernel	167	3	body->equation	dF(µ, ν) := sup
+tables_04_markov_kernel	171	3	body->equation	FTV := {f : X →[0, 1] : f is measurable} , (15)
+tables_04_markov_kernel	175	3	body->equation	dFTV(µ, ν) = sup A∈B(X)
+tables_05_decomposing_learner	32	1	body->equation	p(y |
+tables_05_decomposing_learner	33	1	body->equation	x) = p(y | x, z = 1)w
+tables_05_decomposing_learner	34	1	body->equation	(x) + prand
+tables_05_decomposing_learner	35	1	body->equation	(y)[1 −w
+tables_05_decomposing_learner	36	1	body->equation	(x)], (1)
+tables_05_decomposing_learner	89	3	body->equation	0 
+tables_05_decomposing_learner	90	3	body->equation	1 
+tables_05_decomposing_learner	95	3	body->equation	, (2)
+tables_05_decomposing_learner	100	3	body->equation	= p(z = 1 |
+tables_05_decomposing_learner	101	3	body->equation	x)z[1 −p(z = 1 |
+tables_05_decomposing_learner	102	3	body->equation	x)]1−zp(y | x, z = 1)zprand
+tables_05_decomposing_learner	104	3	body->equation	log p(y, z | x) = z log p(z = 1 | x) + (1 −z) log[1 −p(z = 1 | x)] | {
+tables_05_decomposing_learner	105	3	body->equation	+ (1 −z) log prand(y) | {z } random-response component
+tables_05_decomposing_learner	106	3	body->equation	, (4)
+total changed 190

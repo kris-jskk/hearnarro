@@ -1,0 +1,17 @@
+$ grep -rn "pymupdf\|fitz" api/hearnarro api/pyproject.toml   (brief command, case-sensitive)
+exit=1 (1 = no matches)
+$ grep -rn "^\s*\(import\|from\) \(pymupdf\|fitz\)" api/hearnarro api/tests --include=*.py
+exit=1
+$ grep -rni "pymupdf\|fitz" api/hearnarro   (case-insensitive: prose mentions only)
+api/hearnarro/ingestion/order.py:153:    PyMuPDF splits a line with inline maths into several blocks whose bboxes include sub-
+api/hearnarro/ingestion/extract.py:4:page rendering for OCR comes from pypdfium2 (Apache-2.0/BSD-3). D13 replaced PyMuPDF (AGPL).
+api/hearnarro/ingestion/extract.py:28:# glyphs itself, in content-stream order, the way PyMuPDF's text device did: a glyph continues
+api/hearnarro/ingestion/extract.py:361:    use the printable ASCII code point as PyMuPDF did, else drop it."""
+api/hearnarro/ingestion/extract.py:379:    # a ruled frame around prose is one cell; PyMuPDF did not call that a table
+$ uv pip uninstall pymupdf (run earlier in this task): "Uninstalled 1 package ... - pymupdf==1.28.2"
+$ uv pip list | grep -i "mupdf\|pdfplumber\|pdfminer\|pypdfium2"
+pdfminer-six       20260107
+pdfplumber         0.11.10
+pypdfium2          5.14.0
+$ uv pip show pymupdf
+warning: Package(s) not found for: pymupdf
