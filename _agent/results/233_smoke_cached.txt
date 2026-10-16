@@ -1,0 +1,23 @@
+fixture                            class     status  pages parse_ms   pg/s  segs    word      mass a/e  result
+--------------------------------------------------------------------------------------------------------------
+academic_01_seahelm_audio          academic  cached      4      315   12.7   214  0.9919 0.0903/0.0839  pass
+academic_02_memduet                academic  cached      4      386   10.4   130  0.9912 0.0244/0.0254  pass
+academic_03_pruned_reasoning       academic  cached      4      322   12.4   138  0.9963 0.0529/0.0532  pass
+academic_04_legislative_xml        academic  cached      4      232   17.2   124  0.9839 0.0127/0.0128  pass
+academic_05_sparse_autoencoders    academic  cached      4      252   15.9   139  0.9958 0.0044/0.0044  pass
+tables_01_pfn_bayes                tables    cached      4      292   13.7   169  0.9779 0.0369/0.0388  pass
+tables_02_non_gaussian_sem         tables    cached      4      266   15.0   138  0.9877 0.0163/0.0085  pass
+tables_03_copula_subspaces         tables    cached      4      211   19.0   158  0.9710 0.0472/0.0499  pass
+tables_04_markov_kernel            tables    cached      4      202   19.8   173  0.9756 0.0569/0.0597  pass
+tables_05_decomposing_learner      tables    cached      4      181   22.1   115  0.9989 0.0397/0.0388  pass
+report_01_zero_trust               report    cached      4      162   24.7    57  1.0000 0.0000/0.0000  pass
+report_02_patch_mgmt               report    cached      4      204   19.6    63  1.0000 0.0000/0.0000  pass
+report_03_ssdf                     report    cached      4      192   20.8    57  1.0000 0.0000/0.0000  pass
+report_04_rmf                      report    cached      4      184   21.7    48  1.0000 0.0000/0.0000  pass
+report_05_controls                 report    cached      4      164   24.4    47  1.0000 0.0000/0.0000  pass
+--------------------------------------------------------------------------------------------------------------
+fixtures: 15  passed: 15  failed: 0  skipped (class): 5
+word-level mean: 0.9914 (gate >= 0.97); per-fixture gate >= 0.95
+throughput: n/a (all documents cached; use a fresh --data-dir to measure)
+RESULT: PASS
+exit 0
