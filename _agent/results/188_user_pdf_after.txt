@@ -1,0 +1,88 @@
+segments: 527 (was 538, /Users/sowmyajonnalagadda/hearnarro-m1/iot_segments_v2.txt)
+segments typed table on page 0: 0
+leader-dot segments (text only . · … and spaces): 0
+punctuation-only segments: 1
+segments containing 'Table of Contents': 0
+--- first 40 segments ---
+   0 p0 body     ISBN: 978-1-491-92180-7
+   1 p0 heading  What Is the Internet of Things?
+   2 p0 heading  Mike Loukides & Jon Bruner
+   3 p1 heading  THE O’REILLY INTERNET OF THINGS CONFERENCE
+   4 p1 body     “The future has a funny way of
+   5 p1 body     sneaking up on you.
+   6 p1 body     You don’t notice it until you’re soaking in it.
+   7 p1 body     That was the feeling at O’Reilly’s Solid Conference.
+   8 p1 body     ”
+   9 p1 body     — Wired
+  10 p2 heading  What Is the Internet of Things?
+  11 p2 heading  Mike Loukides and Jon Bruner
+  12 p3 body     What Is the Internet of Things?
+  13 p3 body     by Mike Loukides and Jon Bruner
+  14 p3 body     Copyright © 2015 O’Reilly Media, Inc.
+  15 p3 body     All rights reserved.
+  16 p3 body     Printed in the United States of America.
+  17 p3 body     Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472.
+  18 p3 body     O’Reilly books may be purchased for educational, business, or sales promotional use.
+  19 p3 body     Online editions are also available for most titles (http://safaribooksonline.com).
+  20 p3 body     For more information, contact our corporate/institutional sales department: 800-998-9938 or corporate@oreilly.com.
+  21 p3 body     January 2015: First Edition
+  22 p3 body     Revision History for the First Edition 2015-01-13: First Release While the publisher and the author(s) have used good faith efforts to ensure that the
+  23 p3 body     Use of the information and instructions contained in this work is at your own risk.
+  24 p3 body     If any code samples or other technology this work contains or describes is subject to open source licenses or the intellectual property rights of othe
+  25 p3 footnote 978-1-491-92180-7
+  26 p3 footnote [LSI]
+  27 p6 heading  What Is the Internet of Things?
+  28 p6 body     At our first Solid conference in 2014, we started a wide-ranging discussion about the “intersection between software and the physical world.”
+  29 p6 body     A year later, this discussion is continuing, with even more energy and passion than before.
+  30 p6 body     You can hardly read a newspaper (if you still read newspapers) without seeing something about the “Internet of Things” and the rise of the hardware st
+  31 p6 body     But what does the intersection between software and hardware mean?
+  32 p6 body     Early in 2013, we sat around a table in Sebastopol to survey some interesting trends in technology.
+  33 p6 body     There were many: robotics, sensor networks, the Industrial Internet, the professionalization of the Maker movement, hardware-oriented startups.
+  34 p6 body     It was a confusing picture, until we realized that these weren’t separate trends.
+  35 p6 body     They’re all more alike than different—they are all the visible result of the same underlying forces.
+  36 p6 body     Startups like FitBit and Withings were taking familiar old devices, like pedometers and bathroom scales, and making them intelligent by adding compute
+  37 p6 body     At the other end of the industrial scale, GE was doing the same thing to jet engines and locomotives.
+  38 p6 body     Our homes are increasingly the domain of smart robots, including Roombas and 3D printers, and we’ve started looking forward to self-driving cars and p
+  39 p6 body     Every interesting new product has a network connection—be it WiFi, Bluetooth, Zigbee, or even a basic form of piggybacking through a USB connection to
+--- block-level types, pages 0-5 (scratch script blocks.py) ---
+median 10.5
+PAGE 0 tables [BBox(x0=432.072, y0=0.0, x1=869.04, y1=648.0)]
+    0 body     sz=10.0 nl=1 y=572-582 x=34-154 | ISBN: 978-1-491-92180-7
+    1 heading  sz=70.0 nl=3 y=69-261 x=465-756 | What Is the / Internet of / Things?
+    2 heading  sz=20.0 nl=1 y=543-563 x=465-700 | Mike Loukides & Jon Bruner
+PAGE 1 tables []
+    0 body     sz=27.0 nl=1 y=154-181 x=28-352 | “The future has a funny way of
+    1 body     sz=27.0 nl=5 y=184-331 x=37-367 | sneaking up on you. You don’t / notice it until you’re soaking in it. / That was the feeling / at O’Reilly’s Solid / Conference.”
+    2 body     sz=12.0 nl=1 y=342-354 x=38-76 | — Wired
+    3 figure   sz=9.0 nl=1 y=482-491 x=38-376 | The traditional boundaries between hardware and software are falling. It’s a perfect storm of
+    4 figure   sz=9.0 nl=1 y=496-505 x=38-391 | opportunity for a software-enhanced, networked physical world. The new products and services
+    5 figure   sz=9.0 nl=1 y=510-519 x=38-384 | created from the melding of software, hardware, and data are built by people who work across
+    6 figure   sz=9.0 nl=1 y=524-533 x=38-368 | disciplines and industries. A vibrant new community is emerging, made up of business and
+    7 figure   sz=9.0 nl=1 y=538-547 x=38-398 | industry leaders, software developers, hardware engineers, designers, investors, startup founders,
+    8 figure   sz=9.0 nl=1 y=552-561 x=38-382 | academics, artists, and policy makers—many of whom have never come together before. They
+    9 figure   sz=9.0 nl=1 y=566-575 x=38-381 | gather at Solid to be inspired, to make connections and launch conversations, and to plug into
+   10 figure   sz=9.0 nl=1 y=580-589 x=38-215 | the future for a few days. Will you be a part of it?
+   11 figure   sz=13.0 nl=1 y=605-618 x=38-206 | Find out more at solidcon.com
+   12 heading  sz=10.5 nl=1 y=107-118 x=169-410 | THE O’REILLY INTERNET OF THINGS CONFERENCE
+PAGE 2 tables []
+    0 heading  sz=16.0 nl=1 y=380-396 x=164-360 | Mike Loukides and Jon Bruner
+    1 heading  sz=31.5 nl=2 y=151-212 x=152-360 | What Is the Internet / of Things?
+PAGE 3 tables []
+    0 footnote sz=8.5 nl=1 y=546-554 x=72-137 | 978-1-491-92180-7
+    1 footnote sz=8.5 nl=1 y=562-570 x=72-89 | [LSI]
+    2 body     sz=10.0 nl=2 y=60-82 x=72-187 | What Is the Internet of Things? / by Mike Loukides and Jon Bruner
+    3 body     sz=8.5 nl=1 y=90-98 x=72-269 | Copyright © 2015 O’Reilly Media, Inc. All rights reserved.
+    4 body     sz=8.5 nl=1 y=106-115 x=72-208 | Printed in the United States of America.
+    5 body     sz=8.5 nl=2 y=122-141 x=72-360 | Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA / 95472.
+    6 body     sz=8.5 nl=4 y=149-188 x=72-360 | O’Reilly books may be purchased for educational, business, or sales promotional use. / Online editions are also available for most titles (http://safaribooksonl
+    7 body     sz=8.5 nl=1 y=196-204 x=72-189 | January 2015: First Edition
+    8 body     sz=10.0 nl=11 y=217-331 x=72-360 | Revision History for the First Edition / 2015-01-13: First Release / While the publisher and the author(s) have used good faith efforts to ensure that the / inf
+PAGE 4 tables []
+    0 toc      sz=25.2 nl=1 y=75-100 x=217-360 | Table of Contents
+    1 toc      sz=12.0 nl=20 y=231-383 x=86-360 | What Is the Internet of Things?. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 / So What’s New? / 3 / Disrupting Economies of Scale / 6 / Bein
+    2 footer   sz=9.0 nl=1 y=598-607 x=354-360 | iii
+PAGE 5 tables []
+
+--- whole document: blocks typed toc (dropped by order_page): 2
+  p4 b0 lines=1 | Table of Contents
+  p4 b1 lines=20 | What Is the Internet of Things?. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 / So What’s New? / 3 / Disrupting Economies of Scale / 6 / Being a Software Company / 9 / Frictionless 

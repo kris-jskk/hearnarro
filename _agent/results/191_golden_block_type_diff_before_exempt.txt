@@ -1,0 +1,4 @@
+academic_02_memduet.pdf 3 9 equation -> noise '!'
+tables_03_copula_subspaces.pdf 2 11 equation -> noise ','
+tables_03_copula_subspaces.pdf 3 6 equation -> noise '.'
+tables_03_copula_subspaces.pdf 3 20 equation -> noise ','

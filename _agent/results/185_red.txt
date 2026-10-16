@@ -1,0 +1,177 @@
+...........................................FF.F.F.FFFFF.F.F.             [100%]
+=================================== FAILURES ===================================
+_________________ test_ing3_toc_heading_opens_region_typed_toc _________________
+
+    def test_ing3_toc_heading_opens_region_typed_toc() -> None:
+        pages = classify_pages(_toc_doc())
+>       assert _types(pages[1]) == ["toc", "toc", "toc", "toc"]
+E       AssertionError: assert ['heading', '...body', 'body'] == ['toc', 'toc', 'toc', 'toc']
+E         
+E         At index 0 diff: 'heading' != 'toc'
+E         Use -v to get more diff
+
+tests/test_ing2_classify.py:376: AssertionError
+_____ test_ing3_toc_region_continues_across_pages_and_ends_at_real_heading _____
+
+    def test_ing3_toc_region_continues_across_pages_and_ends_at_real_heading() -> None:
+        pages = classify_pages(
+            _toc_doc(
+                [make_block(2, 0, ["Being a Software Company . . . 9", "Standards 14"], y0=80)],
+                [
+                    make_block(3, 0, ["What Is the Internet of Things?"], y0=80, size=20.0),
+                    make_block(3, 1, [FILLER, FILLER], y0=200),
+                ],
+            )
+        )
+>       assert _types(pages[2]) == ["toc"]
+E       AssertionError: assert ['body'] == ['toc']
+E         
+E         At index 0 diff: 'body' != 'toc'
+E         Use -v to get more diff
+
+tests/test_ing2_classify.py:389: AssertionError
+_______ test_ing3_toc_run_together_titles_and_page_numbers_block_is_toc ________
+
+    def test_ing3_toc_run_together_titles_and_page_numbers_block_is_toc() -> None:
+        run = (
+            "3 Disrupting Economies of Scale 6 Being a Software Company 9 Frictionless "
+            "Manufacturing 10 Software Above the Level of a Single Device"
+        )
+        pages = classify_pages(_toc_doc([make_block(2, 0, [run], y0=80)]))
+>       assert _types(pages[2]) == ["toc"]
+E       AssertionError: assert ['body'] == ['toc']
+E         
+E         At index 0 diff: 'body' != 'toc'
+E         Use -v to get more diff
+
+tests/test_ing2_classify.py:404: AssertionError
+___________ test_ing3_leader_dot_line_is_noise_outside_a_toc_region ____________
+
+    def test_ing3_leader_dot_line_is_noise_outside_a_toc_region() -> None:
+        pages = classify_pages(_doc(make_block(0, 0, [". . . . . . . ."], y0=300)))
+>       assert _type_of(pages, 0) == "noise"
+E       AssertionError: assert 'body' == 'noise'
+E         
+E         - noise
+E         + body
+
+tests/test_ing2_classify.py:423: AssertionError
+______________ test_ing3_punctuation_only_block_is_noise[\u201d] _______________
+
+text = '”'
+
+    @pytest.mark.parametrize("text", ["”", "— –", "…", '"', "* * *"])
+    def test_ing3_punctuation_only_block_is_noise(text: str) -> None:
+        pages = classify_pages(_doc(make_block(0, 0, [text], y0=300)))
+>       assert _type_of(pages, 0) == "noise"
+E       AssertionError: assert 'body' == 'noise'
+E         
+E         - noise
+E         + body
+
+tests/test_ing2_classify.py:436: AssertionError
+___________ test_ing3_punctuation_only_block_is_noise[\u2014 \u2013] ___________
+
+text = '— –'
+
+    @pytest.mark.parametrize("text", ["”", "— –", "…", '"', "* * *"])
+    def test_ing3_punctuation_only_block_is_noise(text: str) -> None:
+        pages = classify_pages(_doc(make_block(0, 0, [text], y0=300)))
+>       assert _type_of(pages, 0) == "noise"
+E       AssertionError: assert 'body' == 'noise'
+E         
+E         - noise
+E         + body
+
+tests/test_ing2_classify.py:436: AssertionError
+______________ test_ing3_punctuation_only_block_is_noise[\u2026] _______________
+
+text = '…'
+
+    @pytest.mark.parametrize("text", ["”", "— –", "…", '"', "* * *"])
+    def test_ing3_punctuation_only_block_is_noise(text: str) -> None:
+        pages = classify_pages(_doc(make_block(0, 0, [text], y0=300)))
+>       assert _type_of(pages, 0) == "noise"
+E       AssertionError: assert 'body' == 'noise'
+E         
+E         - noise
+E         + body
+
+tests/test_ing2_classify.py:436: AssertionError
+_________________ test_ing3_punctuation_only_block_is_noise["] _________________
+
+text = '"'
+
+    @pytest.mark.parametrize("text", ["”", "— –", "…", '"', "* * *"])
+    def test_ing3_punctuation_only_block_is_noise(text: str) -> None:
+        pages = classify_pages(_doc(make_block(0, 0, [text], y0=300)))
+>       assert _type_of(pages, 0) == "noise"
+E       AssertionError: assert 'body' == 'noise'
+E         
+E         - noise
+E         + body
+
+tests/test_ing2_classify.py:436: AssertionError
+_______________ test_ing3_punctuation_only_block_is_noise[* * *] _______________
+
+text = '* * *'
+
+    @pytest.mark.parametrize("text", ["”", "— –", "…", '"', "* * *"])
+    def test_ing3_punctuation_only_block_is_noise(text: str) -> None:
+        pages = classify_pages(_doc(make_block(0, 0, [text], y0=300)))
+>       assert _type_of(pages, 0) == "noise"
+E       AssertionError: assert 'list' == 'noise'
+E         
+E         - noise
+E         + list
+
+tests/test_ing2_classify.py:436: AssertionError
+__________ test_ing3_cover_digit_free_table_is_retyped_by_the_cascade __________
+
+    def test_ing3_cover_digit_free_table_is_retyped_by_the_cascade() -> None:
+        pages = classify_pages(_cover_table_doc(0, "Mike Loukides & Jon Bruner"))
+>       assert _types(pages[0]) == ["heading", "heading"]
+E       AssertionError: assert ['table', 'table'] == ['heading', 'heading']
+E         
+E         At index 0 diff: 'table' != 'heading'
+E         Use -v to get more diff
+
+tests/test_ing2_classify.py:454: AssertionError
+____________________ test_ing3_cover_pull_quote_run_is_body ____________________
+
+    def test_ing3_cover_pull_quote_run_is_body() -> None:
+        quote = [
+            make_block(0, 0, ["“The future has a funny way of"], y0=150, size=27.0),
+            make_block(
+                0,
+                1,
+                [
+                    "sneaking up on you. You don’t",
+                    "notice it until you’re soaking in it.",
+                    "That was the feeling at Solid Conference.”",
+                ],
+                y0=184,
+                size=27.0,
+            ),
+        ]
+        pages = classify_pages(_doc(*quote))
+>       assert _type_of(pages, 0) == "body"
+E       AssertionError: assert 'heading' == 'body'
+E         
+E         - body
+E         + heading
+
+tests/test_ing2_classify.py:484: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing2_classify.py::test_ing3_toc_heading_opens_region_typed_toc
+FAILED tests/test_ing2_classify.py::test_ing3_toc_region_continues_across_pages_and_ends_at_real_heading
+FAILED tests/test_ing2_classify.py::test_ing3_toc_run_together_titles_and_page_numbers_block_is_toc
+FAILED tests/test_ing2_classify.py::test_ing3_leader_dot_line_is_noise_outside_a_toc_region
+FAILED tests/test_ing2_classify.py::test_ing3_punctuation_only_block_is_noise[\u201d]
+FAILED tests/test_ing2_classify.py::test_ing3_punctuation_only_block_is_noise[\u2014 \u2013]
+FAILED tests/test_ing2_classify.py::test_ing3_punctuation_only_block_is_noise[\u2026]
+FAILED tests/test_ing2_classify.py::test_ing3_punctuation_only_block_is_noise["]
+FAILED tests/test_ing2_classify.py::test_ing3_punctuation_only_block_is_noise[* * *]
+FAILED tests/test_ing2_classify.py::test_ing3_cover_digit_free_table_is_retyped_by_the_cascade
+FAILED tests/test_ing2_classify.py::test_ing3_cover_pull_quote_run_is_body - ...
+11 failed, 49 passed in 0.09s
