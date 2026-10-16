@@ -1,1 +1,410 @@
-{}
+{
+ "a61424b8d25fb3ce1": {
+  "agent": "a61424b8d25fb3ce1",
+  "task": "m1-tests-first",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 23
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 46,
+   "output": 172,
+   "cache_create": 151372,
+   "cache_read": 1258338
+  },
+  "final_prompt": 80802,
+  "new_tokens": 151418,
+  "weighted_input": 315094,
+  "assistant_turns": 23,
+  "tool_calls": 13,
+  "started": "2026-10-16T06:19:16.464Z",
+  "ended": "2026-10-16T06:23:54.613Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a61424b8d25fb3ce1.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a41d4f1ef131db991": {
+  "agent": "a41d4f1ef131db991",
+  "task": "m1-fixtures",
+  "brief_model": "sonnet",
+  "models": {
+   "claude-sonnet-5-5": 25
+  },
+  "model_observed": "claude-sonnet-5-5",
+  "tokens": {
+   "input": 50,
+   "output": 273,
+   "cache_create": 83635,
+   "cache_read": 1055583
+  },
+  "final_prompt": 56737,
+  "new_tokens": 83685,
+  "weighted_input": 210152,
+  "assistant_turns": 25,
+  "tool_calls": 14,
+  "started": "2026-10-16T06:19:16.454Z",
+  "ended": "2026-10-16T06:25:00.547Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a41d4f1ef131db991.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "ad0aa71237bf1201f": {
+  "agent": "ad0aa71237bf1201f",
+  "task": "m1-implement-stages",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 35
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 70,
+   "output": 432,
+   "cache_create": 155295,
+   "cache_read": 2458940
+  },
+  "final_prompt": 93025,
+  "new_tokens": 155365,
+  "weighted_input": 440082,
+  "assistant_turns": 35,
+  "tool_calls": 18,
+  "started": "2026-10-16T06:24:34.311Z",
+  "ended": "2026-10-16T06:28:26.349Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/ad0aa71237bf1201f.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a1f1e4c0cefaff29f": {
+  "agent": "a1f1e4c0cefaff29f",
+  "task": "m1-gt-reports",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 36
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 72,
+   "output": 2512,
+   "cache_create": 144579,
+   "cache_read": 2060777
+  },
+  "final_prompt": 88772,
+  "new_tokens": 144651,
+  "weighted_input": 386873,
+  "assistant_turns": 36,
+  "tool_calls": 23,
+  "started": "2026-10-16T06:30:20.336Z",
+  "ended": "2026-10-16T06:32:34.883Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a1f1e4c0cefaff29f.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a38cc0e1db6dd52d2": {
+  "agent": "a38cc0e1db6dd52d2",
+  "task": "m1-gt-academic",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 60
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 120,
+   "output": 7354,
+   "cache_create": 181862,
+   "cache_read": 4571381
+  },
+  "final_prompt": 126204,
+  "new_tokens": 181982,
+  "weighted_input": 684585,
+  "assistant_turns": 60,
+  "tool_calls": 33,
+  "started": "2026-10-16T06:30:20.320Z",
+  "ended": "2026-10-16T06:34:32.554Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a38cc0e1db6dd52d2.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a7de344b3dd896667": {
+  "agent": "a7de344b3dd896667",
+  "task": "m1-gt-tables",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 55
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 110,
+   "output": 5907,
+   "cache_create": 280924,
+   "cache_read": 4302760
+  },
+  "final_prompt": 125145,
+  "new_tokens": 281034,
+  "weighted_input": 781541,
+  "assistant_turns": 55,
+  "tool_calls": 36,
+  "started": "2026-10-16T06:30:20.331Z",
+  "ended": "2026-10-16T06:34:38.683Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a7de344b3dd896667.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a298f44125b31f5a5": {
+  "agent": "a298f44125b31f5a5",
+  "task": "m1-tune-reading-order",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 110
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 220,
+   "output": 808,
+   "cache_create": 278705,
+   "cache_read": 11654714
+  },
+  "final_prompt": 161387,
+  "new_tokens": 278925,
+  "weighted_input": 1514072,
+  "assistant_turns": 110,
+  "tool_calls": 58,
+  "started": "2026-10-16T06:36:25.154Z",
+  "ended": "2026-10-16T06:49:22.689Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a298f44125b31f5a5.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a9f2d4006d02cd499": {
+  "agent": "a9f2d4006d02cd499",
+  "task": "m1-tune-round2",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 96
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 192,
+   "output": 749,
+   "cache_create": 251638,
+   "cache_read": 9655832
+  },
+  "final_prompt": 151542,
+  "new_tokens": 251830,
+  "weighted_input": 1280322,
+  "assistant_turns": 96,
+  "tool_calls": 50,
+  "started": "2026-10-16T06:52:39.594Z",
+  "ended": "2026-10-16T07:02:39.549Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a9f2d4006d02cd499.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a180277e9c6db0bc2": {
+  "agent": "a180277e9c6db0bc2",
+  "task": "m1-measure-prose-only",
+  "brief_model": "sonnet",
+  "models": {
+   "claude-sonnet-5-5": 7
+  },
+  "model_observed": "claude-sonnet-5-5",
+  "tokens": {
+   "input": 14,
+   "output": 124,
+   "cache_create": 141998,
+   "cache_read": 100322
+  },
+  "final_prompt": 41678,
+  "new_tokens": 142012,
+  "weighted_input": 187543,
+  "assistant_turns": 7,
+  "tool_calls": 6,
+  "started": "2026-10-16T07:03:44.674Z",
+  "ended": "2026-10-16T07:04:12.902Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a180277e9c6db0bc2.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "ab728c35628abaf99": {
+  "agent": "ab728c35628abaf99",
+  "task": "m1-d12-parser-test-docs",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 45
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 90,
+   "output": 404,
+   "cache_create": 173879,
+   "cache_read": 2851031
+  },
+  "final_prompt": 92577,
+  "new_tokens": 173969,
+  "weighted_input": 502541,
+  "assistant_turns": 45,
+  "tool_calls": 25,
+  "started": "2026-10-16T18:56:03.172Z",
+  "ended": "2026-10-16T18:59:31.463Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/ab728c35628abaf99.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a4f8a05088210a4f0": {
+  "agent": "a4f8a05088210a4f0",
+  "task": "m1-d12-ground-truth",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 55
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 110,
+   "output": 5768,
+   "cache_create": 265268,
+   "cache_read": 3801654
+  },
+  "final_prompt": 120567,
+  "new_tokens": 265378,
+  "weighted_input": 711860,
+  "assistant_turns": 55,
+  "tool_calls": 31,
+  "started": "2026-10-16T18:56:03.181Z",
+  "ended": "2026-10-16T19:00:37.616Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a4f8a05088210a4f0.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "afea6608a6408b2ad": {
+  "agent": "afea6608a6408b2ad",
+  "task": "m1-prior-art-survey",
+  "brief_model": "sonnet",
+  "models": {
+   "claude-sonnet-5-5": 40
+  },
+  "model_observed": "claude-sonnet-5-5",
+  "tokens": {
+   "input": 80,
+   "output": 527,
+   "cache_create": 266377,
+   "cache_read": 1474249
+  },
+  "final_prompt": 61147,
+  "new_tokens": 266457,
+  "weighted_input": 480476,
+  "assistant_turns": 40,
+  "tool_calls": 35,
+  "started": "2026-10-16T18:56:57.374Z",
+  "ended": "2026-10-16T18:59:04.429Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/afea6608a6408b2ad.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a311d3ad3d274f011": {
+  "agent": "a311d3ad3d274f011",
+  "task": "m1-extractor-swap",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 76
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 152,
+   "output": 674,
+   "cache_create": 195480,
+   "cache_read": 6391385
+  },
+  "final_prompt": 129426,
+  "new_tokens": 195632,
+  "weighted_input": 883640,
+  "assistant_turns": 76,
+  "tool_calls": 42,
+  "started": "2026-10-16T19:03:28.026Z",
+  "ended": "2026-10-16T19:12:54.657Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a311d3ad3d274f011.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a3c3b00ec0a4e18f5": {
+  "agent": "a3c3b00ec0a4e18f5",
+  "task": "m1-gt-retype",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 61
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 122,
+   "output": 4340,
+   "cache_create": 197430,
+   "cache_read": 4291340
+  },
+  "final_prompt": 112456,
+  "new_tokens": 197552,
+  "weighted_input": 676043,
+  "assistant_turns": 61,
+  "tool_calls": 35,
+  "started": "2026-10-16T19:03:28.029Z",
+  "ended": "2026-10-16T19:06:50.961Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a3c3b00ec0a4e18f5.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a1a72dbe9ea85f439": {
+  "agent": "a1a72dbe9ea85f439",
+  "task": "m1-tune-round3-pdfplumber",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 199
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 398,
+   "output": 1372,
+   "cache_create": 478494,
+   "cache_read": 31158048
+  },
+  "final_prompt": 263662,
+  "new_tokens": 478892,
+  "weighted_input": 3714320,
+  "assistant_turns": 199,
+  "tool_calls": 104,
+  "started": "2026-10-16T19:14:53.970Z",
+  "ended": "2026-10-16T19:39:21.561Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a1a72dbe9ea85f439.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a5771e9590293e925": {
+  "agent": "a5771e9590293e925",
+  "task": "m1-measure-word-level",
+  "brief_model": "sonnet",
+  "models": {
+   "claude-sonnet-5-5": 5
+  },
+  "model_observed": "claude-sonnet-5-5",
+  "tokens": {
+   "input": 10,
+   "output": 53,
+   "cache_create": 49298,
+   "cache_read": 134632
+  },
+  "final_prompt": 39725,
+  "new_tokens": 49308,
+  "weighted_input": 75095,
+  "assistant_turns": 5,
+  "tool_calls": 3,
+  "started": "2026-10-16T19:39:58.737Z",
+  "ended": "2026-10-16T19:40:31.762Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a5771e9590293e925.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ },
+ "a31a958e48d99a757": {
+  "agent": "a31a958e48d99a757",
+  "task": "m1-d14-word-level-gate",
+  "brief_model": "opus",
+  "models": {
+   "claude-opus-5-5": 16
+  },
+  "model_observed": "claude-opus-5-5",
+  "tokens": {
+   "input": 32,
+   "output": 143,
+   "cache_create": 82573,
+   "cache_read": 657063
+  },
+  "final_prompt": 54360,
+  "new_tokens": 82605,
+  "weighted_input": 168954,
+  "assistant_turns": 16,
+  "tool_calls": 10,
+  "started": "2026-10-16T20:16:57.110Z",
+  "ended": "2026-10-16T20:18:32.143Z",
+  "transcript": "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/tasks/a31a958e48d99a757.output",
+  "summarized_at": "2026-10-16T13:18:32"
+ }
+}
