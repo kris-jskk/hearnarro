@@ -1,0 +1,43 @@
+  academic_01_seahelm_audio drop 109 p2 heading: 'Speech path'
+  academic_01_seahelm_audio drop 110 p2 heading: 'SEA-HELM'
+  academic_01_seahelm_audio drop 111 p2 heading: 'prompt TTS ASR LLM Verifier Accspeech'
+  academic_01_seahelm_audio drop 112 p2 body: '∆= Acctext −Accspeech'
+  academic_01_seahelm_audio drop 113 p2 heading: 'Text path (baseline)'
+  academic_01_seahelm_audio drop 114 p2 heading: 'SEA-HELM'
+  academic_01_seahelm_audio drop 115 p2 heading: 'prompt LLM Verifier Acctext'
+academic_01_seahelm_audio: 217 -> 210 (removed 7)
+  tables_01_pfn_bayes drop 15 p0 body: 'Deployment error RΠ′(q) −HΠ′ (§3.3)'
+  tables_01_pfn_bayes drop 16 p0 heading: 'Prior error Amortization error'
+  tables_01_pfn_bayes drop 17 p0 heading: 'Context error'
+  tables_01_pfn_bayes drop 18 p0 body: 'AΠ(q)'
+  tables_01_pfn_bayes drop 19 p0 body: 'CΠ'
+  tables_01_pfn_bayes drop 20 p0 body: 'Coverage'
+  tables_01_pfn_bayes drop 21 p0 body: 'Optimization'
+  tables_01_pfn_bayes drop 22 p0 body: 'PΠ′(Π)'
+  tables_01_pfn_bayes drop 23 p0 body: 'Estimation'
+  tables_01_pfn_bayes drop 24 p0 body: 'Transport'
+  tables_01_pfn_bayes drop 25 p0 body: 'Approximation'
+  tables_01_pfn_bayes drop 26 p0 body: 'λ ΓΠ′(q)'
+  tables_01_pfn_bayes drop 27 p0 body: 'Off-support (1−λ) OΠ′(q)'
+tables_01_pfn_bayes: 216 -> 203 (removed 13)
+  tables_02_non_gaussian_sem drop 64 p2 heading: 'Arbitrary noise scales Identically distributed noise'
+  tables_02_non_gaussian_sem drop 65 p2 heading: 'Gaussian'
+  tables_02_non_gaussian_sem drop 66 p2 heading: 'errors'
+  tables_02_non_gaussian_sem drop 67 p2 heading: 'Non- Gaussian'
+  tables_02_non_gaussian_sem drop 68 p2 heading: 'errors'
+  tables_02_non_gaussian_sem drop 69 p2 body: 'Special case under'
+  tables_02_non_gaussian_sem drop 70 p2 body: 'Gaussian noise'
+tables_02_non_gaussian_sem: 149 -> 142 (removed 7)
+  academic_05_sparse_autoencoders drop 72 p2 heading: 'Claim-dependent evidence: choose tests for the claim'
+  academic_05_sparse_autoencoders drop 73 p2 heading: 'Recoverability'
+  academic_05_sparse_autoencoders drop 74 p2 body: 'Reference latent structure; recovery criteria and stated ass'
+  academic_05_sparse_autoencoders drop 75 p2 table: 'Semantic interpretability Held-out contrasts; hard negatives'
+  academic_05_sparse_autoencoders drop 76 p2 table: 'Mechanistic faithfulness Controlled interventions; reconstru'
+  academic_05_sparse_autoencoders drop 77 p2 heading: 'Behavioral utility'
+  academic_05_sparse_autoencoders drop 78 p2 body: 'Matched task baselines; retention and side effects; generali'
+academic_05_sparse_autoencoders: 145 -> 138 (removed 7)
+scanned_01_seahelm_audio <- academic_01_seahelm_audio: 98
+scanned_02_pruned_reasoning <- academic_03_pruned_reasoning: 60
+scanned_03_zero_trust <- report_01_zero_trust: 13
+scanned_04_copula_subspaces <- tables_03_copula_subspaces: 75
+scanned_05_markov_kernel <- tables_04_markov_kernel: 85
