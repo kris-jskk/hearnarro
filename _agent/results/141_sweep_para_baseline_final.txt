@@ -1,0 +1,6 @@
+## PARA_BASELINE=None
+score=0.9822 score=0.8571 score=0.9464 score=0.9407 score=0.9850 score=0.9643 score=1.0000 score=0.9643 score=0.9574 score=0.9565 score=0.8433 score=0.8264 score=0.7402 score=0.8000 score=0.9890 0.9169
+## PARA_BASELINE=1.6
+score=0.9822 score=0.8571 score=0.9464 score=0.9407 score=0.9850 score=0.9643 score=1.0000 score=0.9643 score=0.9574 score=0.9565 score=0.8433 score=0.8264 score=0.7638 score=0.8286 score=0.9890 0.9203
+## PARA_BASELINE=2.0
+score=0.9822 score=0.8571 score=0.9464 score=0.9407 score=0.9850 score=0.9643 score=1.0000 score=0.9643 score=0.9574 score=0.9565 score=0.8433 score=0.8264 score=0.7402 score=0.8190 score=0.9890 0.9181

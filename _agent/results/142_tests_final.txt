@@ -1,0 +1,11 @@
+144 passed, 22 deselected in 0.08s
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_02_memduet]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_03_pruned_reasoning]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_04_legislative_xml]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_05_sparse_autoencoders]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_01_pfn_bayes]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_02_non_gaussian_sem]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_03_copula_subspaces]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_04_markov_kernel]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_mean - Ass...
+9 failed, 152 passed, 5 skipped in 3.53s
