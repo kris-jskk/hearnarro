@@ -1,0 +1,4 @@
+# 207 O'Reilly IoT PDF: before (classify._off_page disabled at runtime) vs after; python -m hearnarro dump --jsonl
+iot_before.jsonl segments=527 sha-equal=True
+iot_after.jsonl segments=527
+diff exit 0

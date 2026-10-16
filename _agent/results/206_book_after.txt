@@ -1,0 +1,77 @@
+# 206 book after the off-page rule (The-Almanack-of-Naval-Ravikant.pdf); dumps via python -m hearnarro dump --jsonl;
+# before = same code with classify._off_page disabled at runtime
+## split pattern (consecutive body segments, A ends without [.!?:;"”’)], B starts lowercase or bracket/quote+lowercase)
+book_before.jsonl: segments=3747 split_pattern=19 (same page 19)
+book_after.jsonl: segments=3710 split_pattern=1 (same page 1)
+## remaining split-pattern pairs after
+    (3, 3, 'A Guide to Wealth and Happiness', 'isBn 978-1-5445-1422-2 Hardcover')
+## first 8 segments after
+    {"order": 0, "page": 2, "type": "heading", "text": "THE ALMANACK OF NAVAL RAVIKANT"}
+    {"order": 1, "page": 2, "type": "heading", "text": "ERIC JORGENSON"}
+    {"order": 2, "page": 3, "type": "body", "text": "Copyright © 2020 EriC JorgEnson"}
+    {"order": 3, "page": 3, "type": "body", "text": "All rights reserved."}
+    {"order": 4, "page": 3, "type": "body", "text": "thE AlmAn ACk of nAvAl rAvikAnt"}
+    {"order": 5, "page": 3, "type": "body", "text": "A Guide to Wealth and Happiness"}
+    {"order": 6, "page": 3, "type": "body", "text": "isBn 978-1-5445-1422-2 Hardcover"}
+    {"order": 7, "page": 3, "type": "body", "text": "978-1-5445-1421-5 Paperback"}
+## first 46 segments before (pages 0-2)
+    0 2 heading THE ALMANACK OF NAVAL RAVIKANT
+    1 2 heading ERIC JORGENSON
+    2 2 body GETTING RICH IS NOT JUST ABOUT LUCK; HAPPINESS IS NOT JUST A TRAIT WE 
+    3 2 body These aspirations may seem out of reach, but building wealth and be-
+    4 2 body ing happy are skills we can learn.
+    5 2 body So what are these skills, and how do we learn them?
+    6 2 body What are the
+    7 2 body principles that should guide our efforts?
+    8 2 body What does progress really
+    9 2 body look like?
+    10 2 body Naval Ravikant is an entrepreneur, philosopher, and investor who
+    11 2 body has captivated the world with his principles for building wealth and
+    12 2 body creating long-term happiness.
+    13 2 body The Almanack of Naval Ravikant is a
+    14 2 body collection of Naval’s wisdom and experience from the last ten years,
+    15 2 body shared as a curation of his most insightful interviews and poignant
+    16 2 body reflections.
+    17 2 body This isn’t a how-to book, or a step-by-step gimmick.
+    18 2 body In-
+    19 2 body stead, through Naval’s own words, you will learn how to walk your own
+    20 2 body unique path toward a happier, wealthier life.
+    21 2 body This book has been created as a public service.
+    22 2 body It is available for free
+    23 2 body download in pdf and e-reader versions on Navalmanack.com.
+    24 2 body Naval is
+    25 2 body not earning any money on this book.
+    26 2 body Naval has essays, podcasts and
+    27 2 body more at Nav.al and is on Twitter @Naval.
+    28 2 heading ERIC JORGENSON is a product
+    29 2 body strategist and writer.
+    30 2 body In 2011, he joined the
+    31 2 body founding team of Zaarly, a company dedicat-
+    32 2 body ed to helping homeowners find accountable
+    33 2 body service providers they can trust.
+    34 2 body His business
+    35 2 footnote blog, Evergreen, educates and entertains more
+    36 2 footnote than one million readers.
+## segments on page 2 after
+    0 heading THE ALMANACK OF NAVAL RAVIKANT
+    1 heading ERIC JORGENSON
+## where are 'GETTING RICH' and 'ERIC JORGENSON is a product' after?
+    GETTING RICH []
+    ERIC JORGENSON is a product [(3704, 240, 'body')]
+    ERIC JORGENSON [(1, 2, 'heading'), (3704, 240, 'body')]
+## segments removed: 39; pages: [2, 3]
+## segments on pages other than 2 identical before/after: False
+## diff of segments outside page 2 (before -> after)
+    --- 
+    +++ 
+    @@ -8,7 +8,5 @@
+     3 body This book has been created as a public service.
+    -3 body It is available for
+    -3 body free download in pdf and e-reader versions on Navalmanack.com.
+    +3 body It is available for free download in pdf and e-reader versions on Navalmanack.co
+     3 body Naval is not earning any money on this book.
+    -3 body Naval has essays,
+    -3 body podcasts and more at Nav.al and is on Twitter @Naval.
+    +3 body Naval has essays, podcasts and more at Nav.al and is on Twitter @Naval.
+     4 heading FOR MY PARENTS, WHO GAVE ME
+## words outside page 2 identical before/after: True words: 41498 41498

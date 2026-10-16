@@ -1,0 +1,74 @@
+...............................................................FF..FF    [100%]
+=================================== FAILURES ===================================
+_______________ test_ing3_off_page_block_is_noise[-300.0-noise] ________________
+
+x0 = -300.0, expected = 'noise'
+
+    @pytest.mark.parametrize(
+        ("x0", "expected"),
+        [
+            (-300.0, "noise"),  # fully left of x = 0
+            (-120.0, "noise"),  # 60% outside
+            (-60.0, "body"),  # 30% outside: trimmed at the edge, kept
+            (72.0, "body"),  # fully inside: unchanged
+        ],
+    )
+    def test_ing3_off_page_block_is_noise(x0: float, expected: str) -> None:
+        block = make_block(0, 0, [OFF_PAGE_TEXT, OFF_PAGE_TEXT], x0=x0, y0=200, width=200)
+>       assert _type_of(classify_pages(_doc(block)), 0) == expected
+E       AssertionError: assert 'body' == 'noise'
+E         
+E         - noise
+E         + body
+
+tests/test_ing2_classify.py:562: AssertionError
+_______________ test_ing3_off_page_block_is_noise[-120.0-noise] ________________
+
+x0 = -120.0, expected = 'noise'
+
+    @pytest.mark.parametrize(
+        ("x0", "expected"),
+        [
+            (-300.0, "noise"),  # fully left of x = 0
+            (-120.0, "noise"),  # 60% outside
+            (-60.0, "body"),  # 30% outside: trimmed at the edge, kept
+            (72.0, "body"),  # fully inside: unchanged
+        ],
+    )
+    def test_ing3_off_page_block_is_noise(x0: float, expected: str) -> None:
+        block = make_block(0, 0, [OFF_PAGE_TEXT, OFF_PAGE_TEXT], x0=x0, y0=200, width=200)
+>       assert _type_of(classify_pages(_doc(block)), 0) == expected
+E       AssertionError: assert 'body' == 'noise'
+E         
+E         - noise
+E         + body
+
+tests/test_ing2_classify.py:562: AssertionError
+________________ test_ing3_off_page_rule_wins_over_heading_size ________________
+
+    def test_ing3_off_page_rule_wins_over_heading_size() -> None:
+        title = make_block(0, 0, ["GETTING RICH"], x0=-250, y0=200, width=200, size=24)
+>       assert _type_of(classify_pages(_doc(title)), 0) == "noise"
+E       AssertionError: assert 'heading' == 'noise'
+E         
+E         - noise
+E         + heading
+
+tests/test_ing2_classify.py:567: AssertionError
+___________________ test_ing3_block_below_the_page_is_noise ____________________
+
+    def test_ing3_block_below_the_page_is_noise() -> None:
+        block = make_block(0, 0, [OFF_PAGE_TEXT, OFF_PAGE_TEXT], y0=800, width=200)
+>       assert _type_of(classify_pages(_doc(block)), 0) == "noise"
+E       AssertionError: assert 'body' == 'noise'
+E         
+E         - noise
+E         + body
+
+tests/test_ing2_classify.py:572: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing2_classify.py::test_ing3_off_page_block_is_noise[-300.0-noise]
+FAILED tests/test_ing2_classify.py::test_ing3_off_page_block_is_noise[-120.0-noise]
+FAILED tests/test_ing2_classify.py::test_ing3_off_page_rule_wins_over_heading_size
+FAILED tests/test_ing2_classify.py::test_ing3_block_below_the_page_is_noise
+4 failed, 65 passed in 0.08s
