@@ -1,0 +1,152 @@
+# fresh data dir; HN_DATA=/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/hn-m1 TMPDIR=/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/tmp; cwd=api/
+$ uv pip install --dry-run --python .venv/bin/python -e ".[dev]"
+Would install 1 package
+ - hearnarro==0.1.0 (from file:///Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api)
+ + hearnarro @ file:///Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api
+$ .venv/bin/python -m hearnarro serve --data-dir "$HN_DATA" --port 8765 &
+B=http://127.0.0.1:8765
+curl -s -w '\n%{http_code}\n' $B/documents
+[]
+200
+curl -s -w '\n%{http_code}\n' -F file=@tests/fixtures/pdfs/report_01_zero_trust.pdf $B/documents
+{"id":1,"status":"parsing"}
+202
+curl -s $B/documents/1 | python3 -m json.tool
+{
+    "id": 1,
+    "title": "report_01_zero_trust",
+    "filename": "report_01_zero_trust.pdf",
+    "sha256": "37d81a52c2c85be363c34907d2f3b0107b21fa7d997ad5adc269491dff3bd7db",
+    "page_count": null,
+    "status": "parsing",
+    "fail_reason": null,
+    "created_at": "2026-10-16T20:32:55+00:00",
+    "last_opened_at": null,
+    "sections": [],
+    "settings": {
+        "voice_id": null,
+        "speed": null
+    },
+    "position": {
+        "segment_id": null,
+        "offset_ms": 0
+    }
+}
+sleep 1
+curl -s $B/documents/1 | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["status"], d["page_count"], d["fail_reason"])'
+ready 4 None
+curl -s $B/documents | python3 -m json.tool
+[
+    {
+        "id": 1,
+        "title": "report_01_zero_trust",
+        "filename": "report_01_zero_trust.pdf",
+        "sha256": "37d81a52c2c85be363c34907d2f3b0107b21fa7d997ad5adc269491dff3bd7db",
+        "page_count": 4,
+        "status": "ready",
+        "fail_reason": null,
+        "created_at": "2026-10-16T20:32:55+00:00",
+        "last_opened_at": null
+    }
+]
+curl -s "$B/documents/1/segments?from=0&limit=2" | python3 -m json.tool
+{
+    "document_id": 1,
+    "total": 57,
+    "from": 0,
+    "limit": 2,
+    "next_from": 2,
+    "segments": [
+        {
+            "id": 1,
+            "order": 0,
+            "block_id": 1,
+            "type": "heading",
+            "section_id": null,
+            "text": "NIST Special Publication 800-207",
+            "normalized_text": "N I S T Special Publication 800-207",
+            "char_start": 0,
+            "char_end": 32
+        },
+        {
+            "id": 2,
+            "order": 1,
+            "block_id": 2,
+            "type": "heading",
+            "section_id": null,
+            "text": "Zero Trust Architecture",
+            "normalized_text": "Zero Trust Architecture",
+            "char_start": 0,
+            "char_end": 23
+        }
+    ]
+}
+curl -s "$B/documents/1/segments?from=50&limit=100" | python3 -c 'import json,sys; p=json.load(sys.stdin); print(p["total"], p["next_from"], [s["order"] for s in p["segments"]])'
+57 None [50, 51, 52, 53, 54, 55, 56]
+curl -s -w '\n%{http_code}\n' -F file=@tests/fixtures/pdfs/report_01_zero_trust.pdf $B/documents
+{"id":1,"status":"ready"}
+200
+printf 'not a pdf\n' > "${TMPDIR:-/tmp}/notes.txt"
+curl -s -w '\n%{http_code}\n' -F file=@"${TMPDIR:-/tmp}/notes.txt" $B/documents
+{"detail":"only PDF uploads are supported"}
+415
+curl -s -w '\n%{http_code}\n' $B/documents/999
+{"detail":"document not found"}
+404
+curl -s -w '\n%{http_code}\n' $B/documents/999/segments
+{"detail":"document not found"}
+404
+.venv/bin/python -m hearnarro dump tests/fixtures/pdfs/report_01_zero_trust.pdf --jsonl > "${TMPDIR:-/tmp}/dump.jsonl"
+curl -s "$B/documents/1/segments?limit=500" > "${TMPDIR:-/tmp}/api.json"
+python3 -c 'import json,os; t=os.environ.get("TMPDIR","/tmp"); d=[(r["type"],r["text"]) for r in map(json.loads,open(t+"/dump.jsonl"))]; a=[(s["type"],s["text"]) for s in json.load(open(t+"/api.json"))["segments"]]; print(len(d),"dump segments,",len(a),"API segments, identical:",d==a)'
+57 dump segments, 57 API segments, identical: True
+curl -s -w '\n%{http_code}\n' -F file=@tests/fixtures/pdfs/scanned_01_seahelm_audio.pdf $B/documents
+{"id":2,"status":"parsing"}
+202
+sleep 2
+curl -s "$B/documents/2/segments" | python3 -c 'import json,sys; print("total segments:", json.load(sys.stdin)["total"])'
+total segments: 0
+curl -s $B/documents/2 | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["status"], d["page_count"], d["fail_reason"])'
+ready 2 None
+ls "$HN_DATA" "$HN_DATA/pdfs"
+/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/hn-m1:
+hearnarro.db
+pdfs
+
+/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/hn-m1/pdfs:
+37d81a52c2c85be363c34907d2f3b0107b21fa7d997ad5adc269491dff3bd7db.pdf
+666e59fd09e39dd62418a87a96c5f4ba5a5dddc54b821a56394132083d8639c4.pdf
+sqlite3 "$HN_DATA/hearnarro.db" 'select id, status, page_count, title from documents'
+1|ready|4|report_01_zero_trust
+2|ready|2|scanned_01_seahelm_audio
+$ .venv/bin/python scripts/m1_smoke.py --base-url http://127.0.0.1:8765 --classes report
+fixture                            class     status   segs    word      mass a/e  result
+----------------------------------------------------------------------------------------
+report_01_zero_trust               report    ready      57  1.0000 0.0000/0.0000  pass
+report_02_patch_mgmt               report    ready      63  1.0000 0.0000/0.0000  pass
+report_03_ssdf                     report    ready      57  1.0000 0.0000/0.0000  pass
+report_04_rmf                      report    ready      48  1.0000 0.0000/0.0000  pass
+report_05_controls                 report    ready      47  1.0000 0.0000/0.0000  pass
+----------------------------------------------------------------------------------------
+fixtures: 5  passed: 5  failed: 0  skipped (class): 15
+word-level mean: 1.0000 (gate >= 0.97); per-fixture gate >= 0.95
+RESULT: PASS
+exit=0
+$ .venv/bin/python scripts/m1_smoke.py --base-url http://127.0.0.1:8765 --classes scanned
+fixture                            class     status   segs    word      mass a/e  result
+----------------------------------------------------------------------------------------
+scanned_01_seahelm_audio           scanned   ready       0  0.0000 0.0000/0.0000  FAIL
+scanned_02_pruned_reasoning        scanned   ready       0  0.0000 0.0000/0.0000  FAIL
+scanned_03_zero_trust              scanned   ready       0  0.0000 0.0000/0.0000  FAIL
+scanned_04_copula_subspaces        scanned   ready       0  0.0000 0.0000/0.0026  FAIL
+scanned_05_markov_kernel           scanned   ready       0  0.0000 0.0000/0.0382  FAIL
+----------------------------------------------------------------------------------------
+fixtures: 5  passed: 0  failed: 5  skipped (class): 15
+word-level mean: 0.0000 (gate >= 0.97); per-fixture gate >= 0.95
+RESULT: FAIL
+exit=1
+$ kill <server pid>; rm -rf "$HN_DATA"
+data dir exists after reset: no
+$ .venv/bin/python -m pytest -q tests/test_ing4_reading_order_golden.py
+...........sssss......                                                   [100%]
+17 passed, 5 skipped in 7.56s

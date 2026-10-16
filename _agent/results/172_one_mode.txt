@@ -1,0 +1,40 @@
+$ .venv/bin/python scripts/m1_smoke.py --one tests/fixtures/unit/text.pdf
+uploaded text.pdf: id=16 (HTTP 200, already stored)
+status=ready pages=1 title='text'
+segments: 5 total; first 5:
+   0 [body    ] Hello world.
+   1 [body    ] Hello world.
+   2 [body    ] Hello world.
+   3 [heading ] Bold heading
+   4 [body    ] Italic words1
+exit=0
+
+$ .venv/bin/python scripts/m1_smoke.py --one tests/fixtures/pdfs/report_02_patch_mgmt.pdf
+uploaded report_02_patch_mgmt.pdf: id=12 (HTTP 200, already stored)
+status=ready pages=4 title='report_02_patch_mgmt'
+segments: 63 total; first 20:
+   0 [heading ] NIST Special Publication
+   1 [heading ] NIST SP 800-40r4
+   2 [heading ] Guide to Enterprise Patch
+   3 [heading ] Management Planning:
+   4 [heading ] Preventive Maintenance for Technology
+   5 [heading ] Murugiah Souppaya
+   6 [heading ] Karen Scarfone
+   7 [heading ] NIST Special Publication
+   8 [heading ] NIST SP 800-40r4
+   9 [heading ] Guide to Enterprise Patch
+  10 [heading ] Management Planning:
+  11 [heading ] Preventive Maintenance for Technology
+  12 [heading ] Murugiah Souppaya Computer Security Division Information Technology Laboratory
+  13 [heading ] Karen Scarfone Scarfone Cybersecurity
+  14 [body    ] Clifton, VA
+  15 [heading ] April 2022
+  16 [heading ] Authority
+  17 [body    ] This publication has been developed by NIST in accordance with its statutory responsibilities under the Federal Information Security Modernization Act (FISMA) of 2014, 44 U.S.C. § 3551 et seq.
+  18 [body    ] , Public Law (P.L.) 113-283.
+  19 [body    ] NIST is responsible for developing information security standards and guidelines, including minimum requirements for federal information systems, but such standards and guidelines shall not apply to national security systems without the express approval of appropriate federal officials exercising policy authority over such systems.
+exit=0
+
+$ .venv/bin/python scripts/m1_smoke.py --base-url http://127.0.0.1:9 --one tests/fixtures/unit/text.pdf
+cannot reach http://127.0.0.1:9: [Errno 61] Connection refused. Is `hearnarro serve` running?
+exit=2

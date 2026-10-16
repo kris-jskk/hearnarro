@@ -1,0 +1,128 @@
+# server: .venv/bin/python -m hearnarro serve --data-dir <scratch>/m1data --port 8765 (15 fixtures already uploaded by 170); cwd=api/
+$ curl -s -w '
+%{http_code}
+' http://127.0.0.1:8765/documents/16
+{"detail":"document not found"}
+404
+
+$ curl -s -w '
+%{http_code}
+' -F file=@tests/fixtures/unit/text.pdf http://127.0.0.1:8765/documents
+{"id":16,"status":"parsing"}
+202
+
+$ curl -s -w '
+%{http_code}
+' http://127.0.0.1:8765/documents/16
+{"id":16,"title":"text","filename":"text.pdf","sha256":"5bc3a69358a0375ed35eb884ab1fac49788949454f96b8c5bfadf200a3555862","page_count":1,"status":"ready","fail_reason":null,"created_at":"2026-10-16T20:32:14+00:00","last_opened_at":null,"sections":[],"settings":{"voice_id":null,"speed":null},"position":{"segment_id":null,"offset_ms":0}}
+200
+
+$ curl -s http://127.0.0.1:8765/documents | python3 -m json.tool | head -12
+[
+    {
+        "id": 1,
+        "title": "academic_01_seahelm_audio",
+        "filename": "academic_01_seahelm_audio.pdf",
+        "sha256": "9232179d2f68641a5d23ff27528dc42f5fa110143635aaf7cc18ef0b74e907ca",
+        "page_count": 4,
+        "status": "ready",
+        "fail_reason": null,
+        "created_at": "2026-10-16T20:31:56+00:00",
+        "last_opened_at": null
+    },
+
+$ curl -s 'http://127.0.0.1:8765/documents' | python3 -c 'import json,sys; [print(d["id"], d["status"], d["page_count"], d["title"]) for d in json.load(sys.stdin)]'
+1 ready 4 academic_01_seahelm_audio
+2 ready 4 academic_02_memduet
+3 ready 4 academic_03_pruned_reasoning
+4 ready 4 academic_04_legislative_xml
+5 ready 4 academic_05_sparse_autoencoders
+6 ready 4 tables_01_pfn_bayes
+7 ready 4 tables_02_non_gaussian_sem
+8 ready 4 tables_03_copula_subspaces
+9 ready 4 tables_04_markov_kernel
+10 ready 4 tables_05_decomposing_learner
+11 ready 4 report_01_zero_trust
+12 ready 4 report_02_patch_mgmt
+13 ready 4 report_03_ssdf
+14 ready 4 report_04_rmf
+15 ready 4 report_05_controls
+16 ready 1 text
+
+$ curl -s 'http://127.0.0.1:8765/documents/11/segments?from=0&limit=3' | python3 -m json.tool
+{
+    "document_id": 11,
+    "total": 57,
+    "from": 0,
+    "limit": 3,
+    "next_from": 3,
+    "segments": [
+        {
+            "id": 1499,
+            "order": 0,
+            "block_id": 646,
+            "type": "heading",
+            "section_id": null,
+            "text": "NIST Special Publication 800-207",
+            "normalized_text": "N I S T Special Publication 800-207",
+            "char_start": 0,
+            "char_end": 32
+        },
+        {
+            "id": 1500,
+            "order": 1,
+            "block_id": 647,
+            "type": "heading",
+            "section_id": null,
+            "text": "Zero Trust Architecture",
+            "normalized_text": "Zero Trust Architecture",
+            "char_start": 0,
+            "char_end": 23
+        },
+        {
+            "id": 1501,
+            "order": 2,
+            "block_id": 648,
+            "type": "heading",
+            "section_id": null,
+            "text": "Scott Rose Oliver Borchert",
+            "normalized_text": "Scott Rose Oliver Borchert",
+            "char_start": 0,
+            "char_end": 26
+        }
+    ]
+}
+
+$ curl -s 'http://127.0.0.1:8765/documents/11/segments?from=55&limit=5' | python3 -c 'import json,sys; p=json.load(sys.stdin); print(p["total"], p["from"], p["next_from"], [s["order"] for s in p["segments"]])'
+57 55 None [55, 56]
+
+$ curl -s -w '
+%{http_code}
+' -F file=@tests/fixtures/unit/text.pdf http://127.0.0.1:8765/documents
+{"id":16,"status":"ready"}
+200
+
+$ curl -s -w '
+%{http_code}
+' -F file=@/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/notes.txt http://127.0.0.1:8765/documents
+{"detail":"only PDF uploads are supported"}
+415
+
+$ curl -s -w '
+%{http_code}
+' http://127.0.0.1:8765/documents/999
+{"detail":"document not found"}
+404
+
+$ curl -s -w '
+%{http_code}
+' http://127.0.0.1:8765/documents/999/segments
+{"detail":"document not found"}
+404
+
+$ curl -s -w '
+%{http_code}
+' 'http://127.0.0.1:8765/documents/11/segments?from=-1'
+{"detail":[{"type":"greater_than_equal","loc":["query","from"],"msg":"Input should be greater than or equal to 0","input":"-1","ctx":{"ge":0}}]}
+422
+

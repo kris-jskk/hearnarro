@@ -1,0 +1,4 @@
+$ ruff check scripts/m1_smoke.py hearnarro/storage/repo.py tests/test_api_documents.py
+All checks passed!
+$ ruff format --check (same files)
+3 files already formatted
