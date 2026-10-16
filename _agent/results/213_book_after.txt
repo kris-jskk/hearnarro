@@ -1,0 +1,17 @@
+Almanack dump after (OFF_PAGE_KEEP_SIZE_RATIO=1.0), jsonl
+segment count:     3713 (v4: 3710)
+tagline block: max span 11.09 / body median 10.000 = ratio 1.109 (from 210_sizes.txt)
+first 6:
+{"order": 0, "page": 2, "type": "heading", "text": "THE ALMANACK OF NAVAL RAVIKANT"}
+{"order": 1, "page": 2, "type": "heading", "text": "ERIC JORGENSON"}
+{"order": 2, "page": 2, "type": "body", "text": "GETTING RICH IS NOT JUST ABOUT LUCK; HAPPINESS IS NOT JUST A TRAIT WE ARE BORN WITH."}
+{"order": 3, "page": 3, "type": "body", "text": "Copyright © 2020 EriC JorgEnson"}
+{"order": 4, "page": 3, "type": "body", "text": "All rights reserved."}
+{"order": 5, "page": 3, "type": "body", "text": "thE AlmAn ACk of nAvAl rAvikAnt"}
+blurb/bio present?
+2
+(the 2 matches above are in-page text: p136 heading 'EVERY DESIRE IS A CHOSEN UNHAPPINESS', p240 body 'ERIC JORGENSON is a product strategist and writer.'; no page-2 blurb/bio)
+v4 vs after, non-equal opcodes: 3713 vs 3710
+('insert', 2, 2, 2, 3) [] [(2, 2, 'body', 'GETTING RICH IS NOT JUST ABOUT LUCK; HAPPINESS IS NOT JUST A TRAIT WE ARE BORN WITH.')]
+('replace', 10, 11, 11, 13) ['It is available for free download in pdf and e-reader versions on Navalmanack.com.'] [(11, 3, 'body', 'It is available for'), (12, 3, 'body', 'free download in pdf and e-reader versions on Navalmanack.com.')]
+('replace', 12, 13, 14, 16) ['Naval has essays, podcasts and more at Nav.al and is on Twitter @Naval.'] [(14, 3, 'body', 'Naval has essays,'), (15, 3, 'body', 'podcasts and more at Nav.al and is on Twitter @Naval.')]

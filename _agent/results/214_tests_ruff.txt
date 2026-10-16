@@ -1,0 +1,7 @@
+..............................................sssss..................... [ 91%]
+...................                                                      [100%]
+230 passed, 5 skipped in 9.53s
+--- ruff check
+All checks passed!
+--- ruff format --check
+2 files already formatted

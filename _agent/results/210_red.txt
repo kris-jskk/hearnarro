@@ -1,0 +1,37 @@
+...................................................................F.F.. [100%]
+=================================== FAILURES ===================================
+___________ test_ing3_off_page_block_kept_from_body_size[10.0-body] ____________
+
+size = 10.0, expected = 'body'
+
+    @pytest.mark.parametrize(
+        ("size", "expected"),
+        [
+            (10.0, "body"),  # ratio 1.0: at body size, kept and typed by the cascade
+            (9.9, "noise"),  # ratio 0.99: below body size, off-page noise
+        ],
+    )
+    def test_ing3_off_page_block_kept_from_body_size(size: float, expected: str) -> None:
+        block = make_block(0, 0, [OFF_PAGE_TEXT, OFF_PAGE_TEXT], x0=-300, y0=200, width=200, size=size)
+>       assert _type_of(classify_pages(_doc(block)), 0) == expected
+E       AssertionError: assert 'noise' == 'body'
+E         
+E         - body
+E         + noise
+
+tests/test_ing2_classify.py:579: AssertionError
+__________ test_ing3_off_page_heading_sized_block_is_read_as_heading ___________
+
+    def test_ing3_off_page_heading_sized_block_is_read_as_heading() -> None:
+        title = make_block(0, 0, ["GETTING RICH"], x0=-250, y0=200, width=200, size=24)
+>       assert _type_of(classify_pages(_doc(title)), 0) == "heading"
+E       AssertionError: assert 'noise' == 'heading'
+E         
+E         - heading
+E         + noise
+
+tests/test_ing2_classify.py:584: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing2_classify.py::test_ing3_off_page_block_kept_from_body_size[10.0-body]
+FAILED tests/test_ing2_classify.py::test_ing3_off_page_heading_sized_block_is_read_as_heading
+2 failed, 70 passed in 0.07s
