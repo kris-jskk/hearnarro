@@ -1,0 +1,96 @@
+# 199 book after the fix (The-Almanack-of-Naval-Ravikant.pdf); dumps via python -m hearnarro dump --jsonl
+## split pattern (consecutive body segments, A ends without [.!?:;"”’)], B starts lowercase or bracket/quote+lowercase)
+book_before.jsonl: segments=4134 split_pattern=354 (same page 337)
+    (15, 2, 'What are the', 'principles that should guide our efforts')
+    (77, 3, 'A Guide to Wealth and Happiness', 'isBn 978-1-5445-1422-2 Hardcover')
+    (82, 3, 'It is available for', 'free download in pdf and e-reader versio')
+    (85, 3, 'Naval has essays,', 'podcasts and more at Nav.al and is on Tw')
+    (163, 9, 'ntent passed through time, space, and medium, some', 'phrasing may have shifted in flight.')
+    (179, 10, 'Jump to anything', 'that interests you and skip anything tha')
+    (203, 13, ' a lot of meals, shared a lot of deals, and hopped', 'around the world together.')
+    (210, 13, 'at, of course, and it shows Naval is a world-class', 'operator instead of an armchair philosop')
+book_after.jsonl: segments=3747 split_pattern=19 (same page 19)
+    (3, 2, 'may seem out of reach, but building wealth and be-', 'ing happy are skills we can learn.')
+    (6, 2, 'What are the', 'principles that should guide our efforts')
+    (8, 2, 'What does progress really', 'look like?')
+    (10, 2, ' is an entrepreneur, philosopher, and investor who', 'has captivated the world with his princi')
+    (11, 2, ' world with his principles for building wealth and', 'creating long-term happiness.')
+    (13, 2, 'The Almanack of Naval Ravikant is a', 'collection of Naval’s wisdom and experie')
+    (14, 2, 'l’s wisdom and experience from the last ten years,', 'shared as a curation of his most insight')
+    (15, 2, 'ion of his most insightful interviews and poignant', 'reflections.')
+
+## first 20 segments after
+{"order": 0, "page": 2, "type": "heading", "text": "THE ALMANACK OF NAVAL RAVIKANT"}
+{"order": 1, "page": 2, "type": "heading", "text": "ERIC JORGENSON"}
+{"order": 2, "page": 2, "type": "body", "text": "GETTING RICH IS NOT JUST ABOUT LUCK; HAPPINESS IS NOT JUST A TRAIT WE ARE BORN WITH."}
+{"order": 3, "page": 2, "type": "body", "text": "These aspirations may seem out of reach, but building wealth and be-"}
+{"order": 4, "page": 2, "type": "body", "text": "ing happy are skills we can learn."}
+{"order": 5, "page": 2, "type": "body", "text": "So what are these skills, and how do we learn them?"}
+{"order": 6, "page": 2, "type": "body", "text": "What are the"}
+{"order": 7, "page": 2, "type": "body", "text": "principles that should guide our efforts?"}
+{"order": 8, "page": 2, "type": "body", "text": "What does progress really"}
+{"order": 9, "page": 2, "type": "body", "text": "look like?"}
+{"order": 10, "page": 2, "type": "body", "text": "Naval Ravikant is an entrepreneur, philosopher, and investor who"}
+{"order": 11, "page": 2, "type": "body", "text": "has captivated the world with his principles for building wealth and"}
+{"order": 12, "page": 2, "type": "body", "text": "creating long-term happiness."}
+{"order": 13, "page": 2, "type": "body", "text": "The Almanack of Naval Ravikant is a"}
+{"order": 14, "page": 2, "type": "body", "text": "collection of Naval’s wisdom and experience from the last ten years,"}
+{"order": 15, "page": 2, "type": "body", "text": "shared as a curation of his most insightful interviews and poignant"}
+{"order": 16, "page": 2, "type": "body", "text": "reflections."}
+{"order": 17, "page": 2, "type": "body", "text": "This isn’t a how-to book, or a step-by-step gimmick."}
+{"order": 18, "page": 2, "type": "body", "text": "In-"}
+{"order": 19, "page": 2, "type": "body", "text": "stead, through Naval’s own words, you will learn how to walk your own"}
+
+## former orders 1795-1830 (now located by text)
+{"order": 1599, "page": 117, "type": "body", "text": "A number of them are going to be too difficult for you."}
+{"order": 1600, "page": 117, "type": "body", "text": "That’s okay—read them anyway."}
+{"order": 1601, "page": 117, "type": "body", "text": "Then go back and reread them and reread them."}
+{"order": 1602, "page": 118, "type": "body", "text": "When you’re reading a book and you’re confused, that confusion is similar to the pain you get in the gym when you’re working out."}
+{"order": 1603, "page": 118, "type": "body", "text": "But you’re building mental muscles instead of physical muscles."}
+{"order": 1604, "page": 118, "type": "body", "text": "Learn how to learn and read the books."}
+{"order": 1605, "page": 118, "type": "body", "text": "The problem with saying “just read” is there is so much junk out there."}
+{"order": 1606, "page": 118, "type": "body", "text": "There are as many different kinds of authors as there are people."}
+{"order": 1607, "page": 118, "type": "body", "text": "Many of them are going to write lots of junk."}
+{"order": 1608, "page": 118, "type": "body", "text": "I have people in my life I consider to be very well-read who aren’t very smart."}
+{"order": 1609, "page": 118, "type": "body", "text": "The reason is because even though they’re very well-read, they read the wrong things in the wrong order."}
+{"order": 1610, "page": 118, "type": "body", "text": "They started out reading a set of false or just weakly true things, and those formed the axioms of the foundation for their worldview."}
+{"order": 1611, "page": 118, "type": "body", "text": "Then, when new things come, they judge the new idea based on a foundation they already built."}
+{"order": 1612, "page": 118, "type": "body", "text": "Your foundation is critical."}
+{"order": 1613, "page": 119, "type": "body", "text": "When it comes to reading, make sure your foundation is very, very high quality."}
+{"order": 1614, "page": 119, "type": "body", "text": "The best way to have a high-quality foundation (you may not love this answer), but the trick is to stick to science and to stick to the basics."}
+{"order": 1615, "page": 119, "type": "body", "text": "Generally, there are only a few things you can read people don’t disagree with."}
+{"order": 1616, "page": 119, "type": "body", "text": "Very few people disagree 2+2=4, right?"}
+{"order": 1617, "page": 119, "type": "body", "text": "That is serious knowledge."}
+{"order": 1618, "page": 119, "type": "body", "text": "Mathematics is a solid foundation."}
+{"order": 1619, "page": 119, "type": "body", "text": "Similarly, the hard sciences are a solid foundation."}
+{"order": 1620, "page": 119, "type": "body", "text": "Microeconomics is a solid foundation."}
+{"order": 1621, "page": 119, "type": "body", "text": "The moment you start wandering outside of these solid foundations you’re in trouble because now you don’t know what’s true and what’s false."}
+{"order": 1622, "page": 119, "type": "body", "text": "I would focus as much as I could on having solid foundations."}
+{"order": 1623, "page": 119, "type": "body", "text": "It’s better to be really great at arithmetic and geometry than to be deep into advanced mathematics."}
+{"order": 1624, "page": 119, "type": "body", "text": "I would read microeconomics all day long—Microeconomics 101."}
+
+## tracked lines (before -> after)
+{"order": 2, "page": 2, "type": "body", "text": "G E T T I N G R I C H I S N OT J U S T A B O U T LU C K ; H A P P I N E S S I S N OT J U S T A T R A I T W E A R E B O R N W I T H ."}
+{"order": 87, "page": 4, "type": "body", "text": "F O R M Y P A R E N T S , W H O G A V E M E"}
+{"order": 88, "page": 4, "type": "body", "text": "E V E R Y T H I N G A N D A L W AY S S E E M T O"}
+{"order": 89, "page": 4, "type": "body", "text": "F I N D A W AY T O G I V E M O R E ."}
+2:{"order": 1, "page": 2, "type": "heading", "text": "ERIC JORGENSON"}
+3:{"order": 2, "page": 2, "type": "body", "text": "GETTING RICH IS NOT JUST ABOUT LUCK; HAPPINESS IS NOT JUST A TRAIT WE ARE BORN WITH."}
+29:{"order": 28, "page": 2, "type": "heading", "text": "ERIC JORGENSON is a product"}
+51:{"order": 50, "page": 4, "type": "heading", "text": "FOR MY PARENTS, WHO GAVE ME"}
+52:{"order": 51, "page": 4, "type": "heading", "text": "EVERYTHING AND ALWAYS SEEM TO"}
+53:{"order": 52, "page": 4, "type": "body", "text": "FIND A WAY TO GIVE MORE."}
+3742:{"order": 3741, "page": 240, "type": "body", "text": "ERIC JORGENSON is a product strategist and writer."}
+
+## remaining single-glyph-spaced segments after (regex: 6+ single-letter tokens in a row)
+0
+
+## single-letter segments: before / after
+40
+0
+
+## title the API would assign
+metadata Title: 'Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd'
+first heading: 'THE ALMANACK OF NAVAL RAVIKANT'
+filename: The-Almanack-of-Naval-Ravikant.pdf
+choose_title -> 'THE ALMANACK OF NAVAL RAVIKANT'

@@ -1,0 +1,17 @@
+academic_01_seahelm_audio.pdf                 pages=   4 bodypages=   4 bodyblocks=   50 joins=   2 per_page=0.50 per_block=0.040
+academic_02_memduet.pdf                       pages=   4 bodypages=   4 bodyblocks=   36 joins=   2 per_page=0.50 per_block=0.056
+academic_03_pruned_reasoning.pdf              pages=   4 bodypages=   4 bodyblocks=   30 joins=   0 per_page=0.00 per_block=0.000
+academic_04_legislative_xml.pdf               pages=   4 bodypages=   4 bodyblocks=   23 joins=   2 per_page=0.50 per_block=0.087
+academic_05_sparse_autoencoders.pdf           pages=   4 bodypages=   4 bodyblocks=   26 joins=   1 per_page=0.25 per_block=0.038
+report_01_zero_trust.pdf                      pages=   4 bodypages=   2 bodyblocks=   14 joins=   0 per_page=0.00 per_block=0.000
+report_02_patch_mgmt.pdf                      pages=   4 bodypages=   3 bodyblocks=   16 joins=   0 per_page=0.00 per_block=0.000
+report_03_ssdf.pdf                            pages=   4 bodypages=   3 bodyblocks=   15 joins=   0 per_page=0.00 per_block=0.000
+report_04_rmf.pdf                             pages=   4 bodypages=   4 bodyblocks=   14 joins=   0 per_page=0.00 per_block=0.000
+report_05_controls.pdf                        pages=   4 bodypages=   3 bodyblocks=   13 joins=   0 per_page=0.00 per_block=0.000
+tables_01_pfn_bayes.pdf                       pages=   4 bodypages=   4 bodyblocks=   62 joins=   8 per_page=2.00 per_block=0.129
+tables_02_non_gaussian_sem.pdf                pages=   4 bodypages=   4 bodyblocks=   33 joins=   0 per_page=0.00 per_block=0.000
+tables_03_copula_subspaces.pdf                pages=   4 bodypages=   4 bodyblocks=   24 joins=   1 per_page=0.25 per_block=0.042
+tables_04_markov_kernel.pdf                   pages=   4 bodypages=   4 bodyblocks=   39 joins=   0 per_page=0.00 per_block=0.000
+tables_05_decomposing_learner.pdf             pages=   4 bodypages=   4 bodyblocks=   28 joins=   0 per_page=0.00 per_block=0.000
+The-Almanack-of-Naval-Ravikant.pdf            pages= 242 bodypages= 201 bodyblocks= 1498 joins= 350 per_page=1.74 per_block=0.234
+what-is-the-internet-of-things.pdf            pages=  32 bodypages=  29 bodyblocks=  135 joins=   1 per_page=0.03 per_block=0.007

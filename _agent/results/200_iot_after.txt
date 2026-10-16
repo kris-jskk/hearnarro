@@ -1,0 +1,23 @@
+# 200 O'Reilly IoT PDF: before (git stash of this change) vs after
+iot_before.jsonl: segments=527 split_pattern=1 (same page 1)
+    (4, 1, '“The future has a funny way of', 'sneaking up on you.')
+iot_after.jsonl: segments=527 split_pattern=1 (same page 1)
+    (4, 1, '“The future has a funny way of', 'sneaking up on you.')
+## full-dump diff before vs after (empty = identical)
+diff exit 0
+## first 15 after
+{"order": 0, "page": 0, "type": "body", "text": "ISBN: 978-1-491-92180-7"}
+{"order": 1, "page": 0, "type": "heading", "text": "What Is the Internet of Things?"}
+{"order": 2, "page": 0, "type": "heading", "text": "Mike Loukides & Jon Bruner"}
+{"order": 3, "page": 1, "type": "heading", "text": "THE O’REILLY INTERNET OF THINGS CONFERENCE"}
+{"order": 4, "page": 1, "type": "body", "text": "“The future has a funny way of"}
+{"order": 5, "page": 1, "type": "body", "text": "sneaking up on you."}
+{"order": 6, "page": 1, "type": "body", "text": "You don’t notice it until you’re soaking in it."}
+{"order": 7, "page": 1, "type": "body", "text": "That was the feeling at O’Reilly’s Solid Conference."}
+{"order": 8, "page": 1, "type": "body", "text": "”"}
+{"order": 9, "page": 1, "type": "body", "text": "— Wired"}
+{"order": 10, "page": 2, "type": "heading", "text": "What Is the Internet of Things?"}
+{"order": 11, "page": 2, "type": "heading", "text": "Mike Loukides and Jon Bruner"}
+{"order": 12, "page": 3, "type": "body", "text": "What Is the Internet of Things?"}
+{"order": 13, "page": 3, "type": "body", "text": "by Mike Loukides and Jon Bruner"}
+{"order": 14, "page": 3, "type": "body", "text": "Copyright © 2015 O’Reilly Media, Inc."}

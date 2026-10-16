@@ -1,0 +1,79 @@
+=== page 118 w=396.0 h=612.0
+[0] footer bbox=(221.3,564.9,331.6,571.9) nlines=1
+     x0=221.3 y0=564.9 y1=571.9 x1=331.6 sz=7.0 | BU I L D I N G JU D G M E N T · 119
+[1] figure bbox=(77.9,52.5,310.3,77.5) nlines=2
+     x0=77.9 y0=52.5 y1=62.5 x1=310.3 sz=10.0 | Study logic and math, because once you’ve mastered them,
+     x0=78.1 y0=67.5 y1=77.5 x1=176.4 sz=10.0 | you won’t fear any book.
+[2] body bbox=(62.3,112.8,334.8,152.8) nlines=3
+     x0=63.0 y0=112.8 y1=122.8 x1=334.6 sz=10.0 | No book in the library should scare you. Whether it’s a math,
+     x0=63.2 y0=127.8 y1=137.8 x1=334.8 sz=10.0 | physics, electrical engineering, sociology, or economics book.
+     x0=62.3 y0=142.8 y1=152.8 x1=332.7 sz=10.0 | You should be able to take any book down off the shelf and read
+[3] body bbox=(63.2,157.8,332.8,197.8) nlines=3
+     x0=63.2 y0=157.8 y1=167.8 x1=332.6 sz=10.0 | it. A number of them are going to be too difficult for you. That’s
+     x0=63.3 y0=172.8 y1=182.8 x1=332.8 sz=10.0 | okay—read them anyway. Then go back and reread them and
+     x0=63.2 y0=187.8 y1=197.8 x1=121.1 sz=10.0 | reread them.
+[4] body bbox=(62.5,217.8,335.3,227.8) nlines=1
+     x0=62.5 y0=217.8 y1=227.8 x1=335.3 sz=10.0 | When you’re reading a book and you’re confused, that con-
+[5] body bbox=(63.0,232.8,333.0,272.8) nlines=3
+     x0=63.3 y0=232.8 y1=242.8 x1=332.4 sz=10.0 | fusion is similar to the pain you get in the gym when you’re
+     x0=63.0 y0=247.8 y1=257.8 x1=333.0 sz=10.0 | working out. But you’re building mental muscles instead of
+     x0=63.2 y0=262.8 y1=272.8 x1=317.2 sz=10.0 | physical muscles. Learn how to learn and read the books.
+[6] body bbox=(62.6,292.8,333.1,302.8) nlines=1
+     x0=62.6 y0=292.8 y1=302.8 x1=333.1 sz=10.0 | The problem with saying “just read” is there is so much junk
+[7] body bbox=(63.3,307.8,332.7,332.8) nlines=2
+     x0=63.3 y0=307.8 y1=317.8 x1=332.7 sz=10.0 | out there. There are as many different kinds of authors as there
+     x0=63.3 y0=322.8 y1=332.8 x1=310.4 sz=10.0 | are people. Many of them are going to write lots of junk.
+[8] body bbox=(62.6,352.8,334.7,407.8) nlines=4
+     x0=63.0 y0=352.8 y1=362.8 x1=332.6 sz=10.0 | I have people in my life I consider to be very well-read who
+     x0=63.3 y0=367.8 y1=377.8 x1=332.6 sz=10.0 | aren’t very smart. The reason is because even though they’re
+     x0=63.0 y0=382.8 y1=392.8 x1=334.5 sz=10.0 | very well-read, they read the wrong things in the wrong order.
+     x0=62.6 y0=397.8 y1=407.8 x1=334.7 sz=10.0 | They started out reading a set of false or just weakly true things,
+[9] body bbox=(63.2,412.8,335.2,467.8) nlines=4
+     x0=63.3 y0=412.8 y1=422.8 x1=335.2 sz=10.0 | and those formed the axioms of the foundation for their worl-
+     x0=63.4 y0=427.8 y1=437.8 x1=332.7 sz=10.0 | dview. Then, when new things come, they judge the new idea
+     x0=63.2 y0=442.8 y1=452.8 x1=332.5 sz=10.0 | based on a foundation they already built. Your foundation is
+     x0=63.3 y0=457.8 y1=467.8 x1=98.1 sz=10.0 | critical.
+[10] figure bbox=(78.1,502.5,301.8,542.5) nlines=3
+     x0=78.2 y0=502.5 y1=512.5 x1=295.6 sz=10.0 | Because most people are intimidated by math and can’t
+     x0=78.4 y0=517.5 y1=527.5 x1=301.8 sz=10.0 | independently critique it, they overvalue opinions backed
+     x0=78.1 y0=532.5 y1=542.5 x1=181.9 sz=10.0 | with math/pseudoscience.
+=== page 119 w=396.0 h=612.0
+[0] footer bbox=(63.0,564.9,242.9,571.9) nlines=1
+     x0=63.0 y0=564.9 y1=571.9 x1=242.9 sz=7.0 | 120 · T H E A L M A N A C K O F N A V A L R A V I K A N T
+[1] body bbox=(62.5,52.8,334.7,62.8) nlines=1
+     x0=62.5 y0=52.8 y1=62.8 x1=334.7 sz=10.0 | When it comes to reading, make sure your foundation is very,
+[2] body bbox=(63.0,67.8,140.0,77.8) nlines=1
+     x0=63.0 y0=67.8 y1=77.8 x1=140.0 sz=10.0 | very high quality.
+[3] body bbox=(62.6,97.8,332.8,107.8) nlines=1
+     x0=62.6 y0=97.8 y1=107.8 x1=332.8 sz=10.0 | The best way to have a high-quality foundation (you may not
+[4] body bbox=(62.9,112.8,332.8,182.8) nlines=5
+     x0=63.2 y0=112.8 y1=122.8 x1=332.6 sz=10.0 | love this answer), but the trick is to stick to science and to
+     x0=63.4 y0=127.8 y1=137.8 x1=332.7 sz=10.0 | stick to the basics. Generally, there are only a few things you
+     x0=63.3 y0=142.8 y1=152.8 x1=332.5 sz=10.0 | can read people don’t disagree with. Very few people disagree
+     x0=62.9 y0=157.8 y1=167.8 x1=332.8 sz=10.0 | 2+2=4, right? That is serious knowledge. Mathematics is a solid
+     x0=63.3 y0=172.8 y1=182.8 x1=115.7 sz=10.0 | foundation.
+[5] body bbox=(63.2,202.8,335.3,272.8) nlines=5
+     x0=63.2 y0=202.8 y1=212.8 x1=335.3 sz=10.0 | Similarly, the hard sciences are a solid foundation. Microeco-
+     x0=63.2 y0=217.8 y1=227.8 x1=332.9 sz=10.0 | nomics is a solid foundation. The moment you start wandering
+     x0=63.3 y0=232.8 y1=242.8 x1=332.6 sz=10.0 | outside of these solid foundations you’re in trouble because
+     x0=63.2 y0=247.8 y1=257.8 x1=332.4 sz=10.0 | now you don’t know what’s true and what’s false. I would focus
+     x0=63.3 y0=262.8 y1=272.8 x1=272.7 sz=10.0 | as much as I could on having solid foundations.
+[6] body bbox=(63.0,292.8,335.3,332.8) nlines=3
+     x0=63.0 y0=292.8 y1=302.8 x1=332.5 sz=10.0 | It’s better to be really great at arithmetic and geometry than to
+     x0=63.2 y0=307.8 y1=317.8 x1=335.3 sz=10.0 | be deep into advanced mathematics. I would read microeco-
+     x0=63.2 y0=322.8 y1=332.8 x1=251.5 sz=10.0 | nomics all day long—Microeconomics 101.
+[7] body bbox=(62.3,352.8,334.7,362.8) nlines=1
+     x0=62.3 y0=352.8 y1=362.8 x1=334.7 sz=10.0 | Another way to do this is to read originals and read classics.
+[8] body bbox=(63.0,367.8,334.8,407.8) nlines=3
+     x0=63.0 y0=367.8 y1=377.8 x1=333.0 sz=10.0 | If you’re interested in evolution, read Charles Darwin. Don’t
+     x0=63.2 y0=382.8 y1=392.8 x1=334.8 sz=10.0 | begin with Richard Dawkins (even though I think he’s great).
+     x0=63.1 y0=397.8 y1=407.8 x1=212.6 sz=10.0 | Read him later; read Darwin first.
+[9] body bbox=(63.0,427.8,335.3,512.8) nlines=6
+     x0=63.0 y0=427.8 y1=437.8 x1=334.7 sz=10.0 | If you want to learn macroeconomics, first read Adam Smith,
+     x0=63.2 y0=442.8 y1=452.8 x1=335.3 sz=10.0 | read von Mises, or read Hayek. Start with the original philos-
+     x0=63.3 y0=457.8 y1=467.8 x1=332.9 sz=10.0 | ophers of the economy. If you’re into communist or socialist
+     x0=63.2 y0=472.8 y1=482.8 x1=334.7 sz=10.0 | ideas (which I’m personally not), start by reading Karl Marx.
+     x0=63.1 y0=487.8 y1=497.8 x1=332.7 sz=10.0 | Don’t read the current interpretation someone is feeding you
+     x0=63.3 y0=502.8 y1=512.8 x1=250.8 sz=10.0 | about how things should be done and run.
+[10] body bbox=(63.0,532.8,332.8,542.8) nlines=1
+     x0=63.0 y0=532.8 y1=542.8 x1=332.8 sz=10.0 | If you start with the originals as your foundations, then you

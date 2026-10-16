@@ -1,0 +1,461 @@
+....................F.F................................EEF.............. [ 45%]
+...............................................F.F.........FFFFFFFFF.... [ 91%]
+..............                                                           [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_ing5_same_page_fragments_join_when_a_is_unpunctuated_and_b_lowercase _
+
+obj = <module 'hearnarro.ingestion.merge' from '/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/ingestion/merge.py'>
+name = 'PARA_JOIN_MIN_COUNT', ann = 'hearnarro.ingestion.merge'
+
+    def annotated_getattr(obj: object, name: str, ann: str) -> object:
+        try:
+>           obj = getattr(obj, name)
+                  ^^^^^^^^^^^^^^^^^^
+E           AttributeError: module 'hearnarro.ingestion.merge' has no attribute 'PARA_JOIN_MIN_COUNT'
+
+.venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:95: AttributeError
+
+The above exception was the direct cause of the following exception:
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107611850>
+
+    @pytest.fixture
+    def joins_on(monkeypatch: pytest.MonkeyPatch) -> None:
+        """Short synthetic documents: lower the document-level gate (PARA_JOIN_MIN_COUNT)."""
+>       monkeypatch.setattr("hearnarro.ingestion.merge.PARA_JOIN_MIN_COUNT", 1)
+
+tests/test_ing4_merge.py:272: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:109: in derive_importpath
+    annotated_getattr(target, attr, ann=module)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = <module 'hearnarro.ingestion.merge' from '/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/ingestion/merge.py'>
+name = 'PARA_JOIN_MIN_COUNT', ann = 'hearnarro.ingestion.merge'
+
+    def annotated_getattr(obj: object, name: str, ann: str) -> object:
+        try:
+            obj = getattr(obj, name)
+        except AttributeError as e:
+>           raise AttributeError(
+                f"{type(obj).__name__!r} object at {ann} has no attribute {name!r}"
+            ) from e
+E           AttributeError: 'module' object at hearnarro.ingestion.merge has no attribute 'PARA_JOIN_MIN_COUNT'
+
+.venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:97: AttributeError
+_ ERROR at setup of test_ing5_same_page_no_join_after_terminal_punct_uppercase_or_heading _
+
+obj = <module 'hearnarro.ingestion.merge' from '/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/ingestion/merge.py'>
+name = 'PARA_JOIN_MIN_COUNT', ann = 'hearnarro.ingestion.merge'
+
+    def annotated_getattr(obj: object, name: str, ann: str) -> object:
+        try:
+>           obj = getattr(obj, name)
+                  ^^^^^^^^^^^^^^^^^^
+E           AttributeError: module 'hearnarro.ingestion.merge' has no attribute 'PARA_JOIN_MIN_COUNT'
+
+.venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:95: AttributeError
+
+The above exception was the direct cause of the following exception:
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x107610a50>
+
+    @pytest.fixture
+    def joins_on(monkeypatch: pytest.MonkeyPatch) -> None:
+        """Short synthetic documents: lower the document-level gate (PARA_JOIN_MIN_COUNT)."""
+>       monkeypatch.setattr("hearnarro.ingestion.merge.PARA_JOIN_MIN_COUNT", 1)
+
+tests/test_ing4_merge.py:272: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:109: in derive_importpath
+    annotated_getattr(target, attr, ann=module)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj = <module 'hearnarro.ingestion.merge' from '/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/ingestion/merge.py'>
+name = 'PARA_JOIN_MIN_COUNT', ann = 'hearnarro.ingestion.merge'
+
+    def annotated_getattr(obj: object, name: str, ann: str) -> object:
+        try:
+            obj = getattr(obj, name)
+        except AttributeError as e:
+>           raise AttributeError(
+                f"{type(obj).__name__!r} object at {ann} has no attribute {name!r}"
+            ) from e
+E           AttributeError: 'module' object at hearnarro.ingestion.merge has no attribute 'PARA_JOIN_MIN_COUNT'
+
+.venv/lib/python3.11/site-packages/_pytest/monkeypatch.py:97: AttributeError
+=================================== FAILURES ===================================
+_____________ test_ing2_tracked_caps_line_is_resplit_at_wide_gaps ______________
+
+    def test_ing2_tracked_caps_line_is_resplit_at_wide_gaps() -> None:
+        """Letter-spaced caps get a virtual space between every glyph (1.8 pt > SPACE_GAP); the
+        line is re-split so only gaps >= 2x the median inter-glyph gap are word breaks."""
+        chars = _tracked("FORMYDAD,", 100, {2: 6.0, 4: 6.0})
+>       assert ["".join(c.text for c in ln) for ln in group_lines(chars)] == ["FOR MY DAD,"]
+E       AssertionError: assert ['F O R M Y D A D ,'] == ['FOR MY DAD,']
+E         
+E         At index 0 diff: 'F O R M Y D A D ,' != 'FOR MY DAD,'
+E         Use -v to get more diff
+
+tests/test_ing1_extract.py:303: AssertionError
+____________ test_ing2_tracked_caps_kerned_pairs_and_trailing_words ____________
+
+    def test_ing2_tracked_caps_kerned_pairs_and_trailing_words() -> None:
+        """A kerned pair ("OT": no virtual space inside) still joins its word; ordinary words after
+        the tracked run keep their spaces."""
+        tracked = _tracked("NOTJUSTRIGHT", 100, {1: 0.5, 2: 6.0, 6: 6.0})
+        x = tracked[-1].bbox.x1 + 6
+        tail = [
+            *_chars("is", x, 100, "Times", 9),
+            *_chars("a", x + 12, 100, "Times", 9),
+            *_chars("product", x + 20, 100, "Times", 9),
+        ]
+        line = "".join(c.text for c in group_lines([*tracked, *tail])[0])
+>       assert line == "NOT JUST RIGHT is a product"
+E       AssertionError: assert 'N OT J U S T... is a product' == 'NOT JUST RIGHT is a product'
+E         
+E         - NOT JUST RIGHT is a product
+E         + N OT J U S T R I G H T is a product
+E         ?  +    + + +   + + + +
+
+tests/test_ing1_extract.py:325: AssertionError
+________ test_ing5_same_page_joins_only_when_systematic_in_the_document ________
+
+    def test_ing5_same_page_joins_only_when_systematic_in_the_document() -> None:
+        """Fewer than PARA_JOIN_MIN_COUNT candidate pairs (or under PARA_JOIN_MIN_SHARE of the body
+        blocks): stage 1's splits are kept, as the golden ground truth expects."""
+        few = [_para(0, "a sentence without an end", 100), _para(1, "continues here.", 115)]
+        assert len(merge_blocks(few)) == 2
+        many: list[Block] = []
+        for i in range(12):
+            many += [
+                _para(2 * i, f"paragraph {i} runs on and on", 100 + 40 * i),
+                _para(2 * i + 1, "and ends on the next line.", 115 + 40 * i),
+            ]
+>       assert len(merge_blocks(many)) == 12
+E       AssertionError: assert 24 == 12
+E        +  where 24 = len([LogicalBlock(id=0, page=0, type='body', text='paragraph 0 runs on and on', source=[(0, 0)]), LogicalBlock(id=1, page=...n', source=[(0, 4)]), LogicalBlock(id=5, page=0, type='body', text='and ends on the next line.', source=[(0, 5)]), ...])
+E        +    where [LogicalBlock(id=0, page=0, type='body', text='paragraph 0 runs on and on', source=[(0, 0)]), LogicalBlock(id=1, page=...n', source=[(0, 4)]), LogicalBlock(id=5, page=0, type='body', text='and ends on the next line.', source=[(0, 5)]), ...] = merge_blocks([Block(page=0, index=0, bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=112.0), lines=[Line(spans=[Span(text='paragraph 0 ru...alse)], bbox=BBox(x0=72.0, y0=195.0, x1=540.0, y1=207.0), dir=(1.0, 0.0))], type='body', ocr=False, inline=False), ...])
+
+tests/test_ing4_merge.py:329: AssertionError
+________ test_ing3_vertical_letter_stack_becomes_one_heading_read_first ________
+
+    def test_ing3_vertical_letter_stack_becomes_one_heading_read_first() -> None:
+        from hearnarro.ingestion.order import order_page
+    
+        above = make_block(3, 0, ["A blurb line above the title."], x0=100, y0=60, width=200)
+        title = _letters(3, 1, ["THE", "ALMANACK"], y0=160)
+        author = _letters(3, 1 + len(title), ["ERIC", "JORGENSON"], y0=title[-1].bbox.y1 + 20)
+        page = make_page(3, [above, *title, *author, *_filler(3, 40)])
+        classify_pages([page])
+        ordered = [b.text for b in order_page(page)]
+>       assert ordered[:3] == ["THE ALMANACK", "ERIC JORGENSON", "A blurb line above the title."]
+E       AssertionError: assert ['A blurb lin...e.', 'T', 'H'] == ['THE ALMANAC...e the title.']
+E         
+E         At index 0 diff: 'A blurb line above the title.' != 'THE ALMANACK'
+E         Use -v to get more diff
+
+tests/test_ing2_classify.py:536: AssertionError
+_______ test_ing1_upload_returns_202_parsing_then_ready_documents_table ________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-35/test_ing1_upload_returns_202_p0')
+
+    async def test_ing1_upload_returns_202_parsing_then_ready_documents_table(tmp_path: Path) -> None:
+        async with client_for(tmp_path) as client:
+            resp = await upload(client, TEXT_PDF)
+            assert resp.status_code == 202, resp.text
+            body = resp.json()
+            assert isinstance(body["id"], int)
+            assert body["status"] == "parsing"
+    
+            doc = await wait_settled(client, body["id"])
+            assert doc["status"] == "ready", doc
+            assert doc["fail_reason"] is None
+            assert doc["page_count"] == 1
+            # no PDF Title metadata -> the first heading ("Bold heading", 2-12 words)
+>           assert doc["title"] == "Bold heading"
+E           AssertionError: assert 'text' == 'Bold heading'
+E             
+E             - Bold heading
+E             + text
+
+tests/test_api_documents.py:86: AssertionError
+__ test_ing1_choose_title[The Almanack-Other Heading Here-x.pdf-The Almanack] __
+
+meta = 'The Almanack', heading = 'Other Heading Here', filename = 'x.pdf'
+expected = 'The Almanack'
+
+    @pytest.mark.parametrize(
+        ("meta", "heading", "filename", "expected"),
+        [
+            ("The Almanack", "Other Heading Here", "x.pdf", "The Almanack"),
+            (
+                "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+                "book.pdf",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+            ),
+            ("draft.DOCX", "Two Words", "a.pdf", "Two Words"),
+            ("Untitled", "Two Words", "a.pdf", "Two Words"),  # no whitespace: filename-like
+            (None, "Two Words", "a.pdf", "Two Words"),
+            ("  ", None, "my-great_book.pdf", "my great book"),
+            (None, "Introduction", "my_book.pdf", "my book"),  # 1-word heading: too short
+            (None, " ".join(["word"] * 13), "my_book.pdf", "my book"),  # 13 words: too long
+        ],
+    )
+    def test_ing1_choose_title(
+        meta: str | None, heading: str | None, filename: str, expected: str
+    ) -> None:
+>       from hearnarro.storage.jobs import choose_title
+E       ImportError: cannot import name 'choose_title' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:253: ImportError
+_ test_ing1_choose_title[Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd-THE ALMANACK OF NAVAL RAVIKANT-book.pdf-THE ALMANACK OF NAVAL RAVIKANT] _
+
+meta = 'Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd'
+heading = 'THE ALMANACK OF NAVAL RAVIKANT', filename = 'book.pdf'
+expected = 'THE ALMANACK OF NAVAL RAVIKANT'
+
+    @pytest.mark.parametrize(
+        ("meta", "heading", "filename", "expected"),
+        [
+            ("The Almanack", "Other Heading Here", "x.pdf", "The Almanack"),
+            (
+                "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+                "book.pdf",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+            ),
+            ("draft.DOCX", "Two Words", "a.pdf", "Two Words"),
+            ("Untitled", "Two Words", "a.pdf", "Two Words"),  # no whitespace: filename-like
+            (None, "Two Words", "a.pdf", "Two Words"),
+            ("  ", None, "my-great_book.pdf", "my great book"),
+            (None, "Introduction", "my_book.pdf", "my book"),  # 1-word heading: too short
+            (None, " ".join(["word"] * 13), "my_book.pdf", "my book"),  # 13 words: too long
+        ],
+    )
+    def test_ing1_choose_title(
+        meta: str | None, heading: str | None, filename: str, expected: str
+    ) -> None:
+>       from hearnarro.storage.jobs import choose_title
+E       ImportError: cannot import name 'choose_title' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:253: ImportError
+_________ test_ing1_choose_title[draft.DOCX-Two Words-a.pdf-Two Words] _________
+
+meta = 'draft.DOCX', heading = 'Two Words', filename = 'a.pdf'
+expected = 'Two Words'
+
+    @pytest.mark.parametrize(
+        ("meta", "heading", "filename", "expected"),
+        [
+            ("The Almanack", "Other Heading Here", "x.pdf", "The Almanack"),
+            (
+                "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+                "book.pdf",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+            ),
+            ("draft.DOCX", "Two Words", "a.pdf", "Two Words"),
+            ("Untitled", "Two Words", "a.pdf", "Two Words"),  # no whitespace: filename-like
+            (None, "Two Words", "a.pdf", "Two Words"),
+            ("  ", None, "my-great_book.pdf", "my great book"),
+            (None, "Introduction", "my_book.pdf", "my book"),  # 1-word heading: too short
+            (None, " ".join(["word"] * 13), "my_book.pdf", "my book"),  # 13 words: too long
+        ],
+    )
+    def test_ing1_choose_title(
+        meta: str | None, heading: str | None, filename: str, expected: str
+    ) -> None:
+>       from hearnarro.storage.jobs import choose_title
+E       ImportError: cannot import name 'choose_title' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:253: ImportError
+__________ test_ing1_choose_title[Untitled-Two Words-a.pdf-Two Words] __________
+
+meta = 'Untitled', heading = 'Two Words', filename = 'a.pdf'
+expected = 'Two Words'
+
+    @pytest.mark.parametrize(
+        ("meta", "heading", "filename", "expected"),
+        [
+            ("The Almanack", "Other Heading Here", "x.pdf", "The Almanack"),
+            (
+                "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+                "book.pdf",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+            ),
+            ("draft.DOCX", "Two Words", "a.pdf", "Two Words"),
+            ("Untitled", "Two Words", "a.pdf", "Two Words"),  # no whitespace: filename-like
+            (None, "Two Words", "a.pdf", "Two Words"),
+            ("  ", None, "my-great_book.pdf", "my great book"),
+            (None, "Introduction", "my_book.pdf", "my book"),  # 1-word heading: too short
+            (None, " ".join(["word"] * 13), "my_book.pdf", "my book"),  # 13 words: too long
+        ],
+    )
+    def test_ing1_choose_title(
+        meta: str | None, heading: str | None, filename: str, expected: str
+    ) -> None:
+>       from hearnarro.storage.jobs import choose_title
+E       ImportError: cannot import name 'choose_title' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:253: ImportError
+____________ test_ing1_choose_title[None-Two Words-a.pdf-Two Words] ____________
+
+meta = None, heading = 'Two Words', filename = 'a.pdf', expected = 'Two Words'
+
+    @pytest.mark.parametrize(
+        ("meta", "heading", "filename", "expected"),
+        [
+            ("The Almanack", "Other Heading Here", "x.pdf", "The Almanack"),
+            (
+                "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+                "book.pdf",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+            ),
+            ("draft.DOCX", "Two Words", "a.pdf", "Two Words"),
+            ("Untitled", "Two Words", "a.pdf", "Two Words"),  # no whitespace: filename-like
+            (None, "Two Words", "a.pdf", "Two Words"),
+            ("  ", None, "my-great_book.pdf", "my great book"),
+            (None, "Introduction", "my_book.pdf", "my book"),  # 1-word heading: too short
+            (None, " ".join(["word"] * 13), "my_book.pdf", "my book"),  # 13 words: too long
+        ],
+    )
+    def test_ing1_choose_title(
+        meta: str | None, heading: str | None, filename: str, expected: str
+    ) -> None:
+>       from hearnarro.storage.jobs import choose_title
+E       ImportError: cannot import name 'choose_title' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:253: ImportError
+_______ test_ing1_choose_title[  -None-my-great_book.pdf-my great book] ________
+
+meta = '  ', heading = None, filename = 'my-great_book.pdf'
+expected = 'my great book'
+
+    @pytest.mark.parametrize(
+        ("meta", "heading", "filename", "expected"),
+        [
+            ("The Almanack", "Other Heading Here", "x.pdf", "The Almanack"),
+            (
+                "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+                "book.pdf",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+            ),
+            ("draft.DOCX", "Two Words", "a.pdf", "Two Words"),
+            ("Untitled", "Two Words", "a.pdf", "Two Words"),  # no whitespace: filename-like
+            (None, "Two Words", "a.pdf", "Two Words"),
+            ("  ", None, "my-great_book.pdf", "my great book"),
+            (None, "Introduction", "my_book.pdf", "my book"),  # 1-word heading: too short
+            (None, " ".join(["word"] * 13), "my_book.pdf", "my book"),  # 13 words: too long
+        ],
+    )
+    def test_ing1_choose_title(
+        meta: str | None, heading: str | None, filename: str, expected: str
+    ) -> None:
+>       from hearnarro.storage.jobs import choose_title
+E       ImportError: cannot import name 'choose_title' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:253: ImportError
+________ test_ing1_choose_title[None-Introduction-my_book.pdf-my book] _________
+
+meta = None, heading = 'Introduction', filename = 'my_book.pdf'
+expected = 'my book'
+
+    @pytest.mark.parametrize(
+        ("meta", "heading", "filename", "expected"),
+        [
+            ("The Almanack", "Other Heading Here", "x.pdf", "The Almanack"),
+            (
+                "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+                "book.pdf",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+            ),
+            ("draft.DOCX", "Two Words", "a.pdf", "Two Words"),
+            ("Untitled", "Two Words", "a.pdf", "Two Words"),  # no whitespace: filename-like
+            (None, "Two Words", "a.pdf", "Two Words"),
+            ("  ", None, "my-great_book.pdf", "my great book"),
+            (None, "Introduction", "my_book.pdf", "my book"),  # 1-word heading: too short
+            (None, " ".join(["word"] * 13), "my_book.pdf", "my book"),  # 13 words: too long
+        ],
+    )
+    def test_ing1_choose_title(
+        meta: str | None, heading: str | None, filename: str, expected: str
+    ) -> None:
+>       from hearnarro.storage.jobs import choose_title
+E       ImportError: cannot import name 'choose_title' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:253: ImportError
+_ test_ing1_choose_title[None-word word word word word word word word word word word word word-my_book.pdf-my book] _
+
+meta = None
+heading = 'word word word word word word word word word word word word word'
+filename = 'my_book.pdf', expected = 'my book'
+
+    @pytest.mark.parametrize(
+        ("meta", "heading", "filename", "expected"),
+        [
+            ("The Almanack", "Other Heading Here", "x.pdf", "The Almanack"),
+            (
+                "Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+                "book.pdf",
+                "THE ALMANACK OF NAVAL RAVIKANT",
+            ),
+            ("draft.DOCX", "Two Words", "a.pdf", "Two Words"),
+            ("Untitled", "Two Words", "a.pdf", "Two Words"),  # no whitespace: filename-like
+            (None, "Two Words", "a.pdf", "Two Words"),
+            ("  ", None, "my-great_book.pdf", "my great book"),
+            (None, "Introduction", "my_book.pdf", "my book"),  # 1-word heading: too short
+            (None, " ".join(["word"] * 13), "my_book.pdf", "my book"),  # 13 words: too long
+        ],
+    )
+    def test_ing1_choose_title(
+        meta: str | None, heading: str | None, filename: str, expected: str
+    ) -> None:
+>       from hearnarro.storage.jobs import choose_title
+E       ImportError: cannot import name 'choose_title' from 'hearnarro.storage.jobs' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/storage/jobs.py)
+
+tests/test_api_documents.py:253: ImportError
+______ test_ing1_filename_like_metadata_title_falls_back_to_first_heading ______
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-35/test_ing1_filename_like_metada0')
+
+    async def test_ing1_filename_like_metadata_title_falls_back_to_first_heading(
+        tmp_path: Path,
+    ) -> None:
+        pdf = tmp_path / "Some-Author_Some-Book.pdf"
+        pdf.write_bytes(_pdf_with_title("Some-Author_Some-Book.indd"))
+        async with client_for(tmp_path / "data") as client:
+            resp = await upload(client, pdf)
+            doc = await wait_settled(client, resp.json()["id"])
+            assert doc["status"] == "ready", doc
+>           assert doc["title"] == "A Guide to Listening"
+E           AssertionError: assert 'Some-Author_Some-Book.indd' == 'A Guide to Listening'
+E             
+E             - A Guide to Listening
+E             + Some-Author_Some-Book.indd
+
+tests/test_api_documents.py:300: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing1_extract.py::test_ing2_tracked_caps_line_is_resplit_at_wide_gaps
+FAILED tests/test_ing1_extract.py::test_ing2_tracked_caps_kerned_pairs_and_trailing_words
+FAILED tests/test_ing4_merge.py::test_ing5_same_page_joins_only_when_systematic_in_the_document
+FAILED tests/test_ing2_classify.py::test_ing3_vertical_letter_stack_becomes_one_heading_read_first
+FAILED tests/test_api_documents.py::test_ing1_upload_returns_202_parsing_then_ready_documents_table
+FAILED tests/test_api_documents.py::test_ing1_choose_title[The Almanack-Other Heading Here-x.pdf-The Almanack]
+FAILED tests/test_api_documents.py::test_ing1_choose_title[Eric-Jorgenson_The-Almanack-of-Naval-Ravikant.indd-THE ALMANACK OF NAVAL RAVIKANT-book.pdf-THE ALMANACK OF NAVAL RAVIKANT]
+FAILED tests/test_api_documents.py::test_ing1_choose_title[draft.DOCX-Two Words-a.pdf-Two Words]
+FAILED tests/test_api_documents.py::test_ing1_choose_title[Untitled-Two Words-a.pdf-Two Words]
+FAILED tests/test_api_documents.py::test_ing1_choose_title[None-Two Words-a.pdf-Two Words]
+FAILED tests/test_api_documents.py::test_ing1_choose_title[  -None-my-great_book.pdf-my great book]
+FAILED tests/test_api_documents.py::test_ing1_choose_title[None-Introduction-my_book.pdf-my book]
+FAILED tests/test_api_documents.py::test_ing1_choose_title[None-word word word word word word word word word word word word word-my_book.pdf-my book]
+FAILED tests/test_api_documents.py::test_ing1_filename_like_metadata_title_falls_back_to_first_heading
+ERROR tests/test_ing4_merge.py::test_ing5_same_page_fragments_join_when_a_is_unpunctuated_and_b_lowercase
+ERROR tests/test_ing4_merge.py::test_ing5_same_page_no_join_after_terminal_punct_uppercase_or_heading
+14 failed, 142 passed, 2 errors in 1.94s
