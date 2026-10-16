@@ -1,0 +1,21 @@
+$ hearnarro check "The-Almanack-of-Naval-Ravikant.pdf"
+The-Almanack-of-Naval-Ravikant.pdf: 3713 segments, title 'THE ALMANACK OF NAVAL RAVIKANT'
+check                       count    value    thr  result  examples
+dangling_hyphens                1        1      0  FAIL    I started going through this little fantasy where I imagined
+ligature_artifacts              1        1      0  FAIL    “Syndicates/For Investors.” https://angel.co/syndicates/ for
+single_letter_segments          0        0      0  PASS    
+chapter_number_segments         0        0      -  info    
+tracked_lines                   0        0      0  PASS    
+leader_dots                     0        0      0  PASS    
+midsentence_breaks              3   0.0009   0.01  PASS    A Guide to Wealth and Happiness || isBn 978-1-5445-1422-2 Ha | It is available for || free download in pdf and e-reader ver | Naval has essays, || podcasts and more at Nav.al and is on T
+toc_leak                        0        0      0  PASS    
+punctuation_only                0        0      0  PASS    
+duplicate_runs                  0        0      0  PASS    
+title_filename_like             0        0      0  PASS    
+empty_text_document             0        0      0  PASS    
+OVERALL FAIL
+exit=1
+
+$ hearnarro check --json (failing checks only)
+{"name": "dangling_hyphens", "count": 1, "threshold": 0, "passed": false, "examples": ["I started going through this little fantasy where I imagined Shane asking me a bunch of questions and I was fantasy- answering them."], "value": 1.0}
+{"name": "ligature_artifacts", "count": 1, "threshold": 0, "passed": false, "examples": ["“Syndicates/For Investors.” https://angel.co/syndicates/ for-investors#syndicates."], "value": 1.0}

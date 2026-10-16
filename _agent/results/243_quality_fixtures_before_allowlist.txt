@@ -1,0 +1,473 @@
+.FFFF.FFFFFFFFFF                                                         [100%]
+=================================== FAILURES ===================================
+_______________ test_quality_fixture[academic_01_seahelm_audio] ________________
+
+name = 'academic_01_seahelm_audio'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: academic_01_seahelm_audio.pdf: 214 segments, title 'SEA-HELM Audio: Evaluating Multilingual ASR-LLM Pipeline Performance'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              2   0.0175   0.01  FAIL    [4] J. Zhou, T. Lu, S. Mishra, S. Brahma, S. Basu, Y. Luan,  | [6] A. Zou, Z. Wang, N. Carlini, M. Nasr, J. Z. Kolter, and 
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='midsentence_breaks', count=2, threshold=0.01, passed=False, examples=['[4] J. Zhou, T. Lu, S. Mishr... transferable adversarial attacks on aligned language models,” arXiv preprint arXiv:2307.15043, 2023.'], value=0.0175)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+__________________ test_quality_fixture[academic_02_memduet] ___________________
+
+name = 'academic_02_memduet'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: academic_02_memduet.pdf: 130 segments, title 'MemDuet: Learning Dual-Process Memory for Long-Context Reasoning'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     1        1      0  FAIL    We divide D into T chunks (c1, . . . , cT ) in their origina
+E         midsentence_breaks              2   0.0211   0.01  FAIL    We train on the original examples and post-update || negativ | 3.3.2 Stage II: System 2 Reinforcement Learning We freeze Sy
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                2        2      0  FAIL    ! | .
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='leader_dots', count=1, threshold=0, passed=False, examples=['We divide D into T chunks (c1, . . . ,...alue=0.0211), CheckResult(name='punctuation_only', count=2, threshold=0, passed=False, examples=['!', '.'], value=2.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+______________ test_quality_fixture[academic_03_pruned_reasoning] ______________
+
+name = 'academic_03_pruned_reasoning'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: academic_03_pruned_reasoning.pdf: 138 segments, title 'academic 03 pruned reasoning'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                1        1      0  FAIL    Figure 3: Non-termination rate and accuracy of DeepSeek mode
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              0        0   0.01  PASS    
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                1        1      0  FAIL    
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='dangling_hyphens', count=1, threshold=0, passed=False, examples=['Figure 3: Non-termination rate an...'], value=1.0), CheckResult(name='punctuation_only', count=1, threshold=0, passed=False, examples=['\x01'], value=1.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+______________ test_quality_fixture[academic_04_legislative_xml] _______________
+
+name = 'academic_04_legislative_xml'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: academic_04_legislative_xml.pdf: 124 segments, title 'A Strong Harness Narrows the Model Gap: A Comparative Evaluation for'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              2   0.0196   0.01  FAIL    We measure it instead as one dimension of a full || pipeline | We use that term for three coupled changes T3 || introduces 
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='midsentence_breaks', count=2, threshold=0.01, passed=False, examples=['We measure it instead as one...er separate context each specialist works in, whereas T2 threads everything through one long context.'], value=0.0196)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+__________________ test_quality_fixture[tables_01_pfn_bayes] ___________________
+
+name = 'tables_01_pfn_bayes'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: tables_01_pfn_bayes.pdf: 169 segments, title 'How Well Do Prior-Data Fitted Networks Amortize'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         2        2      -  info    1 | 1
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     3        3      0  FAIL    What is observable is the functional spread across K indepen | For any distribution p on Y and predictors q1, . . . , qK wi | For PFNs q1, . . . , qK with mixture ¯q,
+E         midsentence_breaks              9   0.0709   0.01  FAIL    By learning to approximate Bayesian posterior predictive dis | This paper studies the amortization error, || the only term  | Whether this holds is a question about amortization || uncer
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                1        1      0  FAIL    .
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='leader_dots', count=3, threshold=0, passed=False, examples=['What is observable is the functional s...'], value=0.0709), CheckResult(name='punctuation_only', count=1, threshold=0, passed=False, examples=['.'], value=1.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+_______________ test_quality_fixture[tables_02_non_gaussian_sem] _______________
+
+name = 'tables_02_non_gaussian_sem'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: tables_02_non_gaussian_sem.pdf: 138 segments, title 'Learning Non-Gaussian SEMs with Conditional Risk, and Why the'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     8        8      0  FAIL    Given a random vector X = (X1, . . . , Xd)⊤, its joint distr | Xi = gi XPA(i), Ni, i = 1, . . . , d, | where PA(i) ⊂{1, . . . , d} \ {i} indexes the parents of Xi,
+E         midsentence_breaks             13   0.1074   0.01  FAIL    We consider a directed acyclic graph G = (V, E) with vertex  | For a vertex i, we write PA || (i), CH | (i), CH || (i), AN
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='leader_dots', count=8, threshold=0, passed=False, examples=['Given a random vector X = (X1, . . . ,...'(i), and DE || (i) for its sets of parents, children, ancestors, and descendants in G, respectively.'], value=0.1074)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+_______________ test_quality_fixture[tables_03_copula_subspaces] _______________
+
+name = 'tables_03_copula_subspaces'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: tables_03_copula_subspaces.pdf: 158 segments, title 'tables 03 copula subspaces'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              1     0.01   0.01  PASS    For comparison, || let P C r := V C r V C⊤ r project onto th
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                4        4      0  FAIL    , |  | .
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='punctuation_only', count=4, threshold=0, passed=False, examples=[',', '\x13', '.', ','], value=4.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+________________ test_quality_fixture[tables_04_markov_kernel] _________________
+
+name = 'tables_04_markov_kernel'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: tables_04_markov_kernel.pdf: 173 segments, title 'Markov Chain Convergence in Kernel-Induced Geometry'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          1        1      0  FAIL    H
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              6   0.0561   0.01  FAIL    for every bounded continuous test function || f. For general | For classical conditions ensuring almost-sure convergence of | H || whenever the two Bochner integrals exist; see, e.g., Sm
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='single_letter_segments', count=1, threshold=0, passed=False, examples=['H'], value=1.0), CheckResul...'The resulting discrepancy is the MMD associated with the kernel k(x, || y) = ⟨ϕ', 'y) = ⟨ϕ || (x), ϕ'], value=0.0561)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+_____________ test_quality_fixture[tables_05_decomposing_learner] ______________
+
+name = 'tables_05_decomposing_learner'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: tables_05_decomposing_learner.pdf: 115 segments, title 'Decomposing A Neural Learner'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              2    0.029   0.01  FAIL    (a) Heterogeneous feature space || (b) Accuracy by region | (b) Accuracy by region || (c) High reliability instances
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  0        0      0  PASS    
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='midsentence_breaks', count=2, threshold=0.01, passed=False, examples=['(a) Heterogeneous feature space || (b) Accuracy by region', '(b) Accuracy by region || (c) High reliability instances'], value=0.029)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+__________________ test_quality_fixture[report_01_zero_trust] __________________
+
+name = 'report_01_zero_trust'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: report_01_zero_trust.pdf: 57 segments, title 'NIST Special Publication 800-207'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              0        0   0.01  PASS    
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  2        2      0  FAIL    NIST Special Publication 800-207 | Zero Trust Architecture
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='duplicate_runs', count=2, threshold=0, passed=False, examples=['NIST Special Publication 800-207', 'Zero Trust Architecture'], value=2.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+__________________ test_quality_fixture[report_02_patch_mgmt] __________________
+
+name = 'report_02_patch_mgmt'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: report_02_patch_mgmt.pdf: 63 segments, title 'NIST Special Publication'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              0        0   0.01  PASS    
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  5        5      0  FAIL    NIST Special Publication | NIST SP 800-40r4 | Guide to Enterprise Patch
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='duplicate_runs', count=5, threshold=0, passed=False, examples=['NIST Special Publication', 'NIST SP 800-40r4', 'Guide to Enterprise Patch', 'Management Planning:', 'Preventive Maintenance for Technology'], value=5.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+_____________________ test_quality_fixture[report_03_ssdf] _____________________
+
+name = 'report_03_ssdf'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: report_03_ssdf.pdf: 57 segments, title 'NIST Special Publication 800-218'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              0        0   0.01  PASS    
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  3        3      0  FAIL    NIST Special Publication 800-218 | Secure Software Development Framework (SSDF) Version 1.1: | Recommendations for Mitigating the Risk of Software Vulnerab
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='duplicate_runs', count=3, threshold=0, passed=False, examples=['NIST Special Publication 800-218', ...ent Framework (SSDF) Version 1.1:', 'Recommendations for Mitigating the Risk of Software Vulnerabilities'], value=3.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+_____________________ test_quality_fixture[report_04_rmf] ______________________
+
+name = 'report_04_rmf'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: report_04_rmf.pdf: 48 segments, title 'NIST Special Publication 800-37'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              0        0   0.01  PASS    
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  4        4      0  FAIL    NIST Special Publication 800-37 | Risk Management Framework for Information Systems and Organi | A System Life Cycle Approach for Security and Privacy
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='duplicate_runs', count=4, threshold=0, passed=False, examples=['NIST Special Publication 800-37', '...n Systems and Organizations', 'A System Life Cycle Approach for Security and Privacy', 'JOINT TASK FORCE'], value=4.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+___________________ test_quality_fixture[report_05_controls] ___________________
+
+name = 'report_05_controls'
+
+    @pytest.mark.parametrize("name", TEXT_FIXTURES)
+    def test_quality_fixture(name: str) -> None:
+        report = check_pdf(FIXTURES / f"{name}.pdf", ocr=False)
+        failing = [
+            c
+            for c in report.checks
+            if not c.passed and c.count > ALLOWED.get((name, c.name), -1)
+        ]
+>       assert not failing, report.table()
+E       AssertionError: report_05_controls.pdf: 47 segments, title 'NIST Special Publication 800-53'
+E         check                       count    value    thr  result  examples
+E         dangling_hyphens                0        0      0  PASS    
+E         ligature_artifacts              0        0      0  PASS    
+E         single_letter_segments          0        0      0  PASS    
+E         chapter_number_segments         0        0      -  info    
+E         tracked_lines                   0        0      0  PASS    
+E         leader_dots                     0        0      0  PASS    
+E         midsentence_breaks              0        0   0.01  PASS    
+E         toc_leak                        0        0      0  PASS    
+E         punctuation_only                0        0      0  PASS    
+E         duplicate_runs                  4        4      0  FAIL    NIST Special Publication 800-53 | Revision 5 | Security and Privacy Controls for Information Systems and Or
+E         title_filename_like             0        0      0  PASS    
+E         empty_text_document             0        0      0  PASS    
+E         OVERALL FAIL
+E       assert not [CheckResult(name='duplicate_runs', count=4, threshold=0, passed=False, examples=['NIST Special Publication 800-53', 'Revision 5', 'Security and Privacy Controls for Information Systems and Organizations', 'JOINT TASK FORCE'], value=4.0)]
+
+tests/test_quality_fixtures.py:39: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[academic_01_seahelm_audio]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[academic_02_memduet]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[academic_03_pruned_reasoning]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[academic_04_legislative_xml]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[tables_01_pfn_bayes]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[tables_02_non_gaussian_sem]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[tables_03_copula_subspaces]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[tables_04_markov_kernel]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[tables_05_decomposing_learner]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[report_01_zero_trust]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[report_02_patch_mgmt]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[report_03_ssdf]
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[report_04_rmf] - ...
+FAILED tests/test_quality_fixtures.py::test_quality_fixture[report_05_controls]
+14 failed, 2 passed in 3.57s
+academic_01_seahelm_audio midsentence_breaks 2 0.0175 || [4] J. Zhou, T. Lu, S. Mishra, S. Brahma, S. Basu, Y. Luan, D. Zhou, || and L. Hou, “Instruction-following eva ## [6] A. Zou, Z. Wang, N. Carlini, M. Nasr, J. Z. Kolter, and M. Fredrik- || son, “Universal and transferable ad
+academic_02_memduet leader_dots 1 1.0 || We divide D into T chunks (c1, . . . , cT ) in their original order, with |ci| ≤C, where | · | denotes token l
+academic_02_memduet midsentence_breaks 2 0.0211 || We train on the original examples and post-update || negatives using the memory-contrastive objective: ## 3.3.2 Stage II: System 2 Reinforcement Learning We freeze System 1 at ϕSFT and optimize all Sys- || tem 2 para
+academic_02_memduet punctuation_only 2 2.0 || ! ## .
+academic_03_pruned_reasoning dangling_hyphens 1 1.0 || Figure 3: Non-termination rate and accuracy of DeepSeek models on AIME-25 under 16K- and 65K-token budgets.
+academic_03_pruned_reasoning punctuation_only 1 1.0 || 
+academic_04_legislative_xml midsentence_breaks 2 0.0196 || We measure it instead as one dimension of a full || pipeline, split into localization and normalization (§5). ## We use that term for three coupled changes T3 || introduces together: decomposition into specialized agents, t
+tables_01_pfn_bayes leader_dots 3 3.0 || What is observable is the functional spread across K independently trained ensemble members q1, . . . , qK wit ## For any distribution p on Y and predictors q1, . . . , qK with mixture ¯q = 1 K PK k=1 qk, ## For PFNs q1, . . . , qK with mixture ¯q,
+tables_01_pfn_bayes midsentence_breaks 9 0.0709 || By learning to approximate Bayesian posterior predictive distributions (PPDs) via in-context learning (Brown e ## This paper studies the amortization error, || the only term controlled by pretraining, which splits into optim ## Whether this holds is a question about amortization || uncertainty. ## Existing work on uncertainty in PFNs (Nagler and Rügamer, 2025; Fortini et al., 2026) studies || the uncertain ## In the inset plots, it is visible that the MCMC reference, where 24 MCMC chains are sampled per task, still do
+tables_01_pfn_bayes punctuation_only 1 1.0 || .
+tables_02_non_gaussian_sem leader_dots 8 8.0 || Given a random vector X = (X1, . . . , Xd)⊤, its joint distribution can be associated with a DAG G whose nodes ## Xi = gi XPA(i), Ni, i = 1, . . . , d, ## where PA(i) ⊂{1, . . . , d} \ {i} indexes the parents of Xi, and Ni is an exogenous noise variable, i.e., a ra ## where Λ ∈Rd×d encodes the linear dependence of each variable on its parents and N = (N1, . . . , Nd)⊤is a vect ## For a positive integer d, let [d] = {1, . . . , d}.
+tables_02_non_gaussian_sem midsentence_breaks 13 0.1074 || We consider a directed acyclic graph G = (V, E) with vertex set V = [d], where each vertex i is associated wit ## For a vertex i, we write PA || (i), CH ## (i), CH || (i), AN ## (i), AN || (i), and DE ## (i), and DE || (i) for its sets of parents, children, ancestors, and descendants in G, respectively.
+tables_03_copula_subspaces punctuation_only 4 4.0 || , ##  ## . ## ,
+tables_04_markov_kernel single_letter_segments 1 1.0 || H
+tables_04_markov_kernel midsentence_breaks 6 0.0561 || for every bounded continuous test function || f. For general Markov chains, however, convergence to a determin ## For classical conditions ensuring almost-sure convergence of bµT as in (2), see, || e.g. ## H || whenever the two Bochner integrals exist; see, e.g., Smola et al. (2007); Gretton et al. (2012). ## The resulting discrepancy is the MMD associated with the kernel k(x, || y) = ⟨ϕ ## y) = ⟨ϕ || (x), ϕ
+tables_05_decomposing_learner midsentence_breaks 2 0.029 || (a) Heterogeneous feature space || (b) Accuracy by region ## (b) Accuracy by region || (c) High reliability instances
+report_01_zero_trust duplicate_runs 2 2.0 || NIST Special Publication 800-207 ## Zero Trust Architecture
+report_02_patch_mgmt duplicate_runs 5 5.0 || NIST Special Publication ## NIST SP 800-40r4 ## Guide to Enterprise Patch ## Management Planning: ## Preventive Maintenance for Technology
+report_03_ssdf duplicate_runs 3 3.0 || NIST Special Publication 800-218 ## Secure Software Development Framework (SSDF) Version 1.1: ## Recommendations for Mitigating the Risk of Software Vulnerabilities
+report_04_rmf duplicate_runs 4 4.0 || NIST Special Publication 800-37 ## Risk Management Framework for Information Systems and Organizations ## A System Life Cycle Approach for Security and Privacy ## JOINT TASK FORCE
+report_05_controls duplicate_runs 4 4.0 || NIST Special Publication 800-53 ## Revision 5 ## Security and Privacy Controls for Information Systems and Organizations ## JOINT TASK FORCE

@@ -1,0 +1,23 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.16, pytest-9.1.1, pluggy-1.7.0 -- /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api
+configfile: pyproject.toml
+plugins: asyncio-1.4.0, anyio-4.15.1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 12 items
+
+tests/test_quality.py::test_quality_dangling_hyphens PASSED              [  8%]
+tests/test_quality.py::test_quality_ligature_artifacts PASSED            [ 16%]
+tests/test_quality.py::test_quality_single_letter_segments_and_chapter_numbers PASSED [ 25%]
+tests/test_quality.py::test_quality_tracked_lines PASSED                 [ 33%]
+tests/test_quality.py::test_quality_leader_dots PASSED                   [ 41%]
+tests/test_quality.py::test_quality_midsentence_breaks PASSED            [ 50%]
+tests/test_quality.py::test_quality_toc_leak PASSED                      [ 58%]
+tests/test_quality.py::test_quality_punctuation_only PASSED              [ 66%]
+tests/test_quality.py::test_quality_duplicate_runs PASSED                [ 75%]
+tests/test_quality.py::test_quality_title_filename_like PASSED           [ 83%]
+tests/test_quality.py::test_quality_empty_text_document PASSED           [ 91%]
+tests/test_quality.py::test_quality_run_checks_overall PASSED            [100%]
+
+============================== 12 passed in 0.03s ==============================

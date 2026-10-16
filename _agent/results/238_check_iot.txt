@@ -1,0 +1,21 @@
+$ hearnarro check "what-is-the-internet-of-things.pdf"
+what-is-the-internet-of-things.pdf: 527 segments, title 'What Is the Internet of Things?'
+check                       count    value    thr  result  examples
+dangling_hyphens                0        0      0  PASS    
+ligature_artifacts              0        0      0  PASS    
+single_letter_segments          0        0      0  PASS    
+chapter_number_segments         0        0      -  info    
+tracked_lines                   0        0      0  PASS    
+leader_dots                     0        0      0  PASS    
+midsentence_breaks              1    0.002   0.01  PASS    “The future has a funny way of || sneaking up on you.
+toc_leak                        0        0      0  PASS    
+punctuation_only                1        1      0  FAIL    ”
+duplicate_runs                  3        3      0  FAIL    What Is the Internet of Things? | What Is the Internet of Things? | Software New Hardware
+title_filename_like             0        0      0  PASS    
+empty_text_document             0        0      0  PASS    
+OVERALL FAIL
+exit=1
+
+$ hearnarro check --json (failing checks only)
+{"name": "punctuation_only", "count": 1, "threshold": 0, "passed": false, "examples": ["”"], "value": 1.0}
+{"name": "duplicate_runs", "count": 3, "threshold": 0, "passed": false, "examples": ["What Is the Internet of Things?", "What Is the Internet of Things?", "Software New Hardware"], "value": 3.0}

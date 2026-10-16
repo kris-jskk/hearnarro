@@ -1,0 +1,27 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.16, pytest-9.1.1, pluggy-1.7.0 -- /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api
+configfile: pyproject.toml
+plugins: asyncio-1.4.0, anyio-4.15.1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 16 items
+
+tests/test_quality_fixtures.py::test_quality_fixture_count PASSED        [  6%]
+tests/test_quality_fixtures.py::test_quality_fixture[academic_01_seahelm_audio] PASSED [ 12%]
+tests/test_quality_fixtures.py::test_quality_fixture[academic_02_memduet] PASSED [ 18%]
+tests/test_quality_fixtures.py::test_quality_fixture[academic_03_pruned_reasoning] PASSED [ 25%]
+tests/test_quality_fixtures.py::test_quality_fixture[academic_04_legislative_xml] PASSED [ 31%]
+tests/test_quality_fixtures.py::test_quality_fixture[academic_05_sparse_autoencoders] PASSED [ 37%]
+tests/test_quality_fixtures.py::test_quality_fixture[tables_01_pfn_bayes] PASSED [ 43%]
+tests/test_quality_fixtures.py::test_quality_fixture[tables_02_non_gaussian_sem] PASSED [ 50%]
+tests/test_quality_fixtures.py::test_quality_fixture[tables_03_copula_subspaces] PASSED [ 56%]
+tests/test_quality_fixtures.py::test_quality_fixture[tables_04_markov_kernel] PASSED [ 62%]
+tests/test_quality_fixtures.py::test_quality_fixture[tables_05_decomposing_learner] PASSED [ 68%]
+tests/test_quality_fixtures.py::test_quality_fixture[report_01_zero_trust] PASSED [ 75%]
+tests/test_quality_fixtures.py::test_quality_fixture[report_02_patch_mgmt] PASSED [ 81%]
+tests/test_quality_fixtures.py::test_quality_fixture[report_03_ssdf] PASSED [ 87%]
+tests/test_quality_fixtures.py::test_quality_fixture[report_04_rmf] PASSED [ 93%]
+tests/test_quality_fixtures.py::test_quality_fixture[report_05_controls] PASSED [100%]
+
+============================== 16 passed in 3.55s ==============================

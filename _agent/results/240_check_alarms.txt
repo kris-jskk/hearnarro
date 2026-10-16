@@ -1,0 +1,17 @@
+$ hearnarro check "The -3-Alarms-personalithy Dev.pdf"
+The -3-Alarms-personalithy Dev.pdf: 1862 segments, title 'The 3 Alarms'
+check                       count    value    thr  result  examples
+dangling_hyphens                0        0      0  PASS    
+ligature_artifacts              0        0      0  PASS    
+single_letter_segments          0        0      0  PASS    
+chapter_number_segments         9        9      -  info    1 | 2 | 3
+tracked_lines                   0        0      0  PASS    
+leader_dots                     0        0      0  PASS    
+midsentence_breaks              1   0.0006   0.01  PASS    How do || you think this has impacted the three domains of y
+toc_leak                        0        0      0  PASS    
+punctuation_only                0        0      0  PASS    
+duplicate_runs                  0        0      0  PASS    
+title_filename_like             0        0      0  PASS    
+empty_text_document             0        0      0  PASS    
+OVERALL PASS
+exit=0
