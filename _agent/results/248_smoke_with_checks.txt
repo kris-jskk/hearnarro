@@ -1,0 +1,44 @@
+fixture                            class     status  pages parse_ms   pg/s  segs    word      mass a/e  checks  result
+----------------------------------------------------------------------------------------------------------------------
+academic_01_seahelm_audio          academic  ready       4      310   12.9   214  0.9919 0.0903/0.0839  1 fail  pass
+academic_02_memduet                academic  ready       4      370   10.8   130  0.9912 0.0244/0.0254  1 fail  pass
+academic_03_pruned_reasoning       academic  ready       4      318   12.6   138  0.9963 0.0529/0.0532      ok  pass
+academic_04_legislative_xml        academic  ready       4      227   17.6   124  0.9839 0.0127/0.0128  1 fail  pass
+academic_05_sparse_autoencoders    academic  ready       4      246   16.3   139  0.9958 0.0044/0.0044      ok  pass
+tables_01_pfn_bayes                tables    ready       4      292   13.7   169  0.9779 0.0369/0.0388  1 fail  pass
+tables_02_non_gaussian_sem         tables    ready       4      267   15.0   138  0.9877 0.0163/0.0085  1 fail  pass
+tables_03_copula_subspaces         tables    ready       4      209   19.1   158  0.9710 0.0472/0.0499      ok  pass
+tables_04_markov_kernel            tables    ready       4      203   19.7   173  0.9756 0.0569/0.0597  2 fail  pass
+tables_05_decomposing_learner      tables    ready       4      179   22.3   115  0.9989 0.0397/0.0388  1 fail  pass
+report_01_zero_trust               report    ready       4      159   25.2    57  1.0000 0.0000/0.0000      ok  pass
+report_02_patch_mgmt               report    ready       4      203   19.7    63  1.0000 0.0000/0.0000      ok  pass
+report_03_ssdf                     report    ready       4      191   20.9    57  1.0000 0.0000/0.0000      ok  pass
+report_04_rmf                      report    ready       4      181   22.1    48  1.0000 0.0000/0.0000      ok  pass
+report_05_controls                 report    ready       4      161   24.8    47  1.0000 0.0000/0.0000      ok  pass
+----------------------------------------------------------------------------------------------------------------------
+failing checks:
+  academic_01_seahelm_audio: midsentence_breaks (2): [4] J. Zhou, T. Lu, S. Mishra, S. Brahma, S. Basu, Y. Luan, D. Zhou, || and L. H | [6] A. Zou, Z. Wang, N. Carlini, M. Nasr, J. Z. Kolter, and M. Fredrik- || son, 
+  academic_02_memduet: midsentence_breaks (2): We train on the original examples and post-update || negatives using the memory- | 3.3.2 Stage II: System 2 Reinforcement Learning We freeze System 1 at ϕSFT and o
+  academic_04_legislative_xml: midsentence_breaks (2): We measure it instead as one dimension of a full || pipeline, split into localiz | We use that term for three coupled changes T3 || introduces together: decomposit
+  tables_01_pfn_bayes: midsentence_breaks (9): By learning to approximate Bayesian posterior predictive distributions (PPDs) vi | This paper studies the amortization error, || the only term controlled by pretra | Whether this holds is a question about amortization || uncertainty.
+  tables_02_non_gaussian_sem: midsentence_breaks (13): We consider a directed acyclic graph G = (V, E) with vertex set V = [d], where e | For a vertex i, we write PA || (i), CH | (i), CH || (i), AN
+  tables_04_markov_kernel: single_letter_segments (1): H
+  tables_04_markov_kernel: midsentence_breaks (6): for every bounded continuous test function || f. For general Markov chains, howe | For classical conditions ensuring almost-sure convergence of bµT as in (2), see, | H || whenever the two Bochner integrals exist; see, e.g., Smola et al. (2007); G
+  tables_05_decomposing_learner: midsentence_breaks (2): (a) Heterogeneous feature space || (b) Accuracy by region | (b) Accuracy by region || (c) High reliability instances
+fixtures: 15  passed: 15  failed: 0  skipped (class): 5
+word-level mean: 0.9914 (gate >= 0.97); per-fixture gate >= 0.95
+pages: 60  parse time: 3.5 s  throughput: 17.1 pages/s
+RESULT: PASS
+quality: 7 documents with failing checks (informational; exit code unchanged)
+
+user documents: /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/userdocs (3 PDFs)
+document                                     status  pages parse_ms   pg/s  segs  checks
+----------------------------------------------------------------------------------------
+The -3-Alarms-personalithy Dev               ready     135     2297   58.8  1862      ok
+The-Almanack-of-Naval-Ravikant               ready     242     3709   65.2  3713  1 fail
+what-is-the-internet-of-things               ready      32      781   41.0   527      ok
+----------------------------------------------------------------------------------------
+failing checks:
+  The-Almanack-of-Naval-Ravikant.pdf: dangling_hyphens (1): I started going through this little fantasy where I imagined Shane asking me a b
+quality (user documents): 1 documents with failing checks (informational)
+exit=0
