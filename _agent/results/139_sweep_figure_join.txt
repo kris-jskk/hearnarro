@@ -1,0 +1,6 @@
+## 0.0
+score=0.9527 a=47/e=41 | score=0.8571 a=13/e=26 | score=0.9464 a=25/e=32 | score=0.9407 a=3/e=3 | score=0.9398 a=4/e=5 | score=0.9643 a=0/e=0 | score=1.0000 a=0/e=0 | score=0.9643 a=0/e=0 | score=0.9574 a=0/e=0 | score=0.9565 a=0/e=0 | score=0.7761 a=34/e=69 | score=0.7851 a=8/e=21 | score=0.7638 a=22/e=66 | score=0.8286 a=62/e=78 | score=0.9890 a=24/e=28 | 0.9081
+## 3.0
+score=0.9822 a=46/e=41 | score=0.8571 a=13/e=26 | score=0.9464 a=25/e=32 | score=0.9407 a=3/e=3 | score=0.9850 a=4/e=5 | score=0.9643 a=0/e=0 | score=1.0000 a=0/e=0 | score=0.9643 a=0/e=0 | score=0.9574 a=0/e=0 | score=0.9565 a=0/e=0 | score=0.8433 a=28/e=69 | score=0.8182 a=8/e=21 | score=0.7638 a=22/e=66 | score=0.8286 a=62/e=78 | score=0.9890 a=24/e=28 | 0.9198
+## 6.0
+score=0.9822 a=46/e=41 | score=0.8571 a=13/e=26 | score=0.9464 a=25/e=32 | score=0.9407 a=3/e=3 | score=0.9850 a=4/e=5 | score=0.9643 a=0/e=0 | score=1.0000 a=0/e=0 | score=0.9643 a=0/e=0 | score=0.9574 a=0/e=0 | score=0.9565 a=0/e=0 | score=0.8433 a=28/e=69 | score=0.8264 a=8/e=21 | score=0.7638 a=22/e=66 | score=0.8286 a=62/e=78 | score=0.9890 a=24/e=28 | 0.9203
