@@ -1,0 +1,55 @@
+.......................................................Fssssssssssssssss [ 64%]
+sssss..................................                                  [100%]
+=================================== FAILURES ===================================
+__________________________ test_fixture_set_complete ___________________________
+
+    def test_fixture_set_complete() -> None:
+        assert len(ENTRIES) == 20
+        assert Counter(e["class"] for e in ENTRIES) == {c: 5 for c in CLASSES}
+        for e in ENTRIES:
+            assert (FIXTURES / f"{e['name']}.pdf").exists(), e["name"]
+>           assert _expected_path(e["name"]).exists(), e["name"]
+E           AssertionError: academic_01_seahelm_audio
+E           assert False
+E            +  where False = exists()
+E            +    where exists = PosixPath('/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/tests/fixtures/pdfs/academic_01_seahelm_audio.expected.jsonl').exists
+E            +      where PosixPath('/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/tests/fixtures/pdfs/academic_01_seahelm_audio.expected.jsonl') = _expected_path('academic_01_seahelm_audio')
+
+tests/test_ing4_reading_order_golden.py:61: AssertionError
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: academic_01_seahelm_audio.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: academic_02_memduet.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: academic_03_pruned_reasoning.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: academic_04_legislative_xml.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: academic_05_sparse_autoencoders.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: report_01_zero_trust.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: report_02_patch_mgmt.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: report_03_ssdf.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: report_04_rmf.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: report_05_controls.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: scanned_01_seahelm_audio.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: scanned_02_pruned_reasoning.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: scanned_03_zero_trust.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: scanned_04_copula_subspaces.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: scanned_05_markov_kernel.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: tables_01_pfn_bayes.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: tables_02_non_gaussian_sem.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: tables_03_copula_subspaces.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: tables_04_markov_kernel.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:69: tables_05_decomposing_learner.expected.jsonl missing
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:78: no scoreable fixtures
+1 failed, 89 passed, 21 skipped, 5 warnings in 0.08s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

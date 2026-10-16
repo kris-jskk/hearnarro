@@ -1,0 +1,95 @@
+tables_01_pfn_bayes	tables	0.6797
+Ftables_02_non_gaussian_sem	tables	0.8497
+Ftables_03_copula_subspaces	tables	0.8800
+Ftables_04_markov_kernel	tables	0.8534
+Ftables_05_decomposing_learner	tables	0.9583
+.
+=================================== FAILURES ===================================
+________________ test_reading_order_golden[tables_01_pfn_bayes] ________________
+
+name = 'tables_01_pfn_bayes'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_01_pfn_bayes (tables): 0.6797 < 0.95
+E       assert 0.6796875 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+____________ test_reading_order_golden[tables_02_non_gaussian_sem] _____________
+
+name = 'tables_02_non_gaussian_sem'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_02_non_gaussian_sem (tables): 0.8497 < 0.95
+E       assert 0.8497109826589595 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+____________ test_reading_order_golden[tables_03_copula_subspaces] _____________
+
+name = 'tables_03_copula_subspaces'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_03_copula_subspaces (tables): 0.8800 < 0.95
+E       assert 0.88 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+______________ test_reading_order_golden[tables_04_markov_kernel] ______________
+
+name = 'tables_04_markov_kernel'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: tables_04_markov_kernel (tables): 0.8534 < 0.95
+E       assert 0.8534031413612566 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_01_pfn_bayes]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_02_non_gaussian_sem]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_03_copula_subspaces]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[tables_04_markov_kernel]
+4 failed, 1 passed, 17 deselected, 5 warnings in 1.41s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

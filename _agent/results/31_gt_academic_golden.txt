@@ -1,0 +1,113 @@
+academic_01_seahelm_audio	academic	0.8018
+Facademic_02_memduet	academic	0.6813
+Facademic_03_pruned_reasoning	academic	0.9148
+Facademic_04_legislative_xml	academic	0.9008
+Facademic_05_sparse_autoencoders	academic	0.9013
+F
+=================================== FAILURES ===================================
+_____________ test_reading_order_golden[academic_01_seahelm_audio] _____________
+
+name = 'academic_01_seahelm_audio'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_01_seahelm_audio (academic): 0.8018 < 0.95
+E       assert 0.8018433179723502 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+________________ test_reading_order_golden[academic_02_memduet] ________________
+
+name = 'academic_02_memduet'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_02_memduet (academic): 0.6813 < 0.95
+E       assert 0.6813186813186813 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+___________ test_reading_order_golden[academic_03_pruned_reasoning] ____________
+
+name = 'academic_03_pruned_reasoning'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_03_pruned_reasoning (academic): 0.9148 < 0.95
+E       assert 0.9147982062780269 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+____________ test_reading_order_golden[academic_04_legislative_xml] ____________
+
+name = 'academic_04_legislative_xml'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_04_legislative_xml (academic): 0.9008 < 0.95
+E       assert 0.9008264462809917 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+__________ test_reading_order_golden[academic_05_sparse_autoencoders] __________
+
+name = 'academic_05_sparse_autoencoders'
+
+    @pytest.mark.parametrize("name", sorted(BY_NAME))
+    def test_reading_order_golden(name: str) -> None:
+        entry = BY_NAME[name]
+        reason = _skip_reason(entry)
+        if reason:
+            pytest.skip(reason)
+        score = _score(name)
+        print(f"{name}\t{entry['class']}\t{score:.4f}")
+>       assert score >= PER_PDF_MIN, f"{name} ({entry['class']}): {score:.4f} < {PER_PDF_MIN}"
+E       AssertionError: academic_05_sparse_autoencoders (academic): 0.9013 < 0.95
+E       assert 0.9013157894736842 >= 0.95
+
+tests/test_ing4_reading_order_golden.py:72: AssertionError
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_01_seahelm_audio]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_02_memduet]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_03_pruned_reasoning]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_04_legislative_xml]
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_golden[academic_05_sparse_autoencoders]
+5 failed, 17 deselected, 5 warnings in 1.48s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

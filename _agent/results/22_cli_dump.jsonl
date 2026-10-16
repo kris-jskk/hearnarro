@@ -1,0 +1,5 @@
+{"order": 0, "page": 0, "type": "heading", "text": "Introduction"}
+{"order": 1, "page": 0, "type": "body", "text": "Reading aloud helps people absorb long documents."}
+{"order": 2, "page": 0, "type": "body", "text": "The PDF format makes this hard because text order is not stored."}
+{"order": 3, "page": 0, "type": "body", "text": "Our method reads the page layout and recovers the order in which a person would read the text, including across page breaks."}
+{"order": 4, "page": 0, "type": "body", "text": "It costs 3.2% more time [4]."}

@@ -1,0 +1,56 @@
+== Table A current ==
+fixture	score
+academic_01_seahelm_audio	0.9493
+academic_02_memduet	0.7619
+academic_03_pruned_reasoning	0.8969
+academic_04_legislative_xml	0.9421
+academic_05_sparse_autoencoders	0.9671
+tables_01_pfn_bayes	0.9258
+tables_02_non_gaussian_sem	0.9133
+tables_03_copula_subspaces	0.8267
+tables_04_markov_kernel	0.9581
+tables_05_decomposing_learner	1.0000
+report_01_zero_trust	1.0000
+report_02_patch_mgmt	1.0000
+report_03_ssdf	1.0000
+report_04_rmf	1.0000
+report_05_controls	1.0000
+SUMMARY A current: mean 0.9427; pass>=0.95 8/15; mean>=0.97 False
+
+== Table B figure-internal removed ==
+fixture	score	fig_rm_actual	fig_rm_expected	list_size
+academic_01_seahelm_audio	0.9493	0	0	0
+academic_02_memduet	0.8652	132	132	132
+academic_03_pruned_reasoning	0.9653	79	79	79
+academic_04_legislative_xml	0.9421	0	0	0
+academic_05_sparse_autoencoders	0.9793	7	7	7
+tables_01_pfn_bayes	0.9181	24	24	24
+tables_02_non_gaussian_sem	0.9877	11	11	11
+tables_03_copula_subspaces	0.8267	0	0	0
+tables_04_markov_kernel	0.9581	0	0	0
+tables_05_decomposing_learner	1.0000	0	0	0
+report_01_zero_trust	1.0000	2	2	2
+report_02_patch_mgmt	1.0000	2	2	2
+report_03_ssdf	1.0000	2	2	2
+report_04_rmf	1.0000	13	13	13
+report_05_controls	1.0000	8	8	8
+SUMMARY B figure-internal removed: mean 0.9595; pass>=0.95 10/15; mean>=0.97 False
+
+== Table C B + table/equation lines removed ==
+fixture	score	tbl_eq_rm_actual	tbl_eq_rm_expected
+academic_01_seahelm_audio	0.9493	0	0
+academic_02_memduet	0.8750	13	13
+academic_03_pruned_reasoning	0.9712	8	5
+academic_04_legislative_xml	0.9421	0	0
+academic_05_sparse_autoencoders	0.9929	5	5
+tables_01_pfn_bayes	0.9058	42	41
+tables_02_non_gaussian_sem	0.9864	15	15
+tables_03_copula_subspaces	0.8563	57	51
+tables_04_markov_kernel	0.9424	55	52
+tables_05_decomposing_learner	1.0000	14	14
+report_01_zero_trust	1.0000	0	0
+report_02_patch_mgmt	1.0000	0	0
+report_03_ssdf	1.0000	0	0
+report_04_rmf	1.0000	0	0
+report_05_controls	1.0000	0	0
+SUMMARY C B + table/equation lines removed: mean 0.9614; pass>=0.95 9/15; mean>=0.97 False

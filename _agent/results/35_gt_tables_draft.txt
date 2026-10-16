@@ -1,0 +1,6 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+tables_01_pfn_bayes	draft_segments=269	pages=4
+tables_02_non_gaussian_sem	draft_segments=179	pages=4
+tables_03_copula_subspaces	draft_segments=245	pages=4
+tables_04_markov_kernel	draft_segments=208	pages=4
+tables_05_decomposing_learner	draft_segments=123	pages=4

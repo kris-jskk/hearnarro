@@ -1,0 +1,105 @@
+tests/test_golden_util.py::test_seq_levenshtein_identical_is_zero
+tests/test_golden_util.py::test_seq_levenshtein_swap_costs_two
+tests/test_golden_util.py::test_seq_levenshtein_insert_delete_substitute
+tests/test_golden_util.py::test_norm_collapses_whitespace
+tests/test_ing1_extract.py::test_ing2_page_from_dict_builds_blocks_lines_spans
+tests/test_ing1_extract.py::test_ing2_page_from_dict_span_flags_and_font_names
+tests/test_ing1_extract.py::test_ing2_page_from_dict_image_blocks_become_image_bboxes
+tests/test_ing1_extract.py::test_ing2_ocr_available_returns_bool
+tests/test_ing1_extract.py::test_ing2_extract_pages_text_layer
+tests/test_ing1_extract.py::test_ing2_extract_pages_blank_page_without_ocr
+tests/test_ing2_classify.py::test_ing3_normalize_key_keeps_digits
+tests/test_ing2_classify.py::test_ing3_body_median_size_is_document_wide_and_char_weighted
+tests/test_ing2_classify.py::test_ing3_repeated_band_texts_needs_three_pages
+tests/test_ing2_classify.py::test_ing3_header_rule_wins_over_heading_size
+tests/test_ing2_classify.py::test_ing3_page_number_regex_matches[3]
+tests/test_ing2_classify.py::test_ing3_page_number_regex_matches[Page 12]
+tests/test_ing2_classify.py::test_ing3_page_number_regex_matches[page 4]
+tests/test_ing2_classify.py::test_ing3_page_number_regex_matches[7 of 20]
+tests/test_ing2_classify.py::test_ing3_page_number_regex_matches[ 12 ]
+tests/test_ing2_classify.py::test_ing3_page_number_regex_rejects[Chapter 3]
+tests/test_ing2_classify.py::test_ing3_page_number_regex_rejects[3 apples]
+tests/test_ing2_classify.py::test_ing3_page_number_regex_rejects[Figure 2]
+tests/test_ing2_classify.py::test_ing3_page_number_regex_rejects[2024 was a year]
+tests/test_ing2_classify.py::test_ing3_page_numbers_in_band_are_header_footer_but_not_outside
+tests/test_ing2_classify.py::test_ing3_heading_by_font_size
+tests/test_ing2_classify.py::test_ing3_heading_by_bold_short_no_period
+tests/test_ing2_classify.py::test_ing3_caption_needs_nearby_image
+tests/test_ing2_classify.py::test_ing3_footnote_by_small_size_low_on_page
+tests/test_ing2_classify.py::test_ing3_footnote_by_leading_superscript_digit
+tests/test_ing2_classify.py::test_ing3_table_by_table_bbox_overlap
+tests/test_ing2_classify.py::test_ing3_equation_by_math_font_or_symbols
+tests/test_ing2_classify.py::test_ing3_list_items
+tests/test_ing2_classify.py::test_ing3_plain_text_is_body
+tests/test_ing3_order.py::test_ing4_read_types
+tests/test_ing3_order.py::test_ing4_detect_columns_two_clusters
+tests/test_ing3_order.py::test_ing4_detect_columns_one_cluster
+tests/test_ing3_order.py::test_ing4_detect_columns_small_gap_is_one_column
+tests/test_ing3_order.py::test_ing4_detect_columns_ignores_full_width_blocks
+tests/test_ing3_order.py::test_ing4_order_page_two_columns_drops_furniture_footnote_last
+tests/test_ing3_order.py::test_ing4_order_page_single_column_sorted_by_top
+tests/test_ing3_order.py::test_ing4_full_width_block_is_column_break
+tests/test_ing3_order.py::test_ing4_order_document_concatenates_pages
+tests/test_ing4_merge.py::test_ing5_merge_lines[lines0-The quick brown fox jumps]
+tests/test_ing4_merge.py::test_ing5_merge_lines[lines1-an example of this]
+tests/test_ing4_merge.py::test_ing5_merge_lines[lines2-a well- Known result]
+tests/test_ing4_merge.py::test_ing5_merge_lines[lines3-re-]
+tests/test_ing4_merge.py::test_ing5_merge_lines[lines4-spaced out line]
+tests/test_ing4_merge.py::test_ing5_merge_lines[lines5-single]
+tests/test_ing4_merge.py::test_ing5_merge_lines[lines6-]
+tests/test_ing4_merge.py::test_ing5_merge_blocks_one_per_block_with_merged_lines
+tests/test_ing4_merge.py::test_ing5_merge_blocks_joins_sentence_across_page_break_past_footer
+tests/test_ing4_merge.py::test_ing5_merge_blocks_dehyphenates_across_page_break
+tests/test_ing4_merge.py::test_ing5_merge_blocks_lowercase_continuation_joins_even_after_period
+tests/test_ing4_merge.py::test_ing5_merge_blocks_keeps_separate_paragraphs_across_page_break
+tests/test_ing4_merge.py::test_ing5_merge_blocks_does_not_join_non_body
+tests/test_ing5_segment.py::test_ing5_split_sentences_three_sentences_with_abbreviations
+tests/test_ing5_segment.py::test_ing5_split_sentences_offsets_round_trip
+tests/test_ing5_segment.py::test_ing5_split_sentences_offsets_round_trip_with_messy_whitespace
+tests/test_ing5_segment.py::test_ing5_split_sentences_ids_orders_and_fields
+tests/test_ing5_segment.py::test_ing5_split_sentences_empty_block
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[The cat sat on the mat.]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[As shown in [12], the effect is real.]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Prior work [3, 4] and [12\u201314] disagrees.]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Smith et al. found 3.2% growth.]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[See https://arxiv.org/abs/1706.03762 for details.]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Visit www.example.com/page today.]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Export the PDF and send it to NASA.]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[An HTML page, a CSV file, and the GPU.]
+tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Rates rose 12% then 0.5% [7] in the EU.]
+tests/test_ing6_normalize.py::test_ing6_identity_on_plain_prose[The cat sat on the mat.]
+tests/test_ing6_normalize.py::test_ing6_identity_on_plain_prose[It rained, and then it stopped; nobody minded.]
+tests/test_ing6_normalize.py::test_ing6_citation_dropped_and_space_collapsed
+tests/test_ing6_normalize.py::test_ing6_citation_list_and_range_dropped
+tests/test_ing6_normalize.py::test_ing6_consecutive_drops_collapse_to_one_space
+tests/test_ing6_normalize.py::test_ing6_et_al
+tests/test_ing6_normalize.py::test_ing6_percent
+tests/test_ing6_normalize.py::test_ing6_url_to_domain
+tests/test_ing6_normalize.py::test_ing6_www_url_keeps_host_only
+tests/test_ing6_normalize.py::test_ing6_all_caps_spelled_out
+tests/test_ing6_normalize.py::test_ing6_spoken_acronym_unchanged
+tests/test_ing_models.py::test_ing3_bbox_dimensions
+tests/test_ing_models.py::test_ing3_bbox_overlaps[other0-True]
+tests/test_ing_models.py::test_ing3_bbox_overlaps[other1-True]
+tests/test_ing_models.py::test_ing3_bbox_overlaps[other2-False]
+tests/test_ing_models.py::test_ing3_bbox_overlaps[other3-False]
+tests/test_ing_models.py::test_ing3_bbox_overlaps[other4-False]
+tests/test_ing_models.py::test_ing3_line_text_joins_spans
+tests/test_ing_models.py::test_ing3_block_text_is_raw_newline_joined
+
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+89 tests collected in 0.06s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

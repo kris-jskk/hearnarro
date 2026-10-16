@@ -1,0 +1,1579 @@
+....FFFFFFFFFF.........FFFFFFFFFF.FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 80%]
+FFFFFFFFF........                                                        [100%]
+=================================== FAILURES ===================================
+______________ test_ing2_page_from_dict_builds_blocks_lines_spans ______________
+
+    def test_ing2_page_from_dict_builds_blocks_lines_spans() -> None:
+>       page = page_from_dict(4, 612.0, 792.0, TEXT_DICT)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing1_extract.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+number = 4, width = 612.0, height = 792.0
+text_dict = {'width': 612.0, 'height': 792.0, 'blocks': [{'number': 0, 'type': 0, 'bbox': (72.0, 72.0, 300.0, 100.0), 'lines': [{'...box': (72.0, 120.0, 540.0, 132.0), 'spans': [{...}]}]}, {'number': 2, 'type': 1, 'bbox': (72.0, 200.0, 300.0, 400.0)}]}
+image_bboxes = (), table_bboxes = ()
+
+    def page_from_dict(
+        number: int,
+        width: float,
+        height: float,
+        text_dict: dict[str, Any],
+        image_bboxes: Sequence[BBox] = (),
+        table_bboxes: Sequence[BBox] = (),
+    ) -> Page:
+        """Build a Page from a PyMuPDF ``page.get_text("dict")`` payload (pure)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/extract.py:30: NotImplementedError
+______________ test_ing2_page_from_dict_span_flags_and_font_names ______________
+
+    def test_ing2_page_from_dict_span_flags_and_font_names() -> None:
+>       page = page_from_dict(0, 612.0, 792.0, TEXT_DICT)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing1_extract.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+number = 0, width = 612.0, height = 792.0
+text_dict = {'width': 612.0, 'height': 792.0, 'blocks': [{'number': 0, 'type': 0, 'bbox': (72.0, 72.0, 300.0, 100.0), 'lines': [{'...box': (72.0, 120.0, 540.0, 132.0), 'spans': [{...}]}]}, {'number': 2, 'type': 1, 'bbox': (72.0, 200.0, 300.0, 400.0)}]}
+image_bboxes = (), table_bboxes = ()
+
+    def page_from_dict(
+        number: int,
+        width: float,
+        height: float,
+        text_dict: dict[str, Any],
+        image_bboxes: Sequence[BBox] = (),
+        table_bboxes: Sequence[BBox] = (),
+    ) -> Page:
+        """Build a Page from a PyMuPDF ``page.get_text("dict")`` payload (pure)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/extract.py:30: NotImplementedError
+__________ test_ing2_page_from_dict_image_blocks_become_image_bboxes ___________
+
+    def test_ing2_page_from_dict_image_blocks_become_image_bboxes() -> None:
+        table = BBox(0, 0, 10, 10)
+>       page = page_from_dict(0, 612.0, 792.0, TEXT_DICT, table_bboxes=[table])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing1_extract.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+number = 0, width = 612.0, height = 792.0
+text_dict = {'width': 612.0, 'height': 792.0, 'blocks': [{'number': 0, 'type': 0, 'bbox': (72.0, 72.0, 300.0, 100.0), 'lines': [{'...box': (72.0, 120.0, 540.0, 132.0), 'spans': [{...}]}]}, {'number': 2, 'type': 1, 'bbox': (72.0, 200.0, 300.0, 400.0)}]}
+image_bboxes = (), table_bboxes = [BBox(x0=0, y0=0, x1=10, y1=10)]
+
+    def page_from_dict(
+        number: int,
+        width: float,
+        height: float,
+        text_dict: dict[str, Any],
+        image_bboxes: Sequence[BBox] = (),
+        table_bboxes: Sequence[BBox] = (),
+    ) -> Page:
+        """Build a Page from a PyMuPDF ``page.get_text("dict")`` payload (pure)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/extract.py:30: NotImplementedError
+_____________________ test_ing2_ocr_available_returns_bool _____________________
+
+    def test_ing2_ocr_available_returns_bool() -> None:
+>       assert isinstance(ocr_available(), bool)
+                          ^^^^^^^^^^^^^^^
+
+tests/test_ing1_extract.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def ocr_available() -> bool:
+        """True when pytesseract is importable AND the tesseract binary is on PATH."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/extract.py:18: NotImplementedError
+______________________ test_ing2_extract_pages_text_layer ______________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-1/test_ing2_extract_pages_text_l0')
+
+    def test_ing2_extract_pages_text_layer(tmp_path: Path) -> None:
+        pdf = tmp_path / "hello.pdf"
+        doc = pymupdf.open()
+        page = doc.new_page()
+        page.insert_text((72, 72), "Hello world. " * 5)
+        doc.save(pdf)
+        doc.close()
+    
+>       pages = extract_pages(pdf, ocr=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing1_extract.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pdf_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-1/test_ing2_extract_pages_text_l0/hello.pdf')
+ocr = False, min_text_chars = 20
+
+    def extract_pages(
+        pdf_path: str | Path, *, ocr: bool = True, min_text_chars: int = 20
+    ) -> list[Page]:
+        """Extract every page of ``pdf_path``; OCR pages with fewer than ``min_text_chars``."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/extract.py:37: NotImplementedError
+________________ test_ing2_extract_pages_blank_page_without_ocr ________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-1/test_ing2_extract_pages_blank_0')
+
+    def test_ing2_extract_pages_blank_page_without_ocr(tmp_path: Path) -> None:
+        pdf = tmp_path / "blank.pdf"
+        doc = pymupdf.open()
+        doc.new_page()
+        doc.save(pdf)
+        doc.close()
+    
+>       pages = extract_pages(str(pdf), ocr=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing1_extract.py:122: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pdf_path = '/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-1/test_ing2_extract_pages_blank_0/blank.pdf'
+ocr = False, min_text_chars = 20
+
+    def extract_pages(
+        pdf_path: str | Path, *, ocr: bool = True, min_text_chars: int = 20
+    ) -> list[Page]:
+        """Extract every page of ``pdf_path``; OCR pages with fewer than ``min_text_chars``."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/extract.py:37: NotImplementedError
+_____________________ test_ing3_normalize_key_keeps_digits _____________________
+
+    def test_ing3_normalize_key_keeps_digits() -> None:
+>       assert normalize_key("  Journal  of\nThings 3 ") == "journal of things 3"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing2_classify.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = '  Journal  of\nThings 3 '
+
+    def normalize_key(text: str) -> str:
+        """Lowercase, collapse whitespace, strip. Digits are kept."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:14: NotImplementedError
+________ test_ing3_body_median_size_is_document_wide_and_char_weighted _________
+
+    def test_ing3_body_median_size_is_document_wide_and_char_weighted() -> None:
+        p0 = make_page(0, [make_block(0, 0, [[make_span("x" * 100, 72, 400, 540, 412, size=10.0)]])])
+        p1 = make_page(
+            1,
+            [
+                make_block(1, 0, [[make_span("y" * 10, 72, 100, 200, 124, size=20.0)]]),
+                make_block(1, 1, [[make_span("z" * 10, 72, 200, 200, 224, size=20.0)]]),
+            ],
+        )
+        # Unweighted median of [10, 20, 20] is 20, page-1 median is 20; weighted by chars it is 10.
+>       assert body_median_size([p0, p1]) == pytest.approx(10.0)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing2_classify.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72, y0=400, x1=540, y1=412), li...Box(x0=72, y0=200, x1=200, y1=224))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def body_median_size(pages: list[Page]) -> float:
+        """Median span size across the document, each span weighted by len(text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:19: NotImplementedError
+_______________ test_ing3_repeated_band_texts_needs_three_pages ________________
+
+    def test_ing3_repeated_band_texts_needs_three_pages() -> None:
+>       assert repeated_band_texts(_five_page_doc()) == {normalize_key("Journal of Things")}
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing2_classify.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=30.0, x1=540.0, y1=42....2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+band_frac = 0.08, min_pages = 3
+
+    def repeated_band_texts(
+        pages: list[Page], *, band_frac: float = 0.08, min_pages: int = 3
+    ) -> set[str]:
+        """normalize_key of top/bottom-band blocks that recur on >= min_pages distinct pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:26: NotImplementedError
+_________________ test_ing3_header_rule_wins_over_heading_size _________________
+
+    def test_ing3_header_rule_wins_over_heading_size() -> None:
+>       pages = classify_pages(_five_page_doc(header_size=16.0))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing2_classify.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=30.0, x1=540.0, y1=49....2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+_______ test_ing3_page_numbers_in_band_are_header_footer_but_not_outside _______
+
+    def test_ing3_page_numbers_in_band_are_header_footer_but_not_outside() -> None:
+>       pages = classify_pages(
+            _doc(
+                make_block(0, 0, ["Page 12"], y0=20),
+                make_block(0, 1, ["7 of 20"], y0=760),
+                make_block(0, 2, ["3"], y0=750, x0=300, width=12),
+                make_block(0, 3, ["2024"], y0=300),
+            )
+        )
+
+tests/test_ing2_classify.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=20.0, x1=540.0, y1=32....2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+________________________ test_ing3_heading_by_font_size ________________________
+
+    def test_ing3_heading_by_font_size() -> None:
+>       pages = classify_pages(
+            _doc(
+                make_block(0, 0, ["Results and discussion of the experiment."], y0=100, size=12.0),
+                make_block(0, 1, ["A sentence in slightly larger type."], y0=150, size=11.0),
+            )
+        )
+
+tests/test_ing2_classify.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=11...2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+__________________ test_ing3_heading_by_bold_short_no_period ___________________
+
+    def test_ing3_heading_by_bold_short_no_period() -> None:
+        long_bold = "This bold line has far more than twelve words in it so it is not a heading"
+>       pages = classify_pages(
+            _doc(
+                make_block(0, 0, ["Related Work"], y0=100, bold=True),
+                make_block(0, 1, ["This is bold."], y0=150, bold=True),
+                make_block(0, 2, [long_bold], y0=200, bold=True),
+            )
+        )
+
+tests/test_ing2_classify.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=11...2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+_____________________ test_ing3_caption_needs_nearby_image _____________________
+
+    def test_ing3_caption_needs_nearby_image() -> None:
+        image = BBox(72, 100, 300, 300)
+>       pages = classify_pages(
+            _doc(
+                make_block(0, 0, ["Figure 1: Growth over time."], y0=310, width=228),
+                make_block(0, 1, ["Figure 1: Growth over time."], y0=700, x0=320, width=200),
+                image_bboxes=[image],
+            )
+        )
+
+tests/test_ing2_classify.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=310.0, x1=300.0, y1=32...], type='body', ocr=False)], image_bboxes=[BBox(x0=72, y0=100, x1=300, y1=300)], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+_________________ test_ing3_footnote_by_small_size_low_on_page _________________
+
+    def test_ing3_footnote_by_small_size_low_on_page() -> None:
+>       pages = classify_pages(
+            _doc(
+                make_block(0, 0, ["See the appendix for the full derivation."], y0=650, size=8.0),
+                make_block(0, 1, ["See the appendix for the full derivation."], y0=300, size=8.0),
+            )
+        )
+
+tests/test_ing2_classify.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=650.0, x1=540.0, y1=65...2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+_______________ test_ing3_footnote_by_leading_superscript_digit ________________
+
+    def test_ing3_footnote_by_leading_superscript_digit() -> None:
+        spans = [
+            make_span("2", 72, 300, 77, 306, size=6.0, superscript=True),
+            make_span("Further details are given elsewhere.", 78, 300, 400, 312),
+        ]
+>       pages = classify_pages(_doc(make_block(0, 0, [spans])))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing2_classify.py:156: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72, y0=300, x1=400, y1=312), li...2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+____________________ test_ing3_table_by_table_bbox_overlap _____________________
+
+    def test_ing3_table_by_table_bbox_overlap() -> None:
+>       pages = classify_pages(
+            _doc(
+                make_block(0, 0, ["Alpha 12 Beta 13 Gamma 14"], y0=310),
+                make_block(0, 1, ["Alpha 12 Beta 13 Gamma 14"], y0=200),
+                table_bboxes=[BBox(72, 300, 540, 400)],
+            )
+        )
+
+tests/test_ing2_classify.py:161: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=310.0, x1=540.0, y1=32...], type='body', ocr=False)], image_bboxes=[], table_bboxes=[BBox(x0=72, y0=300, x1=540, y1=400)], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+__________________ test_ing3_equation_by_math_font_or_symbols __________________
+
+    def test_ing3_equation_by_math_font_or_symbols() -> None:
+>       pages = classify_pages(
+            _doc(
+                make_block(0, 0, ["x + y = z"], y0=100, font="CMMI10"),
+                make_block(0, 1, ["∑α≤β∫∂"], y0=150),
+            )
+        )
+
+tests/test_ing2_classify.py:173: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=11...2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+_____________________________ test_ing3_list_items _____________________________
+
+    def test_ing3_list_items() -> None:
+>       pages = classify_pages(
+            _doc(
+                make_block(0, 0, ["1. First item in the list."], y0=100),
+                make_block(0, 1, ["• Bullet item text here."], y0=150),
+                make_block(0, 2, ["2) Second numbered item."], y0=200),
+            )
+        )
+
+tests/test_ing2_classify.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=11...2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+_________________________ test_ing3_plain_text_is_body _________________________
+
+    def test_ing3_plain_text_is_body() -> None:
+>       pages = classify_pages(_doc())
+                ^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing2_classify.py:195: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=72.0, y0=420.0, x1=540.0, y1=45...2.0, y0=564.0, x1=540.0, y1=576.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def classify_pages(pages: list[Page]) -> list[Page]:
+        """Set block.type in place (first matching rule wins) and return pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/classify.py:31: NotImplementedError
+____________________ test_ing4_detect_columns_two_clusters _____________________
+
+    def test_ing4_detect_columns_two_clusters() -> None:
+        blocks = [col1(0, 100), col1(1, 200), col2(2, 100), col2(3, 200)]
+>       n, split = detect_columns(blocks, 612)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing3_order.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=50, y0=100.0, x1=290, y1=112.0), lines=[Line(spans=[Span(text='c1-0', bbox=BBox(x...old=False, italic=False, superscript=False)], bbox=BBox(x0=322, y0=200.0, x1=562, y1=212.0))], type='body', ocr=False)]
+page_width = 612, gap_frac = 0.08, full_width_frac = 0.6
+
+    def detect_columns(
+        blocks: list[Block],
+        page_width: float,
+        *,
+        gap_frac: float = 0.08,
+        full_width_frac: float = 0.60,
+    ) -> tuple[int, float | None]:
+        """Return (n_columns, split_x); split_x is None for one column."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/order.py:18: NotImplementedError
+_____________________ test_ing4_detect_columns_one_cluster _____________________
+
+    def test_ing4_detect_columns_one_cluster() -> None:
+        blocks = [col1(0, 100), col1(1, 200), col1(2, 300)]
+>       assert detect_columns(blocks, 612) == (1, None)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing3_order.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=50, y0=100.0, x1=290, y1=112.0), lines=[Line(spans=[Span(text='c1-0', bbox=BBox(x...bold=False, italic=False, superscript=False)], bbox=BBox(x0=50, y0=300.0, x1=290, y1=312.0))], type='body', ocr=False)]
+page_width = 612, gap_frac = 0.08, full_width_frac = 0.6
+
+    def detect_columns(
+        blocks: list[Block],
+        page_width: float,
+        *,
+        gap_frac: float = 0.08,
+        full_width_frac: float = 0.60,
+    ) -> tuple[int, float | None]:
+        """Return (n_columns, split_x); split_x is None for one column."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/order.py:18: NotImplementedError
+_______________ test_ing4_detect_columns_small_gap_is_one_column _______________
+
+    def test_ing4_detect_columns_small_gap_is_one_column() -> None:
+        near = make_block(0, 1, ["x"], x0=80, width=240, y0=200)  # x_mid 200: gap 30 < 0.08*612
+>       assert detect_columns([col1(0, 100), near], 612) == (1, None)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing3_order.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=50, y0=100.0, x1=290, y1=112.0), lines=[Line(spans=[Span(text='c1-0', bbox=BBox(x...bold=False, italic=False, superscript=False)], bbox=BBox(x0=80, y0=200.0, x1=320, y1=212.0))], type='body', ocr=False)]
+page_width = 612, gap_frac = 0.08, full_width_frac = 0.6
+
+    def detect_columns(
+        blocks: list[Block],
+        page_width: float,
+        *,
+        gap_frac: float = 0.08,
+        full_width_frac: float = 0.60,
+    ) -> tuple[int, float | None]:
+        """Return (n_columns, split_x); split_x is None for one column."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/order.py:18: NotImplementedError
+______________ test_ing4_detect_columns_ignores_full_width_blocks ______________
+
+    def test_ing4_detect_columns_ignores_full_width_blocks() -> None:
+        # A wide block's x_mid (306) would form a second cluster with col1 (170) if counted.
+        blocks = [col1(0, 100), col1(1, 200), full(2, 300, type="body")]
+>       assert detect_columns(blocks, 612) == (1, None)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing3_order.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=50, y0=100.0, x1=290, y1=112.0), lines=[Line(spans=[Span(text='c1-0', bbox=BBox(x...bold=False, italic=False, superscript=False)], bbox=BBox(x0=50, y0=300.0, x1=562, y1=312.0))], type='body', ocr=False)]
+page_width = 612, gap_frac = 0.08, full_width_frac = 0.6
+
+    def detect_columns(
+        blocks: list[Block],
+        page_width: float,
+        *,
+        gap_frac: float = 0.08,
+        full_width_frac: float = 0.60,
+    ) -> tuple[int, float | None]:
+        """Return (n_columns, split_x); split_x is None for one column."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/order.py:18: NotImplementedError
+________ test_ing4_order_page_two_columns_drops_furniture_footnote_last ________
+
+    def test_ing4_order_page_two_columns_drops_furniture_footnote_last() -> None:
+        blocks = [
+            make_block(0, 0, ["Running head"], x0=50, width=512, y0=20, type="header"),
+            col2(1, 300),
+            col1(2, 300),
+            col2(3, 100),
+            col1(4, 100),
+            make_block(0, 5, ["1 A footnote."], x0=50, width=240, y0=700, type="footnote"),
+            col1(6, 200),
+            col2(7, 200, type="caption"),
+            make_block(0, 8, [""], x0=322, width=240, y0=500, type="image"),
+            make_block(0, 9, ["12"], x0=300, width=12, y0=760, type="footer"),
+        ]
+>       ordered = order_page(make_page(0, blocks))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing3_order.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+page = Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=50, y0=20.0, x1=562, y1=32.0), l...=300, y0=760.0, x1=312, y1=772.0))], type='footer', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)
+gap_frac = 0.08, full_width_frac = 0.6
+
+    def order_page(page: Page, *, gap_frac: float = 0.08, full_width_frac: float = 0.60) -> list[Block]:
+        """Readable blocks of one page in reading order, footnotes last."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/order.py:23: NotImplementedError
+_______________ test_ing4_order_page_single_column_sorted_by_top _______________
+
+    def test_ing4_order_page_single_column_sorted_by_top() -> None:
+        blocks = [full(0, 300, type="body"), full(1, 100, type="body"), full(2, 200, type="list")]
+>       assert _indices(order_page(make_page(0, blocks))) == [1, 2, 0]
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing3_order.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+page = Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=50, y0=300.0, x1=562, y1=312.0),...(x0=50, y0=200.0, x1=562, y1=212.0))], type='list', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)
+gap_frac = 0.08, full_width_frac = 0.6
+
+    def order_page(page: Page, *, gap_frac: float = 0.08, full_width_frac: float = 0.60) -> list[Block]:
+        """Readable blocks of one page in reading order, footnotes last."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/order.py:23: NotImplementedError
+__________________ test_ing4_full_width_block_is_column_break __________________
+
+    def test_ing4_full_width_block_is_column_break() -> None:
+        blocks = [
+            col1(0, 100),  # col1-above
+            col2(1, 100),  # col2-above
+            full(2, 300),  # full-width heading
+            col1(3, 400),  # col1-below
+            col2(4, 400),  # col2-below
+            col1(5, 500),
+            col2(6, 500),
+        ]
+>       ordered = order_page(make_page(0, list(reversed(blocks))))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing3_order.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+page = Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=6, bbox=BBox(x0=322, y0=500.0, x1=562, y1=512.0)...(x0=50, y0=100.0, x1=290, y1=112.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)
+gap_frac = 0.08, full_width_frac = 0.6
+
+    def order_page(page: Page, *, gap_frac: float = 0.08, full_width_frac: float = 0.60) -> list[Block]:
+        """Readable blocks of one page in reading order, footnotes last."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/order.py:23: NotImplementedError
+_________________ test_ing4_order_document_concatenates_pages __________________
+
+    def test_ing4_order_document_concatenates_pages() -> None:
+        p0 = make_page(0, [full(0, 200, type="body", page=0), full(1, 100, type="body", page=0)])
+        p1 = make_page(1, [full(0, 100, type="body", page=1)])
+>       ordered = order_document([p0, p1])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing3_order.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pages = [Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=50, y0=200.0, x1=562, y1=212.0)...x0=50, y0=100.0, x1=562, y1=112.0))], type='body', ocr=False)], image_bboxes=[], table_bboxes=[], has_text_layer=True)]
+
+    def order_document(pages: list[Page]) -> list[Block]:
+        """Concatenation of order_page over pages."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/order.py:28: NotImplementedError
+___________ test_ing5_merge_lines[lines0-The quick brown fox jumps] ____________
+
+lines = ['The quick brown', 'fox jumps'], expected = 'The quick brown fox jumps'
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["The quick brown", "fox jumps"], "The quick brown fox jumps"),
+            (["an exam-", "ple of this"], "an example of this"),
+            (["a well-", "Known result"], "a well- Known result"),
+            (["re-", ""], "re-"),
+            (["  spaced   out ", "\tline  "], "spaced out line"),
+            (["single"], "single"),
+            ([], ""),
+        ],
+    )
+    def test_ing5_merge_lines(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+               ^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lines = ['The quick brown', 'fox jumps']
+
+    def merge_lines(lines: list[str]) -> str:
+        """Join lines with spaces, de-hyphenating before a lowercase continuation."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:10: NotImplementedError
+_______________ test_ing5_merge_lines[lines1-an example of this] _______________
+
+lines = ['an exam-', 'ple of this'], expected = 'an example of this'
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["The quick brown", "fox jumps"], "The quick brown fox jumps"),
+            (["an exam-", "ple of this"], "an example of this"),
+            (["a well-", "Known result"], "a well- Known result"),
+            (["re-", ""], "re-"),
+            (["  spaced   out ", "\tline  "], "spaced out line"),
+            (["single"], "single"),
+            ([], ""),
+        ],
+    )
+    def test_ing5_merge_lines(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+               ^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lines = ['an exam-', 'ple of this']
+
+    def merge_lines(lines: list[str]) -> str:
+        """Join lines with spaces, de-hyphenating before a lowercase continuation."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:10: NotImplementedError
+______________ test_ing5_merge_lines[lines2-a well- Known result] ______________
+
+lines = ['a well-', 'Known result'], expected = 'a well- Known result'
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["The quick brown", "fox jumps"], "The quick brown fox jumps"),
+            (["an exam-", "ple of this"], "an example of this"),
+            (["a well-", "Known result"], "a well- Known result"),
+            (["re-", ""], "re-"),
+            (["  spaced   out ", "\tline  "], "spaced out line"),
+            (["single"], "single"),
+            ([], ""),
+        ],
+    )
+    def test_ing5_merge_lines(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+               ^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lines = ['a well-', 'Known result']
+
+    def merge_lines(lines: list[str]) -> str:
+        """Join lines with spaces, de-hyphenating before a lowercase continuation."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:10: NotImplementedError
+______________________ test_ing5_merge_lines[lines3-re-] _______________________
+
+lines = ['re-', ''], expected = 're-'
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["The quick brown", "fox jumps"], "The quick brown fox jumps"),
+            (["an exam-", "ple of this"], "an example of this"),
+            (["a well-", "Known result"], "a well- Known result"),
+            (["re-", ""], "re-"),
+            (["  spaced   out ", "\tline  "], "spaced out line"),
+            (["single"], "single"),
+            ([], ""),
+        ],
+    )
+    def test_ing5_merge_lines(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+               ^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lines = ['re-', '']
+
+    def merge_lines(lines: list[str]) -> str:
+        """Join lines with spaces, de-hyphenating before a lowercase continuation."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:10: NotImplementedError
+________________ test_ing5_merge_lines[lines4-spaced out line] _________________
+
+lines = ['  spaced   out ', '\tline  '], expected = 'spaced out line'
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["The quick brown", "fox jumps"], "The quick brown fox jumps"),
+            (["an exam-", "ple of this"], "an example of this"),
+            (["a well-", "Known result"], "a well- Known result"),
+            (["re-", ""], "re-"),
+            (["  spaced   out ", "\tline  "], "spaced out line"),
+            (["single"], "single"),
+            ([], ""),
+        ],
+    )
+    def test_ing5_merge_lines(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+               ^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lines = ['  spaced   out ', '\tline  ']
+
+    def merge_lines(lines: list[str]) -> str:
+        """Join lines with spaces, de-hyphenating before a lowercase continuation."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:10: NotImplementedError
+_____________________ test_ing5_merge_lines[lines5-single] _____________________
+
+lines = ['single'], expected = 'single'
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["The quick brown", "fox jumps"], "The quick brown fox jumps"),
+            (["an exam-", "ple of this"], "an example of this"),
+            (["a well-", "Known result"], "a well- Known result"),
+            (["re-", ""], "re-"),
+            (["  spaced   out ", "\tline  "], "spaced out line"),
+            (["single"], "single"),
+            ([], ""),
+        ],
+    )
+    def test_ing5_merge_lines(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+               ^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lines = ['single']
+
+    def merge_lines(lines: list[str]) -> str:
+        """Join lines with spaces, de-hyphenating before a lowercase continuation."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:10: NotImplementedError
+________________________ test_ing5_merge_lines[lines6-] ________________________
+
+lines = [], expected = ''
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["The quick brown", "fox jumps"], "The quick brown fox jumps"),
+            (["an exam-", "ple of this"], "an example of this"),
+            (["a well-", "Known result"], "a well- Known result"),
+            (["re-", ""], "re-"),
+            (["  spaced   out ", "\tline  "], "spaced out line"),
+            (["single"], "single"),
+            ([], ""),
+        ],
+    )
+    def test_ing5_merge_lines(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+               ^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+lines = []
+
+    def merge_lines(lines: list[str]) -> str:
+        """Join lines with spaces, de-hyphenating before a lowercase continuation."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:10: NotImplementedError
+____________ test_ing5_merge_blocks_one_per_block_with_merged_lines ____________
+
+    def test_ing5_merge_blocks_one_per_block_with_merged_lines() -> None:
+        blocks = [
+            make_block(0, 0, ["Introduction"], type="heading"),
+            make_block(0, 1, ["The quick brown fox jum-", "ped over the dog."], y0=100),
+        ]
+>       logical = merge_blocks(blocks)
+                  ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=72.0, y0=72.0, x1=540.0, y1=84.0), lines=[Line(spans=[Span(text='Introduction', b...=False, italic=False, superscript=False)], bbox=BBox(x0=72.0, y0=112.0, x1=540.0, y1=124.0))], type='body', ocr=False)]
+
+    def merge_blocks(blocks: list[Block]) -> list[LogicalBlock]:
+        """One LogicalBlock per Block, joining body blocks that continue across a page break."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:15: NotImplementedError
+_____ test_ing5_merge_blocks_joins_sentence_across_page_break_past_footer ______
+
+    def test_ing5_merge_blocks_joins_sentence_across_page_break_past_footer() -> None:
+        blocks = [
+            make_block(0, 0, ["First paragraph ends here."], y0=100),
+            make_block(0, 1, ["The results show that the"], y0=600),
+            make_block(0, 2, ["Page 1"], y0=760, type="footer"),
+            make_block(1, 0, ["method works well."], y0=100),
+            make_block(1, 1, ["Another paragraph."], y0=200),
+        ]
+>       logical = merge_blocks(blocks)
+                  ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=112.0), lines=[Line(spans=[Span(text='First paragrap...=False, italic=False, superscript=False)], bbox=BBox(x0=72.0, y0=200.0, x1=540.0, y1=212.0))], type='body', ocr=False)]
+
+    def merge_blocks(blocks: list[Block]) -> list[LogicalBlock]:
+        """One LogicalBlock per Block, joining body blocks that continue across a page break."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:15: NotImplementedError
+____________ test_ing5_merge_blocks_dehyphenates_across_page_break _____________
+
+    def test_ing5_merge_blocks_dehyphenates_across_page_break() -> None:
+        blocks = [
+            make_block(0, 0, ["a well-known exam-"], y0=600),
+            make_block(1, 0, ["ple of this."], y0=100),
+        ]
+>       logical = merge_blocks(blocks)
+                  ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=72.0, y0=600.0, x1=540.0, y1=612.0), lines=[Line(spans=[Span(text='a well-known e...=False, italic=False, superscript=False)], bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=112.0))], type='body', ocr=False)]
+
+    def merge_blocks(blocks: list[Block]) -> list[LogicalBlock]:
+        """One LogicalBlock per Block, joining body blocks that continue across a page break."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:15: NotImplementedError
+____ test_ing5_merge_blocks_lowercase_continuation_joins_even_after_period _____
+
+    def test_ing5_merge_blocks_lowercase_continuation_joins_even_after_period() -> None:
+        blocks = [
+            make_block(0, 0, ["It ended with an abbrev. e.g."], y0=600),
+            make_block(1, 0, ["and then continued."], y0=100),
+        ]
+>       logical = merge_blocks(blocks)
+                  ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=72.0, y0=600.0, x1=540.0, y1=612.0), lines=[Line(spans=[Span(text='It ended with ...=False, italic=False, superscript=False)], bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=112.0))], type='body', ocr=False)]
+
+    def merge_blocks(blocks: list[Block]) -> list[LogicalBlock]:
+        """One LogicalBlock per Block, joining body blocks that continue across a page break."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:15: NotImplementedError
+______ test_ing5_merge_blocks_keeps_separate_paragraphs_across_page_break ______
+
+    def test_ing5_merge_blocks_keeps_separate_paragraphs_across_page_break() -> None:
+        blocks = [
+            make_block(0, 0, ["The paragraph ends here."], y0=600),
+            make_block(1, 0, ["A new paragraph starts."], y0=100),
+        ]
+>       logical = merge_blocks(blocks)
+                  ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:88: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=72.0, y0=600.0, x1=540.0, y1=612.0), lines=[Line(spans=[Span(text='The paragraph ...=False, italic=False, superscript=False)], bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=112.0))], type='body', ocr=False)]
+
+    def merge_blocks(blocks: list[Block]) -> list[LogicalBlock]:
+        """One LogicalBlock per Block, joining body blocks that continue across a page break."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:15: NotImplementedError
+________________ test_ing5_merge_blocks_does_not_join_non_body _________________
+
+    def test_ing5_merge_blocks_does_not_join_non_body() -> None:
+        blocks = [
+            make_block(0, 0, ["Section heading without period"], y0=600, type="heading"),
+            make_block(1, 0, ["continues in lowercase."], y0=100),
+        ]
+>       logical = merge_blocks(blocks)
+                  ^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing4_merge.py:99: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+blocks = [Block(page=0, index=0, bbox=BBox(x0=72.0, y0=600.0, x1=540.0, y1=612.0), lines=[Line(spans=[Span(text='Section headin...=False, italic=False, superscript=False)], bbox=BBox(x0=72.0, y0=100.0, x1=540.0, y1=112.0))], type='body', ocr=False)]
+
+    def merge_blocks(blocks: list[Block]) -> list[LogicalBlock]:
+        """One LogicalBlock per Block, joining body blocks that continue across a page break."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/merge.py:15: NotImplementedError
+_________ test_ing5_split_sentences_three_sentences_with_abbreviations _________
+
+    def test_ing5_split_sentences_three_sentences_with_abbreviations() -> None:
+>       segments = split_sentences(_block(), document_id=3, order_start=10, id_start=100)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing5_segment.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+block = LogicalBlock(id=7, page=0, type='body', text='Dr. Smith et al. found 3.2% growth in the sample. See Fig. 2 for details. The effect held across all groups.', source=[(0, 0)])
+document_id = 3, order_start = 10, id_start = 100
+
+    def split_sentences(
+        block: LogicalBlock, *, document_id: int, order_start: int, id_start: int
+    ) -> list[Segment]:
+        """Split block.text into sentence Segments; text == block.text[char_start:char_end]."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/segment.py:12: NotImplementedError
+_________________ test_ing5_split_sentences_offsets_round_trip _________________
+
+    def test_ing5_split_sentences_offsets_round_trip() -> None:
+        block = _block()
+>       for s in split_sentences(block, document_id=3, order_start=10, id_start=100):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing5_segment.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+block = LogicalBlock(id=7, page=0, type='body', text='Dr. Smith et al. found 3.2% growth in the sample. See Fig. 2 for details. The effect held across all groups.', source=[(0, 0)])
+document_id = 3, order_start = 10, id_start = 100
+
+    def split_sentences(
+        block: LogicalBlock, *, document_id: int, order_start: int, id_start: int
+    ) -> list[Segment]:
+        """Split block.text into sentence Segments; text == block.text[char_start:char_end]."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/segment.py:12: NotImplementedError
+______ test_ing5_split_sentences_offsets_round_trip_with_messy_whitespace ______
+
+    def test_ing5_split_sentences_offsets_round_trip_with_messy_whitespace() -> None:
+        block = _block("  First one here.   Second one follows.\nThird on a new line.  ")
+>       segments = split_sentences(block, document_id=0, order_start=0, id_start=0)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing5_segment.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+block = LogicalBlock(id=7, page=0, type='body', text='  First one here.   Second one follows.\nThird on a new line.  ', source=[(0, 0)])
+document_id = 0, order_start = 0, id_start = 0
+
+    def split_sentences(
+        block: LogicalBlock, *, document_id: int, order_start: int, id_start: int
+    ) -> list[Segment]:
+        """Split block.text into sentence Segments; text == block.text[char_start:char_end]."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/segment.py:12: NotImplementedError
+_______________ test_ing5_split_sentences_ids_orders_and_fields ________________
+
+    def test_ing5_split_sentences_ids_orders_and_fields() -> None:
+>       segments = split_sentences(_block(id=7), document_id=3, order_start=10, id_start=100)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing5_segment.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+block = LogicalBlock(id=7, page=0, type='body', text='Dr. Smith et al. found 3.2% growth in the sample. See Fig. 2 for details. The effect held across all groups.', source=[(0, 0)])
+document_id = 3, order_start = 10, id_start = 100
+
+    def split_sentences(
+        block: LogicalBlock, *, document_id: int, order_start: int, id_start: int
+    ) -> list[Segment]:
+        """Split block.text into sentence Segments; text == block.text[char_start:char_end]."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/segment.py:12: NotImplementedError
+____________________ test_ing5_split_sentences_empty_block _____________________
+
+    def test_ing5_split_sentences_empty_block() -> None:
+>       assert split_sentences(_block("   "), document_id=0, order_start=0, id_start=0) == []
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing5_segment.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+block = LogicalBlock(id=7, page=0, type='body', text='   ', source=[(0, 0)])
+document_id = 0, order_start = 0, id_start = 0
+
+    def split_sentences(
+        block: LogicalBlock, *, document_id: int, order_start: int, id_start: int
+    ) -> list[Segment]:
+        """Split block.text into sentence Segments; text == block.text[char_start:char_end]."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/segment.py:12: NotImplementedError
+____________ test_ing6_char_map_invariants[The cat sat on the mat.] ____________
+
+text = 'The cat sat on the mat.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'The cat sat on the mat.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+_____ test_ing6_char_map_invariants[As shown in [12], the effect is real.] _____
+
+text = 'As shown in [12], the effect is real.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'As shown in [12], the effect is real.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+_ test_ing6_char_map_invariants[Prior work [3, 4] and [12\u201314] disagrees.] _
+
+text = 'Prior work [3, 4] and [12–14] disagrees.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'Prior work [3, 4] and [12–14] disagrees.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+________ test_ing6_char_map_invariants[Smith et al. found 3.2% growth.] ________
+
+text = 'Smith et al. found 3.2% growth.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'Smith et al. found 3.2% growth.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+_ test_ing6_char_map_invariants[See https://arxiv.org/abs/1706.03762 for details.] _
+
+text = 'See https://arxiv.org/abs/1706.03762 for details.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'See https://arxiv.org/abs/1706.03762 for details.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+_______ test_ing6_char_map_invariants[Visit www.example.com/page today.] _______
+
+text = 'Visit www.example.com/page today.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'Visit www.example.com/page today.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+______ test_ing6_char_map_invariants[Export the PDF and send it to NASA.] ______
+
+text = 'Export the PDF and send it to NASA.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'Export the PDF and send it to NASA.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+_______________________ test_ing6_char_map_invariants[] ________________________
+
+text = ''
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = ''
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+____ test_ing6_char_map_invariants[An HTML page, a CSV file, and the GPU.] _____
+
+text = 'An HTML page, a CSV file, and the GPU.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'An HTML page, a CSV file, and the GPU.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+____ test_ing6_char_map_invariants[Rates rose 12% then 0.5% [7] in the EU.] ____
+
+text = 'Rates rose 12% then 0.5% [7] in the EU.'
+
+    @pytest.mark.parametrize("text", VARIED)
+    def test_ing6_char_map_invariants(text: str) -> None:
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:25: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'Rates rose 12% then 0.5% [7] in the EU.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+__________ test_ing6_identity_on_plain_prose[The cat sat on the mat.] __________
+
+text = 'The cat sat on the mat.'
+
+    @pytest.mark.parametrize(
+        "text", ["The cat sat on the mat.", "It rained, and then it stopped; nobody minded."]
+    )
+    def test_ing6_identity_on_plain_prose(text: str) -> None:
+>       assert normalize(text) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'The cat sat on the mat.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+_ test_ing6_identity_on_plain_prose[It rained, and then it stopped; nobody minded.] _
+
+text = 'It rained, and then it stopped; nobody minded.'
+
+    @pytest.mark.parametrize(
+        "text", ["The cat sat on the mat.", "It rained, and then it stopped; nobody minded."]
+    )
+    def test_ing6_identity_on_plain_prose(text: str) -> None:
+>       assert normalize(text) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'It rained, and then it stopped; nobody minded.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+________________ test_ing6_citation_dropped_and_space_collapsed ________________
+
+    def test_ing6_citation_dropped_and_space_collapsed() -> None:
+        text = "as shown [12] here"
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'as shown [12] here'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+__________________ test_ing6_citation_list_and_range_dropped ___________________
+
+    def test_ing6_citation_list_and_range_dropped() -> None:
+>       assert normalize("prior work [3, 4] disagrees")[0] == "prior work disagrees"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'prior work [3, 4] disagrees'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+______________ test_ing6_consecutive_drops_collapse_to_one_space _______________
+
+    def test_ing6_consecutive_drops_collapse_to_one_space() -> None:
+        text = "word [1] [2] next"
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'word [1] [2] next'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+_______________________________ test_ing6_et_al ________________________________
+
+    def test_ing6_et_al() -> None:
+>       out, cmap = normalize("Smith et al. found")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'Smith et al. found'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+______________________________ test_ing6_percent _______________________________
+
+    def test_ing6_percent() -> None:
+        text = "growth of 3.2% today"
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:77: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'growth of 3.2% today'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+___________________________ test_ing6_url_to_domain ____________________________
+
+    def test_ing6_url_to_domain() -> None:
+        text = "see https://arxiv.org/abs/1 now"
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'see https://arxiv.org/abs/1 now'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+______________________ test_ing6_www_url_keeps_host_only _______________________
+
+    def test_ing6_www_url_keeps_host_only() -> None:
+>       out, _ = normalize("Visit www.example.com/page today.")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'Visit www.example.com/page today.'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+________________________ test_ing6_all_caps_spelled_out ________________________
+
+    def test_ing6_all_caps_spelled_out() -> None:
+        text = "open the PDF file"
+>       out, cmap = normalize(text)
+                    ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'open the PDF file'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+______________________ test_ing6_spoken_acronym_unchanged ______________________
+
+    def test_ing6_spoken_acronym_unchanged() -> None:
+        assert "NASA" in SPOKEN_ACRONYMS
+        text = "ask NASA today"
+>       assert normalize(text) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^
+
+tests/test_ing6_normalize.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+text = 'ask NASA today'
+
+    def normalize(text: str) -> tuple[str, list[int]]:
+        """Return (normalized_text, char_map) with len(char_map) == len(normalized_text)."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/ingestion/normalize.py:10: NotImplementedError
+=============================== warnings summary ===============================
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:241
+  <frozen importlib._bootstrap>:241: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_ing1_extract.py::test_ing2_page_from_dict_builds_blocks_lines_spans
+FAILED tests/test_ing1_extract.py::test_ing2_page_from_dict_span_flags_and_font_names
+FAILED tests/test_ing1_extract.py::test_ing2_page_from_dict_image_blocks_become_image_bboxes
+FAILED tests/test_ing1_extract.py::test_ing2_ocr_available_returns_bool - Not...
+FAILED tests/test_ing1_extract.py::test_ing2_extract_pages_text_layer - NotIm...
+FAILED tests/test_ing1_extract.py::test_ing2_extract_pages_blank_page_without_ocr
+FAILED tests/test_ing2_classify.py::test_ing3_normalize_key_keeps_digits - No...
+FAILED tests/test_ing2_classify.py::test_ing3_body_median_size_is_document_wide_and_char_weighted
+FAILED tests/test_ing2_classify.py::test_ing3_repeated_band_texts_needs_three_pages
+FAILED tests/test_ing2_classify.py::test_ing3_header_rule_wins_over_heading_size
+FAILED tests/test_ing2_classify.py::test_ing3_page_numbers_in_band_are_header_footer_but_not_outside
+FAILED tests/test_ing2_classify.py::test_ing3_heading_by_font_size - NotImple...
+FAILED tests/test_ing2_classify.py::test_ing3_heading_by_bold_short_no_period
+FAILED tests/test_ing2_classify.py::test_ing3_caption_needs_nearby_image - No...
+FAILED tests/test_ing2_classify.py::test_ing3_footnote_by_small_size_low_on_page
+FAILED tests/test_ing2_classify.py::test_ing3_footnote_by_leading_superscript_digit
+FAILED tests/test_ing2_classify.py::test_ing3_table_by_table_bbox_overlap - N...
+FAILED tests/test_ing2_classify.py::test_ing3_equation_by_math_font_or_symbols
+FAILED tests/test_ing2_classify.py::test_ing3_list_items - NotImplementedError
+FAILED tests/test_ing2_classify.py::test_ing3_plain_text_is_body - NotImpleme...
+FAILED tests/test_ing3_order.py::test_ing4_detect_columns_two_clusters - NotI...
+FAILED tests/test_ing3_order.py::test_ing4_detect_columns_one_cluster - NotIm...
+FAILED tests/test_ing3_order.py::test_ing4_detect_columns_small_gap_is_one_column
+FAILED tests/test_ing3_order.py::test_ing4_detect_columns_ignores_full_width_blocks
+FAILED tests/test_ing3_order.py::test_ing4_order_page_two_columns_drops_furniture_footnote_last
+FAILED tests/test_ing3_order.py::test_ing4_order_page_single_column_sorted_by_top
+FAILED tests/test_ing3_order.py::test_ing4_full_width_block_is_column_break
+FAILED tests/test_ing3_order.py::test_ing4_order_document_concatenates_pages
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines[lines0-The quick brown fox jumps]
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines[lines1-an example of this]
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines[lines2-a well- Known result]
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines[lines3-re-] - NotImple...
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines[lines4-spaced out line]
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines[lines5-single] - NotIm...
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines[lines6-] - NotImplemen...
+FAILED tests/test_ing4_merge.py::test_ing5_merge_blocks_one_per_block_with_merged_lines
+FAILED tests/test_ing4_merge.py::test_ing5_merge_blocks_joins_sentence_across_page_break_past_footer
+FAILED tests/test_ing4_merge.py::test_ing5_merge_blocks_dehyphenates_across_page_break
+FAILED tests/test_ing4_merge.py::test_ing5_merge_blocks_lowercase_continuation_joins_even_after_period
+FAILED tests/test_ing4_merge.py::test_ing5_merge_blocks_keeps_separate_paragraphs_across_page_break
+FAILED tests/test_ing4_merge.py::test_ing5_merge_blocks_does_not_join_non_body
+FAILED tests/test_ing5_segment.py::test_ing5_split_sentences_three_sentences_with_abbreviations
+FAILED tests/test_ing5_segment.py::test_ing5_split_sentences_offsets_round_trip
+FAILED tests/test_ing5_segment.py::test_ing5_split_sentences_offsets_round_trip_with_messy_whitespace
+FAILED tests/test_ing5_segment.py::test_ing5_split_sentences_ids_orders_and_fields
+FAILED tests/test_ing5_segment.py::test_ing5_split_sentences_empty_block - No...
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[The cat sat on the mat.]
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[As shown in [12], the effect is real.]
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Prior work [3, 4] and [12\u201314] disagrees.]
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Smith et al. found 3.2% growth.]
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[See https://arxiv.org/abs/1706.03762 for details.]
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Visit www.example.com/page today.]
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Export the PDF and send it to NASA.]
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[] - NotImp...
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[An HTML page, a CSV file, and the GPU.]
+FAILED tests/test_ing6_normalize.py::test_ing6_char_map_invariants[Rates rose 12% then 0.5% [7] in the EU.]
+FAILED tests/test_ing6_normalize.py::test_ing6_identity_on_plain_prose[The cat sat on the mat.]
+FAILED tests/test_ing6_normalize.py::test_ing6_identity_on_plain_prose[It rained, and then it stopped; nobody minded.]
+FAILED tests/test_ing6_normalize.py::test_ing6_citation_dropped_and_space_collapsed
+FAILED tests/test_ing6_normalize.py::test_ing6_citation_list_and_range_dropped
+FAILED tests/test_ing6_normalize.py::test_ing6_consecutive_drops_collapse_to_one_space
+FAILED tests/test_ing6_normalize.py::test_ing6_et_al - NotImplementedError
+FAILED tests/test_ing6_normalize.py::test_ing6_percent - NotImplementedError
+FAILED tests/test_ing6_normalize.py::test_ing6_url_to_domain - NotImplemented...
+FAILED tests/test_ing6_normalize.py::test_ing6_www_url_keeps_host_only - NotI...
+FAILED tests/test_ing6_normalize.py::test_ing6_all_caps_spelled_out - NotImpl...
+FAILED tests/test_ing6_normalize.py::test_ing6_spoken_acronym_unchanged - Not...
+67 failed, 22 passed, 1 skipped, 5 warnings in 0.13s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

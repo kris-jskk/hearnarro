@@ -1,0 +1,16 @@
+academic_01_seahelm_audio	academic	0.9447	
+academic_02_memduet	academic	0.7546	
+academic_03_pruned_reasoning	academic	0.8655	
+academic_04_legislative_xml	academic	0.9339	
+academic_05_sparse_autoencoders	academic	0.9605	PASS
+report_01_zero_trust	report	1.0000	PASS
+report_02_patch_mgmt	report	1.0000	PASS
+report_03_ssdf	report	1.0000	PASS
+report_04_rmf	report	1.0000	PASS
+report_05_controls	report	1.0000	PASS
+tables_01_pfn_bayes	tables	0.9258	
+tables_02_non_gaussian_sem	tables	0.9133	
+tables_03_copula_subspaces	tables	0.8800	
+tables_04_markov_kernel	tables	0.8691	
+tables_05_decomposing_learner	tables	1.0000	PASS
+mean over 15 fixtures: 0.9365  pass=7

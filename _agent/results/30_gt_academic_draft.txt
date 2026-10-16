@@ -1,0 +1,5 @@
+academic_01_seahelm_audio	pages=4	draft_segments=221
+academic_02_memduet	pages=4	draft_segments=279
+academic_03_pruned_reasoning	pages=4	draft_segments=230
+academic_04_legislative_xml	pages=4	draft_segments=128
+academic_05_sparse_autoencoders	pages=4	draft_segments=158

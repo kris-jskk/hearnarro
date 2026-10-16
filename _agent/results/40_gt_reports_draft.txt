@@ -1,0 +1,6 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+report_01_zero_trust	draft_segments=71	pages=4
+report_02_patch_mgmt	draft_segments=78	pages=4
+report_03_ssdf	draft_segments=71	pages=4
+report_04_rmf	draft_segments=76	pages=4
+report_05_controls	draft_segments=69	pages=4

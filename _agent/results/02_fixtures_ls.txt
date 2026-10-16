@@ -1,0 +1,27 @@
+9836	api/tests/fixtures/pdfs
+total 19672
+drwxr-xr-x@ 25 sowmyajonnalagadda  staff      800 Oct 15 23:24 .
+drwxr-xr-x@  3 sowmyajonnalagadda  staff       96 Oct 15 22:45 ..
+-rw-r--r--@  1 sowmyajonnalagadda  staff   152395 Oct 15 23:24 academic_01_seahelm_audio.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   785650 Oct 15 23:24 academic_02_memduet.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   526118 Oct 15 23:24 academic_03_pruned_reasoning.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   285747 Oct 15 23:24 academic_04_legislative_xml.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   167219 Oct 15 23:24 academic_05_sparse_autoencoders.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff     6692 Oct 15 23:24 ATTRIBUTION.md
+-rw-r--r--@  1 sowmyajonnalagadda  staff     4063 Oct 15 23:24 manifest.json
+-rw-r--r--@  1 sowmyajonnalagadda  staff      473 Oct 15 22:45 README.md
+-rw-r--r--@  1 sowmyajonnalagadda  staff   167695 Oct 15 23:24 report_01_zero_trust.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   178902 Oct 15 23:24 report_02_patch_mgmt.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   170718 Oct 15 23:24 report_03_ssdf.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   178789 Oct 15 23:24 report_04_rmf.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   154852 Oct 15 23:24 report_05_controls.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   617700 Oct 15 23:24 scanned_01_seahelm_audio.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   648868 Oct 15 23:24 scanned_02_pruned_reasoning.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   150556 Oct 15 23:24 scanned_03_zero_trust.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   484925 Oct 15 23:24 scanned_04_copula_subspaces.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   454630 Oct 15 23:24 scanned_05_markov_kernel.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   521606 Oct 15 23:24 tables_01_pfn_bayes.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   266917 Oct 15 23:24 tables_02_non_gaussian_sem.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   559276 Oct 15 23:24 tables_03_copula_subspaces.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff   425169 Oct 15 23:24 tables_04_markov_kernel.pdf
+-rw-r--r--@  1 sowmyajonnalagadda  staff  3126686 Oct 15 23:24 tables_05_decomposing_learner.pdf

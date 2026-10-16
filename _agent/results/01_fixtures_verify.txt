@@ -1,0 +1,41 @@
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+MuPDF error: format error: Invalid offsize in CFF
+
+name                                     class     pages  chars/page  KB
+academic_01_seahelm_audio                academic  4     [5506, 5639, 3905, 6509] 148
+academic_02_memduet                      academic  4     [3485, 4475, 4075, 3479] 767
+academic_03_pruned_reasoning             academic  4     [3869, 4434, 4805, 4405] 513
+academic_04_legislative_xml              academic  4     [4127, 4664, 4598, 3295] 279
+academic_05_sparse_autoencoders          academic  4     [4229, 4435, 4169, 4714] 163
+tables_01_pfn_bayes                      tables    4     [3851, 4271, 4196, 5019] 509
+tables_02_non_gaussian_sem               tables    4     [4034, 5316, 4382, 4691] 260
+tables_03_copula_subspaces               tables    4     [3585, 3823, 2795, 2580] 546
+tables_04_markov_kernel                  tables    4     [2698, 3747, 3377, 2460] 415
+tables_05_decomposing_learner            tables    4     [2485, 4426, 3908, 2738] 3053
+report_01_zero_trust                     report    4     [283, 635, 3090, 2541] 163
+report_02_patch_mgmt                     report    4     [281, 700, 3066, 3301] 174
+report_03_ssdf                           report    4     [327, 828, 3046, 2389] 166
+report_04_rmf                            report    4     [1364, 557, 3697, 3780] 174
+report_05_controls                       report    4     [269, 578, 3552, 2917] 151
+scanned_01_seahelm_audio                 scanned   2     [0, 0] 603
+scanned_02_pruned_reasoning              scanned   2     [0, 0] 633
+scanned_03_zero_trust                    scanned   2     [0, 0] 147
+scanned_04_copula_subspaces              scanned   2     [0, 0] 473
+scanned_05_markov_kernel                 scanned   2     [0, 0] 443

@@ -1,0 +1,4 @@
+............                                                             [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_ing4_reading_order_golden.py:25: /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/tests/fixtures/pdfs/manifest.json missing: fixture PDFs not added yet
+12 passed, 1 skipped in 0.01s
