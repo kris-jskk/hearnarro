@@ -1,0 +1,83 @@
+# hearnarro dump of /Users/sowmyajonnalagadda/hearnarro-m1/inbox/what-is-the-internet-of-things.pdf after the fix (branch m1-ingest, uncommitted fix)
+## jsonl line (segment) count:
+     538
+## occurrences of U+2010+space in jsonl (grep -o | wc -l):
+       0
+## lines with U+2010+space in text dump (grep -c):
+0
+## before (iot_segments.txt) lines with U+2010+space:
+121
+## remaining U+2010 (any) in jsonl, U+2011, U+00AD:
+       0
+       0
+       0
+## stderr:
+## first 60 lines of text dump:
+0	body	ISBN: 978-1-491-92180-7
+1	table	What Is the Internet of Things?
+2	table	Mike Loukides & Jon Bruner
+3	heading	THE O’REILLY INTERNET OF THINGS CONFERENCE
+4	heading	“The future has a funny way of
+5	heading	sneaking up on you.
+6	heading	You don’t notice it until you’re soaking in it.
+7	heading	That was the feeling at O’Reilly’s Solid Conference.
+8	heading	”
+9	body	— Wired
+10	heading	What Is the Internet of Things?
+11	heading	Mike Loukides and Jon Bruner
+12	body	What Is the Internet of Things?
+13	body	by Mike Loukides and Jon Bruner
+14	body	Copyright © 2015 O’Reilly Media, Inc.
+15	body	All rights reserved.
+16	body	Printed in the United States of America.
+17	body	Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472.
+18	body	O’Reilly books may be purchased for educational, business, or sales promotional use.
+19	body	Online editions are also available for most titles (http://safaribooksonline.com).
+20	body	For more information, contact our corporate/institutional sales department: 800-998-9938 or corporate@oreilly.com.
+21	body	January 2015: First Edition
+22	body	Revision History for the First Edition 2015-01-13: First Release While the publisher and the author(s) have used good faith efforts to ensure that the information and instructions contained in this work are accurate, the publisher and the author(s) disclaim all responsibility for errors or omissions, including without limitation responsibility for damages resulting from the use of or reliance on this work.
+23	body	Use of the information and instructions contained in this work is at your own risk.
+24	body	If any code samples or other technology this work contains or describes is subject to open source licenses or the intellectual property rights of others, it is your responsibility to ensure that your use thereof complies with such licenses and/or rights.
+25	footnote	978-1-491-92180-7
+26	footnote	[LSI]
+27	heading	Table of Contents
+28	body	What Is the Internet of Things?
+29	body	. . . . .
+30	body	. . . .
+31	body	. . . .
+32	body	. . . .
+33	body	. . . .
+34	body	. . . .
+35	body	. . . .
+36	body	. . . 1 So What’s New?
+37	body	3 Disrupting Economies of Scale 6 Being a Software Company 9 Frictionless Manufacturing 10 Software Above the Level of a Single Device 12 Standards for Connected Devices 14 Design Beyond the Screen 16 Everything as a Service 18 Software Replaces Physical Complexity 19 Roadblocks on the Information Highway 20 Inventing the Future 25
+38	heading	What Is the Internet of Things?
+39	body	At our first Solid conference in 2014, we started a wide-ranging discussion about the “intersection between software and the physical world.”
+40	body	A year later, this discussion is continuing, with even more energy and passion than before.
+41	body	You can hardly read a newspaper (if you still read newspapers) without seeing something about the “Internet of Things” and the rise of the hardware startup.
+42	body	But what does the intersection between software and hardware mean?
+43	body	Early in 2013, we sat around a table in Sebastopol to survey some interesting trends in technology.
+44	body	There were many: robotics, sensor networks, the Industrial Internet, the professionalization of the Maker movement, hardware-oriented startups.
+45	body	It was a confusing picture, until we realized that these weren’t separate trends.
+46	body	They’re all more alike than different—they are all the visible result of the same underlying forces.
+47	body	Startups like FitBit and Withings were taking familiar old devices, like pedometers and bathroom scales, and making them intelligent by adding computer power and network connections.
+48	body	At the other end of the industrial scale, GE was doing the same thing to jet engines and locomotives.
+49	body	Our homes are increasingly the domain of smart robots, including Roombas and 3D printers, and we’ve started looking forward to self-driving cars and personal autonomous drones.
+50	body	Every interesting new product has a network connection—be it WiFi, Bluetooth, Zigbee, or even a basic form of piggybacking through a USB connection to a PC.
+51	body	Everything has a sensor, and devices as dissimilar as an iPhone and a thermostat are stuffed with them.
+52	body	We spent 30 or more years moving from atoms to bits; now it feels like we’re pushing the bits back into the atoms.
+53	body	And we realized that the intersection of these trends —the conjunction of hardware, software, networking, data, and intelligence—was the real “news,” far more important than any individual trend.
+54	body	The Internet of Things: that’s what we’ve been working on all these years.
+55	body	It’s finally happening.
+56	body	We’ve seen software transformed over the last decade by a handful of truly revolutionary developments: pervasive networking that can make the Internet a central part of any piece of software; APIs that make systems available to each other as abstracted modules; clouds like Amazon Web Services that dramatically reduce the capital needed to start a new software venture; open source projects that make expertise available to anyone; selling services rather than products.
+57	body	We now see the same developments coming to the physical world.
+58	body	As Tomasz Tunguz has said, the potential of the Internet of Things isn’t just “linking millions of devices,” any more than the potential of Google or Amazon was building massive IT infrastructure.
+59	body	The IoT is about “transforming business models” and “enabling companies to sell products in entirely new and better ways.”
+## spot checks (grep -o in after text dump):
+wide-ranging discussion about the 
+taking familiar
+
+## RE-RUN on final (post-ruff-refactor) code:
+jsonl segments:      538
+U+2010+space in jsonl:        0
+identical to first after-dump: yes

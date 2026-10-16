@@ -1,0 +1,14 @@
+## full suite (final code):
+.sssss........................................                           [100%]
+=========================== short test summary info ============================
+SKIPPED [5] tests/test_ing4_reading_order_golden.py:95: OCR unavailable (tesseract); scanned fixtures need OCR fallback (M4)
+185 passed, 5 skipped in 9.70s
+## golden only:
+17 passed, 5 skipped in 7.58s
+## expected.jsonl files:
+      20
+U+2010 occurrences: 0
+U+2011 occurrences: 0
+U+00ad occurrences: 0
+## git status of fixtures + golden test (empty = untouched):
+(end)

@@ -1,0 +1,110 @@
+.......FF..FFFF................                                          [100%]
+=================================== FAILURES ===================================
+_____ test_ing5_merge_lines_unicode_hyphen_lowercase_dehyphenates[U+2010] ______
+
+hyphen = '‐'
+
+    @pytest.mark.parametrize("hyphen", ["\u2010", "\u2011"], ids=["U+2010", "U+2011"])
+    def test_ing5_merge_lines_unicode_hyphen_lowercase_dehyphenates(hyphen: str) -> None:
+>       assert merge_lines([f"a wide-ranging dis{hyphen}", "cussion"]) == "a wide-ranging discussion"
+E       AssertionError: assert 'a wide-ranging dis‐ cussion' == 'a wide-ranging discussion'
+E         
+E         - a wide-ranging discussion
+E         + a wide-ranging dis‐ cussion
+E         ?                   ++
+
+tests/test_ing4_merge.py:29: AssertionError
+_____ test_ing5_merge_lines_unicode_hyphen_lowercase_dehyphenates[U+2011] ______
+
+hyphen = '‑'
+
+    @pytest.mark.parametrize("hyphen", ["\u2010", "\u2011"], ids=["U+2010", "U+2011"])
+    def test_ing5_merge_lines_unicode_hyphen_lowercase_dehyphenates(hyphen: str) -> None:
+>       assert merge_lines([f"a wide-ranging dis{hyphen}", "cussion"]) == "a wide-ranging discussion"
+E       AssertionError: assert 'a wide-ranging dis‑ cussion' == 'a wide-ranging discussion'
+E         
+E         - a wide-ranging discussion
+E         + a wide-ranging dis‑ cussion
+E         ?                   ++
+
+tests/test_ing4_merge.py:29: AssertionError
+___ test_ing5_merge_lines_soft_hyphen_always_removed[lines0-taking familiar] ___
+
+lines = ['tak\xad', 'ing familiar'], expected = 'taking familiar'
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["tak\u00ad", "ing familiar"], "taking familiar"),
+            (["Inter\u00ad", "Net"], "InterNet"),
+        ],
+    )
+    def test_ing5_merge_lines_soft_hyphen_always_removed(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+E       AssertionError: assert 'tak\xad ing familiar' == 'taking familiar'
+E         
+E         - taking familiar
+E         + tak­ ing familiar
+E         ?    ++
+
+tests/test_ing4_merge.py:45: AssertionError
+______ test_ing5_merge_lines_soft_hyphen_always_removed[lines1-InterNet] _______
+
+lines = ['Inter\xad', 'Net'], expected = 'InterNet'
+
+    @pytest.mark.parametrize(
+        ("lines", "expected"),
+        [
+            (["tak\u00ad", "ing familiar"], "taking familiar"),
+            (["Inter\u00ad", "Net"], "InterNet"),
+        ],
+    )
+    def test_ing5_merge_lines_soft_hyphen_always_removed(lines: list[str], expected: str) -> None:
+>       assert merge_lines(lines) == expected
+E       AssertionError: assert 'Inter\xad Net' == 'InterNet'
+E         
+E         - InterNet
+E         + Inter­ Net
+E         ?      ++
+
+tests/test_ing4_merge.py:45: AssertionError
+_____ test_ing5_merge_blocks_dehyphenates_unicode_hyphen_across_page_break _____
+
+    def test_ing5_merge_blocks_dehyphenates_unicode_hyphen_across_page_break() -> None:
+        blocks = [
+            make_block(0, 0, ["a well-known dis\u2010"], y0=600),
+            make_block(1, 0, ["cussion of this."], y0=50),
+        ]
+>       assert [lb.text for lb in merge_blocks(blocks)] == ["a well-known discussion of this."]
+E       AssertionError: assert ['a well-know...ion of this.'] == ['a well-know...ion of this.']
+E         
+E         At index 0 diff: 'a well-known dis‐ cussion of this.' != 'a well-known discussion of this.'
+E         Use -v to get more diff
+
+tests/test_ing4_merge.py:53: AssertionError
+________ test_ing5_merge_blocks_soft_hyphen_at_line_end_always_removed _________
+
+    def test_ing5_merge_blocks_soft_hyphen_at_line_end_always_removed() -> None:
+        blocks = [
+            make_block(0, 0, ["Inter\u00ad", "Net of tak\u00ad"], y0=600),
+            make_block(1, 0, ["ing things\u00ad"], y0=50),
+            make_block(1, 1, ["A new soft\u00ad", ""], y0=300, type="heading"),
+        ]
+>       assert [lb.text for lb in merge_blocks(blocks)] == [
+            "InterNet of taking things",
+            "A new soft",
+        ]
+E       AssertionError: assert ['Inter\xad N...new soft\xad'] == ['InterNet of... 'A new soft']
+E         
+E         At index 0 diff: 'Inter\xad Net of tak\xad ing things\xad' != 'InterNet of taking things'
+E         Use -v to get more diff
+
+tests/test_ing4_merge.py:62: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines_unicode_hyphen_lowercase_dehyphenates[U+2010]
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines_unicode_hyphen_lowercase_dehyphenates[U+2011]
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines_soft_hyphen_always_removed[lines0-taking familiar]
+FAILED tests/test_ing4_merge.py::test_ing5_merge_lines_soft_hyphen_always_removed[lines1-InterNet]
+FAILED tests/test_ing4_merge.py::test_ing5_merge_blocks_dehyphenates_unicode_hyphen_across_page_break
+FAILED tests/test_ing4_merge.py::test_ing5_merge_blocks_soft_hyphen_at_line_end_always_removed
+6 failed, 25 passed in 0.04s
