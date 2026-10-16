@@ -1,0 +1,23 @@
+.academic_01_seahelm_audio	academic	0.9493	excluded actual=0 expected=0
+Facademic_02_memduet	academic	0.8750	excluded actual=13 expected=13
+Facademic_03_pruned_reasoning	academic	0.9568	excluded actual=8 expected=5
+Facademic_04_legislative_xml	academic	0.9421	excluded actual=0 expected=0
+Facademic_05_sparse_autoencoders	academic	0.9929	excluded actual=5 expected=5
+.report_01_zero_trust	report	1.0000	excluded actual=0 expected=0
+.report_02_patch_mgmt	report	1.0000	excluded actual=0 expected=0
+.report_03_ssdf	report	1.0000	excluded actual=0 expected=0
+.report_04_rmf	report	1.0000	excluded actual=0 expected=0
+.report_05_controls	report	1.0000	excluded actual=0 expected=0
+.ssssstables_01_pfn_bayes	tables	0.8691	excluded actual=40 expected=41
+Ftables_02_non_gaussian_sem	tables	0.9592	excluded actual=15 expected=15
+.tables_03_copula_subspaces	tables	0.8218	excluded actual=56 expected=51
+Ftables_04_markov_kernel	tables	0.9209	excluded actual=53 expected=52
+Ftables_05_decomposing_learner	tables	1.0000	excluded actual=14 expected=14
+.mean over 15 fixtures: 0.9525
+E       AssertionError: academic_03_pruned_reasoning: excluded actual=8 vs expected=5 beyond 15%
+___________________________ test_reading_order_mean ____________________________
+    def test_reading_order_mean() -> None:
+        mean = sum(scores) / len(scores)
+E       AssertionError: mean 0.9525 < 0.97
+FAILED tests/test_ing4_reading_order_golden.py::test_reading_order_mean - Ass...
+8 failed, 9 passed, 5 skipped, 5 warnings in 3.69s

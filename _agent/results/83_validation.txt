@@ -1,0 +1,22 @@
+academic_01_seahelm_audio.expected.jsonl	217 segs	VALID	{'body': 157, 'heading': 50, 'list': 10}
+academic_02_memduet.expected.jsonl	138 segs	VALID	{'body': 97, 'caption': 9, 'equation': 13, 'footnote': 2, 'heading': 13, 'list': 4}
+academic_03_pruned_reasoning.expected.jsonl	144 segs	VALID	{'body': 120, 'caption': 4, 'equation': 5, 'footnote': 4, 'heading': 11}
+academic_04_legislative_xml.expected.jsonl	121 segs	VALID	{'body': 108, 'caption': 2, 'footnote': 3, 'heading': 8}
+academic_05_sparse_autoencoders.expected.jsonl	145 segs	VALID	{'body': 123, 'caption': 3, 'equation': 3, 'heading': 14, 'table': 2}
+report_01_zero_trust.expected.jsonl	56 segs	VALID	{'body': 38, 'heading': 18}
+report_02_patch_mgmt.expected.jsonl	63 segs	VALID	{'body': 41, 'heading': 22}
+report_03_ssdf.expected.jsonl	56 segs	VALID	{'body': 37, 'heading': 19}
+report_04_rmf.expected.jsonl	47 segs	VALID	{'body': 33, 'heading': 14}
+report_05_controls.expected.jsonl	46 segs	VALID	{'body': 32, 'heading': 14}
+scanned_01_seahelm_audio.expected.jsonl	98 segs	VALID	{'body': 65, 'heading': 28, 'list': 5}
+scanned_02_pruned_reasoning.expected.jsonl	60 segs	VALID	{'body': 54, 'heading': 6}
+scanned_03_zero_trust.expected.jsonl	13 segs	VALID	{'heading': 13}
+scanned_04_copula_subspaces.expected.jsonl	75 segs	VALID	{'body': 59, 'footnote': 5, 'list': 11}
+scanned_05_markov_kernel.expected.jsonl	85 segs	VALID	{'body': 56, 'equation': 23, 'footnote': 2, 'heading': 4}
+tables_01_pfn_bayes.expected.jsonl	216 segs	VALID	{'body': 157, 'caption': 4, 'equation': 34, 'footnote': 3, 'heading': 14, 'list': 4}
+tables_02_non_gaussian_sem.expected.jsonl	149 segs	VALID	{'body': 117, 'caption': 3, 'equation': 15, 'heading': 14}
+tables_03_copula_subspaces.expected.jsonl	193 segs	VALID	{'body': 131, 'equation': 45, 'footnote': 5, 'list': 12}
+tables_04_markov_kernel.expected.jsonl	183 segs	VALID	{'body': 126, 'equation': 50, 'footnote': 2, 'heading': 5}
+tables_05_decomposing_learner.expected.jsonl	119 segs	VALID	{'body': 83, 'caption': 5, 'equation': 14, 'heading': 9, 'list': 8}
+
+20 files, 20 valid, 0 invalid

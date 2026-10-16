@@ -1,0 +1,13 @@
+## git diff --cached --stat -- api/tests/fixtures (what this commit would include; must be empty)
+## git diff --stat -- api/tests/fixtures (working tree; edits by the parallel expected-files worker, not staged by me)
+ .../pdfs/academic_02_memduet.expected.jsonl        | 384 +++++++--------------
+ .../academic_03_pruned_reasoning.expected.jsonl    | 337 +++++++-----------
+ .../academic_05_sparse_autoencoders.expected.jsonl | 153 ++++----
+ .../pdfs/report_01_zero_trust.expected.jsonl       |  40 +--
+ .../pdfs/report_02_patch_mgmt.expected.jsonl       |  48 ++-
+ .../fixtures/pdfs/report_03_ssdf.expected.jsonl    |  38 +-
+ .../fixtures/pdfs/report_04_rmf.expected.jsonl     |  97 +++---
+ .../pdfs/report_05_controls.expected.jsonl         |  42 +--
+ .../pdfs/tables_01_pfn_bayes.expected.jsonl        | 256 +++++++-------
+ .../pdfs/tables_02_non_gaussian_sem.expected.jsonl | 205 ++++++-----
+ 10 files changed, 660 insertions(+), 940 deletions(-)

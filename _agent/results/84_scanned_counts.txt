@@ -1,0 +1,13 @@
+recipe check: derive(HEAD source) == HEAD scanned file
+  scanned_01_seahelm_audio: identical (98 lines)
+  scanned_02_pruned_reasoning: identical (75 lines)
+  scanned_03_zero_trust: identical (13 lines)
+  scanned_04_copula_subspaces: identical (90 lines)
+  scanned_05_markov_kernel: identical (89 lines)
+
+scanned	source	lines_before	lines_after
+scanned_01_seahelm_audio	academic_01_seahelm_audio	98	98
+scanned_02_pruned_reasoning	academic_03_pruned_reasoning	75	60
+scanned_03_zero_trust	report_01_zero_trust	13	13
+scanned_04_copula_subspaces	tables_03_copula_subspaces	90	75
+scanned_05_markov_kernel	tables_04_markov_kernel	89	85

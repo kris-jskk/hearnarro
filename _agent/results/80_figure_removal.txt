@@ -1,0 +1,17 @@
+fixture	lines_before	removed	expected_removed(55)	unmatched	lines_after	match
+academic_01_seahelm_audio	217	0	0	0	217	OK
+academic_02_memduet	273	132	132	0	141	OK
+academic_03_pruned_reasoning	223	79	79	0	144	OK
+academic_04_legislative_xml	121	0	0	0	121	OK
+academic_05_sparse_autoencoders	152	7	7	0	145	OK
+report_01_zero_trust	58	2	2	0	56	OK
+report_02_patch_mgmt	65	2	2	0	63	OK
+report_03_ssdf	58	2	2	0	56	OK
+report_04_rmf	60	13	13	0	47	OK
+report_05_controls	54	8	8	0	46	OK
+tables_01_pfn_bayes	256	24	24	0	232	OK
+tables_02_non_gaussian_sem	173	11	11	0	162	OK
+tables_03_copula_subspaces	225	0	0	0	225	OK
+tables_04_markov_kernel	191	0	0	0	191	OK
+tables_05_decomposing_learner	120	0	0	0	120	OK
+ALL_MATCH
