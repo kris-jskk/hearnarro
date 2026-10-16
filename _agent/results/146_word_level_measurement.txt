@@ -1,0 +1,40 @@
+Table A (sentence-seq) and Table B (word-level)
+name	A	B	words_expected
+academic_01_seahelm_audio	0.9822	0.9919	2731
+academic_02_memduet	0.8571	0.9912	1826
+academic_03_pruned_reasoning	0.9464	0.9963	2178
+academic_04_legislative_xml	0.9407	0.9839	2428
+academic_05_sparse_autoencoders	0.9850	0.9958	2148
+tables_01_pfn_bayes	0.8433	0.9779	2537
+tables_02_non_gaussian_sem	0.8264	0.9877	2603
+tables_03_copula_subspaces	0.7638	0.9710	1934
+tables_04_markov_kernel	0.8286	0.9756	1765
+tables_05_decomposing_learner	0.9890	0.9989	1901
+report_01_zero_trust	0.9643	1.0000	754
+report_02_patch_mgmt	1.0000	1.0000	832
+report_03_ssdf	0.9643	1.0000	735
+report_04_rmf	0.9574	1.0000	690
+report_05_controls	0.9565	1.0000	600
+
+Table C (excluded char ratio)
+name	ratio_actual	ratio_expected	abs_diff	within_0.05
+academic_01_seahelm_audio	0.0903	0.0839	0.0064	True
+academic_02_memduet	0.0244	0.0254	0.0010	True
+academic_03_pruned_reasoning	0.0529	0.0532	0.0003	True
+academic_04_legislative_xml	0.0127	0.0128	0.0001	True
+academic_05_sparse_autoencoders	0.0044	0.0044	0.0000	True
+tables_01_pfn_bayes	0.0369	0.0388	0.0019	True
+tables_02_non_gaussian_sem	0.0163	0.0085	0.0078	True
+tables_03_copula_subspaces	0.0472	0.0499	0.0027	True
+tables_04_markov_kernel	0.0569	0.0597	0.0028	True
+tables_05_decomposing_learner	0.0397	0.0388	0.0009	True
+report_01_zero_trust	0.0000	0.0000	0.0000	True
+report_02_patch_mgmt	0.0000	0.0000	0.0000	True
+report_03_ssdf	0.0000	0.0000	0.0000	True
+report_04_rmf	0.0000	0.0000	0.0000	True
+report_05_controls	0.0000	0.0000	0.0000	True
+
+SUMMARY
+A: mean 0.9203 pass>=0.95 8/15
+B: mean 0.9914 pass>=0.95 15/15
+C: char-mass guard (<=0.05) passes 15/15
