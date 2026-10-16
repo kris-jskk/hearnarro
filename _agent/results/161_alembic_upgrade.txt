@@ -1,0 +1,15 @@
+$ .venv/bin/python -c 'import greenlet'  (must fail: no greenlet installed)
+ModuleNotFoundError: No module named 'greenlet'
+$ ls -l $D (empty file before)
+total 0
+-rw-r--r--@ 1 sowmyajonnalagadda  wheel  0 Oct 16 13:29 hearnarro.db
+$ HEARNARRO_DATA_DIR=$D .venv/bin/alembic upgrade head
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 0001, Initial schema: the D7 DDL verbatim (ING-1; documents, blocks, sections, segments,
+audio_cache, settings).
+exit=0
+$ alembic current
+INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+0001 (head)

@@ -1,0 +1,237 @@
+FFFFFFFFFF                                                               [100%]
+=================================== FAILURES ===================================
+_______ test_ing1_upload_returns_202_parsing_then_ready_documents_table ________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_upload_returns_202_p0')
+
+    async def test_ing1_upload_returns_202_parsing_then_ready_documents_table(tmp_path: Path) -> None:
+>       async with client_for(tmp_path) as client:
+
+tests/test_api_documents.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_upload_returns_202_p0')
+kwargs = {}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+_________________ test_ing1_ingestion_uses_process_pool_of_two _________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_ingestion_uses_proce0')
+
+    async def test_ing1_ingestion_uses_process_pool_of_two(tmp_path: Path) -> None:
+>       async with client_for(tmp_path) as client:
+
+tests/test_api_documents.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_ingestion_uses_proce0')
+kwargs = {}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+_______ test_ing1_reupload_same_bytes_dedupes_by_sha256_documents_table ________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_reupload_same_bytes_0')
+
+    async def test_ing1_reupload_same_bytes_dedupes_by_sha256_documents_table(tmp_path: Path) -> None:
+>       async with client_for(tmp_path) as client:
+
+tests/test_api_documents.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_reupload_same_bytes_0')
+kwargs = {}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+___________________ test_ing1_segments_paging_segments_table ___________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_segments_paging_segm0')
+
+    async def test_ing1_segments_paging_segments_table(tmp_path: Path) -> None:
+        expected = ingest(REPORT_PDF).segments
+        assert len(expected) > 20
+>       async with client_for(tmp_path) as client:
+
+tests/test_api_documents.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_segments_paging_segm0')
+kwargs = {}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+_______ test_ing1_report01_segments_match_ingest_blocks_segments_tables ________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_report01_segments_ma0')
+
+    async def test_ing1_report01_segments_match_ingest_blocks_segments_tables(tmp_path: Path) -> None:
+        result = ingest(REPORT_PDF)
+>       async with client_for(tmp_path) as client:
+
+tests/test_api_documents.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_report01_segments_ma0')
+kwargs = {}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+________________________ test_ing1_non_pdf_returns_415 _________________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_non_pdf_returns_4150')
+
+    async def test_ing1_non_pdf_returns_415(tmp_path: Path) -> None:
+>       async with client_for(tmp_path) as client:
+
+tests/test_api_documents.py:175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_non_pdf_returns_4150')
+kwargs = {}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+_____________________ test_ing1_pdf_over_limit_returns_413 _____________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_pdf_over_limit_retur0')
+
+    async def test_ing1_pdf_over_limit_returns_413(tmp_path: Path) -> None:
+        assert TEXT_PDF.stat().st_size > 1024
+>       async with client_for(tmp_path, max_upload_bytes=1024) as client:
+
+tests/test_api_documents.py:185: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_pdf_over_limit_retur0')
+kwargs = {'max_upload_bytes': 1024}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+_____________ test_ing1_ingest_raises_sets_failed_documents_table ______________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_ingest_raises_sets_f0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10c938950>
+
+    async def test_ing1_ingest_raises_sets_failed_documents_table(
+        tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    ) -> None:
+>       import hearnarro.storage.jobs as jobs
+E       ModuleNotFoundError: No module named 'hearnarro.storage.jobs'
+
+tests/test_api_documents.py:194: ModuleNotFoundError
+_________________ test_ing1_corrupt_pdf_fails_in_process_pool __________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_corrupt_pdf_fails_in0')
+
+    async def test_ing1_corrupt_pdf_fails_in_process_pool(tmp_path: Path) -> None:
+>       async with client_for(tmp_path) as client:
+
+tests/test_api_documents.py:210: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_corrupt_pdf_fails_in0')
+kwargs = {}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+____________________ test_ing1_missing_document_returns_404 ____________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_missing_document_ret0')
+
+    async def test_ing1_missing_document_returns_404(tmp_path: Path) -> None:
+>       async with client_for(tmp_path) as client:
+
+tests/test_api_documents.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/contextlib.py:210: in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data_dir = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-16/test_ing1_missing_document_ret0')
+kwargs = {}
+
+    @asynccontextmanager
+    async def client_for(data_dir: Path, **kwargs: Any) -> AsyncIterator[httpx.AsyncClient]:
+>       from hearnarro.app import create_app
+E       ModuleNotFoundError: No module named 'hearnarro.app'
+
+tests/test_api_documents.py:37: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_api_documents.py::test_ing1_upload_returns_202_parsing_then_ready_documents_table
+FAILED tests/test_api_documents.py::test_ing1_ingestion_uses_process_pool_of_two
+FAILED tests/test_api_documents.py::test_ing1_reupload_same_bytes_dedupes_by_sha256_documents_table
+FAILED tests/test_api_documents.py::test_ing1_segments_paging_segments_table
+FAILED tests/test_api_documents.py::test_ing1_report01_segments_match_ingest_blocks_segments_tables
+FAILED tests/test_api_documents.py::test_ing1_non_pdf_returns_415 - ModuleNot...
+FAILED tests/test_api_documents.py::test_ing1_pdf_over_limit_returns_413 - Mo...
+FAILED tests/test_api_documents.py::test_ing1_ingest_raises_sets_failed_documents_table
+FAILED tests/test_api_documents.py::test_ing1_corrupt_pdf_fails_in_process_pool
+FAILED tests/test_api_documents.py::test_ing1_missing_document_returns_404 - ...
+10 failed in 0.41s
