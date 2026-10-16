@@ -1,0 +1,18 @@
+.academic_01_seahelm_audio	academic	0.5562	excluded actual=1 expected=41
+Facademic_02_memduet	academic	0.9018	excluded actual=14 expected=26
+Facademic_03_pruned_reasoning	academic	0.7857	excluded actual=10 expected=32
+Facademic_04_legislative_xml	academic	0.8475	excluded actual=0 expected=3
+Facademic_05_sparse_autoencoders	academic	0.9098	excluded actual=4 expected=5
+Freport_01_zero_trust	report	0.9643	excluded actual=0 expected=0
+.report_02_patch_mgmt	report	1.0000	excluded actual=0 expected=0
+.report_03_ssdf	report	0.9643	excluded actual=0 expected=0
+.report_04_rmf	report	0.9574	excluded actual=0 expected=0
+.report_05_controls	report	0.9565	excluded actual=0 expected=0
+.ssssstables_01_pfn_bayes	tables	0.6194	excluded actual=37 expected=69
+Ftables_02_non_gaussian_sem	tables	0.7438	excluded actual=9 expected=21
+Ftables_03_copula_subspaces	tables	0.5827	excluded actual=28 expected=66
+Ftables_04_markov_kernel	tables	0.6476	excluded actual=67 expected=78
+Ftables_05_decomposing_learner	tables	0.9451	excluded actual=22 expected=28
+Fmean over 15 fixtures: 0.8255
+        print(f"mean over {len(scores)} fixtures: {mean:.4f}")
+11 failed, 6 passed, 5 skipped in 3.45s
