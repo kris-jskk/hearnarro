@@ -1,0 +1,190 @@
+.FF......................F.F..F.F..F.....F......                         [100%]
+=================================== FAILURES ===================================
+__________________ test_syn6_audio_cache_file_and_row_written __________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-87/test_syn6_audio_cache_file_and0')
+
+    async def test_syn6_audio_cache_file_and_row_written(tmp_path: Path) -> None:
+        async with ready_document(tmp_path) as (client, segments):
+            seg = worded(segments)[1]
+            resp = await client.get(f"/audio/{seg['id']}", params={"voice": VOICE, "speed": 1.5})
+            assert resp.status_code == 200, resp.text
+            doc_id = client.document_id  # type: ignore[attr-defined]
+        path = tmp_path / "audio" / str(doc_id) / str(seg["id"]) / f"{VOICE}_1.50.wav"
+>       assert path.read_bytes() == resp.content
+               ^^^^^^^^^^^^^^^^^
+
+tests/test_api_audio.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/pathlib.py:1050: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-87/test_syn6_audio_cache_file_and0/audio/1/2/fake_f2_1.50.wav')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-87/test_syn6_audio_cache_file_and0/audio/1/2/fake_f2_1.50.wav'
+
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/pathlib.py:1044: FileNotFoundError
+_____ test_syn3_syn6_quarter_speeds_two_decimal_cache_files_rows_and_hits ______
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-87/test_syn3_syn6_quarter_speeds_0')
+
+    async def test_syn3_syn6_quarter_speeds_two_decimal_cache_files_rows_and_hits(
+        tmp_path: Path,
+    ) -> None:
+        """1.25 is cached as ``_1.25.wav`` (row speed 1.25) and hits on HEAD; 2.25 writes the
+        native-max ``_2.00.wav`` plus the stretched ``_2.25.wav``."""
+        async with ready_document(tmp_path) as (client, segments):
+            seg = worded(segments)[1]
+            url = f"/audio/{seg['id']}"
+            resp = await client.get(url, params={"voice": VOICE, "speed": 1.25})
+>           assert resp.status_code == 200, resp.text
+E           AssertionError: {"detail":"speed must be 0.5..3.0 in 0.1 steps"}
+E           assert 422 == 200
+E            +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+
+tests/test_api_audio.py:127: AssertionError
+_____________ test_syn3_native_path_passes_speed_to_backend[1.25] ______________
+
+speed = 1.25
+
+    @pytest.mark.parametrize("speed", [0.5, 1.0, 1.25, 1.5, 1.75, 2.0])
+    async def test_syn3_native_path_passes_speed_to_backend(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, _ = make_service()
+        try:
+            entry = await service.get_audio(seg.id, VOICE, speed)
+        finally:
+            await service.shutdown()
+>       assert [c[2] for c in spy.calls] == [speed]
+E       assert [1.2] == [1.25]
+E         
+E         At index 0 diff: 1.2 != 1.25
+E         Use -v to get more diff
+
+tests/test_syn3_speed.py:96: AssertionError
+_____________ test_syn3_native_path_passes_speed_to_backend[1.75] ______________
+
+speed = 1.75
+
+    @pytest.mark.parametrize("speed", [0.5, 1.0, 1.25, 1.5, 1.75, 2.0])
+    async def test_syn3_native_path_passes_speed_to_backend(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, _ = make_service()
+        try:
+            entry = await service.get_audio(seg.id, VOICE, speed)
+        finally:
+            await service.shutdown()
+>       assert [c[2] for c in spy.calls] == [speed]
+E       assert [1.8] == [1.75]
+E         
+E         At index 0 diff: 1.8 != 1.75
+E         Use -v to get more diff
+
+tests/test_syn3_speed.py:96: AssertionError
+___ test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.25] ____
+
+speed = 2.25
+
+    @pytest.mark.parametrize("speed", [2.1, 2.25, 2.5, 2.75, 3.0])
+    async def test_syn3_stretched_path_synthesizes_at_native_max_then_stretches(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, cache = make_service()
+        try:
+            entry = await service.get_audio(seg.id, VOICE, speed)
+        finally:
+            await service.shutdown()
+        assert [c[2] for c in spy.calls] == [2.0]  # native max, never the requested speed
+        ratio = speed / 2.0
+        at_max = FakeBackend().synthesize(seg.normalized_text, VOICE, 2.0)
+        expected_ms = at_max.duration_ms / ratio
+        assert abs(entry.duration_ms - expected_ms) <= 0.02 * expected_ms + 1
+>       assert entry.speed == speed  # cached under the requested speed
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert 2.2 == 2.25
+E        +  where 2.2 = AudioEntry(segment_id=10000, voice_id='fake_m1', speed=2.2, backend='fake', status='ready', path=PosixPath('mem/10000/...d=24), WordTimestamp(word='800-207', start_ms=218, end_ms=254, char_start=25, char_end=32)], document_id=1, failures=0).speed
+
+tests/test_syn3_speed.py:115: AssertionError
+___ test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.75] ____
+
+speed = 2.75
+
+    @pytest.mark.parametrize("speed", [2.1, 2.25, 2.5, 2.75, 3.0])
+    async def test_syn3_stretched_path_synthesizes_at_native_max_then_stretches(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, cache = make_service()
+        try:
+            entry = await service.get_audio(seg.id, VOICE, speed)
+        finally:
+            await service.shutdown()
+        assert [c[2] for c in spy.calls] == [2.0]  # native max, never the requested speed
+        ratio = speed / 2.0
+        at_max = FakeBackend().synthesize(seg.normalized_text, VOICE, 2.0)
+        expected_ms = at_max.duration_ms / ratio
+        assert abs(entry.duration_ms - expected_ms) <= 0.02 * expected_ms + 1
+>       assert entry.speed == speed  # cached under the requested speed
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert 2.8 == 2.75
+E        +  where 2.8 = AudioEntry(segment_id=10000, voice_id='fake_m1', speed=2.8, backend='fake', status='ready', path=PosixPath('mem/10000/...d=24), WordTimestamp(word='800-207', start_ms=171, end_ms=200, char_start=25, char_end=32)], document_id=1, failures=0).speed
+
+tests/test_syn3_speed.py:115: AssertionError
+___________ test_syn3_api_speed_validation_0_5_to_3_0_in_0_05_steps ____________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-87/test_syn3_api_speed_validation0')
+
+    async def test_syn3_api_speed_validation_0_5_to_3_0_in_0_05_steps(tmp_path: Path) -> None:
+        from tests.test_api_audio import ready_document
+    
+        async with ready_document(tmp_path) as (client, segments):
+            sid = segments[0]["id"]
+            for speed in VALID:
+                resp = await client.get(f"/audio/{sid}", params={"voice": VOICE, "speed": speed})
+>               assert resp.status_code == 200, (speed, resp.text)
+E               AssertionError: (0.55, '{"detail":"speed must be 0.5..3.0 in 0.1 steps"}')
+E               assert 422 == 200
+E                +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+
+tests/test_syn3_speed.py:141: AssertionError
+___________________ test_syn5_quarter_speed_change_is_a_seek ___________________
+
+    async def test_syn5_quarter_speed_change_is_a_seek() -> None:
+        """1.25 -> 1.2 is a speed change (no one-decimal rounding collapses them): the 1.25
+        window is dropped and the queue refills at 1.2."""
+        spy = SpyBackend(delay_s=0.1)
+        service, _, cache = make_service(spy, lookahead=5)
+        try:
+            await service.prefetch(DOC, 0, VOICE, 1.25)  # queues orders 0..4 at 1.25
+            await wait_for(lambda: len(spy.calls) >= 1)
+            await service.get_audio(at(1).id, VOICE, 1.2)
+            await wait_for(lambda: service.queue_depth(DOC) == 0)
+        finally:
+            await service.shutdown()
+        speeds = [c[2] for c in spy.calls]
+>       assert speeds[0] == 1.25, speeds  # synthesized at 1.25, not rounded to one decimal
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, ...]
+E       assert 1.2 == 1.25
+
+tests/test_syn5_queue.py:117: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_api_audio.py::test_syn6_audio_cache_file_and_row_written - ...
+FAILED tests/test_api_audio.py::test_syn3_syn6_quarter_speeds_two_decimal_cache_files_rows_and_hits
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[1.25]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[1.75]
+FAILED tests/test_syn3_speed.py::test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.25]
+FAILED tests/test_syn3_speed.py::test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.75]
+FAILED tests/test_syn3_speed.py::test_syn3_api_speed_validation_0_5_to_3_0_in_0_05_steps
+FAILED tests/test_syn5_queue.py::test_syn5_quarter_speed_change_is_a_seek - A...
+8 failed, 40 passed in 7.68s

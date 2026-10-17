@@ -1,0 +1,23 @@
+$ git diff main --stat -- api/pyproject.toml
+(empty above = no dependency change vs main)
+$ git diff main --name-only
+_agent/registry/task-usage.json
+_agent/results/353_red.txt
+_agent/results/354_green.txt
+_agent/results/355_full.txt
+_agent/results/356_model.txt
+_agent/results/357_ruff.txt
+_agent/results/358_smoke_audio.txt
+_agent/results/359_deps_diff.txt
+_agent/token-ledger.md
+api/hearnarro/routes/audio.py
+api/hearnarro/synthesis/cache.py
+api/hearnarro/synthesis/service.py
+api/scripts/m1_smoke.py
+api/tests/test_api_audio.py
+api/tests/test_syn3_speed.py
+api/tests/test_syn5_queue.py
+docs/CODE_MAP_M2.md
+docs/M2_TESTING.md
+docs/PRD.md
+docs/TECHNICAL_DESIGN.md
