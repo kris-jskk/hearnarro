@@ -1,0 +1,23 @@
+response keys: ['document_id', 'total', 'from', 'limit', 'next_from', 'segments']
+total segments: 3760
+segment: {'id': 33760, 'order': 1675, 'block_id': 13082, 'type': 'body', 'section_id': None, 'text': 'On a scale of 1–10, I would have said 2/10 or 3/10.', 'normalized_text': 'On a scale of 1–10, I would have said 2/10 or 3/10.', 'char_start': 0, 'char_end': 51}
+audio status: 200 bytes: 138684
+X-Timestamps words: ['On', 'a', 'scale', 'of', '1–10,', 'I', 'would', 'have', 'said', '2/10', 'or', '3/10.']
+
+=== misaki G2P probe (KokoroBackend._g2p_for(False)), Sat Oct 17 02:21:25 PDT 2026 ===
+W1017 02:21:27.254000 37375 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+  super().__init__("LSTM", *args, **kwargs)
+  WeightNorm.apply(module, name, dim)
+kokoro OOV word '1–10' -> None via spelled+spelled (document=None)
+'On a scale of 1–10, I would have said 2/10 or 3/10.'
+  phonemes: ˌɔn ɐ skˈAl ʌv , ˌI wʊd hæv sˈɛd tˈu tˈɛn ɔɹ θɹˈi tˈɛn.
+  tokens: [('On', 'ˌɔn'), ('a', 'ɐ'), ('scale', 'skˈAl'), ('of', 'ʌv'), ('1–10', ''), (',', ','), ('I', 'ˌI'), ('would', 'wʊd'), ('have', 'hæv'), ('said', 'sˈɛd'), ('2/10', 'tˈu tˈɛn'), ('or', 'ɔɹ'), ('3/10', 'θɹˈi tˈɛn'), ('.', '.')]
+'On a scale of 1 to 10, I would have said 2/10 or 3/10.'
+  phonemes: ˌɔn ɐ skˈAl ʌv wˈʌn tə tˈɛn, ˌI wʊd hæv sˈɛd tˈu tˈɛn ɔɹ θɹˈi tˈɛn.
+  tokens: [('On', 'ˌɔn'), ('a', 'ɐ'), ('scale', 'skˈAl'), ('of', 'ʌv'), ('1', 'wˈʌn'), ('to', 'tə'), ('10', 'tˈɛn'), (',', ','), ('I', 'ˌI'), ('would', 'wʊd'), ('have', 'hæv'), ('said', 'sˈɛd'), ('2/10', 'tˈu tˈɛn'), ('or', 'ɔɹ'), ('3/10', 'θɹˈi tˈɛn'), ('.', '.')]
+'pages 10-12'
+  phonemes: pˈAʤᵻz tˌɛntwˈɛlv
+  tokens: [('pages', 'pˈAʤᵻz'), ('10-12', 'tˌɛntwˈɛlv')]
+'5 to 10 percent'
+  phonemes: fˈIv tə tˈɛn pəɹsˈɛnt
+  tokens: [('5', 'fˈIv'), ('to', 'tə'), ('10', 'tˈɛn'), ('percent', 'pəɹsˈɛnt')]
