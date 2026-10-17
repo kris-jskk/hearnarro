@@ -1,0 +1,178 @@
+# 285 boundary P/R/F1 before (result 261) and after (task m2-splitter-abbreviations)
+
+## BEFORE (copied from _agent/results/261_boundary_measurement.txt)
+sentence-boundary P/R/F1, parser vs reviewed truth (not asserted)
+fixture                             truth parser    tp    fp    fn       P       R      F1
+academic_01_seahelm_audio             151    168   149    19     2  0.8869  0.9868  0.9342
+academic_02_memduet                   108    117   104    13     4  0.8889  0.9630  0.9244
+academic_03_pruned_reasoning          111    113   110     3     1  0.9735  0.9910  0.9821
+academic_04_legislative_xml           116    121   114     7     2  0.9421  0.9828  0.9620
+academic_05_sparse_autoencoders       132    135   132     3     0  0.9778  1.0000  0.9888
+tables_01_pfn_bayes                   118    141   116    25     2  0.8227  0.9831  0.8958
+tables_02_non_gaussian_sem            119    130   115    15     4  0.8846  0.9664  0.9237
+tables_03_copula_subspaces            124    136   118    18     6  0.8676  0.9516  0.9077
+tables_04_markov_kernel                98    111    93    18     5  0.8378  0.9490  0.8900
+tables_05_decomposing_learner          88     91    88     3     0  0.9670  1.0000  0.9832
+report_01_zero_trust                   49     57    49     8     0  0.8596  1.0000  0.9245
+report_02_patch_mgmt                   56     63    56     7     0  0.8889  1.0000  0.9412
+report_03_ssdf                         49     57    49     8     0  0.8596  1.0000  0.9245
+report_04_rmf                          40     48    40     8     0  0.8333  1.0000  0.9091
+report_05_controls                     39     47    39     8     0  0.8298  1.0000  0.9070
+mean (15 fixtures)                                                 0.8880  0.9849  0.9332
+
+## AFTER: cd api && .venv/bin/python -m pytest -q tests/test_syn_boundaries.py -s
+sentence-boundary P/R/F1, parser vs reviewed truth (not asserted)
+fixture                             truth parser    tp    fp    fn       P       R      F1
+academic_01_seahelm_audio             151    152   147     5     4  0.9671  0.9735  0.9703
+academic_02_memduet                   108    116   105    11     3  0.9052  0.9722  0.9375
+academic_03_pruned_reasoning          111    113   110     3     1  0.9735  0.9910  0.9821
+academic_04_legislative_xml           116    121   114     7     2  0.9421  0.9828  0.9620
+academic_05_sparse_autoencoders       132    135   132     3     0  0.9778  1.0000  0.9888
+tables_01_pfn_bayes                   118    139   117    22     1  0.8417  0.9915  0.9105
+tables_02_non_gaussian_sem            119    130   116    14     3  0.8923  0.9748  0.9317
+tables_03_copula_subspaces            124    139   123    16     1  0.8849  0.9919  0.9354
+tables_04_markov_kernel                98    111    97    14     1  0.8739  0.9898  0.9282
+tables_05_decomposing_learner          88     91    88     3     0  0.9670  1.0000  0.9832
+report_01_zero_trust                   49     50    49     1     0  0.9800  1.0000  0.9899
+report_02_patch_mgmt                   56     56    56     0     0  1.0000  1.0000  1.0000
+report_03_ssdf                         49     50    49     1     0  0.9800  1.0000  0.9899
+report_04_rmf                          40     41    40     1     0  0.9756  1.0000  0.9877
+report_05_controls                     39     40    39     1     0  0.9750  1.0000  0.9873
+mean (15 fixtures)                                                 0.9424  0.9912  0.9656
+.
+31 passed in 4.91s
+
+## AFTER: residual FP/FN per fixture (scratchpad fp.py; FP IN = both segments in one block, FP X = across blocks, i.e. a block boundary from stages 1-4, outside stage 5)
+## academic_01_seahelm_audio fp=5 fn=4
+  FP X  …'Speech path' || 'Figure 1: SEA-HELM Audio evaluation: speech path ('
+  FP X  …', S. Mishra, S. Brahma, S. Basu, Y. Luan, D. Zhou,' || 'and L. Hou, “Instruction-following evaluation for '
+  FP IN …'Leong, Y. Susanto, R. Ng, S. Longpre, S. Ruder, W.' || '-Y. Ko, A. Bosselut, A. Oh, A. Martins, L. Choshen'
+  FP X  …'N. Carlini, M. Nasr, J. Z. Kolter, and M. Fredrik-' || 'son, “Universal and transferable adversarial attac'
+  FP X  …'N. Nguyen, Y. Huang, N. C. Tai, W. Y. Leong, W. Q.' || 'Leong, X. Yong, J. G. Ngui, Y. Susanto, N. Cheng e'
+  FN  …'ite results (400 samples per run; TTS: OmniVoice).' || 'Accuracy (Speech, Text) and ∆= Text −Speech, in pe'
+  FN  …', Text) and ∆= Text −Speech, in percentage points.' || '4.2. Instruction Following (SEA-HELM IFEval)'
+  FN  …'g, Y. Susanto, R. Ng, S. Longpre, S. Ruder, W. -Y.' || 'Ko, A. Bosselut, A. Oh, A. Martins, L. Choshen, D.'
+  FN  …'istic biases in multilingual evaluation,” in Proc.' || '63rd Annual Meeting of the Association for Computa'
+## academic_02_memduet fp=11 fn=3
+  FP X  …'ry of Human-Machine Hybrid Augmented Intelligence,' || 'Institute of Artificial Intelligence and Robotics,'
+  FP X  …'Faculty of Electronic and Information Engineering,' || 'Xi’an Jiaotong University 3Imperial College London'
+  FP IN …'*Corresponding author: nnzheng@xjtu.edu.cn.' || '1Project page: jiangchengsong.github.io/MemDuet/.'
+  FP X  …'1Project page: jiangchengsong.github.io/MemDuet/.' || 'These advances make recurrent memory increasingly '
+  FP X  …'stem 1 as fast, parallel evidence selection with a' || 'small language model and System 2 as memoryupdate '
+  FP X  …'at,i ∈{Skip, Update}.' || 'The chunks predicted as Update form the candidate '
+  FP X  …' chunks predicted as Update form the candidate set' || 'which is forwarded to System 2.'
+  FP X  …'ocument order and generate its replacement memory:' || 'where i⋆ t = min{i ∈It | ξt,i ≤αt,i}.'
+  FP X  …'p We initialize System 1 on HotpotQA (Yang et al.,' || '2018) by aligning gold supporting facts with docum'
+  FP X  …'We train on the original examples and post-update' || 'negatives using the memory-contrastive objective:'
+  FP X  …'g We freeze System 1 at ϕSFT and optimize all Sys-' || 'tem 2 parameters θ by reinforcement learning over'
+  FN  …'Haodong Jing1, Yulin Mu2, Lesong Tao1, Jixin Wang1' || 'Jin Cui1, Tianjing Ren3, Runxuan Xie2, Yongqiang M'
+  FN  …'*Corresponding author:' || '1Project page: jiangchengsong.github.io/MemDuet/.'
+  FN  …'1Project page: jiangchengsong.github.io/MemDuet/.' || 'Human reading and memory suggest a different princ'
+## academic_03_pruned_reasoning fp=3 fn=1
+  FP X  …'1Nanyang Technological University, Singapore' || '2VinUniversity, Vietnam'
+  FP X  …' are followed by a PROGRESS paragraph, and define:' || '∆cyc ='
+  FP X  …'∆cyc =' || 'where a larger ∆cyc indicates a stronger relative '
+  FN  …'n inputs Xℓ, it solves min∥ˆ Wℓ∥0≤S ∥(Wℓ−ˆ Wℓ)Xℓ∥2' || 'F , where S is the number of retained weights.'
+## academic_04_legislative_xml fp=7 fn=2
+  FP X  …'* Equal contribution.' || '(3) A dimension-resolved error analysis showing th'
+  FP X  …'We measure it instead as one dimension of a full' || 'pipeline, split into localization and normalizatio'
+  FP IN …'ttps://www.oasis-open.org/committees/tc_ home.php?' || 'wg_abbrev=legaldocml'
+  FP X  …'wg_abbrev=legaldocml' || '3 Task and Dataset'
+  FP X  …'We use that term for three coupled changes T3' || 'introduces together: decomposition into specialize'
+  FP X  …'tiers, never the knowledge, so a capability T2 and' || 'Table 1: What each harness receives.'
+  FP IN …' written out in prose for T1 rather than withheld.' || 'What T1 cannot be given this way is anything requi'
+  FN  …'* Equal contribution.' || '2 Related Work'
+  FN  …' written out in prose for T1 rather than withheld.' || 'Table 1: What each harness receives.'
+## academic_05_sparse_autoencoders fp=3 fn=0
+  FP X  …'cience/r/ sae-research-register-C331/register.html' || 'Building on these foundations, our survey examines'
+  FP X  …'RQ1: Which design assumptions change what an SAE' || 'can recover?'
+  FP X  …'aim-dependent evidence: choose tests for the claim' || 'Figure 1: Three facets jointly define a comparison'
+## tables_01_pfn_bayes fp=22 fn=1
+  FP X  …'obialka Emanuel Sommer Thomas Nagler David Rügamer' || 'LMU Munich and Munich Center for Machine Learning'
+  FP X  …' via in-context learning (Brown et al., 2020) dur-' || 'ing pretraining, they perform inference on new dow'
+  FP X  …'A PFN is trained on datasets drawn from a' || 'Figure 1: Decomposition of the deployment error of'
+  FP X  …'This paper studies the amortization error,' || 'the only term controlled by pretraining, which spl'
+  FP IN …'g objective is minimized by the PPD of that prior.' || 'In other words, a PFN is trained to minimize its r'
+  FP X  …'hether this holds is a question about amortization' || 'uncertainty.'
+  FP X  …'r and Rügamer, 2025; Fortini et al., 2026) studies' || 'the uncertainty that remains for a fixed network a'
+  FP X  …'Given (p, N=n), the context is' || 'Dn ∼p⊗n, and the PFN targets the posterior predict'
+  FP X  …'Then for every predictor q,' || 'with equality if and only if q = πΠ′ almost surely'
+  FP X  …'e task and size (pj, nj) are drawn from the prior,' || 'optimized with first-order stochastic gradient met'
+  FP X  …'dent on what datasets are probable under the prior' || '(deviations at small context settings for Ψ unifor'
+  FP X  …'ations at small context settings for Ψ uniform vs.' || 'deviations at large context settings for Ψ logunif'
+  FP X  …'e this approach is sufficient to study the general' || 'capabilities of transformers to approximate the PP'
+  FP X  …'The following studies these problems' || 'in more detail.'
+  FP X  …'he amortization error splits into three components' || 'where ˜θM minimizes the empirical risk for M train'
+  FP X  …'ta, at several scales M1 < · · · < ML, and compute' || 'where θref is a reference checkpoint with Mref ≫ML'
+  FP X  …'rs q1, . . . , qK with mixture ¯q = 1 K PK k=1 qk,' || '1'
+  FP X  …'1' || 'where ∆p := Ey∼p\x02 log ¯q(y) −1 K PK k=1 log qk(y)\x03'
+  FP X  …'1' || 'Thus, the average amortization error of K PFNs spl'
+  FP X  …'The next result makes its cost' || 'explicit and reconciles in what sense model averag'
+  FP X  …' relative to the prior, the Lebesgue decomposition' || 'splits the deployment distribution uniquely into a'
+  FP X  …'he prior can express ˜Π, and a part Π′ ⊥it cannot,' || 'with density ˜rΠ = d˜Π/dΠ on the absolutely contin'
+  FN  …'g objective is minimized by the PPD of that prior.' || 'Figure 1: Decomposition of the deployment error of'
+## tables_02_non_gaussian_sem fp=14 fn=3
+  FP X  …'el (SEM) as a collection of equations of the form:' || 'where PA(i) ⊂{1, . . . , d} \\ {i} indexes the pare'
+  FP X  …'ar function of its parents plus independent noise:' || 'where Λ ∈Rd×d encodes the linear dependence of eac'
+  FP X  …'Special case under Gaussian noise' || 'Figure 1: Representative classes of methods that r'
+  FP IN …'For a vertex i, we write PA' || '(i), CH'
+  FP IN …'(i), CH' || '(i), AN'
+  FP IN …'(i), AN' || '(i), and DE'
+  FP IN …'(i), and DE' || '(i) for its sets of parents, children, ancestors, '
+  FP IN …'The non-descendants of i are V \\ (DE' || '(i) ∪ {i}), i.e., the vertices other than i that c'
+  FP IN …' G if every parent precedes its child: writing t−1' || '(i) for the position of vertex i, t−1'
+  FP IN …'(i) for the position of vertex i, t−1' || '(j) < t−1'
+  FP IN …'(j) < t−1' || '(i) whenever j ∈PA'
+  FP IN …'(i) whenever j ∈PA' || '(i).'
+  FP X  …'quivalently, the support of Λ) from the samples of' || '4 GENERALIZED ORDERING-BASED LEARNING VIA CONDITIO'
+  FP X  …'For every i ∈[d],' || 'For proofs, see Appendix A.'
+  FN  …' under the assumption of equal error variances, σ2' || '1 = · · · = σ2 d = σ2: no two distinct DAGs with e'
+  FN  …'valently, the support of Λ) from the samples of X.' || '4 GENERALIZED ORDERING-BASED LEARNING VIA CONDITIO'
+  FN  …'in) < σ2 otherwise, where bmin = min(i,j)∈E |Λji|.' || 'For proofs, see Appendix A.'
+## tables_03_copula_subspaces fp=16 fn=1
+  FP X  …'We therefore consider the error' || '(1.1)'
+  FP X  …'(1.1)' || 'of the Cas estimate bπn, estimating its individual'
+  FP X  …'ror has order (N log N)−2/(d+2) + N −1/2 [19, Thm.' || '∗This is Part II of a two-part work.'
+  FP IN …'1].' || 'The decomposition reduces the required entropy cal'
+  FP IN …'densities πi with CDFs Fi, the componentwise map Z' || '(x)i := Φ−1(Fi'
+  FP IN …'(x)i := Φ−1(Fi' || '(xi)) produces standard Gaussian marginals (2.1), '
+  FP IN …'define the reduced model πn(x; Vr) := cU r (V ⊤r Z' || '(x)) Q i πi'
+  FP IN …'(x)) Q i πi' || '(xi) (2.4).'
+  FP X  …'t Λr := ΛK2,q2 in r variables to fit Lr(u; bθr) :=' || 'P α∈Λr bθr αHα(u).'
+  FP X  …'Thus the joint estimate (3.1) takes the' || 'with copula factor bcZ(z) := bcU r ( bV C⊤ r z).'
+  FP X  …'πi) + RN + log bZcomp | {z } Emarg (the marginals)' || 'where RN := Eπn[log bcZ(Z)]−Eπn[log bcZ( bZ)] is t'
+  FP X  …'f degree K2 we assume the moment bounds (T), (3.1)' || 'where the outer expectation is over the estimation'
+  FP X  …'Combining this with (M) gives' || 'd (log N)K2/2N −1/2).'
+  FP X  …'Let bV C r be the estimated Stage-1 basis of' || '(3.5) and bPr := bV C r bV C⊤ r .'
+  FP X  …'For comparison,' || 'let P C r := V C r V C⊤ r project onto the top-r e'
+  FP X  …'eparates the rank and suboptimality contributions:' || 'where the rank term is fixed by C and r.'
+  FN  …'has order (N log N)−2/(d+2) + N −1/2 [19, Thm. 1].' || '∗This is Part II of a two-part work.'
+## tables_04_markov_kernel fp=14 fn=1
+  FP X  …'Correspondence to:' || 'Abstract'
+  FP X  …', the empirical law of large numbers gives, almost' || 'for every bounded continuous test function f.'
+  FP X  …'s provided by integral probability metrics (IPMs),' || 'where F is a class of measurable test functions in'
+  FP X  …'unit ball of H in (3), Hilbert-space duality gives' || 'H'
+  FP X  …'H' || 'whenever the two Bochner integrals exist; see, e.g'
+  FP IN …'is the MMD associated with the kernel k(x, y) = ⟨ϕ' || '(x), ϕ'
+  FP IN …'(x), ϕ' || '(y)⟩H.'
+  FP X  …'tion condition: sup MMDϕ(P n(x, ·), π) ≤Cθn, n ≥0,' || 'for some C < ∞and θ ∈[0, 1).'
+  FP X  …'KRR) for learning the one-step prediction function' || 'of a real-valued Markov chain from a single trajec'
+  FP X  …'ance operators, and denoting Σλ := Σ + λI, we have' || 'where Φλ(x) := Σ−1/2 λ [ϕ(x) ⊗ϕ(x)]Σ−1/2 λ .'
+  FP X  …'cale associated with the covariance-feature kernel' || 'For stationary trajectories, under the spectral an'
+  FP X  …'Recall that for a fixed T > 0, bµT := 1 T T −1 X' || 'denotes empirical occupation measure.'
+  FP X  …'Its predictable quadratic variation is' || 'where Ej[·] := E[· | Fj].'
+  FP X  …'ss FTV := {f : X →[0, 1] : f is measurable} , (15)' || 'the corresponding IPM is the total variation dista'
+  FN  …' the covariance-feature kernel K(x, y) = k(x, y)2.' || 'For stationary trajectories, under the spectral an'
+## tables_05_decomposing_learner fp=3 fn=0
+  FP X  …'conditional distribution of y can be decomposed as' || 'where prand(y) := p(y | x, z = 0), since y is inde'
+  FP X  …'these conditional distributions as Gaussian, i.e.,' || 'where f, µ0, σ2 0 and σ2 1 are unknown functions a'
+  FP X  …'he joint log-density of y and z can be obtained as' || 'which is naturally decomposed into three component'
+## report_01_zero_trust fp=1 fn=0
+  FP X  …'Drive (Mail Stop 8920) Gaithersburg, MD 20899-8920' || 'Email: zerotrust-arch@nist.gov'
+## report_02_patch_mgmt fp=0 fn=0
+## report_03_ssdf fp=1 fn=0
+  FP X  …'Donna Dodson*' || '* Former NIST employee; all work for this publicat'
+## report_04_rmf fp=1 fn=0
+  FP X  …'Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930' || 'Email: sec-cert@nist.gov'
+## report_05_controls fp=1 fn=0
+  FP X  …'Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930' || 'Email: sec-cert@nist.gov'

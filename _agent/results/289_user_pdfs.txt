@@ -1,0 +1,75 @@
+# 289 hearnarro dump --jsonl of the three user PDFs (read-only, /Users/sowmyajonnalagadda/hearnarro-m1/inbox/), HEAD splitter (old) vs this task's splitter (new)
+# cmd: .venv/bin/hearnarro dump --jsonl <pdf> with HEAD's segment.py swapped in (old) and with the new one (new); compare script scratchpad cmp.py, scan script inline
+
+## segment counts and segment-level changes (MERGE = several old segments became one new; OTHER pairs = a closing quote moved from the start of one segment to the end of the previous)
+## The -3-Alarms-personalithy Dev.pdf: segments before 1862, after 1859 (delta -3)
+## The-Almanack-of-Naval-Ravikant.pdf: segments before 3713, after 3706 (delta -7)
+## what-is-the-internet-of-things.pdf: segments before 527, after 526 (delta -1)
+
+  MERGE old orders [590, 591]: ['3.', 'I’ve developed the mental toughness that enables me not just to survive when things don’t go to plan, but to actually thrive in those situations.']
+      -> '3. I’ve developed the mental toughness that enables me not just to survive when things don’t go to plan, but to actually thrive in those situations.'
+  MERGE old orders [835, 836]: ['5.', 'Lastly, massive goals prompt us to get real with ourselves and confront our deficiencies.']
+      -> '5. Lastly, massive goals prompt us to get real with ourselves and confront our deficiencies.'
+  MERGE old orders [1400, 1401]: ['12.', 'Which of the antifragility concepts most resonated with you?']
+      -> '12. Which of the antifragility concepts most resonated with you?'
+--
+  MERGE old orders [7, 8]: ['That was the feeling at O’Reilly’s Solid Conference.', '”']
+      -> 'That was the feeling at O’Reilly’s Solid Conference.”'
+
+## closing-quote moves (OTHER pairs): 153 pairs; first 3:
+  OTHER old orders [1530]: ["All the socializing and then New Year's Eve?"]
+      -> "All the socializing and then New Year's Eve?”"
+  OTHER old orders [1531]: ['” Even despite the fact that I had done a successful stretch of no alcohol, a year still seemed quite daunting.']
+      -> 'Even despite the fact that I had done a successful stretch of no alcohol, a year still seemed quite daunting.'
+--
+  OTHER old orders [409]: ['ships, or knowledge, come from compound interest.']
+      -> 'ships, or knowledge, come from compound interest.”'
+  OTHER old orders [410]: ['” How does one know if they’re earning compound interest?']
+
+## scan: segments ending in a listed abbreviation / starting with a closing quote
+The -3-Alarms-personalithy Dev.pdf [old] segments=1862 ending-in-listed-abbreviation=3 starting-with-closing-quote=1
+     abbr-end: 'Schedule your health time, break time, sleep, etc.'
+     abbr-end: 'No.'
+     abbr-end: 'There’s the interior, the staff, the customer service, etc.'
+     closer-start: '” Even despite the fact that I had done a successful stretch of no alcohol, a year still s'
+The -3-Alarms-personalithy Dev.pdf [new] segments=1859 ending-in-listed-abbreviation=3 starting-with-closing-quote=0
+     abbr-end: 'Schedule your health time, break time, sleep, etc.'
+     abbr-end: 'No.'
+     abbr-end: 'There’s the interior, the staff, the customer service, etc.'
+The-Almanack-of-Naval-Ravikant.pdf [old] segments=3713 ending-in-listed-abbreviation=12 starting-with-closing-quote=24
+     abbr-end: 'No.'
+     abbr-end: 'No.'
+     abbr-end: 'That is one definition of art.'
+     abbr-end: 'Yes and no.'
+     abbr-end: 'This includes fortune, fate, etc.'
+     abbr-end: 'IF YOU CAN’T DECIDE, THE ANSWER IS NO.'
+     closer-start: '” How does one know if they’re earning compound interest?'
+     closer-start: '” The Tim Ferriss Show, 2019.'
+     closer-start: '” Killing Buddha, 2016.'
+The-Almanack-of-Naval-Ravikant.pdf [new] segments=3706 ending-in-listed-abbreviation=12 starting-with-closing-quote=1
+     abbr-end: 'No.'
+     abbr-end: 'No.'
+     abbr-end: 'That is one definition of art.'
+     abbr-end: 'Yes and no.'
+     abbr-end: 'This includes fortune, fate, etc.'
+     abbr-end: 'IF YOU CAN’T DECIDE, THE ANSWER IS NO.'
+     closer-start: '” Killing Buddha, 2016.'
+what-is-the-internet-of-things.pdf [old] segments=527 ending-in-listed-abbreviation=2 starting-with-closing-quote=1
+     abbr-end: 'Copyright © 2015 O’Reilly Media, Inc.'
+     abbr-end: 'Mike Loukides is Vice President of Content Strategy for O’Reilly Media, Inc.'
+     closer-start: '”'
+what-is-the-internet-of-things.pdf [new] segments=526 ending-in-listed-abbreviation=2 starting-with-closing-quote=0
+     abbr-end: 'Copyright © 2015 O’Reilly Media, Inc.'
+     abbr-end: 'Mike Loukides is Vice President of Content Strategy for O’Reilly Media, Inc.'
+
+## the one remaining closer-start segment in the Almanack (new), with neighbours
+{'order': 3393, 'page': 232, 'type': 'footnote', 'text': 'naval-ravikant-on-the-tim-ferriss-show-transcript/.'}
+{'order': 3394, 'page': 233, 'type': 'body', 'text': '” Killing Buddha, 2016.'}
+{'order': 3395, 'page': 233, 'type': 'body', 'text': 'http://www.killingbuddha.co/ blog/2016/2/7/naval-ravikant-ceo-of-angellist; “Chief Executive Philosopher:'}
+
+## O'Reilly old order 7-9 vs new order 7-8
+{"order": 7, "page": 1, "type": "body", "text": "That was the feeling at O’Reilly’s Solid Conference."}
+{"order": 8, "page": 1, "type": "body", "text": "”"}
+{"order": 9, "page": 1, "type": "body", "text": "— Wired"}
+{"order": 7, "page": 1, "type": "body", "text": "That was the feeling at O’Reilly’s Solid Conference.”"}
+{"order": 8, "page": 1, "type": "body", "text": "— Wired"}

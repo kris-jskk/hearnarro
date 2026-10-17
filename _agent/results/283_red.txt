@@ -1,0 +1,187 @@
+.....FFF.FF.FFF..F.FF................F                                   [100%]
+=================================== FAILURES ===================================
+___________ test_ing5_boundary_rules[appendix_letter_is_a_boundary] ____________
+
+case = 'appendix_letter_is_a_boundary'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['For proofs,... properties.'] == ['For proofs,... properties.']
+E         
+E         At index 0 diff: 'For proofs, see Appendix A. This fact uses two properties.' != 'For proofs, see Appendix A.'
+E         Right contains one more item: 'This fact uses two properties.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+________ test_ing5_boundary_rules[citation_abbreviations_mid_sentence] _________
+
+case = 'citation_abbreviations_mid_sentence'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['This docume... 'Publ.', ...] == ['This docume...'It is free.']
+E         
+E         At index 0 diff: 'This document is Natl.' != 'This document is Natl. Inst. Stand. Technol. Spec. Publ. 800-207, 59 pages (August 2020).'
+E         Left contains 6 more items, first extra item: 'Stand.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+__________ test_ing5_boundary_rules[closing_quote_alone_after_split] ___________
+
+case = 'closing_quote_alone_after_split'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['The motto w...for a while.'] == ['The motto w...for a while.']
+E         
+E         At index 0 diff: 'The motto was “Move fast.' != 'The motto was “Move fast.\n”'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+________________ test_ing5_boundary_rules[equation_references] _________________
+
+case = 'equation_references'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['The approxi...8), we stop.'] == ['The approxi...8), we stop.']
+E         
+E         At index 0 diff: 'The approximation error (Eq.' != 'The approximation error (Eq. (8)).'
+E         Left contains 3 more items, first extra item: '(4) is approximated.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+_________________ test_ing5_boundary_rules[et_seq_then_comma] __________________
+
+case = 'et_seq_then_comma'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['FISMA, 44 U...responsible.'] == ['FISMA, 44 U...responsible.']
+E         
+E         At index 0 diff: 'FISMA, 44 U.S.C. § 3551 et seq.' != 'FISMA, 44 U.S.C. § 3551 et seq., Public Law (P.L.) 113-283.'
+E         Left contains one more item: 'NIST is responsible.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+______________ test_ing5_boundary_rules[initials_run_with_hyphen] ______________
+
+case = 'initials_run_with_hyphen'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['[3] K. Marc...MMLU,” 2024.'] == ['[3] K. Marc...MMLU,” 2024.']
+E         
+E         At index 0 diff: '[3] K. Marchisio, W. Q. Leong, S. Ruder, W.' != '[3] K. Marchisio, W. Q. Leong, S. Ruder, W.-Y. Lee, and B. Tan, “Global MMLU,” 2024.'
+E         Left contains 2 more items, first extra item: '-Y.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+__________________ test_ing5_boundary_rules[latin_and_titles] __________________
+
+case = 'latin_and_titles'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['Also cf.', ....', '3 here.'] == ['Also cf. Sm...Vol. 3 here.']
+E         
+E         At index 0 diff: 'Also cf.' != 'Also cf. Smith on this.'
+E         Left contains 2 more items, first extra item: 'See No. 5 and Vol.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+____________ test_ing5_boundary_rules[list_marker_inside_sentence] _____________
+
+case = 'list_marker_inside_sentence'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['For a verte...raw context.'] == ['For a verte...raw context.']
+E         
+E         At index 0 diff: 'For a vertex i, we write PA' != 'For a vertex i, we write PA\n(i), CH\n(i) for its parents.'
+E         Left contains 3 more items, first extra item: '(i) for its parents.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+_________ test_ing5_boundary_rules[one_letter_variable_is_a_boundary] __________
+
+case = 'one_letter_variable_is_a_boundary'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['Let X be a ...e is finite.'] == ['Let X be a ...e is finite.']
+E         
+E         At index 0 diff: 'Let X be a chain with transition kernel P. Its measure is finite.' != 'Let X be a chain with transition kernel P.'
+E         Right contains one more item: 'Its measure is finite.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+_______________ test_ing5_boundary_rules[section_number_heading] _______________
+
+case = 'section_number_heading'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['2.1.', 'Exp...ental Design'] == ['2.1. Experimental Design']
+E         
+E         At index 0 diff: '2.1.' != '2.1. Experimental Design'
+E         Left contains one more item: 'Experimental Design'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+___________ test_ing5_boundary_rules[section_number_run_in_heading] ____________
+
+case = 'section_number_run_in_heading'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['3.1.', 'The...it each one.'] == ['3.1. The ma...it each one.']
+E         
+E         At index 0 diff: '3.1.' != '3.1. The marginals.'
+E         Left contains one more item: 'We fit each one.'
+E         Use -v to get more diff
+
+api/tests/test_ing5_segment.py:150: AssertionError
+________________ test_ing5_per_document_abbreviation_extension _________________
+
+    def test_ing5_per_document_abbreviation_extension() -> None:
+>       from hearnarro.ingestion.abbreviations import DEFAULT_ABBREVIATIONS
+E       ModuleNotFoundError: No module named 'hearnarro.ingestion.abbreviations'
+
+api/tests/test_ing5_segment.py:166: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[appendix_letter_is_a_boundary]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[citation_abbreviations_mid_sentence]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[closing_quote_alone_after_split]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[equation_references]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[et_seq_then_comma]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[initials_run_with_hyphen]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[latin_and_titles]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[list_marker_inside_sentence]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[one_letter_variable_is_a_boundary]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[section_number_heading]
+FAILED api/tests/test_ing5_segment.py::test_ing5_boundary_rules[section_number_run_in_heading]
+FAILED api/tests/test_ing5_segment.py::test_ing5_per_document_abbreviation_extension
+12 failed, 26 passed in 0.05s
