@@ -1,0 +1,1746 @@
+FFFFFFFF................................................................ [ 15%]
+........................................................................ [ 31%]
+........................................................................ [ 47%]
+.......................sssss............................................ [ 62%]
+........................................................................ [ 78%]
+..........................FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF........ [ 94%]
+........................Fss                                              [100%]
+=================================== FAILURES ===================================
+______________ test_syn1_audio_get_miss_then_hit_headers_and_head ______________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn1_audio_get_miss_then_0')
+
+    async def test_syn1_audio_get_miss_then_hit_headers_and_head(tmp_path: Path) -> None:
+        spy = SpyBackend(delay_s=0.3)
+        async with ready_document(tmp_path, spy) as (client, segments):
+            seg = worded(segments)[0]
+            url, params = f"/audio/{seg['id']}", {"voice": VOICE, "speed": 1.0}
+    
+>           assert (await client.head(url, params=params)).status_code == 404
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_api_audio.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1826: in head
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 1, voice = 'fake_f2', speed = 1.0
+request = <starlette.requests.Request object at 0x10dc1dd90>
+
+    @router.head("/audio/{segment_id}")
+    async def head_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:29: NotImplementedError
+__________________ test_syn6_audio_cache_file_and_row_written __________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn6_audio_cache_file_and0')
+
+    async def test_syn6_audio_cache_file_and_row_written(tmp_path: Path) -> None:
+        async with ready_document(tmp_path) as (client, segments):
+            seg = worded(segments)[1]
+>           resp = await client.get(f"/audio/{seg['id']}", params={"voice": VOICE, "speed": 1.5})
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_api_audio.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1768: in get
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 2, voice = 'fake_f2', speed = 1.5
+request = <starlette.requests.Request object at 0x10e29c650>
+
+    @router.get("/audio/{segment_id}")
+    async def get_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:24: NotImplementedError
+_______________________ test_syn6_head_never_synthesizes _______________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn6_head_never_synthesiz0')
+
+    async def test_syn6_head_never_synthesizes(tmp_path: Path) -> None:
+        spy = SpyBackend()
+        async with ready_document(tmp_path, spy) as (client, segments):
+            url = f"/audio/{worded(segments)[5]['id']}"
+            for _ in range(2):
+>               resp = await client.head(url, params={"voice": VOICE, "speed": 1.0})
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_api_audio.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1826: in head
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 6, voice = 'fake_f2', speed = 1.0
+request = <starlette.requests.Request object at 0x10e287cd0>
+
+    @router.head("/audio/{segment_id}")
+    async def head_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:29: NotImplementedError
+_____________________ test_syn1_audio_unknown_segment_404 ______________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn1_audio_unknown_segmen0')
+
+    async def test_syn1_audio_unknown_segment_404(tmp_path: Path) -> None:
+        async with ready_document(tmp_path) as (client, _):
+            params = {"voice": VOICE, "speed": 1.0}
+>           assert (await client.get("/audio/999999", params=params)).status_code == 404
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_api_audio.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1768: in get
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 999999, voice = 'fake_f2', speed = 1.0
+request = <starlette.requests.Request object at 0x10e53e8d0>
+
+    @router.get("/audio/{segment_id}")
+    async def get_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:24: NotImplementedError
+_________________ test_syn2_audio_unknown_or_missing_voice_422 _________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn2_audio_unknown_or_mis0')
+
+    async def test_syn2_audio_unknown_or_missing_voice_422(tmp_path: Path) -> None:
+        spy = SpyBackend()
+        async with ready_document(tmp_path, spy) as (client, segments):
+            url = f"/audio/{segments[0]['id']}"
+>           assert (await client.get(url, params={"voice": "af_heart", "speed": 1.0})).status_code == (
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                422
+            )
+
+tests/test_api_audio.py:140: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1768: in get
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 1, voice = 'af_heart', speed = 1.0
+request = <starlette.requests.Request object at 0x10de48850>
+
+    @router.get("/audio/{segment_id}")
+    async def get_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:24: NotImplementedError
+_____________ test_syn1_audio_synthesis_failure_502_and_row_failed _____________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn1_audio_synthesis_fail0')
+
+    async def test_syn1_audio_synthesis_failure_502_and_row_failed(tmp_path: Path) -> None:
+        spy = SpyBackend(fail_texts={"*"})
+        async with ready_document(tmp_path, spy) as (client, segments):
+            sid = worded(segments)[0]["id"]
+            params = {"voice": VOICE, "speed": 1.0}
+>           resp = await client.get(f"/audio/{sid}", params=params)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_api_audio.py:153: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1768: in get
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 1, voice = 'fake_f2', speed = 1.0
+request = <starlette.requests.Request object at 0x10e5b0490>
+
+    @router.get("/audio/{segment_id}")
+    async def get_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:24: NotImplementedError
+________________ test_syn5_audio_lookahead_visible_through_head ________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn5_audio_lookahead_visi0')
+
+    async def test_syn5_audio_lookahead_visible_through_head(tmp_path: Path) -> None:
+        async with ready_document(tmp_path, lookahead=3) as (client, segments):
+            params = {"voice": VOICE, "speed": 1.0}
+>           assert (await client.get(f"/audio/{segments[0]['id']}", params=params)).status_code == 200
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_api_audio.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1768: in get
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 1, voice = 'fake_f2', speed = 1.0
+request = <starlette.requests.Request object at 0x10e8baa90>
+
+    @router.get("/audio/{segment_id}")
+    async def get_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:24: NotImplementedError
+___________________ test_syn2_voices_six_across_both_genders ___________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn2_voices_six_across_bo0')
+
+    async def test_syn2_voices_six_across_both_genders(tmp_path: Path) -> None:
+        async with client_for(tmp_path, tts_backend=SpyBackend(), encoder=WavEncoder()) as client:
+>           resp = await client.get("/voices")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_api_audio.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1768: in get
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+request = <starlette.requests.Request object at 0x10df1cd50>
+
+    @router.get("/voices")
+    async def list_voices(request: Request) -> list[dict[str, Any]]:
+        """``[{id, name, backend, language, gender}]`` from ``app.state.tts_backend.voices()``."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/voices.py:15: NotImplementedError
+------------------------------ Captured log call -------------------------------
+WARNING  hearnarro.settings:settings.py:66 TTS backend: fake (kokoro not installed); set HEARNARRO_TTS_BACKEND to choose
+___________ test_syn1_timestamp_invariants_native_50_sentences[1.0] ____________
+
+speed = 1.0
+
+    @pytest.mark.parametrize("speed", [1.0, 2.0])
+    async def test_syn1_timestamp_invariants_native_50_sentences(speed: float) -> None:
+        service, _, _ = make_service()
+        try:
+            for seg in fifty_fixture_sentences():
+>               entry = await service.get_audio(seg.id, VOICE, speed)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn1_timestamps.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10ed489d0>
+segment_id = 10000, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+___________ test_syn1_timestamp_invariants_native_50_sentences[2.0] ____________
+
+speed = 2.0
+
+    @pytest.mark.parametrize("speed", [1.0, 2.0])
+    async def test_syn1_timestamp_invariants_native_50_sentences(speed: float) -> None:
+        service, _, _ = make_service()
+        try:
+            for seg in fifty_fixture_sentences():
+>               entry = await service.get_audio(seg.id, VOICE, speed)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn1_timestamps.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e0c6250>
+segment_id = 10000, voice_id = 'fake_f1', speed = 2.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+__________ test_syn1_timestamp_invariants_stretched_50_sentences[2.5] __________
+
+speed = 2.5
+
+    @pytest.mark.parametrize("speed", [2.5, 3.0])
+    async def test_syn1_timestamp_invariants_stretched_50_sentences(speed: float) -> None:
+        service, _, _ = make_service()
+        try:
+            for seg in fifty_fixture_sentences():
+>               entry = await service.get_audio(seg.id, VOICE, speed)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn1_timestamps.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e8a9710>
+segment_id = 10000, voice_id = 'fake_f1', speed = 2.5
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+__________ test_syn1_timestamp_invariants_stretched_50_sentences[3.0] __________
+
+speed = 3.0
+
+    @pytest.mark.parametrize("speed", [2.5, 3.0])
+    async def test_syn1_timestamp_invariants_stretched_50_sentences(speed: float) -> None:
+        service, _, _ = make_service()
+        try:
+            for seg in fifty_fixture_sentences():
+>               entry = await service.get_audio(seg.id, VOICE, speed)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn1_timestamps.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e77a510>
+segment_id = 10000, voice_id = 'fake_f1', speed = 3.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+_______ test_syn1_timestamps_translated_to_text_offsets_through_char_map _______
+
+    async def test_syn1_timestamps_translated_to_text_offsets_through_char_map() -> None:
+        segs = fifty_fixture_sentences()
+        service, _, _ = make_service()
+        try:
+            for seg in segs:
+>               entry = await service.get_audio(seg.id, VOICE, 1.0)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn1_timestamps.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e4be910>
+segment_id = 10000, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+_________________ test_syn1_scaled_timestamps_keep_invariants __________________
+
+    def test_syn1_scaled_timestamps_keep_invariants() -> None:
+        from hearnarro.synthesis.stretch import scale_timestamps
+    
+        for seg in fifty_fixture_sentences():
+            native = FakeBackend().synthesize(seg.normalized_text, VOICE, 2.0)
+            for ratio in (1.05, 1.25, 1.5):
+>               scaled: list[WordTimestamp] = scale_timestamps(native.timestamps, ratio)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn1_timestamps.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ts = [WordTimestamp(word='N', start_ms=0, end_ms=40, char_start=0, char_end=1), WordTimestamp(word='I', start_ms=40, end_ms...ar_start=8, char_end=15), WordTimestamp(word='Publication', start_ms=200, end_ms=240, char_start=16, char_end=27), ...]
+ratio = 1.05
+
+    def scale_timestamps(ts: list[WordTimestamp], ratio: float) -> list[WordTimestamp]:
+        """start_ms and end_ms times ``1 / ratio`` as ints; order and char offsets unchanged."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:23: NotImplementedError
+_______________________ test_syn3_scale_timestamps_math ________________________
+
+    def test_syn3_scale_timestamps_math() -> None:
+        from hearnarro.synthesis.stretch import scale_timestamps
+    
+        ts = [
+            WordTimestamp("Zero", 0, 300, 0, 4),
+            WordTimestamp("trust", 300, 750, 5, 10),
+            WordTimestamp("now.", 750, 1500, 11, 15),
+        ]
+>       out = scale_timestamps(ts, 1.5)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ts = [WordTimestamp(word='Zero', start_ms=0, end_ms=300, char_start=0, char_end=4), WordTimestamp(word='trust', start_ms=30..._ms=750, char_start=5, char_end=10), WordTimestamp(word='now.', start_ms=750, end_ms=1500, char_start=11, char_end=15)]
+ratio = 1.5
+
+    def scale_timestamps(ts: list[WordTimestamp], ratio: float) -> list[WordTimestamp]:
+        """start_ms and end_ms times ``1 / ratio`` as ints; order and char offsets unchanged."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:23: NotImplementedError
+___________ test_syn3_scale_timestamps_within_one_ms_of_exact[1.05] ____________
+
+ratio = 1.05
+
+    @pytest.mark.parametrize("ratio", [1.05, 1.1, 1.25, 1.333, 1.5])
+    def test_syn3_scale_timestamps_within_one_ms_of_exact(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import scale_timestamps
+    
+        ts = FakeBackend().synthesize(fifty_fixture_sentences()[3].normalized_text, VOICE, 2.0)
+>       out = scale_timestamps(ts.timestamps, ratio)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ts = [WordTimestamp(word='Stu', start_ms=0, end_ms=40, char_start=0, char_end=3), WordTimestamp(word='Mitchell', start_ms=4...120, char_start=13, char_end=17), WordTimestamp(word='Connelly', start_ms=120, end_ms=160, char_start=18, char_end=26)]
+ratio = 1.05
+
+    def scale_timestamps(ts: list[WordTimestamp], ratio: float) -> list[WordTimestamp]:
+        """start_ms and end_ms times ``1 / ratio`` as ints; order and char offsets unchanged."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:23: NotImplementedError
+____________ test_syn3_scale_timestamps_within_one_ms_of_exact[1.1] ____________
+
+ratio = 1.1
+
+    @pytest.mark.parametrize("ratio", [1.05, 1.1, 1.25, 1.333, 1.5])
+    def test_syn3_scale_timestamps_within_one_ms_of_exact(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import scale_timestamps
+    
+        ts = FakeBackend().synthesize(fifty_fixture_sentences()[3].normalized_text, VOICE, 2.0)
+>       out = scale_timestamps(ts.timestamps, ratio)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ts = [WordTimestamp(word='Stu', start_ms=0, end_ms=40, char_start=0, char_end=3), WordTimestamp(word='Mitchell', start_ms=4...120, char_start=13, char_end=17), WordTimestamp(word='Connelly', start_ms=120, end_ms=160, char_start=18, char_end=26)]
+ratio = 1.1
+
+    def scale_timestamps(ts: list[WordTimestamp], ratio: float) -> list[WordTimestamp]:
+        """start_ms and end_ms times ``1 / ratio`` as ints; order and char offsets unchanged."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:23: NotImplementedError
+___________ test_syn3_scale_timestamps_within_one_ms_of_exact[1.25] ____________
+
+ratio = 1.25
+
+    @pytest.mark.parametrize("ratio", [1.05, 1.1, 1.25, 1.333, 1.5])
+    def test_syn3_scale_timestamps_within_one_ms_of_exact(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import scale_timestamps
+    
+        ts = FakeBackend().synthesize(fifty_fixture_sentences()[3].normalized_text, VOICE, 2.0)
+>       out = scale_timestamps(ts.timestamps, ratio)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ts = [WordTimestamp(word='Stu', start_ms=0, end_ms=40, char_start=0, char_end=3), WordTimestamp(word='Mitchell', start_ms=4...120, char_start=13, char_end=17), WordTimestamp(word='Connelly', start_ms=120, end_ms=160, char_start=18, char_end=26)]
+ratio = 1.25
+
+    def scale_timestamps(ts: list[WordTimestamp], ratio: float) -> list[WordTimestamp]:
+        """start_ms and end_ms times ``1 / ratio`` as ints; order and char offsets unchanged."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:23: NotImplementedError
+___________ test_syn3_scale_timestamps_within_one_ms_of_exact[1.333] ___________
+
+ratio = 1.333
+
+    @pytest.mark.parametrize("ratio", [1.05, 1.1, 1.25, 1.333, 1.5])
+    def test_syn3_scale_timestamps_within_one_ms_of_exact(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import scale_timestamps
+    
+        ts = FakeBackend().synthesize(fifty_fixture_sentences()[3].normalized_text, VOICE, 2.0)
+>       out = scale_timestamps(ts.timestamps, ratio)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ts = [WordTimestamp(word='Stu', start_ms=0, end_ms=40, char_start=0, char_end=3), WordTimestamp(word='Mitchell', start_ms=4...120, char_start=13, char_end=17), WordTimestamp(word='Connelly', start_ms=120, end_ms=160, char_start=18, char_end=26)]
+ratio = 1.333
+
+    def scale_timestamps(ts: list[WordTimestamp], ratio: float) -> list[WordTimestamp]:
+        """start_ms and end_ms times ``1 / ratio`` as ints; order and char offsets unchanged."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:23: NotImplementedError
+____________ test_syn3_scale_timestamps_within_one_ms_of_exact[1.5] ____________
+
+ratio = 1.5
+
+    @pytest.mark.parametrize("ratio", [1.05, 1.1, 1.25, 1.333, 1.5])
+    def test_syn3_scale_timestamps_within_one_ms_of_exact(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import scale_timestamps
+    
+        ts = FakeBackend().synthesize(fifty_fixture_sentences()[3].normalized_text, VOICE, 2.0)
+>       out = scale_timestamps(ts.timestamps, ratio)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+ts = [WordTimestamp(word='Stu', start_ms=0, end_ms=40, char_start=0, char_end=3), WordTimestamp(word='Mitchell', start_ms=4...120, char_start=13, char_end=17), WordTimestamp(word='Connelly', start_ms=120, end_ms=160, char_start=18, char_end=26)]
+ratio = 1.5
+
+    def scale_timestamps(ts: list[WordTimestamp], ratio: float) -> list[WordTimestamp]:
+        """start_ms and end_ms times ``1 / ratio`` as ints; order and char offsets unchanged."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:23: NotImplementedError
+_____________ test_syn3_stretch_pcm_length_is_len_over_ratio[1.05] _____________
+
+ratio = 1.05
+
+    @pytest.mark.parametrize("ratio", [1.05, 1.25, 1.5])
+    def test_syn3_stretch_pcm_length_is_len_over_ratio(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import stretch_pcm
+    
+        pcm = tone(2.0)
+>       out = stretch_pcm(pcm, SR, ratio)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pcm = b'\x00\x00\xcc\x01\x97\x03_\x05"\x07\xe0\x08\x95\nB\x0c\xe5\r{\x0f\x05\x11\x80\x12\xeb\x13E\x15\x8e\x16\xc3\x17\xe4\x1...\x10\xe6\x1c\xe7=\xe8r\xe9\xbb\xea\x15\xec\x80\xed\xfb\xee\x85\xf0\x1b\xf2\xbe\xf3k\xf5 \xf7\xde\xf8\xa1\xfai\xfc4\xfe'
+sample_rate = 24000, ratio = 1.05
+
+    def stretch_pcm(pcm: bytes, sample_rate: int, ratio: float) -> bytes:
+        """PCM16 mono in, PCM16 mono out, ``len(out) ≈ len(pcm) / ratio``; pitch preserved."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:18: NotImplementedError
+_____________ test_syn3_stretch_pcm_length_is_len_over_ratio[1.25] _____________
+
+ratio = 1.25
+
+    @pytest.mark.parametrize("ratio", [1.05, 1.25, 1.5])
+    def test_syn3_stretch_pcm_length_is_len_over_ratio(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import stretch_pcm
+    
+        pcm = tone(2.0)
+>       out = stretch_pcm(pcm, SR, ratio)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pcm = b'\x00\x00\xcc\x01\x97\x03_\x05"\x07\xe0\x08\x95\nB\x0c\xe5\r{\x0f\x05\x11\x80\x12\xeb\x13E\x15\x8e\x16\xc3\x17\xe4\x1...\x10\xe6\x1c\xe7=\xe8r\xe9\xbb\xea\x15\xec\x80\xed\xfb\xee\x85\xf0\x1b\xf2\xbe\xf3k\xf5 \xf7\xde\xf8\xa1\xfai\xfc4\xfe'
+sample_rate = 24000, ratio = 1.25
+
+    def stretch_pcm(pcm: bytes, sample_rate: int, ratio: float) -> bytes:
+        """PCM16 mono in, PCM16 mono out, ``len(out) ≈ len(pcm) / ratio``; pitch preserved."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:18: NotImplementedError
+_____________ test_syn3_stretch_pcm_length_is_len_over_ratio[1.5] ______________
+
+ratio = 1.5
+
+    @pytest.mark.parametrize("ratio", [1.05, 1.25, 1.5])
+    def test_syn3_stretch_pcm_length_is_len_over_ratio(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import stretch_pcm
+    
+        pcm = tone(2.0)
+>       out = stretch_pcm(pcm, SR, ratio)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pcm = b'\x00\x00\xcc\x01\x97\x03_\x05"\x07\xe0\x08\x95\nB\x0c\xe5\r{\x0f\x05\x11\x80\x12\xeb\x13E\x15\x8e\x16\xc3\x17\xe4\x1...\x10\xe6\x1c\xe7=\xe8r\xe9\xbb\xea\x15\xec\x80\xed\xfb\xee\x85\xf0\x1b\xf2\xbe\xf3k\xf5 \xf7\xde\xf8\xa1\xfai\xfc4\xfe'
+sample_rate = 24000, ratio = 1.5
+
+    def stretch_pcm(pcm: bytes, sample_rate: int, ratio: float) -> bytes:
+        """PCM16 mono in, PCM16 mono out, ``len(out) ≈ len(pcm) / ratio``; pitch preserved."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:18: NotImplementedError
+__________ test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[0.9] ___________
+
+ratio = 0.9
+
+    @pytest.mark.parametrize("ratio", [0.9, 1.0, 1.6, 3.0])
+    def test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import stretch_pcm
+    
+        with pytest.raises(ValueError):
+>           stretch_pcm(tone(0.5), SR, ratio)
+
+tests/test_syn3_speed.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pcm = b'\x00\x00\xcc\x01\x97\x03_\x05"\x07\xe0\x08\x95\nB\x0c\xe5\r{\x0f\x05\x11\x80\x12\xeb\x13E\x15\x8e\x16\xc3\x17\xe4\x1...\x10\xe6\x1c\xe7=\xe8r\xe9\xbb\xea\x15\xec\x80\xed\xfb\xee\x85\xf0\x1b\xf2\xbe\xf3k\xf5 \xf7\xde\xf8\xa1\xfai\xfc4\xfe'
+sample_rate = 24000, ratio = 0.9
+
+    def stretch_pcm(pcm: bytes, sample_rate: int, ratio: float) -> bytes:
+        """PCM16 mono in, PCM16 mono out, ``len(out) ≈ len(pcm) / ratio``; pitch preserved."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:18: NotImplementedError
+__________ test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[1.0] ___________
+
+ratio = 1.0
+
+    @pytest.mark.parametrize("ratio", [0.9, 1.0, 1.6, 3.0])
+    def test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import stretch_pcm
+    
+        with pytest.raises(ValueError):
+>           stretch_pcm(tone(0.5), SR, ratio)
+
+tests/test_syn3_speed.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pcm = b'\x00\x00\xcc\x01\x97\x03_\x05"\x07\xe0\x08\x95\nB\x0c\xe5\r{\x0f\x05\x11\x80\x12\xeb\x13E\x15\x8e\x16\xc3\x17\xe4\x1...\x10\xe6\x1c\xe7=\xe8r\xe9\xbb\xea\x15\xec\x80\xed\xfb\xee\x85\xf0\x1b\xf2\xbe\xf3k\xf5 \xf7\xde\xf8\xa1\xfai\xfc4\xfe'
+sample_rate = 24000, ratio = 1.0
+
+    def stretch_pcm(pcm: bytes, sample_rate: int, ratio: float) -> bytes:
+        """PCM16 mono in, PCM16 mono out, ``len(out) ≈ len(pcm) / ratio``; pitch preserved."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:18: NotImplementedError
+__________ test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[1.6] ___________
+
+ratio = 1.6
+
+    @pytest.mark.parametrize("ratio", [0.9, 1.0, 1.6, 3.0])
+    def test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import stretch_pcm
+    
+        with pytest.raises(ValueError):
+>           stretch_pcm(tone(0.5), SR, ratio)
+
+tests/test_syn3_speed.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pcm = b'\x00\x00\xcc\x01\x97\x03_\x05"\x07\xe0\x08\x95\nB\x0c\xe5\r{\x0f\x05\x11\x80\x12\xeb\x13E\x15\x8e\x16\xc3\x17\xe4\x1...\x10\xe6\x1c\xe7=\xe8r\xe9\xbb\xea\x15\xec\x80\xed\xfb\xee\x85\xf0\x1b\xf2\xbe\xf3k\xf5 \xf7\xde\xf8\xa1\xfai\xfc4\xfe'
+sample_rate = 24000, ratio = 1.6
+
+    def stretch_pcm(pcm: bytes, sample_rate: int, ratio: float) -> bytes:
+        """PCM16 mono in, PCM16 mono out, ``len(out) ≈ len(pcm) / ratio``; pitch preserved."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:18: NotImplementedError
+__________ test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[3.0] ___________
+
+ratio = 3.0
+
+    @pytest.mark.parametrize("ratio", [0.9, 1.0, 1.6, 3.0])
+    def test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5(ratio: float) -> None:
+        from hearnarro.synthesis.stretch import stretch_pcm
+    
+        with pytest.raises(ValueError):
+>           stretch_pcm(tone(0.5), SR, ratio)
+
+tests/test_syn3_speed.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+pcm = b'\x00\x00\xcc\x01\x97\x03_\x05"\x07\xe0\x08\x95\nB\x0c\xe5\r{\x0f\x05\x11\x80\x12\xeb\x13E\x15\x8e\x16\xc3\x17\xe4\x1...\x10\xe6\x1c\xe7=\xe8r\xe9\xbb\xea\x15\xec\x80\xed\xfb\xee\x85\xf0\x1b\xf2\xbe\xf3k\xf5 \xf7\xde\xf8\xa1\xfai\xfc4\xfe'
+sample_rate = 24000, ratio = 3.0
+
+    def stretch_pcm(pcm: bytes, sample_rate: int, ratio: float) -> bytes:
+        """PCM16 mono in, PCM16 mono out, ``len(out) ≈ len(pcm) / ratio``; pitch preserved."""
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/stretch.py:18: NotImplementedError
+______________ test_syn3_native_path_passes_speed_to_backend[0.5] ______________
+
+speed = 0.5
+
+    @pytest.mark.parametrize("speed", [0.5, 1.0, 1.5, 2.0])
+    async def test_syn3_native_path_passes_speed_to_backend(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, _ = make_service()
+        try:
+>           entry = await service.get_audio(seg.id, VOICE, speed)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e546f50>
+segment_id = 10000, voice_id = 'fake_m1', speed = 0.5
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+______________ test_syn3_native_path_passes_speed_to_backend[1.0] ______________
+
+speed = 1.0
+
+    @pytest.mark.parametrize("speed", [0.5, 1.0, 1.5, 2.0])
+    async def test_syn3_native_path_passes_speed_to_backend(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, _ = make_service()
+        try:
+>           entry = await service.get_audio(seg.id, VOICE, speed)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10db9c5d0>
+segment_id = 10000, voice_id = 'fake_m1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+______________ test_syn3_native_path_passes_speed_to_backend[1.5] ______________
+
+speed = 1.5
+
+    @pytest.mark.parametrize("speed", [0.5, 1.0, 1.5, 2.0])
+    async def test_syn3_native_path_passes_speed_to_backend(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, _ = make_service()
+        try:
+>           entry = await service.get_audio(seg.id, VOICE, speed)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10db9dd50>
+segment_id = 10000, voice_id = 'fake_m1', speed = 1.5
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+______________ test_syn3_native_path_passes_speed_to_backend[2.0] ______________
+
+speed = 2.0
+
+    @pytest.mark.parametrize("speed", [0.5, 1.0, 1.5, 2.0])
+    async def test_syn3_native_path_passes_speed_to_backend(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, _ = make_service()
+        try:
+>           entry = await service.get_audio(seg.id, VOICE, speed)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e0c7a90>
+segment_id = 10000, voice_id = 'fake_m1', speed = 2.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+____ test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.1] ____
+
+speed = 2.1
+
+    @pytest.mark.parametrize("speed", [2.1, 2.5, 3.0])
+    async def test_syn3_stretched_path_synthesizes_at_native_max_then_stretches(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, cache = make_service()
+        try:
+>           entry = await service.get_audio(seg.id, VOICE, speed)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10ddf52d0>
+segment_id = 10000, voice_id = 'fake_m1', speed = 2.1
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+____ test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.5] ____
+
+speed = 2.5
+
+    @pytest.mark.parametrize("speed", [2.1, 2.5, 3.0])
+    async def test_syn3_stretched_path_synthesizes_at_native_max_then_stretches(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, cache = make_service()
+        try:
+>           entry = await service.get_audio(seg.id, VOICE, speed)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e547450>
+segment_id = 10000, voice_id = 'fake_m1', speed = 2.5
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+____ test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[3.0] ____
+
+speed = 3.0
+
+    @pytest.mark.parametrize("speed", [2.1, 2.5, 3.0])
+    async def test_syn3_stretched_path_synthesizes_at_native_max_then_stretches(speed: float) -> None:
+        seg = fifty_fixture_sentences()[0]
+        service, spy, cache = make_service()
+        try:
+>           entry = await service.get_audio(seg.id, VOICE, speed)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10ea2d350>
+segment_id = 10000, voice_id = 'fake_m1', speed = 3.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+____________ test_syn3_api_speed_validation_0_5_to_3_0_in_0_1_steps ____________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn3_api_speed_validation0')
+
+    async def test_syn3_api_speed_validation_0_5_to_3_0_in_0_1_steps(tmp_path: Path) -> None:
+        from tests.test_api_audio import ready_document
+    
+        async with ready_document(tmp_path) as (client, segments):
+            sid = segments[0]["id"]
+            for speed in VALID:
+>               resp = await client.get(f"/audio/{sid}", params={"voice": VOICE, "speed": speed})
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn3_speed.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1768: in get
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 1, voice = 'fake_m1', speed = 0.5
+request = <starlette.requests.Request object at 0x10e5b1b50>
+
+    @router.get("/audio/{segment_id}")
+    async def get_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:24: NotImplementedError
+____________ test_syn5_lookahead_enqueues_n_after_first_request[3] _____________
+
+n = 3
+
+    @pytest.mark.parametrize("n", [3, 5])
+    async def test_syn5_lookahead_enqueues_n_after_first_request(n: int) -> None:
+        service, spy, cache = make_service(lookahead=n)
+        try:
+>           await service.get_audio(at(10).id, VOICE, SPEED)
+
+tests/test_syn5_queue.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e555fd0>
+segment_id = 10010, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+____________ test_syn5_lookahead_enqueues_n_after_first_request[5] _____________
+
+n = 5
+
+    @pytest.mark.parametrize("n", [3, 5])
+    async def test_syn5_lookahead_enqueues_n_after_first_request(n: int) -> None:
+        service, spy, cache = make_service(lookahead=n)
+        try:
+>           await service.get_audio(at(10).id, VOICE, SPEED)
+
+tests/test_syn5_queue.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e92c0d0>
+segment_id = 10010, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+__________________ test_syn5_lookahead_stops_at_document_end ___________________
+
+    async def test_syn5_lookahead_stops_at_document_end() -> None:
+        segs = doc_segments()
+        service, _, cache = make_service(lookahead=5)
+        try:
+>           await service.get_audio(segs[-2].id, VOICE, SPEED)
+
+tests/test_syn5_queue.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e96cc90>
+segment_id = 10048, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+_______ test_syn5_lookahead_runs_on_single_synthesis_thread_off_the_loop _______
+
+    async def test_syn5_lookahead_runs_on_single_synthesis_thread_off_the_loop() -> None:
+        service, spy, cache = make_service(lookahead=5)
+        try:
+>           await service.get_audio(at(0).id, VOICE, SPEED)
+
+tests/test_syn5_queue.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e555e10>
+segment_id = 10000, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+__________ test_syn5_seek_clears_queue_and_refills_from_new_position ___________
+
+    async def test_syn5_seek_clears_queue_and_refills_from_new_position() -> None:
+        spy = SpyBackend(delay_s=0.1)
+        service, _, cache = make_service(spy, lookahead=5)
+        try:
+>           await service.get_audio(at(0).id, VOICE, SPEED)  # queues orders 1..5
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn5_queue.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e92c090>
+segment_id = 10000, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+________________ test_syn5_voice_change_prefetch_uses_new_voice ________________
+
+    async def test_syn5_voice_change_prefetch_uses_new_voice() -> None:
+        service, spy, cache = make_service(lookahead=2)
+        try:
+>           await service.prefetch(DOC, 0, "fake_m3", 1.5)
+
+tests/test_syn5_queue.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10dd65d50>
+document_id = 1, from_order = 0, voice_id = 'fake_m3', speed = 1.5
+
+    async def prefetch(
+        self, document_id: int, from_order: int, voice_id: str, speed: float
+    ) -> None:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:78: NotImplementedError
+________________________ test_syn5_cached_jobs_skipped _________________________
+
+    async def test_syn5_cached_jobs_skipped() -> None:
+        service, spy, cache = make_service(lookahead=5)
+        try:
+            for order in (2, 3):
+                seg = at(order)
+                await cache.put(
+                    AudioEntry(seg.id, VOICE, SPEED, "fake", "ready", None, "audio/wav", 80, []),
+                    b"RIFF",
+                )
+>           await service.get_audio(at(0).id, VOICE, SPEED)
+
+tests/test_syn5_queue.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e741390>
+segment_id = 10000, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+_______________ test_syn6_cache_hit_returns_without_backend_call _______________
+
+    async def test_syn6_cache_hit_returns_without_backend_call() -> None:
+        service, spy, _ = make_service(lookahead=0)
+        try:
+>           first = await service.get_audio(at(7).id, VOICE, SPEED)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn5_queue.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e8d3e10>
+segment_id = 10007, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+___________________ test_syn5_first_request_jumps_the_queue ____________________
+
+    async def test_syn5_first_request_jumps_the_queue() -> None:
+        delay = 0.2
+        spy = SpyBackend(delay_s=delay)
+        service, _, _cache = make_service(spy, lookahead=5)
+        try:
+>           await service.prefetch(DOC, 0, VOICE, SPEED)  # five jobs ahead of us
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn5_queue.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e8d3050>
+document_id = 1, from_order = 0, voice_id = 'fake_f1', speed = 1.0
+
+    async def prefetch(
+        self, document_id: int, from_order: int, voice_id: str, speed: float
+    ) -> None:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:78: NotImplementedError
+_______ test_syn5_failed_segment_raises_marks_failed_and_queue_moves_on ________
+
+    async def test_syn5_failed_segment_raises_marks_failed_and_queue_moves_on() -> None:
+        bad = at(2)
+        spy = SpyBackend(fail_texts={bad.normalized_text})
+        service, _, cache = make_service(spy, lookahead=4)
+        try:
+>           await service.get_audio(at(0).id, VOICE, SPEED)
+
+tests/test_syn5_queue.py:170: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10de2e950>
+segment_id = 10000, voice_id = 'fake_f1', speed = 1.0
+
+    async def get_audio(self, segment_id: int, voice_id: str, speed: float) -> AudioEntry:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:73: NotImplementedError
+_____________ test_syn5_shutdown_returns_within_5s_with_queue_full _____________
+
+    async def test_syn5_shutdown_returns_within_5s_with_queue_full() -> None:
+        service, _, _ = make_service(SpyBackend(delay_s=0.5), lookahead=5)
+>       await service.prefetch(DOC, 0, VOICE, SPEED)
+
+tests/test_syn5_queue.py:191: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.service.SynthesisService object at 0x10e518f50>
+document_id = 1, from_order = 0, voice_id = 'fake_f1', speed = 1.0
+
+    async def prefetch(
+        self, document_id: int, from_order: int, voice_id: str, speed: float
+    ) -> None:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/synthesis/service.py:78: NotImplementedError
+_________________ test_syn_gate_fake_ttfa_under_2s_all_speeds __________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-58/test_syn_gate_fake_ttfa_under_0')
+
+    async def test_syn_gate_fake_ttfa_under_2s_all_speeds(tmp_path: Path) -> None:
+        from tests.test_api_audio import ready_document, worded
+    
+        async with ready_document(tmp_path, lookahead=5) as (client, segments):
+            seg = worded(segments)[0]
+            for speed in GATE_SPEEDS:  # each speed is a distinct cache key: cold every time
+                t0 = time.perf_counter()
+>               resp = await client.get(
+                    f"/audio/{seg['id']}", params={"voice": "fake_f1", "speed": speed}
+                )
+
+tests/test_syn_gate.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+.venv/lib/python3.11/site-packages/httpx/_client.py:1768: in get
+    return await self.request(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1540: in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1629: in send
+    response = await self._send_handling_auth(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1657: in _send_handling_auth
+    response = await self._send_handling_redirects(
+.venv/lib/python3.11/site-packages/httpx/_client.py:1694: in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_client.py:1730: in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/httpx/_transports/asgi.py:170: in handle_async_request
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/applications.py:1216: in __call__
+    await super().__call__(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/applications.py:96: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:186: in __call__
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/middleware/errors.py:164: in __call__
+    await self.app(scope, receive, _send)
+.venv/lib/python3.11/site-packages/fastapi/telemetry/_asgi.py:151: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/middleware/exceptions.py:63: in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py:18: in __call__
+    await self.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/routing.py:676: in __call__
+    await self.middleware_stack(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2791: in app
+    await route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1819: in handle
+    await self.original_router.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:2874: in handle
+    await included_router._handle_selected(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1845: in _handle_selected
+    await original_route.handle(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:1308: in handle
+    await effective_context.app(scope, receive, send)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:165: in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:53: in wrapped_app
+    raise exc
+.venv/lib/python3.11/site-packages/starlette/_exception_handler.py:42: in wrapped_app
+    await app(scope, receive, sender)
+.venv/lib/python3.11/site-packages/fastapi/routing.py:151: in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+.venv/lib/python3.11/site-packages/fastapi/routing.py:727: in app
+    raw_response = await run_endpoint_function(
+.venv/lib/python3.11/site-packages/fastapi/routing.py:360: in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+segment_id = 1, voice = 'fake_f1', speed = 0.5
+request = <starlette.requests.Request object at 0x10b5a1690>
+
+    @router.get("/audio/{segment_id}")
+    async def get_audio(segment_id: int, voice: str, speed: float, request: Request) -> Response:
+>       raise NotImplementedError
+E       NotImplementedError
+
+hearnarro/routes/audio.py:24: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_api_audio.py::test_syn1_audio_get_miss_then_hit_headers_and_head
+FAILED tests/test_api_audio.py::test_syn6_audio_cache_file_and_row_written - ...
+FAILED tests/test_api_audio.py::test_syn6_head_never_synthesizes - NotImpleme...
+FAILED tests/test_api_audio.py::test_syn1_audio_unknown_segment_404 - NotImpl...
+FAILED tests/test_api_audio.py::test_syn2_audio_unknown_or_missing_voice_422
+FAILED tests/test_api_audio.py::test_syn1_audio_synthesis_failure_502_and_row_failed
+FAILED tests/test_api_audio.py::test_syn5_audio_lookahead_visible_through_head
+FAILED tests/test_api_audio.py::test_syn2_voices_six_across_both_genders - No...
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamp_invariants_native_50_sentences[1.0]
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamp_invariants_native_50_sentences[2.0]
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamp_invariants_stretched_50_sentences[2.5]
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamp_invariants_stretched_50_sentences[3.0]
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamps_translated_to_text_offsets_through_char_map
+FAILED tests/test_syn1_timestamps.py::test_syn1_scaled_timestamps_keep_invariants
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_math - NotImpleme...
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.05]
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.1]
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.25]
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.333]
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.5]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_length_is_len_over_ratio[1.05]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_length_is_len_over_ratio[1.25]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_length_is_len_over_ratio[1.5]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[0.9]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[1.0]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[1.6]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[3.0]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[0.5]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[1.0]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[1.5]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[2.0]
+FAILED tests/test_syn3_speed.py::test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.1]
+FAILED tests/test_syn3_speed.py::test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.5]
+FAILED tests/test_syn3_speed.py::test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[3.0]
+FAILED tests/test_syn3_speed.py::test_syn3_api_speed_validation_0_5_to_3_0_in_0_1_steps
+FAILED tests/test_syn5_queue.py::test_syn5_lookahead_enqueues_n_after_first_request[3]
+FAILED tests/test_syn5_queue.py::test_syn5_lookahead_enqueues_n_after_first_request[5]
+FAILED tests/test_syn5_queue.py::test_syn5_lookahead_stops_at_document_end - ...
+FAILED tests/test_syn5_queue.py::test_syn5_lookahead_runs_on_single_synthesis_thread_off_the_loop
+FAILED tests/test_syn5_queue.py::test_syn5_seek_clears_queue_and_refills_from_new_position
+FAILED tests/test_syn5_queue.py::test_syn5_voice_change_prefetch_uses_new_voice
+FAILED tests/test_syn5_queue.py::test_syn5_cached_jobs_skipped - NotImplement...
+FAILED tests/test_syn5_queue.py::test_syn6_cache_hit_returns_without_backend_call
+FAILED tests/test_syn5_queue.py::test_syn5_first_request_jumps_the_queue - No...
+FAILED tests/test_syn5_queue.py::test_syn5_failed_segment_raises_marks_failed_and_queue_moves_on
+FAILED tests/test_syn5_queue.py::test_syn5_shutdown_returns_within_5s_with_queue_full
+FAILED tests/test_syn_gate.py::test_syn_gate_fake_ttfa_under_2s_all_speeds - ...
+47 failed, 405 passed, 7 skipped in 24.97s

@@ -1,0 +1,148 @@
+...........................FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 93%]
+F.Fss                                                                    [100%]
+=================================== FAILURES ===================================
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:23: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:23: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:23: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:23: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:23: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:23: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:23: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:18: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:18: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:18: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:18: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:18: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:18: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/stretch.py:18: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:24: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:78: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:78: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:73: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/synthesis/service.py:78: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:29: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:24: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:29: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:24: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:24: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:24: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:24: NotImplementedError
+E   NotImplementedError
+------------------------------ Captured log call -------------------------------
+WARNING  hearnarro.settings:settings.py:66 TTS backend: fake (kokoro not installed); set HEARNARRO_TTS_BACKEND to choose
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/voices.py:15: NotImplementedError
+E   NotImplementedError
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/routes/audio.py:24: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamp_invariants_native_50_sentences[1.0]
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamp_invariants_native_50_sentences[2.0]
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamp_invariants_stretched_50_sentences[2.5]
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamp_invariants_stretched_50_sentences[3.0]
+FAILED tests/test_syn1_timestamps.py::test_syn1_timestamps_translated_to_text_offsets_through_char_map
+FAILED tests/test_syn1_timestamps.py::test_syn1_scaled_timestamps_keep_invariants
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_math - NotImpleme...
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.05]
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.1]
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.25]
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.333]
+FAILED tests/test_syn3_speed.py::test_syn3_scale_timestamps_within_one_ms_of_exact[1.5]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_length_is_len_over_ratio[1.05]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_length_is_len_over_ratio[1.25]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_length_is_len_over_ratio[1.5]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[0.9]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[1.0]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[1.6]
+FAILED tests/test_syn3_speed.py::test_syn3_stretch_pcm_rejects_ratio_outside_1_to_1_5[3.0]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[0.5]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[1.0]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[1.5]
+FAILED tests/test_syn3_speed.py::test_syn3_native_path_passes_speed_to_backend[2.0]
+FAILED tests/test_syn3_speed.py::test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.1]
+FAILED tests/test_syn3_speed.py::test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[2.5]
+FAILED tests/test_syn3_speed.py::test_syn3_stretched_path_synthesizes_at_native_max_then_stretches[3.0]
+FAILED tests/test_syn3_speed.py::test_syn3_api_speed_validation_0_5_to_3_0_in_0_1_steps
+FAILED tests/test_syn5_queue.py::test_syn5_lookahead_enqueues_n_after_first_request[3]
+FAILED tests/test_syn5_queue.py::test_syn5_lookahead_enqueues_n_after_first_request[5]
+FAILED tests/test_syn5_queue.py::test_syn5_lookahead_stops_at_document_end - ...
+FAILED tests/test_syn5_queue.py::test_syn5_lookahead_runs_on_single_synthesis_thread_off_the_loop
+FAILED tests/test_syn5_queue.py::test_syn5_seek_clears_queue_and_refills_from_new_position
+FAILED tests/test_syn5_queue.py::test_syn5_voice_change_prefetch_uses_new_voice
+FAILED tests/test_syn5_queue.py::test_syn5_cached_jobs_skipped - NotImplement...
+FAILED tests/test_syn5_queue.py::test_syn6_cache_hit_returns_without_backend_call
+FAILED tests/test_syn5_queue.py::test_syn5_first_request_jumps_the_queue - No...
+FAILED tests/test_syn5_queue.py::test_syn5_failed_segment_raises_marks_failed_and_queue_moves_on
+FAILED tests/test_syn5_queue.py::test_syn5_shutdown_returns_within_5s_with_queue_full
+FAILED tests/test_api_audio.py::test_syn1_audio_get_miss_then_hit_headers_and_head
+FAILED tests/test_api_audio.py::test_syn6_audio_cache_file_and_row_written - ...
+FAILED tests/test_api_audio.py::test_syn6_head_never_synthesizes - NotImpleme...
+FAILED tests/test_api_audio.py::test_syn1_audio_unknown_segment_404 - NotImpl...
+FAILED tests/test_api_audio.py::test_syn2_audio_unknown_or_missing_voice_422
+FAILED tests/test_api_audio.py::test_syn1_audio_synthesis_failure_502_and_row_failed
+FAILED tests/test_api_audio.py::test_syn5_audio_lookahead_visible_through_head
+FAILED tests/test_api_audio.py::test_syn2_voices_six_across_both_genders - No...
+FAILED tests/test_syn_gate.py::test_syn_gate_fake_ttfa_under_2s_all_speeds - ...
+47 failed, 28 passed, 2 skipped in 3.42s
