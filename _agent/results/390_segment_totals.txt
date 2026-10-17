@@ -1,0 +1,34 @@
+# segment totals per user document (inbox), dump --jsonl line count; before = main 4eaaf02 worktree, after = m2-bullets
+The -3-Alarms-personalithy Dev.pdf	before=    1842	after=    1858	delta=16	list_before=61	list_after=77
+The-Almanack-of-Naval-Ravikant.pdf	before=    3704	after=    3760	delta=56	list_before=7	list_after=104
+what-is-the-internet-of-things.pdf	before=     526	after=     526	delta=0	list_before=0	list_after=0
+# Alarms: text-level diff (order ignored): removed=4 added=20
+  -1. Maintained peak-performance habits 2. Stabilized the company and team 3. Raised funds for next phase of growth 4. Upgraded company-wide marketing 
+  +1. Maintained peak-performance habits
+  +2. Stabilized the company and team
+  +3. Raised funds for next phase of growth
+  +4. Upgraded company-wide marketing
+  +5. Launched leadership development program
+  -1. Worked too much, felt worn out 2. Failed to follow-up on marketing project on time 3. Missed language learning goals in Portuguese 4. Extended two
+  +1. Worked too much, felt worn out
+  +2. Failed to follow-up on marketing project on time
+  +3. Missed language learning goals in Portuguese
+  +4. Extended two project deadlines unnecessarily
+  +5. Didn’t spend sufficient time with family and friends
+  -1. Perfectionism is a big development opportunity 2. Reading should be scheduled into the day 3. The mind needs to be trained as much as the body 4. 
+  +1. Perfectionism is a big development opportunity
+  +2. Reading should be scheduled into the day
+  +3. The mind needs to be trained as much as the body
+  +4. Weekly reviews must result in new weekly commitments
+  +5. I want to become world-class at peak performance
+  -1. Determine what are the non-negotiables in my life 2. Increase output with a color-coded master calendar 3. Bring the joy/be more intentional 4. Hi
+  +1. Determine what are the non-negotiables in my life
+  +2. Increase output with a color-coded master calendar
+  +3. Bring the joy/be more intentional
+  +4. Hire a virtual assistant
+  +5. Create a weekly accountability checklist
+# Almanack: text-level diff (order ignored): removed=15 added=71
+# IoT: text-level diff (order ignored): removed=0 added=0
+The -3-Alarms-personalithy Dev.pdf: final-code dump identical to the 'after' dump used above
+The-Almanack-of-Naval-Ravikant.pdf: final-code dump identical to the 'after' dump used above
+what-is-the-internet-of-things.pdf: final-code dump identical to the 'after' dump used above

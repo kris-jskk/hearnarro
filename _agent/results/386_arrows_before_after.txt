@@ -1,0 +1,144 @@
+# Almanack, dump --jsonl, lines containing → (BEFORE, main 4eaaf02)
+{"order": 81, "page": 8, "type": "body", "text": "→ The transcripts have been edited for clarity and brevity (multiple times)."}
+{"order": 82, "page": 8, "type": "body", "text": "→ Not all sources are primary (some excerpts are from other writers quoting Naval)."}
+{"order": 83, "page": 8, "type": "body", "text": "→ I can’t be 100 percent certain of every source’s authenticity."}
+{"order": 84, "page": 8, "type": "body", "text": "→ Concepts and interpretations change over time, medium, and context."}
+{"order": 85, "page": 8, "type": "body", "text": "→ Please verify phrasing with a primary source before citing Naval from this text."}
+{"order": 86, "page": 8, "type": "body", "text": "→ Please interpret generously."}
+{"order": 141, "page": 13, "type": "body", "text": "→ Questions nearly everything → Can think from first principles → Tests things well → Is good at not fooling himself → Changes his mind regularly → Laughs a lot → Thinks holistically → Thinks long-term → And…doesn’t take himself too goddamn seriously."}
+{"order": 189, "page": 20, "type": "body", "text": "→ 1974 - Born in Delhi, India → 1985 - Age 9 - Moved from New Delhi to Queens, NY → 1989 - Age 14 - Attended Stuyvesant High School → 1995 - Age 21 - Graduated Dartmouth (studied computer science and economics) → 1999 - Age 25 - Founder/CEO of Epinions → 2001 - Age 27 - Venture Partner at August Capital → 2003 - Age 29 - Founder of Vast.com, a classified ad marketplace → 2005 - Age 30 - Is called “Radioactive Mud” in Silicon Valley → 2007 - Age 32 - Founded Hit Forge, a small VC fund originally conceived as an incubator → 2007 - Age 32 - Launched VentureHacks blog → 2010 - Age 34 - Launched AngelList → 2010 - Age 34 - Invested in Uber → 2012 - Age 36 - Lobbied Congress to get the JOBS Act passed → 2018 - Age 43 - Is named “Angel Investor of the Year”"}
+{"order": 329, "page": 40, "type": "body", "text": "→ Sales skills → Musical talents, with the ability to pick up any instrument → An obsessive personality: you dive into things and remember them quickly → Love for science fiction: you were into reading sci-fi, which means you absorb a lot of knowledge very quickly → Playing a lot of games, you understand game theory pretty well → Gossiping, digging into your friend network."}
+{"order": 1434, "page": 110, "type": "body", "text": "→ Should I marry this person?"}
+{"order": 1435, "page": 110, "type": "body", "text": "→ Should I take this job?"}
+{"order": 1436, "page": 110, "type": "body", "text": "→ Should I buy this house?"}
+{"order": 1437, "page": 110, "type": "body", "text": "→ Should I move to this city?"}
+{"order": 1438, "page": 110, "type": "body", "text": "→ Should I go into business with this person?"}
+{"order": 2997, "page": 208, "type": "body", "text": "→ Genome: The Autobiography of a Species in 23 Chapters → The Red Queen: Sex and the Evolution of Human Nature → The Origins of Virtue: Human Instincts and the Evolution of Cooperation → The Evolution of Everything: How New Ideas Emerge"}
+{"order": 3277, "page": 222, "type": "body", "text": "→ Happiness = Health + Wealth + Good Relationships → Health = Exercise + Diet + Sleep → Exercise = High Intensity Resistance Training + Sports + Rest → Diet = Natural Foods + Intermittent Fasting + Plants → Sleep = No alarms + 8–9 hours + Circadian rhythms → Wealth = Income + Wealth * (Return on Investment) → Income = Accountability + Leverage + Specific Knowledge → Accountability = Personal Branding + Personal Platform + Taking Risk?"}
+{"order": 3278, "page": 222, "type": "body", "text": "→ Leverage = Capital + People + Intellectual Property → Specific Knowledge = Knowing how to do something society cannot yet easily train other people to do → Return on Investment = “Buy-and-Hold” + Valuation + Margin of Safety [72]"}
+{"order": 3280, "page": 223, "type": "body", "text": "→ Be present above all else."}
+{"order": 3281, "page": 223, "type": "body", "text": "→ Desire is suffering."}
+{"order": 3282, "page": 223, "type": "body", "text": "(Buddha) → Anger is a hot coal you hold in your hand while waiting to throw it at someone else."}
+{"order": 3283, "page": 223, "type": "body", "text": "(Buddha) → If you can’t see yourself working with someone for life, don’t work with them for a day."}
+{"order": 3284, "page": 223, "type": "body", "text": "→ Reading (learning) is the ultimate meta-skill and can be traded for anything else."}
+{"order": 3285, "page": 223, "type": "body", "text": "→ All the real benefits in life come from compound interest."}
+{"order": 3286, "page": 223, "type": "body", "text": "→ Earn with your mind, not your time."}
+{"order": 3287, "page": 223, "type": "body", "text": "→ 99 percent of all effort is wasted."}
+{"order": 3288, "page": 223, "type": "body", "text": "→ Total honesty at all times."}
+{"order": 3290, "page": 223, "type": "body", "text": "→ Praise specifically, criticize generally."}
+{"order": 3291, "page": 223, "type": "body", "text": "(Warren Buffett) → Truth is that which has predictive power."}
+{"order": 3292, "page": 223, "type": "body", "text": "→ Watch every thought."}
+{"order": 3293, "page": 223, "type": "body", "text": "(Ask “Why am I having this thought?”) → All greatness comes from suffering."}
+{"order": 3294, "page": 223, "type": "body", "text": "→ Love is given, not received."}
+{"order": 3295, "page": 223, "type": "body", "text": "→ Enlightenment is the space between your thoughts."}
+{"order": 3296, "page": 223, "type": "body", "text": "(Eckhart Tolle) → Mathematics is the language of nature."}
+{"order": 3297, "page": 223, "type": "body", "text": "→ Every moment has to be complete in and of itself."}
+{"order": 3305, "page": 226, "type": "body", "text": "→ Education → The Story of AngelList → Investing → Startups → Crypto → Relationships"}
+{"order": 3307, "page": 226, "type": "body", "text": "→ On Twitter: Twitter.com/Naval → On his podcast: Naval → On his website: https://nav.al/"}
+{"order": 3309, "page": 226, "type": "body", "text": "→ Naval podcast episodes compilation:How to Get Rich → Interview on The Knowledge Project → Interview on Joe Rogan Podcast"}
+{"order": 3349, "page": 230, "type": "body", "text": "→ Poor Charlie’s Almanack edited by Peter Kaufman (of Charlie Munger’s work) → Zero to One by Blake Masters (of Peter Thiel’s work) → Seeking Wisdom (and others) by Peter Bevelin (of Buffett and Munger’s work) → Berkshire Hathaway Letters to Shareholders edited by Max Olson (of Buffett’s work) → Principles by Ray Dalio (and team)"}
+
+# AFTER (m2-bullets, final code)
+{"order": 81, "page": 8, "type": "list", "text": "→ The transcripts have been edited for clarity and brevity (multiple times)."}
+{"order": 82, "page": 8, "type": "list", "text": "→ Not all sources are primary (some excerpts are from other writers quoting Naval)."}
+{"order": 83, "page": 8, "type": "list", "text": "→ I can’t be 100 percent certain of every source’s authenticity."}
+{"order": 84, "page": 8, "type": "list", "text": "→ Concepts and interpretations change over time, medium, and context."}
+{"order": 85, "page": 8, "type": "list", "text": "→ Please verify phrasing with a primary source before citing Naval from this text."}
+{"order": 86, "page": 8, "type": "list", "text": "→ Please interpret generously."}
+{"order": 141, "page": 13, "type": "list", "text": "→ Questions nearly everything"}
+{"order": 142, "page": 13, "type": "list", "text": "→ Can think from first principles"}
+{"order": 143, "page": 13, "type": "list", "text": "→ Tests things well"}
+{"order": 144, "page": 14, "type": "list", "text": "→ Is good at not fooling himself"}
+{"order": 145, "page": 14, "type": "list", "text": "→ Changes his mind regularly"}
+{"order": 146, "page": 14, "type": "list", "text": "→ Laughs a lot"}
+{"order": 147, "page": 14, "type": "list", "text": "→ Thinks holistically"}
+{"order": 148, "page": 14, "type": "list", "text": "→ Thinks long-term"}
+{"order": 149, "page": 14, "type": "list", "text": "→ And…doesn’t take himself too goddamn seriously."}
+{"order": 197, "page": 20, "type": "list", "text": "→ 1974 - Born in Delhi, India"}
+{"order": 198, "page": 20, "type": "list", "text": "→ 1985 - Age 9 - Moved from New Delhi to Queens, NY"}
+{"order": 199, "page": 20, "type": "list", "text": "→ 1989 - Age 14 - Attended Stuyvesant High School"}
+{"order": 200, "page": 20, "type": "list", "text": "→ 1995 - Age 21 - Graduated Dartmouth (studied computer science and economics)"}
+{"order": 201, "page": 20, "type": "list", "text": "→ 1999 - Age 25 - Founder/CEO of Epinions"}
+{"order": 202, "page": 20, "type": "list", "text": "→ 2001 - Age 27 - Venture Partner at August Capital"}
+{"order": 203, "page": 20, "type": "list", "text": "→ 2003 - Age 29 - Founder of Vast.com, a classified ad marketplace"}
+{"order": 204, "page": 20, "type": "list", "text": "→ 2005 - Age 30 - Is called “Radioactive Mud” in Silicon Valley"}
+{"order": 205, "page": 20, "type": "list", "text": "→ 2007 - Age 32 - Founded Hit Forge, a small VC fund originally conceived as an incubator"}
+{"order": 206, "page": 20, "type": "list", "text": "→ 2007 - Age 32 - Launched VentureHacks blog"}
+{"order": 207, "page": 20, "type": "list", "text": "→ 2010 - Age 34 - Launched AngelList"}
+{"order": 208, "page": 20, "type": "list", "text": "→ 2010 - Age 34 - Invested in Uber"}
+{"order": 209, "page": 20, "type": "list", "text": "→ 2012 - Age 36 - Lobbied Congress to get the JOBS Act passed"}
+{"order": 210, "page": 20, "type": "list", "text": "→ 2018 - Age 43 - Is named “Angel Investor of the Year”"}
+{"order": 350, "page": 40, "type": "list", "text": "→ Sales skills"}
+{"order": 351, "page": 40, "type": "list", "text": "→ Musical talents, with the ability to pick up any instrument"}
+{"order": 352, "page": 40, "type": "list", "text": "→ An obsessive personality: you dive into things and remember them quickly"}
+{"order": 353, "page": 40, "type": "list", "text": "→ Love for science fiction: you were into reading sci-fi, which means you absorb a lot of knowledge very quickly"}
+{"order": 354, "page": 40, "type": "list", "text": "→ Playing a lot of games, you understand game theory pretty well"}
+{"order": 355, "page": 40, "type": "list", "text": "→ Gossiping, digging into your friend network."}
+{"order": 1460, "page": 110, "type": "list", "text": "→ Should I marry this person?"}
+{"order": 1461, "page": 110, "type": "list", "text": "→ Should I take this job?"}
+{"order": 1462, "page": 110, "type": "list", "text": "→ Should I buy this house?"}
+{"order": 1463, "page": 110, "type": "list", "text": "→ Should I move to this city?"}
+{"order": 1464, "page": 110, "type": "list", "text": "→ Should I go into business with this person?"}
+{"order": 3023, "page": 208, "type": "list", "text": "→ Genome: The Autobiography of a Species in 23 Chapters"}
+{"order": 3024, "page": 208, "type": "list", "text": "→ The Red Queen: Sex and the Evolution of Human Nature"}
+{"order": 3025, "page": 208, "type": "list", "text": "→ The Origins of Virtue: Human Instincts and the Evolution of Cooperation"}
+{"order": 3026, "page": 208, "type": "list", "text": "→ The Evolution of Everything: How New Ideas Emerge"}
+{"order": 3306, "page": 222, "type": "list", "text": "→ Happiness = Health + Wealth + Good Relationships"}
+{"order": 3307, "page": 222, "type": "list", "text": "→ Health = Exercise + Diet + Sleep"}
+{"order": 3308, "page": 222, "type": "list", "text": "→ Exercise = High Intensity Resistance Training + Sports + Rest"}
+{"order": 3309, "page": 222, "type": "list", "text": "→ Diet = Natural Foods + Intermittent Fasting + Plants"}
+{"order": 3310, "page": 222, "type": "list", "text": "→ Sleep = No alarms + 8–9 hours + Circadian rhythms"}
+{"order": 3311, "page": 222, "type": "list", "text": "→ Wealth = Income + Wealth * (Return on Investment)"}
+{"order": 3312, "page": 222, "type": "list", "text": "→ Income = Accountability + Leverage + Specific Knowledge"}
+{"order": 3313, "page": 222, "type": "list", "text": "→ Accountability = Personal Branding + Personal Platform + Taking Risk?"}
+{"order": 3314, "page": 222, "type": "list", "text": "→ Leverage = Capital + People + Intellectual Property"}
+{"order": 3315, "page": 222, "type": "list", "text": "→ Specific Knowledge = Knowing how to do something society cannot yet easily train other people to do"}
+{"order": 3316, "page": 222, "type": "list", "text": "→ Return on Investment = “Buy-and-Hold” + Valuation + Margin of Safety [72]"}
+{"order": 3318, "page": 223, "type": "list", "text": "→ Be present above all else."}
+{"order": 3319, "page": 223, "type": "list", "text": "→ Desire is suffering."}
+{"order": 3321, "page": 223, "type": "list", "text": "→ Anger is a hot coal you hold in your hand while waiting to throw it at someone else."}
+{"order": 3323, "page": 223, "type": "list", "text": "→ If you can’t see yourself working with someone for life, don’t work with them for a day."}
+{"order": 3324, "page": 223, "type": "list", "text": "→ Reading (learning) is the ultimate meta-skill and can be traded for anything else."}
+{"order": 3325, "page": 223, "type": "list", "text": "→ All the real benefits in life come from compound interest."}
+{"order": 3326, "page": 223, "type": "list", "text": "→ Earn with your mind, not your time."}
+{"order": 3327, "page": 223, "type": "list", "text": "→ 99 percent of all effort is wasted."}
+{"order": 3328, "page": 223, "type": "list", "text": "→ Total honesty at all times."}
+{"order": 3330, "page": 223, "type": "list", "text": "→ Praise specifically, criticize generally."}
+{"order": 3332, "page": 223, "type": "list", "text": "→ Truth is that which has predictive power."}
+{"order": 3333, "page": 223, "type": "list", "text": "→ Watch every thought."}
+{"order": 3335, "page": 223, "type": "list", "text": "→ All greatness comes from suffering."}
+{"order": 3336, "page": 223, "type": "list", "text": "→ Love is given, not received."}
+{"order": 3337, "page": 223, "type": "list", "text": "→ Enlightenment is the space between your thoughts."}
+{"order": 3339, "page": 223, "type": "list", "text": "→ Mathematics is the language of nature."}
+{"order": 3340, "page": 223, "type": "list", "text": "→ Every moment has to be complete in and of itself."}
+{"order": 3348, "page": 226, "type": "list", "text": "→ Education"}
+{"order": 3349, "page": 226, "type": "list", "text": "→ The Story of AngelList"}
+{"order": 3350, "page": 226, "type": "list", "text": "→ Investing"}
+{"order": 3351, "page": 226, "type": "list", "text": "→ Startups"}
+{"order": 3352, "page": 226, "type": "list", "text": "→ Crypto"}
+{"order": 3353, "page": 226, "type": "list", "text": "→ Relationships"}
+{"order": 3355, "page": 226, "type": "list", "text": "→ On Twitter: Twitter.com/Naval"}
+{"order": 3356, "page": 226, "type": "list", "text": "→ On his podcast: Naval"}
+{"order": 3357, "page": 226, "type": "list", "text": "→ On his website: https://nav.al/"}
+{"order": 3359, "page": 226, "type": "list", "text": "→ Naval podcast episodes compilation:How to Get Rich"}
+{"order": 3360, "page": 227, "type": "list", "text": "→ Interview on The Knowledge Project"}
+{"order": 3361, "page": 227, "type": "list", "text": "→ Interview on Joe Rogan Podcast"}
+{"order": 3401, "page": 230, "type": "list", "text": "→ Poor Charlie’s Almanack edited by Peter Kaufman (of Charlie Munger’s work)"}
+{"order": 3402, "page": 230, "type": "list", "text": "→ Zero to One by Blake Masters (of Peter Thiel’s work)"}
+{"order": 3403, "page": 230, "type": "list", "text": "→ Seeking Wisdom (and others) by Peter Bevelin (of Buffett and Munger’s work)"}
+{"order": 3404, "page": 230, "type": "list", "text": "→ Berkshire Hathaway Letters to Shareholders edited by Max Olson (of Buffett’s work)"}
+{"order": 3405, "page": 230, "type": "list", "text": "→ Principles by Ray Dalio (and team)"}
+
+# AFTER: the user's 9 lines with normalized_text (pipeline.ingest, asserts block.text[char_start:char_end]==text)
+{"order": 141, "page": 13, "type": "list", "text": "→ Questions nearly everything", "normalized_text": "Questions nearly everything", "char_map0": 2}
+{"order": 142, "page": 13, "type": "list", "text": "→ Can think from first principles", "normalized_text": "Can think from first principles", "char_map0": 2}
+{"order": 143, "page": 13, "type": "list", "text": "→ Tests things well", "normalized_text": "Tests things well", "char_map0": 2}
+{"order": 144, "page": 14, "type": "list", "text": "→ Is good at not fooling himself", "normalized_text": "Is good at not fooling himself", "char_map0": 2}
+{"order": 145, "page": 14, "type": "list", "text": "→ Changes his mind regularly", "normalized_text": "Changes his mind regularly", "char_map0": 2}
+{"order": 146, "page": 14, "type": "list", "text": "→ Laughs a lot", "normalized_text": "Laughs a lot", "char_map0": 2}
+{"order": 147, "page": 14, "type": "list", "text": "→ Thinks holistically", "normalized_text": "Thinks holistically", "char_map0": 2}
+{"order": 148, "page": 14, "type": "list", "text": "→ Thinks long-term", "normalized_text": "Thinks long-term", "char_map0": 2}
+{"order": 149, "page": 14, "type": "list", "text": "→ And…doesn’t take himself too goddamn seriously.", "normalized_text": "And…doesn’t take himself too goddamn seriously.", "char_map0": 2}
+The -3-Alarms-personalithy Dev.pdf: final-code dump identical to the 'after' dump used above
+The-Almanack-of-Naval-Ravikant.pdf: final-code dump identical to the 'after' dump used above
+what-is-the-internet-of-things.pdf: final-code dump identical to the 'after' dump used above

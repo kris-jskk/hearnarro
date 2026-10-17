@@ -1,0 +1,40 @@
+FAILED tests/test_ing4_merge.py::test_ing5_list_items_split_across_page_break_are_not_joined
+FAILED tests/test_ing4_merge.py::test_ing5_list_item_continuation_lines_join_their_item
+FAILED tests/test_ing4_merge.py::test_ing5_inline_glyph_items_split - Asserti...
+FAILED tests/test_ing4_merge.py::test_ing5_dash_star_and_numbered_items_split
+FAILED tests/test_ing4_merge.py::test_ing5_glyph_alone_on_its_line_joins_the_next_line
+FAILED tests/test_ing5_segment.py::test_ing5_list_item_is_one_segment_glyph_silent[\u2192 Questions nearly everything]
+FAILED tests/test_ing5_segment.py::test_ing5_list_item_is_one_segment_glyph_silent[\u2192 And\u2026doesn\u2019t take himself too goddamn seriously.]
+FAILED tests/test_ing5_segment.py::test_ing5_list_item_is_one_segment_glyph_silent[\u2022 Text accuracy (Scoretext): The accuracy of the target LLM.]
+FAILED tests/test_ing5_segment.py::test_ing5_list_item_is_one_segment_glyph_silent[\u2192 1974 - Born in Delhi, India]
+FAILED tests/test_ing5_segment.py::test_ing5_list_item_with_inner_sentence_end_splits
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2022 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\xb7 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25aa Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25ab Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25a0 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25a1 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25cf Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25cb Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25e6 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2023 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25ba Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u25b6 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u27a2 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u27a4 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2192 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u21d2 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2713 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2714 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2717 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2718 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2605 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2606 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[- Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2013 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2014 Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[* Item text here]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2192Tight item]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[  \u2192  Spaced item]
+FAILED tests/test_ing6_normalize.py::test_ing6_leading_bullet_glyph_is_silent[\u2192]
+67 failed, 214 passed in 0.31s
