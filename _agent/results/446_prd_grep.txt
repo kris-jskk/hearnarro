@@ -1,0 +1,1 @@
+docs/guide/m2-synthesis-map.html:369:              <li>Two stale mentions of "Kokoro ONNX" remain in the PRD's footprint row and an open question; cosmetic.</li></ul></div>
