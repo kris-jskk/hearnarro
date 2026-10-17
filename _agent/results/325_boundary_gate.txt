@@ -1,0 +1,66 @@
+...............
+fixture                             truth parser    tp    fp    fn       P       R      F1
+academic_01_seahelm_audio             151    152   147     5     4  0.9671  0.9735  0.9703
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+academic_02_memduet                   108    116   105    11     3  0.9052  0.9722  0.9375
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+academic_03_pruned_reasoning          111    113   110     3     1  0.9735  0.9910  0.9821
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+academic_04_legislative_xml           116    121   114     7     2  0.9421  0.9828  0.9620
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+academic_05_sparse_autoencoders       132    135   132     3     0  0.9778  1.0000  0.9888
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+tables_01_pfn_bayes                   118    139   117    22     1  0.8417  0.9915  0.9105
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+tables_02_non_gaussian_sem            119    130   116    14     3  0.8923  0.9748  0.9317
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+tables_03_copula_subspaces            124    139   123    16     1  0.8849  0.9919  0.9354
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+tables_04_markov_kernel                98    111    97    14     1  0.8739  0.9898  0.9282
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+tables_05_decomposing_learner          88     91    88     3     0  0.9670  1.0000  0.9832
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+report_01_zero_trust                   49     50    49     1     0  0.9800  1.0000  0.9899
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+report_02_patch_mgmt                   56     56    56     0     0  1.0000  1.0000  1.0000
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+report_03_ssdf                         49     50    49     1     0  0.9800  1.0000  0.9899
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+report_04_rmf                          40     41    40     1     0  0.9756  1.0000  0.9877
+.
+fixture                             truth parser    tp    fp    fn       P       R      F1
+report_05_controls                     39     40    39     1     0  0.9750  1.0000  0.9873
+.
+sentence-boundary P/R/F1, parser vs reviewed truth
+fixture                             truth parser    tp    fp    fn       P       R      F1
+academic_01_seahelm_audio             151    152   147     5     4  0.9671  0.9735  0.9703
+academic_02_memduet                   108    116   105    11     3  0.9052  0.9722  0.9375
+academic_03_pruned_reasoning          111    113   110     3     1  0.9735  0.9910  0.9821
+academic_04_legislative_xml           116    121   114     7     2  0.9421  0.9828  0.9620
+academic_05_sparse_autoencoders       132    135   132     3     0  0.9778  1.0000  0.9888
+tables_01_pfn_bayes                   118    139   117    22     1  0.8417  0.9915  0.9105
+tables_02_non_gaussian_sem            119    130   116    14     3  0.8923  0.9748  0.9317
+tables_03_copula_subspaces            124    139   123    16     1  0.8849  0.9919  0.9354
+tables_04_markov_kernel                98    111    97    14     1  0.8739  0.9898  0.9282
+tables_05_decomposing_learner          88     91    88     3     0  0.9670  1.0000  0.9832
+report_01_zero_trust                   49     50    49     1     0  0.9800  1.0000  0.9899
+report_02_patch_mgmt                   56     56    56     0     0  1.0000  1.0000  1.0000
+report_03_ssdf                         49     50    49     1     0  0.9800  1.0000  0.9899
+report_04_rmf                          40     41    40     1     0  0.9756  1.0000  0.9877
+report_05_controls                     39     40    39     1     0  0.9750  1.0000  0.9873
+mean (15 fixtures)                                                 0.9424  0.9912  0.9656
+.
+31 passed in 5.06s
