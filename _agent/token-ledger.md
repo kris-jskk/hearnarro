@@ -20,7 +20,7 @@ Models not in the table are priced at claude-opus-5-5 and flagged in `Model rate
 
 | Started | Task | Model (observed) | Requested | Turns | Tools | Final prompt | New | Cache read | Output | Weighted input | Cost $ | Model rate |
 |---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-10-16T06:14 | supervisor (session 356b510a) | claude-fable-5-1 | - | 322 | 322 | 894,153 | 1,555,215 | 154,597,693 | 471,211 | 17,402,346 | 93.26 |  |
+| 2026-10-16T06:14 | supervisor (session 356b510a) | claude-fable-5-1 | - | 330 | 330 | 909,754 | 1,570,656 | 161,813,799 | 481,698 | 18,143,215 | 95.89 |  |
 | 2026-10-16T06:19 | m1-fixtures | claude-sonnet-5-5 | sonnet | 13 | 14 | 56,737 | 56,761 | 536,422 | 159 | 124,586 | 0.20 |  |
 | 2026-10-16T06:19 | m1-tests-first | claude-opus-5-5 | opus | 13 | 13 | 80,802 | 80,826 | 705,244 | 115 | 171,550 | 0.55 |  |
 | 2026-10-16T06:24 | m1-implement-stages | claude-opus-5-5 | opus | 17 | 18 | 93,025 | 74,936 | 1,194,544 | 231 | 213,115 | 0.62 |  |
@@ -80,7 +80,7 @@ Models not in the table are priced at claude-opus-5-5 and flagged in `Model rate
 
 | Group | Rows | Input | Cache write 5m | Cache write 1h | Cache read | Output | Cost $ |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| session 356b510a | 53 | 8,484 | 4,776,891 | 1,549,447 | 269,478,301 | 602,976 | 141.16 |
+| session 356b510a | 53 | 8,652 | 4,776,891 | 1,564,720 | 276,694,407 | 613,463 | 143.80 |
 
 ### By milestone (task-name prefix)
 
@@ -89,13 +89,13 @@ Models not in the table are priced at claude-opus-5-5 and flagged in `Model rate
 | m1 | 30 | 1,520 | 2,709,693 | 0 | 65,848,098 | 85,756 | 27.71 |
 | m2 | 20 | 1,144 | 1,962,876 | 0 | 47,671,126 | 45,746 | 19.58 |
 | other | 2 | 52 | 104,322 | 0 | 1,361,384 | 263 | 0.61 |
-| supervisor | 1 | 5,768 | 0 | 1,549,447 | 154,597,693 | 471,211 | 93.26 |
+| supervisor | 1 | 5,936 | 0 | 1,564,720 | 161,813,799 | 481,698 | 95.89 |
 
 ### Project
 
 | Group | Rows | Input | Cache write 5m | Cache write 1h | Cache read | Output | Cost $ |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| project total | 53 | 8,484 | 4,776,891 | 1,549,447 | 269,478,301 | 602,976 | 141.16 |
+| project total | 53 | 8,652 | 4,776,891 | 1,564,720 | 276,694,407 | 613,463 | 143.80 |
 
 ## Cost review (2026-10-17)
 
@@ -103,7 +103,7 @@ Ten most expensive rows. Cache-read share = cache-read dollars / row dollars.
 
 | # | Task | Model | Cost $ | Turns | Final prompt | Cache-read share | Driver |
 |---:|---|---|---:|---:|---:|---:|---|
-| 1 | supervisor (session 356b510a) | claude-fable-5-1 | 93.26 | 322 | 894,153 | 41% | prefix re-read over 322 turns: 154.6M cache-read tokens (41% of cost) |
+| 1 | supervisor (session 356b510a) | claude-fable-5-1 | 95.89 | 330 | 909,754 | 42% | prefix re-read over 330 turns: 161.8M cache-read tokens (42% of cost) |
 | 2 | m1-tune-round3-pdfplumber | claude-opus-5-5 | 4.49 | 103 | 263,662 | 72% | prefix re-read over 103 turns: 16.2M cache-read tokens (72% of cost) |
 | 3 | m1-code-map | claude-opus-5-5 | 2.59 | 30 | 214,772 | 28% | new context written to cache: 197k tokens (38% of cost) |
 | 4 | m1-fix-book-layout | claude-opus-5-5 | 2.10 | 53 | 174,603 | 58% | prefix re-read over 53 turns: 6.1M cache-read tokens (58% of cost) |
@@ -119,4 +119,4 @@ Ten most expensive rows. Cache-read share = cache-read dollars / row dollars.
 - **Opus tasks under 15 tool calls** (Sonnet candidates): 2 tasks, $0.89; the same tokens at Sonnet 5.5 rates would be $0.45 (saving $0.45, assuming Sonnet used the same tokens, which is unverified).
 - **Briefs 30 % shorter**: about $0.12 of cache-read cost saved. Proportional estimate: brief tokens taken as characters / 4, re-read once per turn at the model's cache-read rate; turns held constant.
 - **Evidence re-runs** (task-name words fix / red / tighten): 6 tasks, $4.76 (m1-fix-book-layout, m1-fix-ligatures-dropcaps-toc, m1-fix-toc-and-cover, m1-fix-unicode-hyphen, m1-quality-tighten-and-smoke, m2-queue-test-fix).
-- **Supervisor vs workers**: supervisor sessions $93.26 (66%), workers $47.90 (34%).
+- **Supervisor vs workers**: supervisor sessions $95.89 (67%), workers $47.90 (33%).
