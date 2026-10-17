@@ -1,0 +1,381 @@
+FFFFFFFFFF...............F                                               [100%]
+=================================== FAILURES ===================================
+_ test_ing6_equals_sign_read_as_equals[Happiness = Health + Wealth + Good Relationships-Happiness equals Health + Wealth + Good Relationships] _
+
+text = 'Happiness = Health + Wealth + Good Relationships'
+expected = 'Happiness equals Health + Wealth + Good Relationships'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Happiness = ...Relationships' == 'Happiness eq...Relationships'
+E         
+E         - Happiness equals Health + Wealth + Good Relationships
+E         ?           ^^^^^^
+E         + Happiness = Health + Wealth + Good Relationships
+E         ?           ^
+
+tests/test_ing6_normalize.py:370: AssertionError
+____________ test_ing6_equals_sign_read_as_equals[x = 5-x equals 5] ____________
+
+text = 'x = 5', expected = 'x equals 5'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'x = 5' == 'x equals 5'
+E         
+E         - x equals 5
+E         + x = 5
+
+tests/test_ing6_normalize.py:370: AssertionError
+_____________ test_ing6_equals_sign_read_as_equals[x=5-x equals 5] _____________
+
+text = 'x=5', expected = 'x equals 5'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'x=5' == 'x equals 5'
+E         
+E         - x equals 5
+E         + x=5
+
+tests/test_ing6_normalize.py:370: AssertionError
+______ test_ing6_equals_sign_read_as_equals[y=2.5 here-y equals 2.5 here] ______
+
+text = 'y=2.5 here', expected = 'y equals 2.5 here'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'y=2.5 here' == 'y equals 2.5 here'
+E         
+E         - y equals 2.5 here
+E         + y=2.5 here
+
+tests/test_ing6_normalize.py:370: AssertionError
+_ test_ing6_equals_sign_read_as_equals[Very few people disagree 2+2=4, right?-Very few people disagree 2+2 equals 4, right?] _
+
+text = 'Very few people disagree 2+2=4, right?'
+expected = 'Very few people disagree 2+2 equals 4, right?'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Very few peo...2+2=4, right?' == 'Very few peo...als 4, right?'
+E         
+E         - Very few people disagree 2+2 equals 4, right?
+E         ?                             ^^^^^^^^
+E         + Very few people disagree 2+2=4, right?
+E         ?                             ^
+
+tests/test_ing6_normalize.py:370: AssertionError
+___________ test_ing6_equals_sign_read_as_equals[a  =  b-a equals b] ___________
+
+text = 'a  =  b', expected = 'a equals b'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'a  =  b' == 'a equals b'
+E         
+E         - a equals b
+E         + a  =  b
+
+tests/test_ing6_normalize.py:370: AssertionError
+_ test_ing6_equals_sign_read_as_equals[Sleep = No alarms + 8\u20139 hours-Sleep equals No alarms + 8 to 9 hours] _
+
+text = 'Sleep = No alarms + 8–9 hours'
+expected = 'Sleep equals No alarms + 8 to 9 hours'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Sleep = No a... 8 to 9 hours' == 'Sleep equals... 8 to 9 hours'
+E         
+E         - Sleep equals No alarms + 8 to 9 hours
+E         ?       ^^^^^^
+E         + Sleep = No alarms + 8 to 9 hours
+E         ?       ^
+
+tests/test_ing6_normalize.py:370: AssertionError
+_ test_ing6_equals_sign_read_as_equals[Return on Investment = \u201cBuy-and-Hold\u201d + Valuation-Return on Investment equals \u201cBuy-and-Hold\u201d + Valuation] _
+
+text = 'Return on Investment = “Buy-and-Hold” + Valuation'
+expected = 'Return on Investment equals “Buy-and-Hold” + Valuation'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Return on In...” + Valuation' == 'Return on In...” + Valuation'
+E         
+E         - Return on Investment equals “Buy-and-Hold” + Valuation
+E         ?                      ^^^^^^
+E         + Return on Investment = “Buy-and-Hold” + Valuation
+E         ?                      ^
+
+tests/test_ing6_normalize.py:370: AssertionError
+_____ test_ing6_equals_sign_read_as_equals[a \u2260 b-a does not equal b] ______
+
+text = 'a ≠ b', expected = 'a does not equal b'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'a ≠ b' == 'a does not equal b'
+E         
+E         - a does not equal b
+E         + a ≠ b
+
+tests/test_ing6_normalize.py:370: AssertionError
+_____ test_ing6_equals_sign_read_as_equals[x\u22605.-x does not equal 5.] ______
+
+text = 'x≠5.', expected = 'x does not equal 5.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Happiness = Health + Wealth + Good Relationships",
+                "Happiness equals Health + Wealth + Good Relationships",
+            ),
+            ("x = 5", "x equals 5"),
+            ("x=5", "x equals 5"),
+            ("y=2.5 here", "y equals 2.5 here"),
+            ("Very few people disagree 2+2=4, right?", "Very few people disagree 2+2 equals 4, right?"),
+            ("a  =  b", "a equals b"),
+            ("Sleep = No alarms + 8–9 hours", "Sleep equals No alarms + 8 to 9 hours"),
+            (
+                "Return on Investment = “Buy-and-Hold” + Valuation",
+                "Return on Investment equals “Buy-and-Hold” + Valuation",
+            ),
+            ("a ≠ b", "a does not equal b"),
+            ("x≠5.", "x does not equal 5."),
+        ],
+    )
+    def test_ing6_equals_sign_read_as_equals(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'x≠5.' == 'x does not equal 5.'
+E         
+E         - x does not equal 5.
+E         + x≠5.
+
+tests/test_ing6_normalize.py:370: AssertionError
+__________________ test_ing6_equals_sign_char_map_round_trip ___________________
+
+    def test_ing6_equals_sign_char_map_round_trip() -> None:
+        text = "Health = Exercise + Diet"
+        out, cmap = normalize(text)
+>       assert out == "Health equals Exercise + Diet"
+E       AssertionError: assert 'Health = Exercise + Diet' == 'Health equal...ercise + Diet'
+E         
+E         - Health equals Exercise + Diet
+E         ?        ^^^^^^
+E         + Health = Exercise + Diet
+E         ?        ^
+
+tests/test_ing6_normalize.py:402: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[Happiness = Health + Wealth + Good Relationships-Happiness equals Health + Wealth + Good Relationships]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[x = 5-x equals 5]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[x=5-x equals 5]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[y=2.5 here-y equals 2.5 here]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[Very few people disagree 2+2=4, right?-Very few people disagree 2+2 equals 4, right?]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[a  =  b-a equals b]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[Sleep = No alarms + 8\u20139 hours-Sleep equals No alarms + 8 to 9 hours]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[Return on Investment = \u201cBuy-and-Hold\u201d + Valuation-Return on Investment equals \u201cBuy-and-Hold\u201d + Valuation]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[a \u2260 b-a does not equal b]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_read_as_equals[x\u22605.-x does not equal 5.]
+FAILED tests/test_ing6_normalize.py::test_ing6_equals_sign_char_map_round_trip
+11 failed, 15 passed, 135 deselected in 0.07s

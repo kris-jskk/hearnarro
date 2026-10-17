@@ -1,0 +1,52 @@
+=== run 1: renormalize document 17 (branch m3-fix-equals-sign, uncommitted rule), Sat Oct 17 02:30:47 PDT 2026 ===
+document 17: 12 segments changed, 11 cache rows removed
+segments changed: 12
+cache rows removed: 11
+orphaned audio files left on disk: 11
+=== changed segments (before vs after normalized_text via API) ===
+snapshot segments: 3760
+count: 12
+- 33692: 'Very few people disagree 2+2=4, right?'
+    -> 'Very few people disagree 2+2 equals 4, right?'
+- 35391: 'Happiness = Health + Wealth + Good Relationships'
+    -> 'Happiness equals Health + Wealth + Good Relationships'
+- 35392: 'Health = Exercise + Diet + Sleep'
+    -> 'Health equals Exercise + Diet + Sleep'
+- 35393: 'Exercise = High Intensity Resistance Training + Sports + Rest'
+    -> 'Exercise equals High Intensity Resistance Training + Sports + Rest'
+- 35394: 'Diet = Natural Foods + Intermittent Fasting + Plants'
+    -> 'Diet equals Natural Foods + Intermittent Fasting + Plants'
+- 35395: 'Sleep = No alarms + 8 to 9 hours + Circadian rhythms'
+    -> 'Sleep equals No alarms + 8 to 9 hours + Circadian rhythms'
+- 35396: 'Wealth = Income + Wealth * (Return on Investment)'
+    -> 'Wealth equals Income + Wealth * (Return on Investment)'
+- 35397: 'Income = Accountability + Leverage + Specific Knowledge'
+    -> 'Income equals Accountability + Leverage + Specific Knowledge'
+- 35398: 'Accountability = Personal Branding + Personal Platform + Taking Risk?'
+    -> 'Accountability equals Personal Branding + Personal Platform + Taking Risk?'
+- 35399: 'Leverage = Capital + People + Intellectual Property'
+    -> 'Leverage equals Capital + People + Intellectual Property'
+- 35400: 'Specific Knowledge = Knowing how to do something society cannot yet easily train other people to do'
+    -> 'Specific Knowledge equals Knowing how to do something society cannot yet easily train other people to do'
+- 35401: 'Return on Investment = “Buy-and-Hold” + Valuation + Margin of Safety'
+    -> 'Return on Investment equals “Buy-and-Hold” + Valuation + Margin of Safety'
+=== formula segment after ===
+segment: {'id': 35391, 'order': 3306, 'block_id': 13610, 'type': 'list', 'section_id': None, 'text': '→ Happiness = Health + Wealth + Good Relationships', 'normalized_text': 'Happiness equals Health + Wealth + Good Relationships', 'char_start': 0, 'char_end': 50}
+audio status: 200 bytes: 146870
+X-Timestamps words: ['Happiness', 'equals', 'Health', '+', 'Wealth', '+', 'Good', 'Relationships']
+=== 2+2=4 segment after ===
+segment: {'id': 33692, 'order': 1607, 'block_id': 13057, 'type': 'body', 'section_id': None, 'text': 'Very few people disagree 2+2=4, right?', 'normalized_text': 'Very few people disagree 2+2 equals 4, right?', 'char_start': 224, 'char_end': 262}
+audio status: 200 bytes: 141284
+X-Timestamps words: ['Very', 'few', 'people', 'disagree', '2+2', 'equals', '4,', 'right?']
+=== run 2: renormalize document 17 again, Sat Oct 17 02:30:48 PDT 2026 ===
+document 17: 0 segments changed, 0 cache rows removed
+segments changed: 0
+cache rows removed: 0
+orphaned audio files left on disk: 0
+=== remaining '=' in normalized text ===
+35681 'v=2htl-O1oDcI.'
+35759 'v=few99D5WnRg.'
+35765 'v=jCtOHUMaUY8.'
+35780 'v=o1mkxci6vvo.'
+35822 'utm_ campaign=platform-newsletter&utm_medium=email.'
+35828 'v=3qHkcs3kG44.'
