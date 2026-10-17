@@ -1,0 +1,9 @@
+order 0 type heading words 7 starts 0.00 s ends 0.56 s
+order 1 type heading words 3 starts 0.56 s ends 0.80 s
+order 2 type heading words 11 starts 0.80 s ends 1.68 s
+order 3 type heading words 1 starts 1.68 s ends 1.76 s
+order 4 type heading words 3 starts 1.76 s ends 2.00 s
+order 5 type heading words 1 starts 2.00 s ends 2.08 s
+order 6 type body words 32 starts 2.08 s ends 4.64 s
+order 7 type body words 22 starts 4.64 s ends 6.40 s
+order 8 type body words 23 starts 6.40 s ends 8.24 s
