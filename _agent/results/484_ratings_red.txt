@@ -1,0 +1,316 @@
+........................................................................ [ 36%]
+........................................................................ [ 72%]
+.................FFFFFF................FFFF.......F...F                  [100%]
+=================================== FAILURES ===================================
+_ test_ing6_rating_read_as_out_of[On a scale of 1\u201310, I would have said 2/10 or 3/10.-On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.] _
+
+text = 'On a scale of 1–10, I would have said 2/10 or 3/10.'
+expected = 'On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "On a scale of 1–10, I would have said 2/10 or 3/10.",
+                "On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.",
+            ),
+            ("9/10 or 10/10", "9 out of 10 or 10 out of 10"),
+            ("I give it 95/100!", "I give it 95 out of 100!"),
+            ("a 0/10 effort", "a 0 out of 10 effort"),
+            ("100/100, perfect", "100 out of 100, perfect"),
+            ("(4/10)", "(4 out of 10)"),
+        ],
+    )
+    def test_ing6_rating_read_as_out_of(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'On a scale o...2/10 or 3/10.' == 'On a scale o... 3 out of 10.'
+E         
+E         - On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.
+E         ?                                           ^^^^^^^^       ^^^^^^^^
+E         + On a scale of 1 to 10, I would have said 2/10 or 3/10.
+E         ?                                           ^       ^
+
+tests/test_ing6_normalize.py:432: AssertionError
+__ test_ing6_rating_read_as_out_of[9/10 or 10/10-9 out of 10 or 10 out of 10] __
+
+text = '9/10 or 10/10', expected = '9 out of 10 or 10 out of 10'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "On a scale of 1–10, I would have said 2/10 or 3/10.",
+                "On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.",
+            ),
+            ("9/10 or 10/10", "9 out of 10 or 10 out of 10"),
+            ("I give it 95/100!", "I give it 95 out of 100!"),
+            ("a 0/10 effort", "a 0 out of 10 effort"),
+            ("100/100, perfect", "100 out of 100, perfect"),
+            ("(4/10)", "(4 out of 10)"),
+        ],
+    )
+    def test_ing6_rating_read_as_out_of(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert '9/10 or 10/10' == '9 out of 10 or 10 out of 10'
+E         
+E         - 9 out of 10 or 10 out of 10
+E         + 9/10 or 10/10
+
+tests/test_ing6_normalize.py:432: AssertionError
+_ test_ing6_rating_read_as_out_of[I give it 95/100!-I give it 95 out of 100!] __
+
+text = 'I give it 95/100!', expected = 'I give it 95 out of 100!'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "On a scale of 1–10, I would have said 2/10 or 3/10.",
+                "On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.",
+            ),
+            ("9/10 or 10/10", "9 out of 10 or 10 out of 10"),
+            ("I give it 95/100!", "I give it 95 out of 100!"),
+            ("a 0/10 effort", "a 0 out of 10 effort"),
+            ("100/100, perfect", "100 out of 100, perfect"),
+            ("(4/10)", "(4 out of 10)"),
+        ],
+    )
+    def test_ing6_rating_read_as_out_of(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'I give it 95/100!' == 'I give it 95 out of 100!'
+E         
+E         - I give it 95 out of 100!
+E         ?             ^^^^^^^^
+E         + I give it 95/100!
+E         ?             ^
+
+tests/test_ing6_normalize.py:432: AssertionError
+_____ test_ing6_rating_read_as_out_of[a 0/10 effort-a 0 out of 10 effort] ______
+
+text = 'a 0/10 effort', expected = 'a 0 out of 10 effort'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "On a scale of 1–10, I would have said 2/10 or 3/10.",
+                "On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.",
+            ),
+            ("9/10 or 10/10", "9 out of 10 or 10 out of 10"),
+            ("I give it 95/100!", "I give it 95 out of 100!"),
+            ("a 0/10 effort", "a 0 out of 10 effort"),
+            ("100/100, perfect", "100 out of 100, perfect"),
+            ("(4/10)", "(4 out of 10)"),
+        ],
+    )
+    def test_ing6_rating_read_as_out_of(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'a 0/10 effort' == 'a 0 out of 10 effort'
+E         
+E         - a 0 out of 10 effort
+E         + a 0/10 effort
+
+tests/test_ing6_normalize.py:432: AssertionError
+__ test_ing6_rating_read_as_out_of[100/100, perfect-100 out of 100, perfect] ___
+
+text = '100/100, perfect', expected = '100 out of 100, perfect'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "On a scale of 1–10, I would have said 2/10 or 3/10.",
+                "On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.",
+            ),
+            ("9/10 or 10/10", "9 out of 10 or 10 out of 10"),
+            ("I give it 95/100!", "I give it 95 out of 100!"),
+            ("a 0/10 effort", "a 0 out of 10 effort"),
+            ("100/100, perfect", "100 out of 100, perfect"),
+            ("(4/10)", "(4 out of 10)"),
+        ],
+    )
+    def test_ing6_rating_read_as_out_of(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert '100/100, perfect' == '100 out of 100, perfect'
+E         
+E         - 100 out of 100, perfect
+E         ?    ^^^^^^^^
+E         + 100/100, perfect
+E         ?    ^
+
+tests/test_ing6_normalize.py:432: AssertionError
+____________ test_ing6_rating_read_as_out_of[(4/10)-(4 out of 10)] _____________
+
+text = '(4/10)', expected = '(4 out of 10)'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "On a scale of 1–10, I would have said 2/10 or 3/10.",
+                "On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.",
+            ),
+            ("9/10 or 10/10", "9 out of 10 or 10 out of 10"),
+            ("I give it 95/100!", "I give it 95 out of 100!"),
+            ("a 0/10 effort", "a 0 out of 10 effort"),
+            ("100/100, perfect", "100 out of 100, perfect"),
+            ("(4/10)", "(4 out of 10)"),
+        ],
+    )
+    def test_ing6_rating_read_as_out_of(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert '(4/10)' == '(4 out of 10)'
+E         
+E         - (4 out of 10)
+E         + (4/10)
+
+tests/test_ing6_normalize.py:432: AssertionError
+_____________________ test_ing6_rating_char_map_round_trip _____________________
+
+    def test_ing6_rating_char_map_round_trip() -> None:
+        text = "said 2/10 or"
+        out, cmap = normalize(text)
+>       assert out == "said 2 out of 10 or"
+E       AssertionError: assert 'said 2/10 or' == 'said 2 out of 10 or'
+E         
+E         - said 2 out of 10 or
+E         + said 2/10 or
+
+tests/test_ing6_normalize.py:465: AssertionError
+_ test_ing6_asterisk_between_terms_read_as_times[Wealth = Income + Wealth * (Return on Investment)-Wealth equals Income + Wealth times (Return on Investment)] _
+
+text = 'Wealth = Income + Wealth * (Return on Investment)'
+expected = 'Wealth equals Income + Wealth times (Return on Investment)'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Wealth = Income + Wealth * (Return on Investment)",
+                "Wealth equals Income + Wealth times (Return on Investment)",
+            ),
+            ("3 * 4", "3 times 4"),
+            ("a  *  b", "a times b"),
+        ],
+    )
+    def test_ing6_asterisk_between_terms_read_as_times(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Wealth equal...n Investment)' == 'Wealth equal...n Investment)'
+E         
+E         - Wealth equals Income + Wealth times (Return on Investment)
+E         ?                               ^^^^^
+E         + Wealth equals Income + Wealth * (Return on Investment)
+E         ?                               ^
+
+tests/test_ing6_normalize.py:486: AssertionError
+_______ test_ing6_asterisk_between_terms_read_as_times[3 * 4-3 times 4] ________
+
+text = '3 * 4', expected = '3 times 4'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Wealth = Income + Wealth * (Return on Investment)",
+                "Wealth equals Income + Wealth times (Return on Investment)",
+            ),
+            ("3 * 4", "3 times 4"),
+            ("a  *  b", "a times b"),
+        ],
+    )
+    def test_ing6_asterisk_between_terms_read_as_times(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert '3 * 4' == '3 times 4'
+E         
+E         - 3 times 4
+E         + 3 * 4
+
+tests/test_ing6_normalize.py:486: AssertionError
+______ test_ing6_asterisk_between_terms_read_as_times[a  *  b-a times b] _______
+
+text = 'a  *  b', expected = 'a times b'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            (
+                "Wealth = Income + Wealth * (Return on Investment)",
+                "Wealth equals Income + Wealth times (Return on Investment)",
+            ),
+            ("3 * 4", "3 times 4"),
+            ("a  *  b", "a times b"),
+        ],
+    )
+    def test_ing6_asterisk_between_terms_read_as_times(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'a  *  b' == 'a times b'
+E         
+E         - a times b
+E         + a  *  b
+
+tests/test_ing6_normalize.py:486: AssertionError
+_____________ test_ing6_asterisk_negative_cases[* starts the line] _____________
+
+text = '* starts the line'
+
+    @pytest.mark.parametrize(
+        "text",
+        [
+            "a ** b",
+            "**bold** text",
+            "a footnote* here",
+            "see *note",
+            "3*4",
+            "a *b",
+            "a* b",
+            "* starts the line",
+            "first line\n* second line",
+            "the line ends with *",
+            "first line *\nsecond line",
+        ],
+    )
+    def test_ing6_asterisk_negative_cases(text: str) -> None:
+>       assert normalize(text) == (text, list(range(len(text))))
+E       AssertionError: assert ('starts the ...5, 6, 7, ...]) == ('* starts th...3, 4, 5, ...])
+E         
+E         At index 0 diff: 'starts the line' != '* starts the line'
+E         Use -v to get more diff
+
+tests/test_ing6_normalize.py:508: AssertionError
+____________________ test_ing6_asterisk_char_map_round_trip ____________________
+
+    def test_ing6_asterisk_char_map_round_trip() -> None:
+        text = "Wealth * (Return"
+        out, cmap = normalize(text)
+>       assert out == "Wealth times (Return"
+E       AssertionError: assert 'Wealth * (Return' == 'Wealth times (Return'
+E         
+E         - Wealth times (Return
+E         ?        ^^^^^
+E         + Wealth * (Return
+E         ?        ^
+
+tests/test_ing6_normalize.py:514: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing6_normalize.py::test_ing6_rating_read_as_out_of[On a scale of 1\u201310, I would have said 2/10 or 3/10.-On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.]
+FAILED tests/test_ing6_normalize.py::test_ing6_rating_read_as_out_of[9/10 or 10/10-9 out of 10 or 10 out of 10]
+FAILED tests/test_ing6_normalize.py::test_ing6_rating_read_as_out_of[I give it 95/100!-I give it 95 out of 100!]
+FAILED tests/test_ing6_normalize.py::test_ing6_rating_read_as_out_of[a 0/10 effort-a 0 out of 10 effort]
+FAILED tests/test_ing6_normalize.py::test_ing6_rating_read_as_out_of[100/100, perfect-100 out of 100, perfect]
+FAILED tests/test_ing6_normalize.py::test_ing6_rating_read_as_out_of[(4/10)-(4 out of 10)]
+FAILED tests/test_ing6_normalize.py::test_ing6_rating_char_map_round_trip - A...
+FAILED tests/test_ing6_normalize.py::test_ing6_asterisk_between_terms_read_as_times[Wealth = Income + Wealth * (Return on Investment)-Wealth equals Income + Wealth times (Return on Investment)]
+FAILED tests/test_ing6_normalize.py::test_ing6_asterisk_between_terms_read_as_times[3 * 4-3 times 4]
+FAILED tests/test_ing6_normalize.py::test_ing6_asterisk_between_terms_read_as_times[a  *  b-a times b]
+FAILED tests/test_ing6_normalize.py::test_ing6_asterisk_negative_cases[* starts the line]
+FAILED tests/test_ing6_normalize.py::test_ing6_asterisk_char_map_round_trip
+12 failed, 187 passed in 0.10s
