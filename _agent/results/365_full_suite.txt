@@ -1,0 +1,6 @@
+== default (model tests skipped)
+560 passed, 19 skipped in 30.50s
+== HEARNARRO_TEST_MODEL=1 HEARNARRO_TTS_BACKEND=kokoro HEARNARRO_KOKORO_REVISION=<PINNED_REVISION> HF_HOME=~/hearnarro-m1/hf
+........................................................................ [ 99%]
+...                                                                      [100%]
+574 passed, 5 skipped in 53.47s

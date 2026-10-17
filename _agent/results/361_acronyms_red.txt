@@ -1,0 +1,21 @@
+___________ ERROR collecting tests/test_ing6_acronym_definitions.py ____________
+ImportError while importing test module '/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/tests/test_ing6_acronym_definitions.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_ing6_acronym_definitions.py:11: in <module>
+    from hearnarro.ingestion.acronyms import find_definitions
+E   ModuleNotFoundError: No module named 'hearnarro.ingestion.acronyms'
+=========================== short test summary info ============================
+ERROR tests/test_acronyms.py
+ERROR tests/test_ing6_acronym_definitions.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+2 errors in 0.05s
+
+tests/test_ing6_normalize.py:102: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing6_normalize.py::test_ing6_all_caps_tokens_left_for_the_backend[open the PDF file]
+FAILED tests/test_ing6_normalize.py::test_ing6_all_caps_tokens_left_for_the_backend[a TED talk by the CEO]
+2 failed, 20 passed in 0.02s

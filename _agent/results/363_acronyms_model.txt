@@ -1,0 +1,36 @@
+...............                                                          [100%]
+15 passed in 10.63s
+tokens: [('The', 'ðə', ' '), ('C', 'sˌi', ''), ('E', 'ˌi', ''), ('O', 'ˈO', ' '), ('watched', 'wˈɑʧt', ' '), ('a', 'ɐ', ' '), ('TED', 'tˈɛd', ' '), ('talk', 'tˈɔk', ' '), ('about', 'əbˈWt', ' '), ('NASA', 'nˈæsə', ' '), ('and', 'ænd', ' '), ('P', 'pˌi', ''), ('D', 'dˌi', ''), ('F', 'ˈɛf', ' '), ('files', 'fˈIlz', ''), ('.', '.', '')]
+WordTimestamp(word='The', start_ms=325, end_ms=400, char_start=0, char_end=3)
+WordTimestamp(word='CEO', start_ms=475, end_ms=950, char_start=4, char_end=7)
+WordTimestamp(word='watched', start_ms=1000, end_ms=1275, char_start=8, char_end=15)
+WordTimestamp(word='a', start_ms=1300, end_ms=1325, char_start=16, char_end=17)
+WordTimestamp(word='TED', start_ms=1375, end_ms=1550, char_start=18, char_end=21)
+WordTimestamp(word='talk', start_ms=1600, end_ms=1825, char_start=22, char_end=26)
+WordTimestamp(word='about', start_ms=1875, end_ms=2100, char_start=27, char_end=32)
+WordTimestamp(word='NASA', start_ms=2150, end_ms=2675, char_start=33, char_end=37)
+WordTimestamp(word='and', start_ms=2750, end_ms=2825, char_start=38, char_end=41)
+WordTimestamp(word='PDF', start_ms=2875, end_ms=3325, char_start=42, char_end=45)
+WordTimestamp(word='files.', start_ms=3375, end_ms=4175, char_start=46, char_end=52)
+wrote /Users/sowmyajonnalagadda/hearnarro-m1/audio_samples/acronyms_1.0x.wav 4200 ms
+
+| token | after (in 'I read about X yesterday.') |
+|---|---|
+| TED | spoken tˈɛd |
+| NASA | spoken nˈæsə |
+| NIST | spoken nˈɪst |
+| CEO | spelled sˌi ˌi ˈO |
+| PDF | spelled pˌi dˌi ˈɛf |
+| HTML | spelled ˌAʧ tˌi ˌɛm ˈɛl |
+| USB | spelled jˌu ˌɛs bˈi |
+| FBI | spelled ˌɛf bˌi ˈI |
+| AI | spelled ˌA ˈI |
+| UK | spelled jˌu kˈA |
+| IBM | spelled ˌI bˌi ˈɛm |
+| JSON | spoken ʤˈAsᵊn |
+| SQL | spelled ˌɛs kjˌu ˈɛl |
+| GPU | spelled ʤˌi pˌi jˈu |
+| OPEC | spoken ˈOpɛk |
+| FIFA | spoken fˈifə |
+| IKEA | spoken ˈIkiə |
+| NATO | spoken nˈATO |

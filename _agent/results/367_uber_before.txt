@@ -1,0 +1,14 @@
+before tokens: [('I', 'ˌI'), ('took', 'tˈʊk'), ('an', 'ɐn'), ('Uber', 'jˈubəɹ'), ('to', 'tə'), ('the', 'ðə'), ('TED', 'tˈɛd'), ('talk', 'tˈɔk'), ('.', '.')]
+wrote /Users/sowmyajonnalagadda/hearnarro-m1/audio_samples/uber_before.wav 2325 ms
+| Uber | jˈubəɹ | OOV:g2p_en |
+| Uber's | jˈubəɹz | OOV:g2p_en |
+| Ubers | jˈubəɹz | OOV:g2p_en |
+| Kubernetes | kəbˈɜɹnəts | OOV:g2p_en |
+| Nvidia | ɛnvˈɪdiə | misaki lexicon |
+| NVIDIA | ɛnvˈɪdiə | misaki lexicon |
+| Huawei | hwˈɑwi | OOV:g2p_en |
+| Xiaomi | zIkˈOmi | OOV:g2p_en |
+| Adobe | ədˈObi | misaki lexicon |
+| Linux | lˈɪnəks | misaki lexicon |
+| GIF | ɡˈɪf | misaki lexicon |
+| Roomba | ɹˈumbə | OOV:g2p_en |

@@ -1,0 +1,18 @@
+.academic_01_seahelm_audio	academic	word=0.9919	sentence=0.7988	excluded_chars actual=0.0902 expected=0.0839
+.academic_02_memduet	academic	word=0.9912	sentence=0.8036	excluded_chars actual=0.0244 expected=0.0254
+.academic_03_pruned_reasoning	academic	word=0.9963	sentence=0.9464	excluded_chars actual=0.0529 expected=0.0532
+.academic_04_legislative_xml	academic	word=0.9839	sentence=0.9407	excluded_chars actual=0.0127 expected=0.0128
+.academic_05_sparse_autoencoders	academic	word=0.9958	sentence=0.9850	excluded_chars actual=0.0044 expected=0.0044
+.report_01_zero_trust	report	word=1.0000	sentence=0.8036	excluded_chars actual=0.0000 expected=0.0000
+.report_02_patch_mgmt	report	word=1.0000	sentence=0.8571	excluded_chars actual=0.0000 expected=0.0000
+.report_03_ssdf	report	word=1.0000	sentence=0.8036	excluded_chars actual=0.0000 expected=0.0000
+.report_04_rmf	report	word=1.0000	sentence=0.7660	excluded_chars actual=0.0000 expected=0.0000
+.report_05_controls	report	word=1.0000	sentence=0.7609	excluded_chars actual=0.0000 expected=0.0000
+.ssssstables_01_pfn_bayes	tables	word=0.9779	sentence=0.7836	excluded_chars actual=0.0369 expected=0.0388
+.tables_02_non_gaussian_sem	tables	word=0.9877	sentence=0.8347	excluded_chars actual=0.0163 expected=0.0085
+.tables_03_copula_subspaces	tables	word=0.9710	sentence=0.6929	excluded_chars actual=0.0472 expected=0.0499
+.tables_04_markov_kernel	tables	word=0.9756	sentence=0.7619	excluded_chars actual=0.0570 expected=0.0597
+.tables_05_decomposing_learner	tables	word=0.9989	sentence=0.9890	excluded_chars actual=0.0404 expected=0.0388
+.word-level mean over 15 fixtures: 0.9914 (min 0.9710); sentence-level mean (diagnostic): 0.8352
+.
+17 passed, 5 skipped in 8.14s
