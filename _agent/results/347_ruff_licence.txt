@@ -1,0 +1,9 @@
+# 347 ruff + licence, Fri Oct 16 22:57:45 PDT 2026
+All checks passed!
+check exit 0
+74 files already formatted
+format exit 0
+licence exit 0
+websockets                       17.2           ok             BSD-3-Clause
+wrapt                            2.5.1          ok             BSD-2-Clause
+TOTAL 100  VIOLATIONS 0 []

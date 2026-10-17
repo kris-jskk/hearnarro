@@ -1,0 +1,7 @@
+# 346 suites on final code, Fri Oct 16 22:57:51 PDT 2026
+=== model tests (HEARNARRO_TEST_MODEL=1, kokoro)
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+10 passed, 494 deselected, 14 warnings in 14.27s
+=== fake-backend suite (default)
+......................................................................ss [100%]
+489 passed, 15 skipped in 28.76s

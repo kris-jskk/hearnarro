@@ -1,0 +1,9 @@
+_infer vs vendored KModel.forward on the user's sentence (af_heart)
+speed 0.5: BOS model=27 ours=27; other durations identical=True; len model=211200 ours=211200; max|diff| (if same len)=0.15109115839004517
+speed 1.0: BOS model=13 ours=13; other durations identical=True; len model=106800 ours=106800; max|diff| (if same len)=0.12827716767787933
+speed 1.5: BOS model=9 ours=13; other durations identical=True; len model=70200 ours=72600; max|diff| (if same len)=False
+speed 2.0: BOS model=7 ours=13; other durations identical=True; len model=59400 ours=63000; max|diff| (if same len)=False
+
+Same comparison with torch.manual_seed(0) before each call (the decoder draws random noise):
+speed 0.5: model-vs-model max|diff|=0.00e+00; model-vs-_infer max|diff|=0.00e+00
+speed 1.0: model-vs-model max|diff|=0.00e+00; model-vs-_infer max|diff|=0.00e+00
