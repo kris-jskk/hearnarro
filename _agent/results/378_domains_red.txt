@@ -1,0 +1,499 @@
+....................FF...FFFFFFFFFFFF.FFF............................... [ 74%]
+........................F                                                [100%]
+=================================== FAILURES ===================================
+___________________________ test_ing6_url_to_domain ____________________________
+
+    def test_ing6_url_to_domain() -> None:
+        text = "see https://arxiv.org/abs/1 now"
+        out, cmap = normalize(text)
+>       assert out == "see arxiv dot org slash abs slash 1 now"
+E       AssertionError: assert 'see arxiv.org now' == 'see arxiv do...s slash 1 now'
+E         
+E         - see arxiv dot org slash abs slash 1 now
+E         + see arxiv.org now
+
+tests/test_ing6_normalize.py:89: AssertionError
+_________________ test_ing6_www_url_keeps_host_and_short_path __________________
+
+    def test_ing6_www_url_keeps_host_and_short_path() -> None:
+        out, _ = normalize("Visit www.example.com/page today.")
+>       assert out == "Visit example dot com slash page today."
+E       AssertionError: assert 'Visit example.com today.' == 'Visit exampl...h page today.'
+E         
+E         - Visit example dot com slash page today.
+E         + Visit example.com today.
+
+tests/test_ing6_normalize.py:98: AssertionError
+_ test_ing6_domain_spoken_with_dot[part of shopping.com today-part of shopping dot com today] _
+
+text = 'part of shopping.com today', expected = 'part of shopping dot com today'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'part of shopping.com today' == 'part of shop...dot com today'
+E         
+E         - part of shopping dot com today
+E         ?                 ^^^^^
+E         + part of shopping.com today
+E         ?                 ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[he co-founded vast.com and-he co-founded vast dot com and] _
+
+text = 'he co-founded vast.com and', expected = 'he co-founded vast dot com and'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'he co-founded vast.com and' == 'he co-founde...t dot com and'
+E         
+E         - he co-founded vast dot com and
+E         ?                   ^^^^^
+E         + he co-founded vast.com and
+E         ?                   ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[Go to Navalmanack.com to get-Go to Navalmanack dot com to get] _
+
+text = 'Go to Navalmanack.com to get'
+expected = 'Go to Navalmanack dot com to get'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Go to Navalmanack.com to get' == 'Go to Navalm...ot com to get'
+E         
+E         - Go to Navalmanack dot com to get
+E         ?                  ^^^^^
+E         + Go to Navalmanack.com to get
+E         ?                  ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[see https://angel.co/syndicates now-see angel dot co slash syndicates now] _
+
+text = 'see https://angel.co/syndicates now'
+expected = 'see angel dot co slash syndicates now'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'see angel.co now' == 'see angel do...yndicates now'
+E         
+E         - see angel dot co slash syndicates now
+E         + see angel.co now
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[join at www.ericpartaker.com today-join at ericpartaker dot com today] _
+
+text = 'join at www.ericpartaker.com today'
+expected = 'join at ericpartaker dot com today'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'join at eric...ker.com today' == 'join at eric...dot com today'
+E         
+E         - join at ericpartaker dot com today
+E         ?                     ^^^^^
+E         + join at ericpartaker.com today
+E         ?                     ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[titles (http://safaribooksonline.com).-titles (safaribooksonline dot com).] _
+
+text = 'titles (http://safaribooksonline.com).'
+expected = 'titles (safaribooksonline dot com).'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'titles (safa...sonline.com).' == 'titles (safa...ine dot com).'
+E         
+E         - titles (safaribooksonline dot com).
+E         ?                          ^^^^^
+E         + titles (safaribooksonline.com).
+E         ?                          ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+______ test_ing6_domain_spoken_with_dot[see vast.com.-see vast dot com.] _______
+
+text = 'see vast.com.', expected = 'see vast dot com.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'see vast.com.' == 'see vast dot com.'
+E         
+E         - see vast dot com.
+E         ?         ^^^^^
+E         + see vast.com.
+E         ?         ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[the site (shopping.com) works-the site (shopping dot com) works] _
+
+text = 'the site (shopping.com) works'
+expected = 'the site (shopping dot com) works'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'the site (sh...ng.com) works' == 'the site (sh...ot com) works'
+E         
+E         - the site (shopping dot com) works
+E         ?                   ^^^^^
+E         + the site (shopping.com) works
+E         ?                   ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[On Twitter: Twitter.com/Naval.-On Twitter: Twitter dot com slash Naval.] _
+
+text = 'On Twitter: Twitter.com/Naval.'
+expected = 'On Twitter: Twitter dot com slash Naval.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'On Twitter: ...er.com/Naval.' == 'On Twitter: ... slash Naval.'
+E         
+E         - On Twitter: Twitter dot com slash Naval.
+E         ?                    ^^^^^   ^^^^^^^
+E         + On Twitter: Twitter.com/Naval.
+E         ?                    ^   ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[at news.bbc.co.uk now-at news dot bbc dot co dot uk now] _
+
+text = 'at news.bbc.co.uk now', expected = 'at news dot bbc dot co dot uk now'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'at news.bbc.co.uk now' == 'at news dot ...co dot uk now'
+E         
+E         - at news dot bbc dot co dot uk now
+E         + at news.bbc.co.uk now
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[https:// startupboy.com/2011/12/13/why-you-cant-hire/.-startupboy dot com.] _
+
+text = 'https:// startupboy.com/2011/12/13/why-you-cant-hire/.'
+expected = 'startupboy dot com.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'https:// sta...u-cant-hire/.' == 'startupboy dot com.'
+E         
+E         - startupboy dot com.
+E         + https:// startupboy.com/2011/12/13/why-you-cant-hire/.
+
+tests/test_ing6_normalize.py:140: AssertionError
+_ test_ing6_domain_spoken_with_dot[my blog at www. ericpartaker.com, but-my blog at ericpartaker dot com, but] _
+
+text = 'my blog at www. ericpartaker.com, but'
+expected = 'my blog at ericpartaker dot com, but'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("part of shopping.com today", "part of shopping dot com today"),
+            ("he co-founded vast.com and", "he co-founded vast dot com and"),
+            ("Go to Navalmanack.com to get", "Go to Navalmanack dot com to get"),
+            ("see https://angel.co/syndicates now", "see angel dot co slash syndicates now"),
+            ("join at www.ericpartaker.com today", "join at ericpartaker dot com today"),
+            ("titles (http://safaribooksonline.com).", "titles (safaribooksonline dot com)."),
+            ("see vast.com.", "see vast dot com."),
+            ("the site (shopping.com) works", "the site (shopping dot com) works"),
+            ("On Twitter: Twitter.com/Naval.", "On Twitter: Twitter dot com slash Naval."),
+            ("at news.bbc.co.uk now", "at news dot bbc dot co dot uk now"),
+            ("https:// startupboy.com/2011/12/13/why-you-cant-hire/.", "startupboy dot com."),
+            ("my blog at www. ericpartaker.com, but", "my blog at ericpartaker dot com, but"),
+        ],
+    )
+    def test_ing6_domain_spoken_with_dot(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'my blog at w...aker.com, but' == 'my blog at e... dot com, but'
+E         
+E         - my blog at ericpartaker dot com, but
+E         ?                        ^^^^^
+E         + my blog at www. ericpartaker.com, but
+E         ?           +++++             ^
+
+tests/test_ing6_normalize.py:140: AssertionError
+________________________ test_ing6_www_maps_to_nothing _________________________
+
+    def test_ing6_www_maps_to_nothing() -> None:
+        text = "at www.ericpartaker.com now"
+        out, cmap = normalize(text)
+>       assert out == "at ericpartaker dot com now"
+E       AssertionError: assert 'at ericpartaker.com now' == 'at ericpartaker dot com now'
+E         
+E         - at ericpartaker dot com now
+E         ?                ^^^^^
+E         + at ericpartaker.com now
+E         ?                ^
+
+tests/test_ing6_normalize.py:158: AssertionError
+_________________________ test_ing6_long_path_dropped __________________________
+
+    def test_ing6_long_path_dropped() -> None:
+        out, _ = normalize("see https://www.forbes.com/sites/petercohan/2012/02/06/x now")
+>       assert out == "see forbes dot com now"
+E       AssertionError: assert 'see forbes.com now' == 'see forbes dot com now'
+E         
+E         - see forbes dot com now
+E         ?           ^^^^^
+E         + see forbes.com now
+E         ?           ^
+
+tests/test_ing6_normalize.py:164: AssertionError
+____________________ test_ing6_email_spoken_with_at_and_dot ____________________
+
+    def test_ing6_email_spoken_with_at_and_dot() -> None:
+        text = "contact corporate@oreilly.com."
+        out, cmap = normalize(text)
+>       assert out == "contact corporate at oreilly dot com."
+E       AssertionError: assert 'contact corp...@oreilly.com.' == 'contact corp...illy dot com.'
+E         
+E         - contact corporate at oreilly dot com.
+E         ?                  ^^^^       ^^^^^
+E         + contact corporate@oreilly.com.
+E         ?                  ^       ^
+
+tests/test_ing6_normalize.py:170: AssertionError
+_ test_ing5_domain_dot_is_not_a_sentence_end[Read my blog at www. ericpartaker.com, but not today.-expected2] _
+
+text = 'Read my blog at www. ericpartaker.com, but not today.'
+expected = ['Read my blog at www. ericpartaker.com, but not today.']
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("Visit shopping.com for details.", ["Visit shopping.com for details."]),
+            ("see vast.com. Then go.", ["see vast.com.", "Then go."]),
+            (
+                "Read my blog at www. ericpartaker.com, but not today.",
+                ["Read my blog at www. ericpartaker.com, but not today."],
+            ),
+        ],
+    )
+    def test_ing5_domain_dot_is_not_a_sentence_end(text: str, expected: list[str]) -> None:
+        segments = split_sentences(_block(text), document_id=3, order_start=0, id_start=0)
+>       assert [s.text for s in segments] == expected
+E       AssertionError: assert ['Read my blo...t not today.'] == ['Read my blo...t not today.']
+E         
+E         At index 0 diff: 'Read my blog at www.' != 'Read my blog at www. ericpartaker.com, but not today.'
+E         Left contains one more item: 'ericpartaker.com, but not today.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:236: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing6_normalize.py::test_ing6_url_to_domain - AssertionError...
+FAILED tests/test_ing6_normalize.py::test_ing6_www_url_keeps_host_and_short_path
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[part of shopping.com today-part of shopping dot com today]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[he co-founded vast.com and-he co-founded vast dot com and]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[Go to Navalmanack.com to get-Go to Navalmanack dot com to get]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[see https://angel.co/syndicates now-see angel dot co slash syndicates now]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[join at www.ericpartaker.com today-join at ericpartaker dot com today]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[titles (http://safaribooksonline.com).-titles (safaribooksonline dot com).]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[see vast.com.-see vast dot com.]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[the site (shopping.com) works-the site (shopping dot com) works]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[On Twitter: Twitter.com/Naval.-On Twitter: Twitter dot com slash Naval.]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[at news.bbc.co.uk now-at news dot bbc dot co dot uk now]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[https:// startupboy.com/2011/12/13/why-you-cant-hire/.-startupboy dot com.]
+FAILED tests/test_ing6_normalize.py::test_ing6_domain_spoken_with_dot[my blog at www. ericpartaker.com, but-my blog at ericpartaker dot com, but]
+FAILED tests/test_ing6_normalize.py::test_ing6_www_maps_to_nothing - Assertio...
+FAILED tests/test_ing6_normalize.py::test_ing6_long_path_dropped - AssertionE...
+FAILED tests/test_ing6_normalize.py::test_ing6_email_spoken_with_at_and_dot
+FAILED tests/test_ing5_segment.py::test_ing5_domain_dot_is_not_a_sentence_end[Read my blog at www. ericpartaker.com, but not today.-expected2]
+18 failed, 79 passed in 0.08s
