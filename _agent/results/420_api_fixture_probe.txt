@@ -1,0 +1,28 @@
+INFO:     Started server process [28585]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:62183 (Press CTRL+C to quit)
+INFO:     127.0.0.1:62186 - "GET /documents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62187 - "POST /documents HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:62188 - "GET /documents/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62189 - "GET /documents/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62190 - "GET /documents/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62191 - "GET /documents/1/segments?from=0&limit=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62192 - "GET /voices HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [28585]
+api pid 28585 port 62183 data_dir /var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/hn-e2e-mfbhrqsw
+upload status 202
+upload body {'id': 1, 'status': 'parsing'}
+final status ready after 0.5s
+summary keys ['acronyms', 'created_at', 'fail_reason', 'filename', 'id', 'last_opened_at', 'page_count', 'pages_done', 'parse_ms', 'position', 'sections', 'settings', 'sha256', 'status', 'title']
+sections 0 []
+total 198 next_from None
+body segments 111
+{"id": 1, "order": 0, "block_id": 1, "type": "heading", "section_id": null, "text": "SEA-HELM Audio: Evaluating Multilingual ASR-LLM Pipeline Performance", "normalized_text": "SEA-HELM Audio: Evaluating Multilingual ASR-LLM Pipeline Performance", "char_start": 0, "char_end": 68}
+{"id": 2, "order": 1, "block_id": 2, "type": "heading", "section_id": null, "text": "Across SEA-HELM Subsets", "normalized_text": "Across SEA-HELM Subsets", "char_start": 0, "char_end": 23}
+{"id": 3, "order": 2, "block_id": 3, "type": "heading", "section_id": null, "text": "Yixian Tan, Aulia Adila, Jonathan Heng, Kunat Pipatanakul, Donghang Wu, Anocha", "normalized_text": "Yixian Tan, Aulia Adila, Jonathan Heng, Kunat Pipatanakul, Donghang Wu, Anocha", "char_start": 0, "char_end": 78}
+voices [{'id': 'fake_f1', 'name': 'Fake Female 1', 'backend': 'fake', 'language': 'en-US', 'gender': 'female'}, {'id': 'fake_f2', 'name': 'Fake Female 2', 'backend': 'fake', 'language': 'en-US', 'gender': 'female'}, {'id': 'fake_f3', 'name': 'Fake Female 3', 'backend': 'fake', 'language': 'en-US', 'gender': 'female'}, {'id': 'fake_m1', 'name': 'Fake Male 1', 'backend': 'fake', 'language': 'en-US', 'gender': 'male'}, {'id': 'fake_m2', 'name': 'Fake Male 2', 'backend': 'fake', 'language': 'en-US', 'gender': 'male'}, {'id': 'fake_m3', 'name': 'Fake Male 3', 'backend': 'fake', 'language': 'en-US', 'gender': 'male'}]
+api stopped, returncode -15

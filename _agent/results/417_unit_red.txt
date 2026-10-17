@@ -1,0 +1,681 @@
+
+> hearnarro-web@0.0.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web
+
+ ❯ tests/unit/schedule.test.ts (16 tests | 16 failed) 3ms
+   ❯ tokenize (3)
+     × offsets round-trip into the text 2ms
+     × offsets round-trip with leading, repeated and mixed whitespace 0ms
+     × empty and whitespace-only text give no tokens 0ms
+   ❯ mapTimestampsToTokens (3)
+     × maps FakeBackend-shaped timestamps one to one 0ms
+     × a timestamp spanning two tokens goes to the first overlapping token 0ms
+     × a timestamp overlapping no token is dropped 0ms
+   ❯ locate (4)
+     × finds the entry whose window contains currentTime 0ms
+     × a boundary belongs to the entry that starts there 0ms
+     × returns null in a gap between entries and in the gap after the last 0ms
+     × returns null before the first entry and for no entries 0ms
+   ❯ findActiveWord (6)
+     × before the first word is null 0ms
+     × at and inside a word returns its token index 0ms
+     × between words the previous token stays active 0ms
+     × after the last word the last token stays active 0ms
+     × on FakeBackend-shaped timestamps (back to back) follows 80 ms per word 0ms
+     × no mapped timestamps is null 0ms
+ ❯ tests/unit/machine.test.ts (31 tests | 31 failed) 5ms
+   ❯ PLAY-1..PLAY-5 player reducer (31)
+     × LOAD from idle 2ms
+     × LOAD from error 0ms
+     × PLAY from idle 0ms
+     × PLAY from paused 0ms
+     × PLAY from error 0ms
+     × AUDIO_READY from loading 0ms
+     × PAUSE from playing 0ms
+     × RESUME from paused 0ms
+     × SEEK from playing 0ms
+     × SEEK from paused 0ms
+     × SEEK from loading 0ms
+     × SKIP from playing 0ms
+     × SKIP from paused 0ms
+     × SKIP_SECTION from playing 0ms
+     × SKIP_SECTION from paused 0ms
+     × SET_VOICE from playing 0ms
+     × SET_VOICE from paused 0ms
+     × SET_VOICE from idle 0ms
+     × SET_SPEED from playing 0ms
+     × SET_SPEED from paused 0ms
+     × SET_SPEED from idle 0ms
+     × SEGMENT_STARTED from playing 0ms
+     × POSITION from playing 0ms
+     × BUFFERING from playing 0ms
+     × ENDED from playing 0ms
+     × FETCH_FAILED from loading 0ms
+     × FETCH_FAILED from playing 0ms
+     × RETRY from error 0ms
+     × DISMISS from error 0ms
+     × stale generation is ignored 0ms
+     × unknown event is identity 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 47 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > LOAD from idle
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:44:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > LOAD from error
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:55:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > PLAY from idle
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:66:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > PLAY from paused
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:77:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > PLAY from error
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:85:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > AUDIO_READY from loading
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:93:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > PAUSE from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:101:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > RESUME from paused
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:109:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SEEK from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:116:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SEEK from paused
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:123:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SEEK from loading
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:130:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SKIP from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:137:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SKIP from paused
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:153:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SKIP_SECTION from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:169:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SKIP_SECTION from paused
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:179:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SET_VOICE from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:195:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SET_VOICE from paused
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:203:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SET_VOICE from idle
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:211:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SET_SPEED from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:219:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SET_SPEED from paused
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:227:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SET_SPEED from idle
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:235:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > SEGMENT_STARTED from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:243:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > POSITION from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:249:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > BUFFERING from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:255:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > ENDED from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:261:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > FETCH_FAILED from loading
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:270:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > FETCH_FAILED from playing
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:280:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > RETRY from error
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:286:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > DISMISS from error
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:293:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > stale generation is ignored
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:299:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/47]⎯
+
+ FAIL  tests/unit/machine.test.ts > PLAY-1..PLAY-5 player reducer > unknown event is identity
+Error: NotImplemented: reduce
+ ❯ reduce src/player/machine.ts:69:9
+     67|   void state
+     68|   void event
+     69|   throw new Error('NotImplemented: reduce')
+       |         ^
+     70| }
+     71|
+ ❯ tests/unit/machine.test.ts:315:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > tokenize > offsets round-trip into the text
+Error: NotImplemented: tokenize
+ ❯ tokenize src/player/schedule.ts:30:9
+     28| export function tokenize(text: string): Token[] {
+     29|   void text
+     30|   throw new Error('NotImplemented: tokenize')
+       |         ^
+     31| }
+     32|
+ ❯ tests/unit/schedule.test.ts:36:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > tokenize > offsets round-trip with leading, repeated and mixed whitespace
+Error: NotImplemented: tokenize
+ ❯ tokenize src/player/schedule.ts:30:9
+     28| export function tokenize(text: string): Token[] {
+     29|   void text
+     30|   throw new Error('NotImplemented: tokenize')
+       |         ^
+     31| }
+     32|
+ ❯ tests/unit/schedule.test.ts:41:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > tokenize > empty and whitespace-only text give no tokens
+Error: NotImplemented: tokenize
+ ❯ tokenize src/player/schedule.ts:30:9
+     28| export function tokenize(text: string): Token[] {
+     29|   void text
+     30|   throw new Error('NotImplemented: tokenize')
+       |         ^
+     31| }
+     32|
+ ❯ tests/unit/schedule.test.ts:50:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[34/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > mapTimestampsToTokens > maps FakeBackend-shaped timestamps one to one
+Error: NotImplemented: mapTimestampsToTokens
+ ❯ mapTimestampsToTokens src/player/schedule.ts:36:9
+     34|   void tokens
+     35|   void ts
+     36|   throw new Error('NotImplemented: mapTimestampsToTokens')
+       |         ^
+     37| }
+     38|
+ ❯ tests/unit/schedule.test.ts:57:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[35/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > mapTimestampsToTokens > a timestamp spanning two tokens goes to the first overlapping token
+Error: NotImplemented: mapTimestampsToTokens
+ ❯ mapTimestampsToTokens src/player/schedule.ts:36:9
+     34|   void tokens
+     35|   void ts
+     36|   throw new Error('NotImplemented: mapTimestampsToTokens')
+       |         ^
+     37| }
+     38|
+ ❯ tests/unit/schedule.test.ts:73:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[36/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > mapTimestampsToTokens > a timestamp overlapping no token is dropped
+Error: NotImplemented: mapTimestampsToTokens
+ ❯ mapTimestampsToTokens src/player/schedule.ts:36:9
+     34|   void tokens
+     35|   void ts
+     36|   throw new Error('NotImplemented: mapTimestampsToTokens')
+       |         ^
+     37| }
+     38|
+ ❯ tests/unit/schedule.test.ts:87:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[37/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > locate > finds the entry whose window contains currentTime
+Error: NotImplemented: locate
+ ❯ locate src/player/schedule.ts:45:9
+     43|   void entries
+     44|   void currentTime
+     45|   throw new Error('NotImplemented: locate')
+       |         ^
+     46| }
+     47|
+ ❯ tests/unit/schedule.test.ts:103:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[38/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > locate > a boundary belongs to the entry that starts there
+Error: NotImplemented: locate
+ ❯ locate src/player/schedule.ts:45:9
+     43|   void entries
+     44|   void currentTime
+     45|   throw new Error('NotImplemented: locate')
+       |         ^
+     46| }
+     47|
+ ❯ tests/unit/schedule.test.ts:115:15
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > locate > returns null in a gap between entries and in the gap after the last
+Error: NotImplemented: locate
+ ❯ locate src/player/schedule.ts:45:9
+     43|   void entries
+     44|   void currentTime
+     45|   throw new Error('NotImplemented: locate')
+       |         ^
+     46| }
+     47|
+ ❯ tests/unit/schedule.test.ts:121:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[40/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > locate > returns null before the first entry and for no entries
+Error: NotImplemented: locate
+ ❯ locate src/player/schedule.ts:45:9
+     43|   void entries
+     44|   void currentTime
+     45|   throw new Error('NotImplemented: locate')
+       |         ^
+     46| }
+     47|
+ ❯ tests/unit/schedule.test.ts:126:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[41/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > findActiveWord > before the first word is null
+Error: NotImplemented: findActiveWord
+ ❯ findActiveWord src/player/schedule.ts:52:9
+     50|   void mapped
+     51|   void elapsedMs
+     52|   throw new Error('NotImplemented: findActiveWord')
+       |         ^
+     53| }
+     54|
+ ❯ tests/unit/schedule.test.ts:140:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[42/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > findActiveWord > at and inside a word returns its token index
+Error: NotImplemented: findActiveWord
+ ❯ findActiveWord src/player/schedule.ts:52:9
+     50|   void mapped
+     51|   void elapsedMs
+     52|   throw new Error('NotImplemented: findActiveWord')
+       |         ^
+     53| }
+     54|
+ ❯ tests/unit/schedule.test.ts:145:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[43/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > findActiveWord > between words the previous token stays active
+Error: NotImplemented: findActiveWord
+ ❯ findActiveWord src/player/schedule.ts:52:9
+     50|   void mapped
+     51|   void elapsedMs
+     52|   throw new Error('NotImplemented: findActiveWord')
+       |         ^
+     53| }
+     54|
+ ❯ tests/unit/schedule.test.ts:152:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[44/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > findActiveWord > after the last word the last token stays active
+Error: NotImplemented: findActiveWord
+ ❯ findActiveWord src/player/schedule.ts:52:9
+     50|   void mapped
+     51|   void elapsedMs
+     52|   throw new Error('NotImplemented: findActiveWord')
+       |         ^
+     53| }
+     54|
+ ❯ tests/unit/schedule.test.ts:157:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[45/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > findActiveWord > on FakeBackend-shaped timestamps (back to back) follows 80 ms per word
+Error: NotImplemented: findActiveWord
+ ❯ findActiveWord src/player/schedule.ts:52:9
+     50|   void mapped
+     51|   void elapsedMs
+     52|   throw new Error('NotImplemented: findActiveWord')
+       |         ^
+     53| }
+     54|
+ ❯ tests/unit/schedule.test.ts:167:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[46/47]⎯
+
+ FAIL  tests/unit/schedule.test.ts > findActiveWord > no mapped timestamps is null
+Error: NotImplemented: findActiveWord
+ ❯ findActiveWord src/player/schedule.ts:52:9
+     50|   void mapped
+     51|   void elapsedMs
+     52|   throw new Error('NotImplemented: findActiveWord')
+       |         ^
+     53| }
+     54|
+ ❯ tests/unit/schedule.test.ts:174:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[47/47]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  47 failed (47)
+   Start at  00:54:22
+   Duration  115ms (transform 61%, import 17%, tests 16%, worker 6%)
+

@@ -1,0 +1,11 @@
+
+> hearnarro-web@0.0.0 lint
+> eslint . && prettier --check .
+
+
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/fixtures.ts
+  124:15  error  React Hook "use" cannot be called in a try/catch block                                                                                                                                                                                          react-hooks/rules-of-hooks
+  141:11  error  React Hook "use" is called in function "audioRequests" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word "use"  react-hooks/rules-of-hooks
+
+✖ 2 problems (2 errors, 0 warnings)
+

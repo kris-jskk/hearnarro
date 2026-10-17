@@ -1,0 +1,9 @@
+# bare-specifier imports in web/src (everything bundled from node_modules enters through these)
+   1 from 'react-dom/client'
+   6 from 'react'
+# dist bundle files
+total 480
+drwxr-xr-x@ 4 sowmyajonnalagadda  staff     128 Oct 17 01:09 .
+drwxr-xr-x@ 4 sowmyajonnalagadda  staff     128 Oct 17 01:09 ..
+-rw-r--r--@ 1 sowmyajonnalagadda  staff  239612 Oct 17 01:09 index-mFssXXTA.js
+-rw-r--r--@ 1 sowmyajonnalagadda  staff    3607 Oct 17 01:09 index-pjTi9PRq.css

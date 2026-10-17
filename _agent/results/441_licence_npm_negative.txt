@@ -1,0 +1,16 @@
+[prod]
+     3 MIT
+[dev]
+   135 MIT
+    19 Apache-2.0
+    10 ISC
+     6 BSD-2-Clause
+     2 BSD-3-Clause
+     2 MPL-2.0
+     1 BlueOak-1.0.0
+     1 GPL-3.0
+production closure: react, react-dom, scheduler
+VIOLATION caniuse-lite@1.0.30001816 [copyleft] GPL-3.0 prod=False
+TOTAL 179 (prod 3, dev 176)  VIOLATIONS 1 ['caniuse-lite']
+exit 1
+restored

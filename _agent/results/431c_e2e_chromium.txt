@@ -1,0 +1,67 @@
+
+> hearnarro-web@0.0.0 e2e
+> playwright test --project=chromium
+
+
+Running 9 tests using 1 worker
+
+[WebServer] 1:08:24 AM [vite] http proxy error: /documents
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:62681
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 1:08:24 AM [vite] http proxy error: /documents
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:62681
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+DECODE chromium tone.wav pass duration=1.0000 s rate=48000 
+  ✓  1 [chromium] › tests/e2e/decode.spec.ts:29:3 › decode tone.wav (161ms)
+[WebServer] 1:08:24 AM [vite] http proxy error: /documents
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:62681
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 1:08:24 AM [vite] http proxy error: /documents
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:62681
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+DECODE chromium tone.ogg pass duration=1.0000 s rate=48000 
+  ✓  2 [chromium] › tests/e2e/decode.spec.ts:29:3 › decode tone.ogg (85ms)
+[WebServer] 1:08:24 AM [vite] http proxy error: /documents
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:62681
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+[WebServer] 1:08:24 AM [vite] http proxy error: /documents
+[WebServer] Error: connect ECONNREFUSED 127.0.0.1:62681
+[WebServer]     at TCPConnectWrap.afterConnect [as oncomplete] (node:net:2083:16)
+CLOCK chromium state=running advanced=0.699 s in 0.700 s
+  ✓  3 [chromium] › tests/e2e/decode.spec.ts:52:1 › AudioContext.currentTime advances headless while a buffer plays (790ms)
+[e2e-fixture] api pid 30064 at http://127.0.0.1:62681; academic_01_seahelm_audio.pdf -> document 1 ready after 512 ms, 198 segments
+  ✓  4 [chromium] › tests/e2e/play.spec.ts:86:1 › harness: the Vite dev server proxies /documents to the e2e API (not 8765) (43ms)
+  ✓  5 [chromium] › tests/e2e/play.spec.ts:95:1 › PLAY-1/PLAY-2/PLAY-5: highlighted word matches the FakeBackend clock at 3 s, 8 s, 15 s (15.4s)
+  ✓  6 [chromium] › tests/e2e/play.spec.ts:130:1 › PLAY-3: clicking the first token of segment order 12 seeks there (394ms)
+[e2e-fixture] api pid 30064 stopped (exited=true)
+  ✘  7 [chromium] › tests/e2e/play.spec.ts:143:1 › PLAY-4: a speed change mid-play restarts the current sentence at the new speed (3.2s)
+[e2e-fixture] api pid 30086 at http://127.0.0.1:62681; academic_01_seahelm_audio.pdf -> document 1 ready after 513 ms, 198 segments
+  ✓  8 [chromium] › tests/e2e/play.spec.ts:191:1 › PLAY-1: pause/resume, next/previous sentence and next/previous section (934ms)
+  ✓  9 [chromium] › tests/e2e/play.spec.ts:225:1 › PLAY-5: with every clip cached, consecutive entries splice with zero gap (4.0s)
+[e2e-fixture] api pid 30086 stopped (exited=true)
+
+
+  1) [chromium] › tests/e2e/play.spec.ts:143:1 › PLAY-4: a speed change mid-play restarts the current sentence at the new speed 
+
+    Error: expect(received).toContain(expected) // indexOf
+
+    Expected value: "5:0"
+    Received array: ["6:0", "6:1", "6:2", "6:3", "6:4", "6:5", "6:6", "6:7", "6:8", "6:9", …]
+
+    Call Log:
+    - Timeout 1000ms exceeded while waiting on the predicate
+
+      172 |       timeout: 1_000,
+      173 |     })
+    > 174 |     .toContain(`${order}:0`)
+          |      ^
+      175 |   const after = audioRequests.slice(before).map((r) => new URL(r.url))
+      176 |   const cur = after.find((u) => u.pathname === `/audio/${current.id}`)
+      177 |   expect(cur?.searchParams.get('speed')).toBe('2.00')
+        at /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:174:6
+
+    Error Context: test-results/play-PLAY-4-a-speed-change-27ddd-t-sentence-at-the-new-speed-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/e2e/play.spec.ts:143:1 › PLAY-4: a speed change mid-play restarts the current sentence at the new speed 
+  8 passed (28.5s)

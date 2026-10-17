@@ -1,0 +1,7 @@
+.................................                                        [100%]
+33 passed in 0.21s
+--- node_modules absent:
+................................s                                        [100%]
+=========================== short test summary info ============================
+SKIPPED [1] api/tests/test_licences.py:98: web/node_modules absent (run npm install in web/)
+32 passed, 1 skipped in 0.05s
