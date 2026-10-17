@@ -1,0 +1,197 @@
+Resolved 100 packages in 776ms
+   Building distance==0.1.3
+   Building hearnarro @ file:///Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api
+Downloading nltk (1.7MiB)
+Downloading g2p-en (3.0MiB)
+      Built distance==0.1.3
+ Downloaded nltk
+ Downloaded g2p-en
+      Built hearnarro @ file:///Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api
+Prepared 10 packages in 306ms
+Uninstalled 1 package in 0.62ms
+Installed 46 packages in 203ms
+ + addict==2.4.0
+ + blis==1.3.3
+ + catalogue==2.0.10
+ + cloudpathlib==0.26.0
+ + cloudpickle==3.1.2
+ + confection==1.3.3
+ + cymem==2.0.13
+ + defusedxml==0.7.1
+ + distance==0.1.3
+ + en-core-web-sm==3.8.0 (from https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl)
+ + g2p-en==2.1.0
+ ~ hearnarro==0.1.0 (from file:///Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api)
+ + inflect==7.5.0
+ + jinja2==3.1.6
+ + joblib==1.6.0
+ + markdown-it-py==4.2.0
+ + mdurl==0.1.2
+ + misaki==0.9.4
+ + more-itertools==11.2.1
+ + mpmath==1.3.0
+ + murmurhash==1.0.15
+ + networkx==3.6.1
+ + nltk==3.10.3
+ + preshed==3.0.13
+ + regex==2026.9.29
+ + requests==2.34.2
+ + rich==15.0.0
+ + safetensors==0.8.0
+ + setuptools==84.0.0
+ + shellingham==1.5.4
+ + smart-open==8.0.3
+ + spacy==3.8.16
+ + spacy-legacy==3.0.12
+ + spacy-loggers==1.0.5
+ + srsly==2.5.4
+ + sympy==1.14.0
+ + thinc==8.3.13
+ + tokenizers==0.23.3
+ + torch==2.14.1
+ + transformers==5.20.1
+ + typeguard==4.6.0
+ + typer==0.27.3
+ + urllib3==2.8.0
+ + wasabi==1.1.3
+ + weasel==1.0.0
+ + wrapt==2.5.1
+--- uninstall num2words
+Uninstalled 1 package in 7ms
+ - num2words==0.5.14
+=== uv pip install -e '.[dev,tts]' (after option A: kokoro and g2p_en vendored, g2p_en/nltk/distance/num2words uninstalled)
+Resolved 94 packages in 149ms
+   Building hearnarro @ file:///Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api
+      Built hearnarro @ file:///Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api
+Prepared 1 package in 262ms
+Uninstalled 1 package in 0.62ms
+Installed 1 package in 1ms
+ ~ hearnarro==0.1.0 (from file:///Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api)
+
+=== python scripts/check_licences.py --allow regex (regex: Apache-2.0 AND CNRI-Python)
+name                             version        verdict        licence
+addict                           2.4.0          ok             UNKNOWN; MIT License
+aiosqlite                        0.22.1         ok             MIT License
+alembic                          1.20.0         ok             MIT
+annotated-doc                    0.0.5          ok             MIT
+annotated-types                  0.8.0          ok             MIT
+anyio                            4.15.1         ok             MIT
+blis                             1.3.3          ok             BSD; BSD License
+catalogue                        2.0.10         ok             MIT; MIT License
+certifi                          2026.7.22      ok             MPL-2.0; Mozilla Public License 2.0 (MPL 2.0)
+cffi                             2.1.1          ok             MIT-0
+charset-normalizer               3.5.2          ok             MIT
+click                            8.5.0          ok             BSD-3-Clause
+cloudpathlib                     0.26.0         ok             MIT License
+cloudpickle                      3.1.2          ok             BSD-3-Clause; BSD License
+confection                       1.3.3          ok             MIT; MIT License
+cryptography                     50.0.2         ok             Apache-2.0 OR BSD-3-Clause
+cymem                            2.0.13         ok             MIT; MIT License
+defusedxml                       0.7.1          ok             PSFL; Python Software Foundation License
+docopt                           0.6.2          ok             MIT; MIT License
+en_core_web_sm                   3.8.0          ok             MIT
+fastapi                          0.143.2        ok             MIT
+filelock                         4.2.0          ok             MIT
+fsspec                           2026.9.0       ok             BSD-3-Clause
+h11                              0.16.0         ok             MIT; MIT License
+hearnarro                        0.1.0          ok             Apache-2.0
+hf-xet                           1.7.0          ok             Apache-2.0
+httpcore                         1.0.9          ok             BSD-3-Clause
+httpcore2                        2.13.1         ok             BSD-3-Clause
+httptools                        0.9.0          ok             MIT
+httpx                            0.28.1         ok             BSD-3-Clause; BSD License
+httpx2                           2.13.1         ok             BSD-3-Clause
+huggingface_hub                  2.2.0          ok             Apache-2.0; Apache Software License
+idna                             3.20           ok             BSD-3-Clause
+inflect                          7.5.0          ok             MIT License
+iniconfig                        2.3.1          ok             MIT
+Jinja2                           3.1.6          ok             BSD License
+joblib                           1.6.0          ok             BSD-3-Clause
+Mako                             1.4.3          ok             MIT
+markdown-it-py                   4.2.0          ok             MIT License
+MarkupSafe                       3.0.4          ok             BSD-3-Clause
+mdurl                            0.1.2          ok             MIT License
+misaki                           0.9.4          ok             Apache License; Apache Software License
+more-itertools                   11.2.1         ok             MIT
+mpmath                           1.3.0          ok             BSD; BSD License
+murmurhash                       1.0.15         ok             MIT; MIT License
+networkx                         3.6.1          ok             BSD-3-Clause
+numpy                            2.4.6          ok             BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0
+opentelemetry-api                1.45.1         ok             Apache-2.0
+packaging                        26.3           ok             Apache-2.0 OR BSD-2-Clause
+pdfminer.six                     20260107       ok             MIT
+pdfplumber                       0.11.10        ok             MIT License
+pillow                           12.3.0         ok             MIT-CMU
+pluggy                           1.7.0          ok             MIT; MIT License
+preshed                          3.0.13         ok             MIT; MIT License
+pycparser                        3.11           ok             BSD-3-Clause
+pydantic                         2.14.1         ok             MIT
+pydantic_core                    2.50.1         ok             MIT
+Pygments                         2.21.0         ok             BSD-2-Clause
+pypdfium2                        5.14.0         ok             BSD-3-Clause, Apache-2.0, dependency licenses
+pysbd                            0.3.4          ok             MIT; MIT License
+pytesseract                      0.3.13         ok             Apache License 2.0; Apache Software License
+pytest                           9.1.1          ok             MIT
+pytest-asyncio                   1.4.0          ok             Apache-2.0
+python-dotenv                    1.2.4          ok             BSD-3-Clause
+python-multipart                 0.0.32         ok             Apache-2.0
+PyYAML                           6.0.3          ok             MIT; MIT License
+regex                            2026.9.29      ok             Apache-2.0 AND CNRI-Python (allowlisted)
+requests                         2.34.2         ok             Apache-2.0; Apache Software License
+rich                             15.0.0         ok             MIT; MIT License
+ruff                             0.17.1         ok             MIT
+safetensors                      0.8.0          ok             Apache Software License
+setuptools                       84.0.0         ok             MIT
+shellingham                      1.5.4          ok             ISC License; ISC License (ISCL)
+smart_open                       8.0.3          ok             MIT License
+spacy                            3.8.16         ok             MIT; MIT License
+spacy-legacy                     3.0.12         ok             MIT; MIT License
+spacy-loggers                    1.0.5          ok             MIT
+SQLAlchemy                       2.1.4          ok             MIT
+srsly                            2.5.4          ok             MIT; MIT License
+starlette                        1.8.0          ok             BSD-3-Clause
+sympy                            1.14.0         ok             BSD; BSD License
+thinc                            8.3.13         ok             MIT; MIT License
+tokenizers                       0.23.3         ok             Apache Software License
+torch                            2.14.1         ok             Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT
+tqdm                             4.70.1         ok             MPL-2.0 AND MIT
+transformers                     5.20.1         ok             Apache 2.0 License
+truststore                       0.10.5         ok             MIT
+typeguard                        4.6.0          ok             MIT
+typer                            0.27.3         ok             MIT
+typing-inspection                0.4.4          ok             MIT
+typing_extensions                4.16.0         ok             PSF-2.0
+urllib3                          2.8.0          ok             MIT
+uvicorn                          0.54.0         ok             BSD-3-Clause
+uvloop                           0.23.0         ok             MIT License; Apache Software License; MIT License
+wasabi                           1.1.3          ok             MIT
+watchfiles                       1.3.0          ok             MIT; MIT License
+weasel                           1.0.0          ok             MIT; MIT License
+websockets                       17.2           ok             BSD-3-Clause
+wrapt                            2.5.1          ok             BSD-2-Clause
+TOTAL 99  VIOLATIONS 0 []
+exit 0
+
+=== without --allow
+TOTAL 99  VIOLATIONS 1 ['regex']
+=== copyleft package names absent?
+kokoro absent
+misaki-en absent
+phonemizer absent
+phonemizer-fork absent
+espeakng-loader absent
+num2words absent
+distance absent
+nltk absent
+g2p-en absent
+kokoro-onnx absent
+onnxruntime absent
+soundfile absent
+
+=== Fri Oct 16 21:47:14 PDT 2026 after supervisor note: CNRI-Python added to the permissive set; no --allow
+regex                            2026.9.29      ok             Apache-2.0 AND CNRI-Python
+TOTAL 99  VIOLATIONS 0 []
+exit 
+=== pytest tests/test_licences.py tests/test_compat_num2words.py
+............................................                             [100%]
+44 passed in 1.05s

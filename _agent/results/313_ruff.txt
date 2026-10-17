@@ -1,0 +1,7 @@
+ruff check hearnarro/synthesis/kokoro_backend.py hearnarro/synthesis/compat hearnarro/synthesis/g2p_oov hearnarro/settings.py tests/test_kokoro_backend.py tests/test_compat_num2words.py tests/test_licences.py tests/conftest.py scripts/bench.py scripts/check_licences.py
+All checks passed!
+ruff format --check hearnarro/synthesis/kokoro_backend.py hearnarro/synthesis/compat hearnarro/synthesis/g2p_oov hearnarro/settings.py tests/test_kokoro_backend.py tests/test_compat_num2words.py tests/test_licences.py tests/conftest.py scripts/bench.py scripts/check_licences.py
+11 files already formatted
+(hearnarro/synthesis/kokoro_model is vendored and excluded via [tool.ruff] extend-exclude)
+=== pytest tests/test_compat_num2words.py
+18 passed in 1.61s

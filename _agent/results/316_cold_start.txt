@@ -1,0 +1,5 @@
+W1016 21:45:07.765000 11281 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+python start->module import 0.020 s; KokoroBackend() (torch/misaki/spaCy import + model load) 2.321 s; total cold start 2.341 s
+first synthesize after load 232 ms, audio 2750 ms
+second (warm) 222 ms
+voices present at pinned revision: {'af_heart': True, 'af_bella': True, 'af_nicole': True, 'am_michael': True, 'am_fenrir': True, 'am_puck': True, 'bf_emma': True, 'bf_isabella': True, 'bm_george': True, 'bm_fable': True}

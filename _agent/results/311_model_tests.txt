@@ -1,0 +1,72 @@
+HF_HOME=/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/hf HEARNARRO_TEST_MODEL=1 HEARNARRO_TTS_BACKEND=kokoro (no HEARNARRO_KOKORO_REVISION: settings default = D15 pin)
+git: HEAD 611e1ab (service/stretch committed by the phase-2 worker) + this task's changes, after ruff format
+============================= test session starts ==============================
+platform darwin -- Python 3.11.16, pytest-9.1.1, pluggy-1.7.0 -- /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api
+configfile: pyproject.toml
+plugins: asyncio-1.4.0, typeguard-4.6.0, anyio-4.15.1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 30 items
+
+tests/test_kokoro_backend.py::test_syn4_kokoro_revision_is_pinned_hash PASSED
+tests/test_kokoro_backend.py::test_syn4_arpabet_to_kokoro_stress_and_vowels PASSED
+tests/test_kokoro_backend.py::test_syn1_word_timestamps_every_word_gets_a_span PASSED
+tests/test_kokoro_backend.py::test_syn2_kokoro_voices_both_genders_en W1016 21:49:35.028000 11804 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1011: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+PASSED
+tests/test_kokoro_backend.py::test_syn1_kokoro_sentence_timestamps_valid[af_heart] PASSED
+tests/test_kokoro_backend.py::test_syn1_kokoro_sentence_timestamps_valid[bm_george] PASSED
+tests/test_kokoro_backend.py::test_syn4_kokoro_oov_words_are_spoken_and_timed PASSED
+tests/test_kokoro_backend.py::test_syn3_kokoro_native_speed_range_scales_duration PASSED
+tests/test_syn_gate.py::test_syn_gate_sentence_is_150_chars PASSED
+tests/test_syn_gate.py::test_syn_gate_fake_ttfa_under_2s_all_speeds 
+TTFA fake speed=0.5 10 ms
+
+TTFA fake speed=1.0 8 ms
+
+TTFA fake speed=2.0 7 ms
+
+TTFA fake speed=3.0 7 ms
+PASSED
+tests/test_syn_gate.py::test_syn4_kokoro_smoke_one_sentence /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1011: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+PASSED
+tests/test_syn_gate.py::test_syn_gate_kokoro_ttfa_under_2s_150_chars /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1011: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+
+TTFA kokoro speed=0.5 1842 ms
+
+TTFA kokoro speed=1.0 997 ms
+
+TTFA kokoro speed=2.0 472 ms
+
+TTFA kokoro speed=3.0 483 ms
+PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args0-kwargs0-zero] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args1-kwargs1-twenty-one] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args2-kwargs2-one hundred and twenty-three] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args3-kwargs3-one million] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args4-kwargs4-minus five] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args5-kwargs5-first] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args6-kwargs6-twenty-first] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args7-kwargs7-nineteen eighty-four] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args8-kwargs8-nineteen oh five] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args9-kwargs9-nineteen hundred] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args10-kwargs10-two thousand and five] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args11-kwargs11-twenty ten] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args12-kwargs12-three point two] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args13-kwargs13-zero point zero five] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_english[args14-kwargs14-seven] PASSED
+tests/test_compat_num2words.py::test_syn4_compat_num2words_rejects_other_languages_and_modes PASSED
+tests/test_compat_num2words.py::test_syn4_compat_install_registers_shim_not_lgpl_package PASSED
+tests/test_compat_num2words.py::test_syn4_compat_misaki_en_imports_without_num2words_distribution PASSED
+
+============================= 30 passed in 11.98s ==============================

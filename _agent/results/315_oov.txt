@@ -1,0 +1,21 @@
+W1016 21:45:04.766000 11280 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+LOG WARNING hearnarro.synthesis.kokoro_backend: kokoro OOV word 'Zygalski' -> 'zɪɡˈɑlski' via g2p_en
+LOG WARNING hearnarro.synthesis.kokoro_backend: kokoro OOV word "HearNarro's" -> 'hˈɪɹnˈɑɹOz' via lexicon+g2p_en
+LOG WARNING hearnarro.synthesis.kokoro_backend: kokoro OOV word 'Kubernetes' -> 'kəbˈɜɹnəts' via g2p_en
+text "Kubernetes orchestrates pods across HearNarro's Zygalski nodes."
+audio 4375 ms, words 7, timestamps 7
+   {"word": "Kubernetes", "start_ms": 325, "end_ms": 850, "char_start": 0, "char_end": 10}
+   {"word": "orchestrates", "start_ms": 900, "end_ms": 1475, "char_start": 11, "char_end": 23}
+   {"word": "pods", "start_ms": 1550, "end_ms": 2025, "char_start": 24, "char_end": 28}
+   {"word": "across", "start_ms": 2075, "end_ms": 2350, "char_start": 29, "char_end": 35}
+   {"word": "HearNarro's", "start_ms": 2400, "end_ms": 2900, "char_start": 36, "char_end": 47}
+   {"word": "Zygalski", "start_ms": 2950, "end_ms": 3475, "char_start": 48, "char_end": 56}
+   {"word": "nodes.", "start_ms": 3525, "end_ms": 4350, "char_start": 57, "char_end": 63}
+OOV fallback log (word, phonemes, method):
+   ('Zygalski', 'zɪɡˈɑlski', 'g2p_en')
+   ("HearNarro's", 'hˈɪɹnˈɑɹOz', 'lexicon+g2p_en')
+   ('Kubernetes', 'kəbˈɜɹnəts', 'g2p_en')
+LOG WARNING hearnarro.synthesis.kokoro_backend: kokoro OOV word 'Zygalski' -> 'zɪɡˈɑlski' via g2p_en
+LOG WARNING hearnarro.synthesis.kokoro_backend: kokoro OOV word "HearNarro's" -> 'hˈɪɹnˈɑɹOz' via lexicon+g2p_en
+LOG WARNING hearnarro.synthesis.kokoro_backend: kokoro OOV word 'Kubernetes' -> 'kəbˈɜɹnəts' via g2p_en
+all tokens -> phonemes: [('Kubernetes', 'kəbˈɜɹnəts'), ('orchestrates', 'ˈɔɹkəstɹˌAts'), ('pods', 'pˈɑdz'), ('across', 'əkɹˈɔs'), ("HearNarro's", 'hˈɪɹnˈɑɹOz'), ('Zygalski', 'zɪɡˈɑlski'), ('nodes', 'nˈOdz'), ('.', '.')]

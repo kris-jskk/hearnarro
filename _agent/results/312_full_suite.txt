@@ -1,0 +1,12 @@
+env: HEARNARRO_TEST_MODEL unset (FakeBackend paths); HEAD 611e1ab + this task's changes
+
+tests/test_ing5_segment.py:186: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[numbered_list_items_stay_split]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[reference_after_real_end_stays_split]
+2 failed, 484 passed, 12 skipped in 27.76s
+
+=== same 2 ing5 failures at clean HEAD (worktree, no changes from this task):
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[numbered_list_items_stay_split]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[reference_after_real_end_stays_split]
+2 failed, 43 passed in 0.04s
