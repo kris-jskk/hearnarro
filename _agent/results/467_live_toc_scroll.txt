@@ -1,0 +1,17 @@
+branch m3-fix-toc-scroll uncommitted fix; vite 5183 -> api 8765; script /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/8f2872c0-0b02-4815-9096-51cd6c665c26/scratchpad/live_toc_scroll.cjs
+2026-10-17T09:09:33.670Z segments 3760 toc entries 194
+2026-10-17T09:09:33.675Z current top segment order 0 -> toc entry 11 { id: 'section-32126', order: 41, segId: 32126 }
+2026-10-17T09:09:34.244Z CHECK1 toc click after toc wheel: target in viewport = true after 474 ms {"top":685.046875,"bottom":734.125,"vh":900}
+2026-10-17T09:09:34.245Z status playing
+2026-10-17T09:09:36.647Z CHECK2 advance under cooldown: active 32126 -> 32127 scrollY 31 -> 31 scrolled = false new active in viewport = false
+2026-10-17T09:09:41.872Z CHECK3 advance after cooldown: active 32130 -> 32131 scrollY 31 -> 2173 new active in viewport = true
+
+=== BEFORE: same script with web/src at main (fix stashed) ===
+(eval):1: command not found: timeout
+worktree /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/8f2872c0-0b02-4815-9096-51cd6c665c26/scratchpad/wt-main at 5a9aed1, vite 5184 -> api 8765, same script with port 5184
+2026-10-17T09:10:11.708Z segments 3760 toc entries 194
+2026-10-17T09:10:11.713Z current top segment order 0 -> toc entry 11 { id: 'section-32126', order: 41, segId: 32126 }
+2026-10-17T09:10:13.367Z CHECK1 toc click after toc wheel: target in viewport = false after 0 ms {"top":2336.046875,"bottom":2385.125,"vh":900}
+2026-10-17T09:10:13.369Z status playing
+2026-10-17T09:10:15.757Z CHECK2 advance under cooldown: active 32127 -> 32128 scrollY 0 -> 0 scrolled = false new active in viewport = false
+2026-10-17T09:10:20.792Z CHECK3 advance after cooldown: active 32130 -> 32131 scrollY 0 -> 2147 new active in viewport = true
