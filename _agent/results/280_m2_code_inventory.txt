@@ -1,0 +1,35 @@
+# 280 M2 code inventory (read 2026-10-16 ~21:27 PDT; HEAD 9b68eb0 on m2-synthesis; many files untracked/modified in the working tree)
+# status legend: planned = no file; stub = file exists and its public behaviour raises NotImplementedError;
+#                implemented = real code, no dedicated passing test seen; tested = real code + passing tests in a saved run;
+#                red = test file written before the code, code under test is a stub (not run by this worker)
+# path | status | how decided
+api/hearnarro/synthesis/__init__.py | implemented (empty package marker) | file is 0 lines
+api/hearnarro/synthesis/backend.py | tested | committed; Protocol + dataclasses; test_syn4_fake_backend_satisfies_protocol passes (281)
+api/hearnarro/synthesis/fake.py | tested | real code; test_fake_backend.py passes (281, 265)
+api/hearnarro/synthesis/encode.py | tested (WavEncoder, default_encoder) / stub (OpusEncoder) | OpusEncoder.__init__ raises EncoderUnavailable, encode raises NotImplementedError; test_encode.py passes (281, 266)
+api/hearnarro/synthesis/stretch.py | stub | stretch_pcm and scale_timestamps raise NotImplementedError
+api/hearnarro/synthesis/cache.py | stub | AudioEntry dataclass real; AudioCache.get/put/mark_failed raise NotImplementedError
+api/hearnarro/synthesis/service.py | stub | SegmentSynthesisFailed and SegmentRepo real; DbSegmentRepo.*, get_audio, prefetch, queue_depth raise NotImplementedError; shutdown is a no-op returning None
+api/hearnarro/synthesis/kokoro_backend.py | stub | voices/speed_range/synthesize raise NotImplementedError
+api/hearnarro/routes/audio.py | stub | get_audio and head_audio raise NotImplementedError
+api/hearnarro/routes/voices.py | stub | list_voices raises NotImplementedError
+api/hearnarro/app.py | implemented (M2 wiring uncommitted) | git diff: build_backend, synthesis state in lifespan, audio/voices routers; no M2 test exercises it yet
+api/hearnarro/settings.py | tested | real code; test_settings.py passes (281, 266)
+api/hearnarro/storage/db.py | implemented (M1, unchanged) | not in git status
+api/hearnarro/storage/repo.py | implemented (M1, unchanged) | not in git status; no audio_cache or get_segment function
+api/hearnarro/storage/jobs.py | implemented (M1, unchanged) | not in git status
+api/hearnarro/storage/migrations/versions/0001_initial_schema.py | implemented (M1) | audio_cache table already in the D7 DDL; no M2 migration needed
+api/scripts/bench.py | planned | ls api/scripts shows only m1_smoke.py
+api/tests/conftest.py | implemented (M2 helpers uncommitted) | git diff: model marker, SpyBackend, InMemoryCache, MemorySegmentRepo, synth_fixture_segments, fifty_fixture_sentences
+api/tests/test_fake_backend.py | tested | passes (281)
+api/tests/test_encode.py | tested | passes (281)
+api/tests/test_settings.py | tested | passes (281)
+api/tests/boundary_util.py | tested | test_boundary_util.py passes (281)
+api/tests/test_boundary_util.py | tested | passes (281)
+api/tests/test_syn_boundaries.py | tested (measurement only, no thresholds) | 31 passed in 261_boundary_measurement.txt
+api/tests/test_syn1_timestamps.py | red | file present (untracked); imports stubs; not run here
+api/tests/test_syn3_speed.py | red | file present (untracked); imports stubs; not run here
+api/tests/test_syn5_queue.py | planned | absent at read time
+api/tests/test_api_audio.py | planned | absent at read time
+api/tests/test_syn_gate.py | planned | absent at read time
+_agent/results/276_spike_rtf.txt | absent | RTF/TTFA not measured at read time

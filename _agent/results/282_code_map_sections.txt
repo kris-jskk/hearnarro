@@ -1,0 +1,11 @@
+## Scope and status: 65
+## Code flows: 302
+## Modules and files: 189
+## Data structures: 162
+## Concurrency model: 38
+## Speed handling: 30
+## Dependencies and licences: 81
+## Sentence boundaries: 40
+## How to run: 57
+## Open items: 23
+     998 docs/CODE_MAP_M2.md
