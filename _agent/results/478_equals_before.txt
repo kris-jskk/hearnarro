@@ -1,0 +1,59 @@
+=== 478 equals before, Sat Oct 17 02:28:45 PDT 2026 ===
+--- normalizer (main @ c984281) ---
+'Happiness = Health + Wealth + Good Relationships' -> 'Happiness = Health + Wealth + Good Relationships'
+'Very few people disagree 2+2=4, right?' -> 'Very few people disagree 2+2=4, right?'
+'x = 5' -> 'x = 5'
+--- API segment 35391 (formula), voice af_heart speed 1.25 ---
+segment: {'id': 35391, 'order': 3306, 'block_id': 13610, 'type': 'list', 'section_id': None, 'text': '→ Happiness = Health + Wealth + Good Relationships', 'normalized_text': 'Happiness = Health + Wealth + Good Relationships', 'char_start': 0, 'char_end': 50}
+audio status: 200 bytes: 121670
+X-Timestamps words: ['Happiness', '=', 'Health', '+', 'Wealth', '+', 'Good', 'Relationships']
+--- API segment 33692 ---
+segment: {'id': 33692, 'order': 1607, 'block_id': 13057, 'type': 'body', 'section_id': None, 'text': 'Very few people disagree 2+2=4, right?', 'normalized_text': 'Very few people disagree 2+2=4, right?', 'char_start': 224, 'char_end': 262}
+audio status: 200 bytes: 85128
+X-Timestamps words: ['Very', 'few', 'people', 'disagree', '2+2=4,', 'right?']
+--- all doc-17 segments whose text has '=' ---
+33692 'Very few people disagree 2+2=4, right?' -> 'Very few people disagree 2+2=4, right?'
+35391 '→ Happiness = Health + Wealth + Good Relationships' -> 'Happiness = Health + Wealth + Good Relationships'
+35392 '→ Health = Exercise + Diet + Sleep' -> 'Health = Exercise + Diet + Sleep'
+35393 '→ Exercise = High Intensity Resistance Training + Sports + Rest' -> 'Exercise = High Intensity Resistance Training + Sports + Rest'
+35394 '→ Diet = Natural Foods + Intermittent Fasting + Plants' -> 'Diet = Natural Foods + Intermittent Fasting + Plants'
+35395 '→ Sleep = No alarms + 8–9 hours + Circadian rhythms' -> 'Sleep = No alarms + 8 to 9 hours + Circadian rhythms'
+35396 '→ Wealth = Income + Wealth * (Return on Investment)' -> 'Wealth = Income + Wealth * (Return on Investment)'
+35397 '→ Income = Accountability + Leverage + Specific Knowledge' -> 'Income = Accountability + Leverage + Specific Knowledge'
+35398 '→ Accountability = Personal Branding + Personal Platform + Taking Risk?' -> 'Accountability = Personal Branding + Personal Platform + Taking Risk?'
+35399 '→ Leverage = Capital + People + Intellectual Property' -> 'Leverage = Capital + People + Intellectual Property'
+35400 '→ Specific Knowledge = Knowing how to do something society cannot yet easily train other people to do' -> 'Specific Knowledge = Knowing how to do something society cannot yet easily train other people to do'
+35401 '→ Return on Investment = “Buy-and-Hold” + Valuation + Margin of Safety [72]' -> 'Return on Investment = “Buy-and-Hold” + Valuation + Margin of Safety'
+35681 'v=2htl-O1oDcI.' -> 'v=2htl-O1oDcI.'
+35759 'v=few99D5WnRg.' -> 'v=few99D5WnRg.'
+35765 'v=jCtOHUMaUY8.' -> 'v=jCtOHUMaUY8.'
+35780 'v=o1mkxci6vvo.' -> 'v=o1mkxci6vvo.'
+35822 'utm_ campaign=platform-newsletter&utm_medium=email.' -> 'utm_ campaign=platform-newsletter&utm_medium=email.'
+35828 'v=3qHkcs3kG44.' -> 'v=3qHkcs3kG44.'
+=== misaki G2P probe (KokoroBackend()._g2p_for(False)) ===
+W1017 02:28:47.388000 37984 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+  super().__init__("LSTM", *args, **kwargs)
+  WeightNorm.apply(module, name, dim)
+kokoro OOV word '=' -> None via none (document=None)
+kokoro OOV word '2+2=4' -> None via spelled+spelled+spelled (document=None)
+'Happiness = Health + Wealth + Good Relationships'
+  phonemes: hˈæpinəs  hˈɛlθ plˈʌs wˈɛlθ plˈʌs ɡˈʊd ɹəlˈAʃənʃˌɪps
+  tokens: [('Happiness', 'hˈæpinəs'), ('=', None), ('Health', 'hˈɛlθ'), ('+', 'plˈʌs'), ('Wealth', 'wˈɛlθ'), ('+', 'plˈʌs'), ('Good', 'ɡˈʊd'), ('Relationships', 'ɹəlˈAʃənʃˌɪps')]
+'Very few people disagree 2+2=4, right?'
+  phonemes: vˈɛɹi fjˈu pˈipᵊl dˌɪsəɡɹˈi , ɹˈIt?
+  tokens: [('Very', 'vˈɛɹi'), ('few', 'fjˈu'), ('people', 'pˈipᵊl'), ('disagree', 'dˌɪsəɡɹˈi'), ('2+2=4', ''), (',', ','), ('right', 'ɹˈIt'), ('?', '?')]
+'x = 5'
+  phonemes: ˈɛks  fˈIv
+  tokens: [('x', 'ˈɛks'), ('=', None), ('5', 'fˈIv')]
+'Happiness equals Health + Wealth'
+  phonemes: hˈæpinəs ˈikwᵊlz hˈɛlθ plˈʌs wˈɛlθ
+  tokens: [('Happiness', 'hˈæpinəs'), ('equals', 'ˈikwᵊlz'), ('Health', 'hˈɛlθ'), ('+', 'plˈʌs'), ('Wealth', 'wˈɛlθ')]
+'Very few people disagree 2+2 equals 4, right?'
+  phonemes: vˈɛɹi fjˈu pˈipᵊl dˌɪsəɡɹˈi tˈu plˈʌs tˈu ˈikwᵊlz fˈɔɹ, ɹˈIt?
+  tokens: [('Very', 'vˈɛɹi'), ('few', 'fjˈu'), ('people', 'pˈipᵊl'), ('disagree', 'dˌɪsəɡɹˈi'), ('2+2', 'tˈu plˈʌs tˈu'), ('equals', 'ˈikwᵊlz'), ('4', 'fˈɔɹ'), (',', ','), ('right', 'ɹˈIt'), ('?', '?')]
+'a + b'
+  phonemes: ɐ plˈʌs bˈi
+  tokens: [('a', 'ɐ'), ('+', 'plˈʌs'), ('b', 'bˈi')]
+'C++ and A+ grades'
+  phonemes: sˈi plˈʌs plˈʌs ænd ˈA plˈʌs ɡɹˈAdz
+  tokens: [('C++', 'sˈi plˈʌs plˈʌs'), ('and', 'ænd'), ('A+', 'ˈA plˈʌs'), ('grades', 'ɡɹˈAdz')]
