@@ -1,0 +1,36 @@
+# 376 helper gap AFTER prefetch: /Users/sowmyajonnalagadda/hearnarro-m1/play_segments.py (new), HEARNARRO_TIMING=1 HEARNARRO_VOLUME=0; same server as 370 (port 8799, untrimmed code, fresh cache rows for these orders)
+## A: playing (afplay -v 0), orders 140.. cold cache
+[140] (2650 ms) I take Naval seriously because he:
+PLAY order 140: afplay wall 2917 ms, clip 2650 ms
+[141] (15275 ms) → Questions nearly everything → Can think from first principles → Tests things well → Is good at not fooling himself → Changes his mind regularly → Laughs a lot → Thinks holistically → Thinks long-term → And…doesn’t take himself too goddamn seriously.
+GAP order 141: 0 ms (afplay end k -> afplay start k+1)
+PLAY order 141: afplay wall 16215 ms, clip 15275 ms
+[142] (2175 ms) That last one is important.
+GAP order 142: 0 ms (afplay end k -> afplay start k+1)
+PLAY order 142: afplay wall 2890 ms, clip 2175 ms
+[143] (5500 ms) This book will give you a good taste of what that cocktail of bullets looks like in Naval’s head.
+GAP order 143: 0 ms (afplay end k -> afplay start k+1)
+PLAY order 143: afplay wall 6223 ms, clip 5500 ms
+[144] (3625 ms) So, pay attention…but don’t simply parrot his words.
+GAP order 144: 0 ms (afplay end k -> afplay start k+1)
+PLAY order 144: afplay wall 4440 ms, clip 3625 ms
+## B: HEARNARRO_NOPLAY=1, orders 150.. cold cache
+[150] (3300 ms) Pura Vida, Tim Ferriss Austin, Texas
+PLAY order 150: afplay wall 0 ms, clip 3300 ms
+[151] (4850 ms) ERIC’S NOTE (ABOUT THIS BOOK)
+GAP order 151: 392 ms (afplay end k -> afplay start k+1)
+PLAY order 151: afplay wall 0 ms, clip 4850 ms
+[152] (9725 ms) Throughout his career, Naval has generously shared his wisdom, and millions of people around the world follow his advice on building wealth and living happily.
+GAP order 152: 762 ms (afplay end k -> afplay start k+1)
+PLAY order 152: afplay wall 0 ms, clip 9725 ms
+[153] (6000 ms) Naval Ravikant is an icon in Silicon Valley and startup culture around the world.
+GAP order 153: 471 ms (afplay end k -> afplay start k+1)
+PLAY order 153: afplay wall 0 ms, clip 6000 ms
+[154] (7825 ms) He founded multiple successful companies (Epinions during the 2000 dot-com crash, AngelList in 2010).
+GAP order 154: 612 ms (afplay end k -> afplay start k+1)
+PLAY order 154: afplay wall 0 ms, clip 7825 ms
+## C: afplay start-up alone: 'afplay -v 0' on one short cached clip (the first /tmp/hearnarro_*_1.0x.wav; its afinfo duration is below), 3 runs
+afplay wall 2907 ms
+afplay wall 2880 ms
+afplay wall 2885 ms
+estimated duration: 2.100000 sec

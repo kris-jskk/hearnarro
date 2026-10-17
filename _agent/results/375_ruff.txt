@@ -1,0 +1,4 @@
+$ ruff check <5 files>
+All checks passed!
+$ ruff format --check <5 files>
+5 files already formatted

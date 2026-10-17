@@ -1,0 +1,13 @@
+W1016 23:46:34.568000 20635 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+  super().__init__("LSTM", *args, **kwargs)
+  WeightNorm.apply(module, name, dim)
+service trim pads: lead 60 ms, tail 150 ms
+order 117 'FOREWORD': untrimmed 1425 ms, trimmed 782 ms, trimmed is an exact slice of untrimmed: True
+order 118 'Dear Reader,': untrimmed 1550 ms, trimmed 843 ms, trimmed is an exact slice of untrimmed: True
+order 119 'It feels strange for me to write these words, as I committed many years ago to never write forewords.': untrimmed 6150 ms, trimmed 5552 ms, trimmed is an exact slice of untrimmed: True
+trimmed: /Users/sowmyajonnalagadda/hearnarro-m1/audio_samples/foreword_3_sentences_trimmed.wav, 7179 ms
+  gap sentence 1 -> 2 (last sound of k to first sound of k+1 at -40 dBFS): 210 ms
+  gap sentence 2 -> 3 (last sound of k to first sound of k+1 at -40 dBFS): 211 ms
+untrimmed: /Users/sowmyajonnalagadda/hearnarro-m1/audio_samples/foreword_3_sentences_untrimmed.wav, 9125 ms
+  gap sentence 1 -> 2 (last sound of k to first sound of k+1 at -40 dBFS): 872 ms
+  gap sentence 2 -> 3 (last sound of k to first sound of k+1 at -40 dBFS): 854 ms

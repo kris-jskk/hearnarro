@@ -1,0 +1,32 @@
+# 370 helper gap BEFORE prefetch: measurement copy of the original play_segments.py (/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/play_before.py) = original + stderr timestamps + afplay -v 0
+# server: my own kokoro server on port 8799 (worktree m2-sentence-pause, untrimmed), copy of ~/hearnarro-m1/hearnarro.db with audio_cache emptied; lookahead 5; doc 17; speed 1.0
+## A: playing (afplay -v 0), orders 120.. cold cache
+PLAY order 120: afplay wall 4661 ms, clip 3750 ms, overhead 911 ms
+GAP order 121: 7 ms (afplay end k -> afplay start k+1)
+PLAY order 121: afplay wall 8660 ms, clip 7775 ms, overhead 885 ms
+GAP order 122: 14 ms (afplay end k -> afplay start k+1)
+PLAY order 122: afplay wall 6664 ms, clip 5775 ms, overhead 889 ms
+GAP order 123: 14 ms (afplay end k -> afplay start k+1)
+PLAY order 123: afplay wall 8455 ms, clip 7625 ms, overhead 830 ms
+GAP order 124: 15 ms (afplay end k -> afplay start k+1)
+PLAY order 124: afplay wall 6425 ms, clip 5700 ms, overhead 725 ms
+[120] (3750 ms) I’m making a rare exception in this case for three reasons.
+[121] (7775 ms) First, a free version of this book is being offered to the world in a digital/Kindle/eBook format with no strings attached.
+[122] (5775 ms) Second, I’ve known Naval for more than a decade and have long wanted someone to compile this book.
+[123] (7625 ms) Third, I’m increasing the likelihood of Naval’s next child being named “Tim” (I’ll settle for “Timbo,” if he prefers).
+[124] (5700 ms) Naval is one of the smartest people I’ve ever met, and he’s also one of the most courageous.
+## B: HEARNARRO_NOPLAY=1 (fetch gaps only), orders 130.. cold cache
+PLAY order 130: afplay wall 0 ms, clip 5050 ms, overhead -5050 ms
+GAP order 131: 579 ms (afplay end k -> afplay start k+1)
+PLAY order 131: afplay wall 0 ms, clip 7275 ms, overhead -7275 ms
+GAP order 132: 827 ms (afplay end k -> afplay start k+1)
+PLAY order 132: afplay wall 0 ms, clip 10575 ms, overhead -10575 ms
+GAP order 133: 314 ms (afplay end k -> afplay start k+1)
+PLAY order 133: afplay wall 0 ms, clip 3950 ms, overhead -3950 ms
+GAP order 134: 510 ms (afplay end k -> afplay start k+1)
+PLAY order 134: afplay wall 0 ms, clip 6450 ms, overhead -6450 ms
+[130] (5050 ms) We’ve shared a lot of meals, shared a lot of deals, and hopped around the world together.
+[131] (7275 ms) That’s all to say that, while I consider myself a good people-watcher, I consider myself an excellent Naval-watcher.
+[132] (10575 ms) He is one of the people I call most for advice, and I’ve watched him in many habitats through many seasons: easy times, hard times, recessions, booms— you name it.
+[133] (3950 ms) Sure, he’s the CEO and a co-founder of AngelList.
+[134] (6450 ms) Sure, he previously co-founded Vast.com and Epinions, which went public as part of Shopping.com.
