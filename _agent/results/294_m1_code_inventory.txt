@@ -1,0 +1,73 @@
+# M1 code inventory at commit fa7b257 (branch m2-synthesis). Lines = `git show fa7b257:<path> | wc -l`.
+# test_defs = number of `def test_` names (parametrized tests count once). Status basis: _agent/results/296_m1_tests_at_head.txt (310 passed, 5 skipped, 1 failed).
+# working-tree changes under api/ at read time:
+#    M api/hearnarro/app.py
+#    M api/hearnarro/routes/audio.py
+#    M api/hearnarro/routes/voices.py
+#    M api/hearnarro/settings.py
+#    M api/hearnarro/storage/repo.py
+#    M api/hearnarro/synthesis/cache.py
+#    M api/hearnarro/synthesis/kokoro_backend.py
+#    M api/hearnarro/synthesis/service.py
+#    M api/hearnarro/synthesis/stretch.py
+#    M api/pyproject.toml
+#    M api/tests/conftest.py
+#    M api/tests/test_licences.py
+#   ?? api/hearnarro/synthesis/compat/
+#   ?? api/hearnarro/synthesis/g2p_oov/
+#   ?? api/hearnarro/synthesis/kokoro_model/
+#   ?? api/tests/test_compat_num2words.py
+#   ?? api/tests/test_kokoro_backend.py
+#   ?? api/tests/test_stretch.py
+path                                                                   lines test_defs  status
+api/hearnarro/ingestion/__init__.py                                        0         -  implemented (empty)
+api/hearnarro/ingestion/models.py                                        137         -  tested
+api/hearnarro/ingestion/extract.py                                       968         -  tested
+api/hearnarro/ingestion/classify.py                                      626         -  tested
+api/hearnarro/ingestion/order.py                                         230         -  tested
+api/hearnarro/ingestion/merge.py                                         224         -  tested
+api/hearnarro/ingestion/segment.py                                        63         -  changing (modified in working tree; tested at HEAD)
+api/hearnarro/ingestion/abbreviations.py                                  87         -  changing (untracked; not in HEAD) [working tree only]
+api/hearnarro/ingestion/normalize.py                                      81         -  tested
+api/hearnarro/ingestion/pipeline.py                                       48         -  tested
+api/hearnarro/quality.py                                                 315         -  tested
+api/hearnarro/cli.py                                                      79         -  implemented (no dedicated test)
+api/hearnarro/__main__.py                                                  7         -  implemented
+api/hearnarro/app.py                                                     105         -  tested
+api/hearnarro/routes/documents.py                                        169         -  tested
+api/hearnarro/storage/__init__.py                                          0         -  implemented (empty)
+api/hearnarro/storage/db.py                                              124         -  tested
+api/hearnarro/storage/repo.py                                             98         -  tested
+api/hearnarro/storage/jobs.py                                            194         -  tested
+api/hearnarro/storage/migrations/env.py                                   42         -  tested
+api/hearnarro/storage/migrations/versions/0001_initial_schema.py          80         -  tested
+api/hearnarro/storage/migrations/versions/0002_parse_progress.py          27         -  tested
+api/scripts/m1_smoke.py                                                  315         -  implemented (runs 170, 248)
+api/scripts/check_licences.py                                            158         -  tested (classifier); env scan red in 296
+api/tests/__init__.py                                                      0         0  implemented (empty)
+api/tests/conftest.py                                                    254         0  implemented (helpers)
+api/tests/golden_util.py                                                  71         0  tested
+api/tests/boundary_util.py                                               110         0  tested
+api/tests/test_ing_models.py                                              48         4  tested
+api/tests/test_ing1_extract.py                                           410        29  tested
+api/tests/test_ing2_classify.py                                          647        53  tested
+api/tests/test_ing3_order.py                                             180        18  tested
+api/tests/test_ing4_merge.py                                             329        25  tested
+api/tests/test_ing5_segment.py                                            57         5  changing (modified in working tree; 5 tests passed at HEAD in 296)
+api/tests/test_ing6_normalize.py                                         109        11  tested
+api/tests/test_ing4_reading_order_golden.py                              119         3  tested
+api/tests/test_golden_util.py                                             78        12  tested
+api/tests/test_boundary_util.py                                           65         9  tested
+api/tests/test_quality.py                                                157        15  tested
+api/tests/test_quality_fixtures.py                                        51         2  tested
+api/tests/test_api_documents.py                                          361        15  tested
+api/tests/test_licences.py                                                76         3  2 tested, 1 red (env) in 296
+api/tests/fixtures/pdfs/README.md                                         47         0  data
+api/tests/fixtures/pdfs/manifest.json                                    162         0  data
+
+# Update: after this inventory was taken the branch moved to bc3657c; commit 5e686db committed segment.py (new splitter), abbreviations.py and test_ing5_segment.py. No other M1 file in this list changed (git diff --stat fa7b257 bc3657c -- api/hearnarro api/scripts api/tests):
+#    api/hearnarro/ingestion/abbreviations.py |  87 +++++++++++++++
+#    api/hearnarro/ingestion/segment.py       | 186 ++++++++++++++++++++++++++++---
+#    api/tests/test_ing5_segment.py           | 163 +++++++++++++++++++++++++++
+#    api/tests/test_syn_boundaries.py         |  25 +++--
+#    4 files changed, 440 insertions(+), 21 deletions(-)

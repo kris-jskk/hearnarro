@@ -1,0 +1,49 @@
+# docs/CODE_MAP_M1.md section line counts (## and ### headings); total 1305 lines
+   93  ## Scope and status
+   20    ### What M1 delivers
+   16    ### The gate
+    9    ### Status words
+   22    ### Status at a glance
+  268  ## Code flows
+  100    ### a. `POST /documents` upload to `ready`
+   20    ### b. `GET /documents/{id}/segments?from=&limit=` paging
+   71    ### c. `ingest(pdf)` stage by stage
+   21    ### d. `hearnarro dump` and `hearnarro check`
+   28    ### e. The golden test's scoring path and the quality fixture test
+   23    ### f. The smoke script's loop
+  219  ## Modules and files
+  108    ### `api/hearnarro/ingestion/`
+   13    ### `api/hearnarro/quality.py`
+   10    ### `api/hearnarro/cli.py`, `api/hearnarro/__main__.py`
+   16    ### `api/hearnarro/app.py` (M1 part)
+    8    ### `api/hearnarro/routes/documents.py`
+   21    ### `api/hearnarro/storage/`
+   10    ### `api/scripts/`
+   28    ### `api/tests/` (M1 files)
+  153  ## Data structures
+   57    ### Stage 1 types (`models.py`)
+   17    ### `LayoutChar` (`extract.py`)
+   15    ### `LogicalBlock` (`models.py`)
+   24    ### `Segment` (`models.py`)
+    4    ### `IngestResult` (`pipeline.py`)
+    6    ### Quality types (`quality.py`)
+   14    ### Database rows (D7 DDL, migrations 0001 and 0002)
+    8    ### Files under the data dir
+    6    ### `char_map` encoding
+   21  ## Concurrency model
+  320  ## Stage rules
+   93    ### Stage 1: extract (`extract.py`)
+   81    ### Stage 2: classify (`classify.py`)
+   45    ### Stage 3: order (`order.py`)
+   61    ### Stage 4: merge (`merge.py`)
+   13    ### Stage 5: segment (`segment.py` at `fa7b257`; changing)
+   22    ### Normalization (`normalize.py`)
+  113  ## Golden and quality gates
+   13    ### The fixture set
+   31    ### How the word-level score works (`tests/golden_util.py`)
+   10    ### Last scores (`_agent/results/151_golden_d14.txt`)
+   44    ### The quality checklist (`quality.py`)
+   13    ### The smoke script's columns
+   40  ## Dependencies and licences
+   50  ## How to run
+   16  ## Open items
