@@ -1,0 +1,8 @@
+rows in task table: 53  project total rows: 53
+sum of task-table Cost $ (each row rounded to cents): 141.18
+sum of unrounded row costs in registry: 141.1008
+project total Cost $: 141.10
+sum of by-session totals: 141.10
+sum of by-milestone totals: 141.11
+registry sum == project total (to the cent): True
+rounded-row sum within 53 x half-cent of total: True

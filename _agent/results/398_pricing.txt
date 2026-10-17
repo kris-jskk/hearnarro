@@ -1,0 +1,20 @@
+Source: https://platform.claude.com/docs/en/about-claude/pricing.md  fetched 2026-10-17 (WebFetch)
+Rows (per MTok: base input | 5m cache write | 1h cache write | cache hit | output):
+| Claude Fable 5.1 | $10 / MTok | $12.50 / MTok | $20 / MTok | $0.25 / MTok<sup>1</sup> | $50 / MTok |
+| Claude Opus 5.5 | $4 / MTok | $5 / MTok | $8 / MTok | $0.20 / MTok<sup>2</sup> | $20 / MTok |
+| Claude Sonnet 5.5 | $2 / MTok | $2.50 / MTok | $4 / MTok | $0.10 / MTok<sup>2</sup> | $10 / MTok |
+| Claude Haiku 5.5 (for prompts up to 100,000 tokens) | $0.10 / MTok | $0.125 / MTok | $0.20 / MTok | $0.01 / MTok | $0.50 / MTok |
+| Claude Haiku 5.5 (for prompts over 100,000 tokens) | $0.50 / MTok | $0.625 / MTok | $1 / MTok | $0.05 / MTok | $2.50 / MTok |
+| Claude Opus 5.5 | $8 USD / MTok | $40 USD / MTok |
+| Claude Fable 5.1 | $5 / MTok | $25 / MTok |
+| Claude Opus 5.5 | $2 / MTok | $10 / MTok |
+| Claude Sonnet 5.5 | $1 / MTok | $5 / MTok |
+| Claude Haiku 5.5 (for prompts up to 100,000 tokens) | $0.05 / MTok | $0.25 / MTok |
+| Claude Haiku 5.5 (for prompts over 100,000 tokens) | $0.25 / MTok | $1.25 / MTok |
+| Claude Opus 5.5 | 286 tokens | |
+| Claude Sonnet 5.5 | 286 tokens | |
+| Claude Haiku 5.5 | 286 tokens | 406 tokens |
+Footnotes:
+228:1. The total number of input tokens sent to the model (including in the `tools` parameter)
+469:1. **Use appropriate models:** Choose Haiku for simple tasks, Sonnet for most production workloads, and Opus for the most complex reasoning
+39:*<sup>1 Cache hits and refreshes on Claude Fable 5.1 and Claude Mythos 5.1 are priced at 0.025x the base input price.</sup>*

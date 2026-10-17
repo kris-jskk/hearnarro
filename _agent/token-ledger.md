@@ -72,7 +72,7 @@ Models not in the table are priced at claude-opus-5-5 and flagged in `Model rate
 | 2026-10-17T06:56 | m2-domains-spoken | claude-opus-5-5 | opus | 22 | 22 | 90,314 | 90,356 | 1,389,804 | 271 | 251,914 | 0.74 |  |
 | 2026-10-17T07:09 | m2-bullet-items | claude-opus-5-5 | opus | 38 | 39 | 117,677 | 117,751 | 3,030,523 | 316 | 450,222 | 1.20 |  |
 | 2026-10-17T07:24 | m2-allcaps-context | claude-opus-5-5 | opus | 23 | 23 | 80,534 | 80,578 | 1,305,549 | 269 | 231,265 | 0.67 |  |
-| 2026-10-17T07:27 | ledger-cost-and-review | claude-opus-5-5 | opus | 19 | 22 | 83,631 | 65,546 | 1,093,578 | 181 | 191,280 | 0.55 |  |
+| 2026-10-17T07:27 | ledger-cost-and-review | claude-opus-5-5 | opus | 21 | 24 | 88,515 | 70,434 | 1,264,684 | 210 | 214,500 | 0.61 |  |
 
 ## Totals
 
@@ -80,7 +80,7 @@ Models not in the table are priced at claude-opus-5-5 and flagged in `Model rate
 
 | Group | Rows | Input | Cache write 5m | Cache write 1h | Cache read | Output | Cost $ |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| session 356b510a | 53 | 8,480 | 4,772,007 | 1,549,447 | 269,307,195 | 602,947 | 141.10 |
+| session 356b510a | 53 | 8,484 | 4,776,891 | 1,549,447 | 269,478,301 | 602,976 | 141.16 |
 
 ### By milestone (task-name prefix)
 
@@ -88,14 +88,14 @@ Models not in the table are priced at claude-opus-5-5 and flagged in `Model rate
 |---|---:|---:|---:|---:|---:|---:|---:|
 | m1 | 30 | 1,520 | 2,709,693 | 0 | 65,848,098 | 85,756 | 27.71 |
 | m2 | 20 | 1,144 | 1,962,876 | 0 | 47,671,126 | 45,746 | 19.58 |
-| other | 2 | 48 | 99,438 | 0 | 1,190,278 | 234 | 0.56 |
+| other | 2 | 52 | 104,322 | 0 | 1,361,384 | 263 | 0.61 |
 | supervisor | 1 | 5,768 | 0 | 1,549,447 | 154,597,693 | 471,211 | 93.26 |
 
 ### Project
 
 | Group | Rows | Input | Cache write 5m | Cache write 1h | Cache read | Output | Cost $ |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| project total | 53 | 8,480 | 4,772,007 | 1,549,447 | 269,307,195 | 602,947 | 141.10 |
+| project total | 53 | 8,484 | 4,776,891 | 1,549,447 | 269,478,301 | 602,976 | 141.16 |
 
 ## Cost review (2026-10-17)
 
@@ -119,4 +119,4 @@ Ten most expensive rows. Cache-read share = cache-read dollars / row dollars.
 - **Opus tasks under 15 tool calls** (Sonnet candidates): 2 tasks, $0.89; the same tokens at Sonnet 5.5 rates would be $0.45 (saving $0.45, assuming Sonnet used the same tokens, which is unverified).
 - **Briefs 30 % shorter**: about $0.12 of cache-read cost saved. Proportional estimate: brief tokens taken as characters / 4, re-read once per turn at the model's cache-read rate; turns held constant.
 - **Evidence re-runs** (task-name words fix / red / tighten): 6 tasks, $4.76 (m1-fix-book-layout, m1-fix-ligatures-dropcaps-toc, m1-fix-toc-and-cover, m1-fix-unicode-hyphen, m1-quality-tighten-and-smoke, m2-queue-test-fix).
-- **Supervisor vs workers**: supervisor sessions $93.26 (66%), workers $47.84 (34%).
+- **Supervisor vs workers**: supervisor sessions $93.26 (66%), workers $47.90 (34%).

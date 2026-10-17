@@ -1,0 +1,7 @@
+Hook command (from .claude/settings.json, unchanged): cd "$CLAUDE_PROJECT_DIR" && python3 _agent/scripts/usage_from_transcripts.py >/dev/null 2>&1; true
+Run with CLAUDE_PROJECT_DIR=/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/wt (main worktree), python3 = Python 3.9.6
+exit 0; ledger mtime before 1792222384 after 1792222385
+Same entry point without the redirect, to show its output:
+0 transcripts and 0 sessions read; 53 rows in ledger; total $141.10; /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/wt/_agent/token-ledger.md written
+exit 0
+settings.json diff above (empty = unchanged)
