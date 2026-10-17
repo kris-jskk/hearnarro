@@ -1,0 +1,26 @@
+=== run 1: renormalize document 17, Sat Oct 17 02:23:26 PDT 2026 ===
+document 17: 2 segments changed, 2 cache rows removed
+segments changed: 2
+cache rows removed: 2
+orphaned audio files left on disk: 2
+
+3760
+=== changed segments (before vs after normalized_text via API) ===
+count: 2
+- 33760: 'On a scale of 1–10, I would have said 2/10 or 3/10.'
+    -> 'On a scale of 1 to 10, I would have said 2/10 or 3/10.'
+- 35395: 'Sleep = No alarms + 8–9 hours + Circadian rhythms'
+    -> 'Sleep = No alarms + 8 to 9 hours + Circadian rhythms'
+
+=== target segment after ===
+response keys: ['document_id', 'total', 'from', 'limit', 'next_from', 'segments']
+total segments: 3760
+segment: {'id': 33760, 'order': 1675, 'block_id': 13082, 'type': 'body', 'section_id': None, 'text': 'On a scale of 1–10, I would have said 2/10 or 3/10.', 'normalized_text': 'On a scale of 1 to 10, I would have said 2/10 or 3/10.', 'char_start': 0, 'char_end': 51}
+audio status: 200 bytes: 172268
+X-Timestamps words: ['On', 'a', 'scale', 'of', '1', 'to', '10,', 'I', 'would', 'have', 'said', '2/10', 'or', '3/10.']
+
+=== run 2: renormalize document 17 again, Sat Oct 17 02:23:26 PDT 2026 ===
+document 17: 0 segments changed, 0 cache rows removed
+segments changed: 0
+cache rows removed: 0
+orphaned audio files left on disk: 0
