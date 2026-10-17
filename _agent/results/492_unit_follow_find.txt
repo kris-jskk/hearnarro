@@ -1,0 +1,13 @@
+
+> hearnarro-web@0.0.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web
+
+
+ Test Files  3 passed (3)
+      Tests  81 passed (81)
+   Start at  02:50:49
+   Duration  70ms (tests 44%, import 30%, transform 17%, worker 9%)
+

@@ -1,0 +1,31 @@
+index entry before Play "EVERYTHING AND ALWAYS SEEM TO" of 194
+after index entry {"y":525,"status":"playing","seg":"32102","word":"TO@4","following":true,"btn":null,"rect":[376,425]}
+after play {"y":632,"status":"playing","seg":"32104","word":"PART@0","following":true,"btn":null,"rect":[376,425]}
+PASS  following after Play
+after window.scrollTo(0,1500) (find-box emulation, no wheel) {"y":1500,"status":"playing","seg":"32104","word":"I:@1","following":false,"btn":"Back to reading ↑","rect":[-492,-443]}
+PASS  scrollY is 1500 after scrollTo  y 1500
+  t+ {"y":1500,"status":"playing","seg":"32104","word":"WEALTH@2","following":false,"btn":"Back to reading ↑","rect":[-492,-443]}
+  t+ {"y":1500,"status":"playing","seg":"32105","word":"BUILDING@0","following":false,"btn":"Back to reading ↑","rect":[-431,-382]}
+  t+ {"y":1500,"status":"playing","seg":"32105","word":"WEALTH@1","following":false,"btn":"Back to reading ↑","rect":[-431,-382]}
+  t+ {"y":1500,"status":"playing","seg":"32106","word":"29@0","following":false,"btn":"Back to reading ↑","rect":[-370,-214]}
+  t+ {"y":1500,"status":"playing","seg":"32106","word":"Understand@1","following":false,"btn":"Back to reading ↑","rect":[-370,-214]}
+  t+ {"y":1500,"status":"playing","seg":"32106","word":"Wealth@3","following":false,"btn":"Back to reading ↑","rect":[-370,-214]}
+  t+ {"y":1500,"status":"playing","seg":"32106","word":"Created@5","following":false,"btn":"Back to reading ↑","rect":[-370,-214]}
+  t+ {"y":1500,"status":"playing","seg":"32106","word":"30@6","following":false,"btn":"Back to reading ↑","rect":[-370,-214]}
+  t+ {"y":1500,"status":"playing","seg":"32106","word":"Find@7","following":false,"btn":"Back to reading ↑","rect":[-370,-214]}
+  t+ {"y":1500,"status":"playing","seg":"32106","word":"Specific@10","following":false,"btn":"Back to reading ↑","rect":[-370,-214]}
+PASS  at least one segment change during 5 s  segments seen 32104,32105,32106
+PASS  scrollY stays 1500 (view did not jump back)  ys 1500,1500,1500,1500,1500,1500,1500,1500,1500,1500
+PASS  following false
+PASS  button "Back to reading" visible  text "Back to reading ↑"
+after Back to reading {"y":808,"status":"playing","seg":"32106","word":"Long-Term@14","following":true,"btn":null,"rect":[322,478]}
+PASS  active segment centred (within 40 px of 400)  centre 400
+PASS  following true after click
+  segment change 1 {"y":808,"status":"playing","seg":"32107","word":"BUILDING@0","following":true,"btn":null,"rect":[490,539]}
+  segment change 2 {"y":984,"status":"playing","seg":"32108","word":"93@0","following":true,"btn":null,"rect":[375,424]}
+after two advances +1.5 s {"y":1083,"status":"playing","seg":"32110","word":"94@0","following":true,"btn":null,"rect":[383,417]}
+scroll log tail [[9338,847,true],[9354,838,true],[9371,830,true],[9389,824,true],[9405,819,true],[9422,815,true],[9438,812,true],[9455,810,true],[9471,808,true],[27704,811,true],[27721,827,true],[27738,867,true],[27754,891,true],[27771,903,true],[27788,911,true],[27804,916,true],[27821,919,true],[27838,921,true],[27854,922,true],[28738,925,true],[28755,948,true],[28771,967,true],[28788,975,true],[28803,980,true],[28821,982,true],[28837,983,true],[28854,984,true],[29571,987,true],[29588,1010,true],[29604,1025,true],[29621,1031,true],[29637,1035,true],[29654,1036,true],[29671,1037,true],[30238,1041,true],[30254,1063,true],[30271,1074,true],[30288,1079,true],[30304,1081,true],[30321,1083,true]]
+PASS  two segment changes with no input  changes 2
+PASS  following stays true throughout
+PASS  view follows: active segment centred after the advances  centre 400 y 808 -> 1083
+ALL PASS
