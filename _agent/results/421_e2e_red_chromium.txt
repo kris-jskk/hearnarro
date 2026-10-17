@@ -1,0 +1,168 @@
+
+> hearnarro-web@0.0.0 e2e
+> playwright test --project=chromium
+
+
+Running 9 tests using 1 worker
+
+DECODE chromium tone.wav pass duration=1.0000 s rate=48000 
+  ✓  1 [chromium] › tests/e2e/decode.spec.ts:29:3 › decode tone.wav (154ms)
+DECODE chromium tone.ogg pass duration=1.0000 s rate=48000 
+  ✓  2 [chromium] › tests/e2e/decode.spec.ts:29:3 › decode tone.ogg (80ms)
+CLOCK chromium state=running advanced=0.699 s in 0.700 s
+  ✓  3 [chromium] › tests/e2e/decode.spec.ts:52:1 › AudioContext.currentTime advances headless while a buffer plays (783ms)
+[e2e-fixture] api pid 28378 at http://127.0.0.1:62048; academic_01_seahelm_audio.pdf -> document 1 ready after 513 ms, 198 segments
+  ✓  4 [chromium] › tests/e2e/play.spec.ts:86:1 › harness: the Vite dev server proxies /documents to the e2e API (not 8765) (46ms)
+[e2e-fixture] api pid 28378 stopped (exited=true)
+  ✘  5 [chromium] › tests/e2e/play.spec.ts:95:1 › PLAY-1/PLAY-2/PLAY-5: highlighted word matches the FakeBackend clock at 3 s, 8 s, 15 s (5.1s)
+[e2e-fixture] api pid 28394 at http://127.0.0.1:62048; academic_01_seahelm_audio.pdf -> document 1 ready after 513 ms, 198 segments
+[e2e-fixture] api pid 28394 stopped (exited=true)
+  ✘  6 [chromium] › tests/e2e/play.spec.ts:130:1 › PLAY-3: clicking the first token of segment order 12 seeks there (5.1s)
+[e2e-fixture] api pid 28404 at http://127.0.0.1:62048; academic_01_seahelm_audio.pdf -> document 1 ready after 512 ms, 198 segments
+[e2e-fixture] api pid 28404 stopped (exited=true)
+  ✘  7 [chromium] › tests/e2e/play.spec.ts:143:1 › PLAY-4: a speed change mid-play restarts the current sentence at the new speed (5.1s)
+[e2e-fixture] api pid 28427 at http://127.0.0.1:62048; academic_01_seahelm_audio.pdf -> document 1 ready after 513 ms, 198 segments
+[e2e-fixture] api pid 28427 stopped (exited=true)
+  ✘  8 [chromium] › tests/e2e/play.spec.ts:191:1 › PLAY-1: pause/resume, next/previous sentence and next section (5.1s)
+[e2e-fixture] api pid 28441 at http://127.0.0.1:62048; academic_01_seahelm_audio.pdf -> document 1 ready after 513 ms, 198 segments
+[e2e-fixture] api pid 28441 stopped (exited=true)
+  ✘  9 [chromium] › tests/e2e/play.spec.ts:222:1 › PLAY-5: with every clip cached, consecutive entries splice with zero gap (5.1s)
+
+
+  1) [chromium] › tests/e2e/play.spec.ts:95:1 › PLAY-1/PLAY-2/PLAY-5: highlighted word matches the FakeBackend clock at 3 s, 8 s, 15 s 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.seg[data-order]').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.seg[data-order]').first() with timeout 5000ms
+      - waiting for locator('.seg[data-order]').first()
+
+
+      73 | async function openAndPlay(page: Page, api: Api) {
+      74 |   await page.goto(`/#/doc/${api.documentId}`)
+    > 75 |   await expect(page.locator('.seg[data-order]').first()).toBeVisible()
+         |                                                          ^
+      76 |   await page.getByRole('button', { name: 'Play', exact: true }).click()
+      77 |   await expect(page.getByRole('status')).toContainText('playing', { timeout: 10_000 })
+      78 | }
+        at openAndPlay (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:75:58)
+        at /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:100:3
+
+    Error Context: test-results/play-PLAY-1-PLAY-2-PLAY-5--305cb-ckend-clock-at-3-s-8-s-15-s-chromium/error-context.md
+
+  2) [chromium] › tests/e2e/play.spec.ts:130:1 › PLAY-3: clicking the first token of segment order 12 seeks there 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.seg[data-order]').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.seg[data-order]').first() with timeout 5000ms
+      - waiting for locator('.seg[data-order]').first()
+
+
+      73 | async function openAndPlay(page: Page, api: Api) {
+      74 |   await page.goto(`/#/doc/${api.documentId}`)
+    > 75 |   await expect(page.locator('.seg[data-order]').first()).toBeVisible()
+         |                                                          ^
+      76 |   await page.getByRole('button', { name: 'Play', exact: true }).click()
+      77 |   await expect(page.getByRole('status')).toContainText('playing', { timeout: 10_000 })
+      78 | }
+        at openAndPlay (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:75:58)
+        at /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:137:3
+
+    Error Context: test-results/play-PLAY-3-clicking-the-f-28de4-egment-order-12-seeks-there-chromium/error-context.md
+
+  3) [chromium] › tests/e2e/play.spec.ts:143:1 › PLAY-4: a speed change mid-play restarts the current sentence at the new speed 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.seg[data-order]').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.seg[data-order]').first() with timeout 5000ms
+      - waiting for locator('.seg[data-order]').first()
+
+
+      73 | async function openAndPlay(page: Page, api: Api) {
+      74 |   await page.goto(`/#/doc/${api.documentId}`)
+    > 75 |   await expect(page.locator('.seg[data-order]').first()).toBeVisible()
+         |                                                          ^
+      76 |   await page.getByRole('button', { name: 'Play', exact: true }).click()
+      77 |   await expect(page.getByRole('status')).toContainText('playing', { timeout: 10_000 })
+      78 | }
+        at openAndPlay (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:75:58)
+        at /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:149:3
+
+    Error Context: test-results/play-PLAY-4-a-speed-change-27ddd-t-sentence-at-the-new-speed-chromium/error-context.md
+
+  4) [chromium] › tests/e2e/play.spec.ts:191:1 › PLAY-1: pause/resume, next/previous sentence and next section 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.seg[data-order]').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.seg[data-order]').first() with timeout 5000ms
+      - waiting for locator('.seg[data-order]').first()
+
+
+      73 | async function openAndPlay(page: Page, api: Api) {
+      74 |   await page.goto(`/#/doc/${api.documentId}`)
+    > 75 |   await expect(page.locator('.seg[data-order]').first()).toBeVisible()
+         |                                                          ^
+      76 |   await page.getByRole('button', { name: 'Play', exact: true }).click()
+      77 |   await expect(page.getByRole('status')).toContainText('playing', { timeout: 10_000 })
+      78 | }
+        at openAndPlay (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:75:58)
+        at /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:194:3
+
+    Error Context: test-results/play-PLAY-1-pause-resume-n-4246f-s-sentence-and-next-section-chromium/error-context.md
+
+  5) [chromium] › tests/e2e/play.spec.ts:222:1 › PLAY-5: with every clip cached, consecutive entries splice with zero gap 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.seg[data-order]').first()
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.seg[data-order]').first() with timeout 5000ms
+      - waiting for locator('.seg[data-order]').first()
+
+
+      73 | async function openAndPlay(page: Page, api: Api) {
+      74 |   await page.goto(`/#/doc/${api.documentId}`)
+    > 75 |   await expect(page.locator('.seg[data-order]').first()).toBeVisible()
+         |                                                          ^
+      76 |   await page.getByRole('button', { name: 'Play', exact: true }).click()
+      77 |   await expect(page.getByRole('status')).toContainText('playing', { timeout: 10_000 })
+      78 | }
+        at openAndPlay (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:75:58)
+        at /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/web/tests/e2e/play.spec.ts:227:3
+
+    Error Context: test-results/play-PLAY-5-with-every-cli-1d85e-ntries-splice-with-zero-gap-chromium/error-context.md
+
+  5 failed
+    [chromium] › tests/e2e/play.spec.ts:95:1 › PLAY-1/PLAY-2/PLAY-5: highlighted word matches the FakeBackend clock at 3 s, 8 s, 15 s 
+    [chromium] › tests/e2e/play.spec.ts:130:1 › PLAY-3: clicking the first token of segment order 12 seeks there 
+    [chromium] › tests/e2e/play.spec.ts:143:1 › PLAY-4: a speed change mid-play restarts the current sentence at the new speed 
+    [chromium] › tests/e2e/play.spec.ts:191:1 › PLAY-1: pause/resume, next/previous sentence and next section 
+    [chromium] › tests/e2e/play.spec.ts:222:1 › PLAY-5: with every clip cached, consecutive entries splice with zero gap 
+  4 passed (34.5s)

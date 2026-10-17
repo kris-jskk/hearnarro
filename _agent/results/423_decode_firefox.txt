@@ -1,0 +1,15 @@
+
+> hearnarro-web@0.0.0 e2e
+> playwright test --project=firefox tests/e2e/decode.spec.ts
+
+
+Running 3 tests using 1 worker
+
+DECODE firefox tone.wav pass duration=1.0000 s rate=48000 
+  ✓  1 [firefox] › tests/e2e/decode.spec.ts:29:3 › decode tone.wav (623ms)
+DECODE firefox tone.ogg pass duration=1.0000 s rate=48000 
+  ✓  2 [firefox] › tests/e2e/decode.spec.ts:29:3 › decode tone.ogg (152ms)
+CLOCK firefox state=running advanced=0.699 s in 0.700 s
+  ✓  3 [firefox] › tests/e2e/decode.spec.ts:52:1 › AudioContext.currentTime advances headless while a buffer plays (863ms)
+
+  3 passed (2.7s)

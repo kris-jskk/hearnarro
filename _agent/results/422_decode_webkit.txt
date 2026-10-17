@@ -1,0 +1,15 @@
+
+> hearnarro-web@0.0.0 e2e
+> playwright test --project=webkit tests/e2e/decode.spec.ts
+
+
+Running 3 tests using 1 worker
+
+DECODE webkit tone.wav pass duration=1.0000 s rate=48000 
+  ✓  1 [webkit] › tests/e2e/decode.spec.ts:29:3 › decode tone.wav (220ms)
+DECODE webkit tone.ogg pass duration=1.0000 s rate=48000 
+  ✓  2 [webkit] › tests/e2e/decode.spec.ts:29:3 › decode tone.ogg (162ms)
+CLOCK webkit state=running advanced=0.696 s in 0.700 s
+  ✓  3 [webkit] › tests/e2e/decode.spec.ts:52:1 › AudioContext.currentTime advances headless while a buffer plays (858ms)
+
+  3 passed (1.9s)
