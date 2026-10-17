@@ -1,0 +1,10 @@
+
+> hearnarro-web@0.0.0 typecheck
+> tsc --noEmit -p tsconfig.json
+
+
+> hearnarro-web@0.0.0 lint
+> eslint . && prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
