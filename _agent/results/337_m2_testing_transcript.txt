@@ -1,0 +1,212 @@
+# 337 transcript of docs/M2_TESTING.md commands, Fri Oct 16 22:33:53 PDT 2026; git HEAD 9a66c92 + working tree; HF_HOME=/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/m2close/../kokoro_spike/hf
+
+======== server: HEARNARRO_TTS_BACKEND=fake HEARNARRO_AUDIO_FORMAT=wav, PID 13423, port 8800, data dir /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/m2close/t_fake_wav ========
+$ curl -s $B/voices | python3 -c 'import json,sys; v=json.load(sys.stdin); print(len(v), "voices:", [(x["id"], x["gender"]) for x in v])'
+6 voices: [('fake_f1', 'female'), ('fake_f2', 'female'), ('fake_f3', 'female'), ('fake_m1', 'male'), ('fake_m2', 'male'), ('fake_m3', 'male')]
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -F file=@tests/fixtures/pdfs/report_01_zero_trust.pdf $B/documents
+202
+[exit 0]
+
+$ python3 -c 'import time;time.sleep(2)'; curl -s $B/documents/1 | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["status"], d["page_count"])'
+ready 4
+[exit 0]
+
+$ curl -s "$B/documents/1/segments?from=0&limit=2" | python3 -c 'import json,sys; [print(s["id"], s["type"], repr(s["text"]), repr(s["normalized_text"])) for s in json.load(sys.stdin)["segments"]]'
+1 heading 'NIST Special Publication 800-207' 'N I S T Special Publication 800-207'
+2 heading 'Zero Trust Architecture' 'Zero Trust Architecture'
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -I "$B/audio/1?voice=$V&speed=1.0"
+404
+[exit 0]
+
+$ curl -s -D $OUT/h1.txt -o $OUT/seg1_x1.0.$EXT -w 'HTTP %{http_code}  %{size_download} bytes  %{time_total} s\n' "$B/audio/1?voice=$V&speed=1.0"; grep -i -E '^(content-type|x-duration-ms|x-timestamps)' $OUT/h1.txt | cut -c1-220
+HTTP 200  26924 bytes  0.007169 s
+x-timestamps: [{"word": "N", "start_ms": 0, "end_ms": 80, "char_start": 0, "char_end": 1}, {"word": "I", "start_ms": 80, "end_ms": 160, "char_start": 1, "char_end": 2}, {"word": "S", "start_ms": 160, "end_ms": 240, "char
+x-duration-ms: 560
+content-type: audio/wav
+[exit 0]
+
+$ curl -s -D $OUT/h2.txt -o $OUT/seg1_x2.5.$EXT -w 'HTTP %{http_code}  %{size_download} bytes  %{time_total} s\n' "$B/audio/1?voice=$V&speed=2.5"; grep -i -E '^(content-type|x-duration-ms)' $OUT/h2.txt
+HTTP 200  10796 bytes  0.007596 s
+x-duration-ms: 224
+content-type: audio/wav
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -I "$B/audio/1?voice=$V&speed=1.0"
+200
+[exit 0]
+
+$ curl -s -o /dev/null -w 'second GET (cache hit): HTTP %{http_code} %{time_total} s\n' "$B/audio/1?voice=$V&speed=1.0"
+second GET (cache hit): HTTP 200 0.005010 s
+[exit 0]
+
+$ afinfo $OUT/seg1_x1.0.$EXT | grep -E 'File type|Data format|estimated duration'; afinfo $OUT/seg1_x2.5.$EXT | grep -E 'estimated duration'
+File type ID:   WAVE
+Data format:     1 ch,  24000 Hz, Int16
+estimated duration: 0.560000 sec
+estimated duration: 0.224000 sec
+[exit 0]
+
+$ curl -s -w ' %{http_code}\n' "$B/audio/1?voice=af_nope&speed=1.0"; curl -s -w ' %{http_code}\n' "$B/audio/1?voice=$V&speed=0.45"
+{"detail":"unknown voice 'af_nope'"} 422
+{"detail":"speed must be 0.5..3.0 in 0.1 steps"} 422
+[exit 0]
+
+$ find $HN_DATA -type f \( -name '*.wav' -o -name '*.ogg' \) | sed "s|$HN_DATA/||" | sort | head -4
+audio/1/1/fake_f1_1.0.wav
+audio/1/1/fake_f1_2.0.wav
+audio/1/1/fake_f1_2.5.wav
+audio/1/2/fake_f1_1.0.wav
+[exit 0]
+
+--- server log (encoder/backend lines)
+
+======== server: HEARNARRO_TTS_BACKEND=kokoro HEARNARRO_AUDIO_FORMAT=wav, PID 13464, port 8800, data dir /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/m2close/t_kokoro_wav ========
+$ curl -s $B/voices | python3 -c 'import json,sys; v=json.load(sys.stdin); print(len(v), "voices:", [(x["id"], x["gender"]) for x in v])'
+10 voices: [('af_heart', 'female'), ('af_bella', 'female'), ('af_nicole', 'female'), ('am_michael', 'male'), ('am_fenrir', 'male'), ('am_puck', 'male'), ('bf_emma', 'female'), ('bf_isabella', 'female'), ('bm_george', 'male'), ('bm_fable', 'male')]
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -F file=@tests/fixtures/pdfs/report_01_zero_trust.pdf $B/documents
+202
+[exit 0]
+
+$ python3 -c 'import time;time.sleep(2)'; curl -s $B/documents/1 | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["status"], d["page_count"])'
+ready 4
+[exit 0]
+
+$ curl -s "$B/documents/1/segments?from=0&limit=2" | python3 -c 'import json,sys; [print(s["id"], s["type"], repr(s["text"]), repr(s["normalized_text"])) for s in json.load(sys.stdin)["segments"]]'
+1 heading 'NIST Special Publication 800-207' 'N I S T Special Publication 800-207'
+2 heading 'Zero Trust Architecture' 'Zero Trust Architecture'
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -I "$B/audio/1?voice=$V&speed=1.0"
+404
+[exit 0]
+
+$ curl -s -D $OUT/h1.txt -o $OUT/seg1_x1.0.$EXT -w 'HTTP %{http_code}  %{size_download} bytes  %{time_total} s\n' "$B/audio/1?voice=$V&speed=1.0"; grep -i -E '^(content-type|x-duration-ms|x-timestamps)' $OUT/h1.txt | cut -c1-220
+HTTP 200  195644 bytes  0.357798 s
+x-timestamps: [{"word": "N", "start_ms": 375, "end_ms": 525, "char_start": 0, "char_end": 1}, {"word": "I", "start_ms": 575, "end_ms": 725, "char_start": 1, "char_end": 2}, {"word": "S", "start_ms": 775, "end_ms": 925, "
+x-duration-ms: 4075
+content-type: audio/wav
+[exit 0]
+
+$ curl -s -D $OUT/h2.txt -o $OUT/seg1_x2.5.$EXT -w 'HTTP %{http_code}  %{size_download} bytes  %{time_total} s\n' "$B/audio/1?voice=$V&speed=2.5"; grep -i -E '^(content-type|x-duration-ms)' $OUT/h2.txt
+HTTP 200  82604 bytes  0.376092 s
+x-duration-ms: 1720
+content-type: audio/wav
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -I "$B/audio/1?voice=$V&speed=1.0"
+200
+[exit 0]
+
+$ curl -s -o /dev/null -w 'second GET (cache hit): HTTP %{http_code} %{time_total} s\n' "$B/audio/1?voice=$V&speed=1.0"
+second GET (cache hit): HTTP 200 0.006895 s
+[exit 0]
+
+$ afinfo $OUT/seg1_x1.0.$EXT | grep -E 'File type|Data format|estimated duration'; afinfo $OUT/seg1_x2.5.$EXT | grep -E 'estimated duration'
+File type ID:   WAVE
+Data format:     1 ch,  24000 Hz, Int16
+estimated duration: 4.075000 sec
+estimated duration: 1.720000 sec
+[exit 0]
+
+$ curl -s -w ' %{http_code}\n' "$B/audio/1?voice=af_nope&speed=1.0"; curl -s -w ' %{http_code}\n' "$B/audio/1?voice=$V&speed=0.45"
+{"detail":"unknown voice 'af_nope'"} 422
+{"detail":"speed must be 0.5..3.0 in 0.1 steps"} 422
+[exit 0]
+
+$ find $HN_DATA -type f \( -name '*.wav' -o -name '*.ogg' \) | sed "s|$HN_DATA/||" | sort | head -4
+audio/1/1/af_heart_1.0.wav
+audio/1/1/af_heart_2.0.wav
+audio/1/1/af_heart_2.5.wav
+audio/1/2/af_heart_1.0.wav
+[exit 0]
+
+--- server log (encoder/backend lines)
+
+======== server: HEARNARRO_TTS_BACKEND=kokoro HEARNARRO_AUDIO_FORMAT=opus, PID 13511, port 8800, data dir /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/m2close/t_kokoro_opus ========
+$ curl -s $B/voices | python3 -c 'import json,sys; v=json.load(sys.stdin); print(len(v), "voices:", [(x["id"], x["gender"]) for x in v])'
+10 voices: [('af_heart', 'female'), ('af_bella', 'female'), ('af_nicole', 'female'), ('am_michael', 'male'), ('am_fenrir', 'male'), ('am_puck', 'male'), ('bf_emma', 'female'), ('bf_isabella', 'female'), ('bm_george', 'male'), ('bm_fable', 'male')]
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -F file=@tests/fixtures/pdfs/report_01_zero_trust.pdf $B/documents
+202
+[exit 0]
+
+$ python3 -c 'import time;time.sleep(2)'; curl -s $B/documents/1 | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d["status"], d["page_count"])'
+ready 4
+[exit 0]
+
+$ curl -s "$B/documents/1/segments?from=0&limit=2" | python3 -c 'import json,sys; [print(s["id"], s["type"], repr(s["text"]), repr(s["normalized_text"])) for s in json.load(sys.stdin)["segments"]]'
+1 heading 'NIST Special Publication 800-207' 'N I S T Special Publication 800-207'
+2 heading 'Zero Trust Architecture' 'Zero Trust Architecture'
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -I "$B/audio/1?voice=$V&speed=1.0"
+404
+[exit 0]
+
+$ curl -s -D $OUT/h1.txt -o $OUT/seg1_x1.0.$EXT -w 'HTTP %{http_code}  %{size_download} bytes  %{time_total} s\n' "$B/audio/1?voice=$V&speed=1.0"; grep -i -E '^(content-type|x-duration-ms|x-timestamps)' $OUT/h1.txt | cut -c1-220
+HTTP 200  23919 bytes  0.453348 s
+x-timestamps: [{"word": "N", "start_ms": 375, "end_ms": 525, "char_start": 0, "char_end": 1}, {"word": "I", "start_ms": 575, "end_ms": 725, "char_start": 1, "char_end": 2}, {"word": "S", "start_ms": 775, "end_ms": 925, "
+x-duration-ms: 4075
+content-type: audio/ogg
+[exit 0]
+
+$ curl -s -D $OUT/h2.txt -o $OUT/seg1_x2.5.$EXT -w 'HTTP %{http_code}  %{size_download} bytes  %{time_total} s\n' "$B/audio/1?voice=$V&speed=2.5"; grep -i -E '^(content-type|x-duration-ms)' $OUT/h2.txt
+HTTP 200  10482 bytes  0.508626 s
+x-duration-ms: 1720
+content-type: audio/ogg
+[exit 0]
+
+$ curl -s -o /dev/null -w '%{http_code}\n' -I "$B/audio/1?voice=$V&speed=1.0"
+200
+[exit 0]
+
+$ curl -s -o /dev/null -w 'second GET (cache hit): HTTP %{http_code} %{time_total} s\n' "$B/audio/1?voice=$V&speed=1.0"
+second GET (cache hit): HTTP 200 0.007120 s
+[exit 0]
+
+$ afinfo $OUT/seg1_x1.0.$EXT | grep -E 'File type|Data format|estimated duration'; afinfo $OUT/seg1_x2.5.$EXT | grep -E 'estimated duration'
+File type ID:   Oggf
+Data format:     1 ch,  48000 Hz, opus (0x00000000) 0 bits/channel, 0 bytes/packet, 0 frames/packet, 0 bytes/frame
+estimated duration: 4.081500 sec
+estimated duration: 1.726500 sec
+[exit 0]
+
+$ curl -s -w ' %{http_code}\n' "$B/audio/1?voice=af_nope&speed=1.0"; curl -s -w ' %{http_code}\n' "$B/audio/1?voice=$V&speed=0.45"
+{"detail":"unknown voice 'af_nope'"} 422
+{"detail":"speed must be 0.5..3.0 in 0.1 steps"} 422
+[exit 0]
+
+$ find $HN_DATA -type f \( -name '*.wav' -o -name '*.ogg' \) | sed "s|$HN_DATA/||" | sort | head -4
+audio/1/1/af_heart_1.0.ogg
+audio/1/1/af_heart_2.0.ogg
+audio/1/1/af_heart_2.5.ogg
+audio/1/2/af_heart_1.0.ogg
+[exit 0]
+
+--- server log (encoder/backend lines)
+
+======== benchmark (short run, --n 5; full --n 20 run is 314) ========
+$ .venv/bin/python scripts/bench.py --backend kokoro --n 5 --out <scratch>
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1011: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  super().__init__("LSTM", *args, **kwargs)
+/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+backend kokoro voice af_heart sentences 5 cold start 2.32 s
+speed   n TTFA mean    p50    max RTF mean    max  <=2s
+  0.5   5      1816   1821   2378    0.084  0.086  4/5
+  1.0   5       920    844   1106    0.086  0.099  5/5
+  2.0   5       466    445    613    0.081  0.083  5/5
+  3.0   5       474    454    623    0.124  0.126  5/5
+wrote /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/m2close/bench/2026-10-16.json
+[exit 0]
+
+======== model cache size ========
+$ du -shL $HF_HOME/hub/models--hexgrad--Kokoro-82M
+626M	/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/hf/hub/models--hexgrad--Kokoro-82M

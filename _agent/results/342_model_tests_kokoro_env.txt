@@ -1,0 +1,21 @@
+# 342 model tests, HF_HOME=/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/hf HEARNARRO_TEST_MODEL=1 HEARNARRO_TTS_BACKEND=kokoro (as in 311; 339 omitted the backend variable and the two test_syn_gate Kokoro tests failed on the revision assert), Fri Oct 16 22:39:27 PDT 2026
+  /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1011: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+    super().__init__("LSTM", *args, **kwargs)
+
+tests/test_kokoro_backend.py::test_syn2_kokoro_voices_both_genders_en
+tests/test_syn_gate.py::test_syn4_kokoro_smoke_one_sentence
+tests/test_syn_gate.py::test_syn_gate_kokoro_ttfa_under_2s_150_chars
+  /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+
+tests/test_kokoro_backend.py::test_syn2_kokoro_voices_both_genders_en
+tests/test_kokoro_backend.py::test_syn1_kokoro_sentence_timestamps_valid[bm_george]
+tests/test_syn_gate.py::test_syn4_kokoro_smoke_one_sentence
+tests/test_syn_gate.py::test_syn_gate_kokoro_ttfa_under_2s_150_chars
+
+tests/test_kokoro_backend.py::test_syn2_kokoro_voices_both_genders_en
+tests/test_kokoro_backend.py::test_syn1_kokoro_sentence_timestamps_valid[bm_george]
+tests/test_syn_gate.py::test_syn4_kokoro_smoke_one_sentence
+tests/test_syn_gate.py::test_syn_gate_kokoro_ttfa_under_2s_150_chars
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+12 passed, 14 warnings in 10.88s

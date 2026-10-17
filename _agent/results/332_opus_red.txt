@@ -1,0 +1,77 @@
+....FF........F                                                          [100%]
+=================================== FAILURES ===================================
+______________ test_syn1_opus_encoder_ogg_container_and_size_d16 _______________
+
+    def test_syn1_opus_encoder_ogg_container_and_size_d16() -> None:
+        pytest.importorskip("opuscodec")
+        from hearnarro.synthesis.encode import OpusEncoder
+    
+>       enc = OpusEncoder()
+              ^^^^^^^^^^^^^
+
+tests/test_encode.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <hearnarro.synthesis.encode.OpusEncoder object at 0x10c272e10>
+
+    def __init__(self) -> None:
+>       raise EncoderUnavailable("OpusEncoder is not implemented yet (M2)")
+E       hearnarro.synthesis.encode.EncoderUnavailable: OpusEncoder is not implemented yet (M2)
+
+hearnarro/synthesis/encode.py:53: EncoderUnavailable
+______________ test_syn1_default_encoder_opus_when_installed_d16 _______________
+
+    def test_syn1_default_encoder_opus_when_installed_d16() -> None:
+        pytest.importorskip("opuscodec")
+        from hearnarro.synthesis.encode import OpusEncoder
+    
+>       assert isinstance(default_encoder("opus"), OpusEncoder)
+E       AssertionError: assert False
+E        +  where False = isinstance(<hearnarro.synthesis.encode.WavEncoder object at 0x10c416790>, <class 'hearnarro.synthesis.encode.OpusEncoder'>)
+E        +    where <hearnarro.synthesis.encode.WavEncoder object at 0x10c416790> = default_encoder('opus')
+
+tests/test_encode.py:77: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  hearnarro.synthesis.encode:encode.py:74 audio encoder: opus requested but unavailable: OpusEncoder is not implemented yet (M2); using WAV
+__________ test_syn1_audio_format_opus_serves_ogg_same_timestamps_d16 __________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-76/test_syn1_audio_format_opus_se0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10f3e7a90>
+
+    async def test_syn1_audio_format_opus_serves_ogg_same_timestamps_d16(
+        tmp_path: Path, monkeypatch: Any
+    ) -> None:
+        """HEARNARRO_AUDIO_FORMAT=opus: the encoder comes from settings; same X-Timestamps as WAV."""
+        import pytest
+    
+        pytest.importorskip("opuscodec")
+        async with ready_document(tmp_path / "wav") as (client, segments):
+            seg = worded(segments)[0]
+            params = {"voice": VOICE, "speed": 1.0}
+            wav = await client.get(f"/audio/{seg['id']}", params=params)
+            assert wav.status_code == 200 and wav.headers["content-type"].startswith("audio/wav")
+    
+        monkeypatch.setenv("HEARNARRO_AUDIO_FORMAT", "opus")
+        monkeypatch.setenv("HEARNARRO_TTS_BACKEND", "fake")
+        async with client_for(tmp_path / "ogg", tts_backend=SpyBackend(), lookahead=0) as client:
+            doc_id = (await upload(client, REPORT_PDF)).json()["id"]
+            assert (await wait_settled(client, doc_id))["status"] == "ready"
+            page = (await client.get(f"/documents/{doc_id}/segments?limit=500")).json()
+            seg2 = worded(page["segments"])[0]
+            assert seg2["text"] == seg["text"]
+            url = f"/audio/{seg2['id']}"
+            ogg = await client.get(url, params=params)
+            assert ogg.status_code == 200, ogg.text
+>           assert ogg.headers["content-type"].startswith("audio/ogg")
+E           AssertionError: assert False
+E            +  where False = <built-in method startswith of str object at 0x10e521f70>('audio/ogg')
+E            +    where <built-in method startswith of str object at 0x10e521f70> = 'audio/wav'.startswith
+
+tests/test_api_audio.py:225: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  hearnarro.synthesis.encode:encode.py:74 audio encoder: opus requested but unavailable: OpusEncoder is not implemented yet (M2); using WAV
+=========================== short test summary info ============================
+FAILED tests/test_encode.py::test_syn1_opus_encoder_ogg_container_and_size_d16
+FAILED tests/test_encode.py::test_syn1_default_encoder_opus_when_installed_d16
+FAILED tests/test_api_audio.py::test_syn1_audio_format_opus_serves_ogg_same_timestamps_d16
+3 failed, 12 passed in 3.80s

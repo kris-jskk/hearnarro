@@ -1,0 +1,26 @@
+# 339 model tests, HF_HOME=/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/hf HEARNARRO_TEST_MODEL=1, Fri Oct 16 22:39:04 PDT 2026
+------------------------------ Captured log call -------------------------------
+WARNING  hearnarro.settings:settings.py:77 TTS backend: fake (kokoro has no pinned revision); set HEARNARRO_TTS_BACKEND to choose
+=============================== warnings summary ===============================
+tests/test_kokoro_backend.py::test_syn2_kokoro_voices_both_genders_en
+  /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/modules/rnn.py:1011: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+    super().__init__("LSTM", *args, **kwargs)
+
+tests/test_kokoro_backend.py::test_syn2_kokoro_voices_both_genders_en
+  /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/torch/nn/utils/weight_norm.py:145: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+
+tests/test_kokoro_backend.py::test_syn2_kokoro_voices_both_genders_en
+tests/test_kokoro_backend.py::test_syn1_kokoro_sentence_timestamps_valid[bm_george]
+  /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/misaki/en.py:143: DeprecationWarning: open_text is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.
+    with importlib.resources.open_text(data, f"{'gb' if british else 'us'}_gold.json") as r:
+
+tests/test_kokoro_backend.py::test_syn2_kokoro_voices_both_genders_en
+tests/test_kokoro_backend.py::test_syn1_kokoro_sentence_timestamps_valid[bm_george]
+  /Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/.venv/lib/python3.11/site-packages/misaki/en.py:145: DeprecationWarning: open_text is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.
+    with importlib.resources.open_text(data, f"{'gb' if british else 'us'}_silver.json") as r:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_syn_gate.py::test_syn4_kokoro_smoke_one_sentence - Assertio...
+FAILED tests/test_syn_gate.py::test_syn_gate_kokoro_ttfa_under_2s_150_chars
+2 failed, 10 passed, 6 warnings in 5.66s
