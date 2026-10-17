@@ -1,0 +1,107 @@
+# manual run 2026-10-17T04:43:01Z: HEARNARRO_TTS_BACKEND=fake, data dir /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/data, port 59847, server PID 10718, code = clean worktree at HEAD + this task's files
+# (first attempt discarded: launcher lacked a __main__ guard, so the spawned ingestion process re-ran uvicorn and the upload failed with BrokenProcessPool)
+
+$ POST /documents (report_01_zero_trust.pdf)
+{"id":1,"status":"parsing"}
+document 1 status: ready
+segments: 50; first id 1; far id (index 40) 41
+
+$ GET /voices
+[{"id":"fake_f1","name":"Fake Female 1","backend":"fake","language":"en-US","gender":"female"},{"id":"fake_f2","name":"Fake Female 2","backend":"fake","language":"en-US","gender":"female"},{"id":"fake_f3","name":"Fake Female 3","backend":"fake","language":"en-US","gender":"female"},{"id":"fake_m1","name":"Fake Male 1","backend":"fake","language":"en-US","gender":"male"},{"id":"fake_m2","name":"Fake Male 2","backend":"fake","language":"en-US","gender":"male"},{"id":"fake_m3","name":"Fake Male 3","backend":"fake","language":"en-US","gender":"male"}]
+
+$ GET /audio/1?voice=fake_f1&speed=1.0
+HTTP/1.1 200 OK
+date: Sat, 17 Oct 2026 04:43:00 GMT
+server: uvicorn
+x-timestamps: [{"word": "N", "start_ms": 0, "end_ms": 80, "char_start": 0, "char_end": 1}, {"word": "I", "start_ms": 80, "end_ms": 160, "char_start": 1, "char_end": 2}, {"word": "S", "start_ms": 160, "end_ms": 240, "char_start": 2, "char_end": 3}, {"word": "T", "start_ms": 240, "end_ms": 320, "char_start": 3, "char_end": 4}, {"word": "Special", "start_ms": 320, "end_ms": 400, "char_start": 5, "char_end": 12}, {"word": "Publication", "start_ms": 400, "end_ms": 480, "char_start": 13, "char_end": 24}, {"word": "800-207", "start_ms": 480, "end_ms": 560, "char_start": 25, "char_end": 32}]
+x-duration-ms: 560
+content-length: 26924
+content-type: audio/wav
+
+body bytes:    26924
+
+$ HEAD /audio/1?voice=fake_f1&speed=1.0
+HTTP/1.1 200 OK
+date: Sat, 17 Oct 2026 04:43:00 GMT
+server: uvicorn
+x-timestamps: [{"word": "N", "start_ms": 0, "end_ms": 80, "char_start": 0, "char_end": 1}, {"word": "I", "start_ms": 80, "end_ms": 160, "char_start": 1, "char_end": 2}, {"word": "S", "start_ms": 160, "end_ms": 240, "char_start": 2, "char_end": 3}, {"word": "T", "start_ms": 240, "end_ms": 320, "char_start": 3, "char_end": 4}, {"word": "Special", "start_ms": 320, "end_ms": 400, "char_start": 5, "char_end": 12}, {"word": "Publication", "start_ms": 400, "end_ms": 480, "char_start": 13, "char_end": 24}, {"word": "800-207", "start_ms": 480, "end_ms": 560, "char_start": 25, "char_end": 32}]
+x-duration-ms: 560
+content-length: 0
+content-type: audio/wav
+
+
+$ GET /audio/1?voice=fake_f1&speed=2.5  (stretched: native 2.0 x 1.25)
+HTTP/1.1 200 OK
+date: Sat, 17 Oct 2026 04:43:00 GMT
+server: uvicorn
+x-timestamps: [{"word": "N", "start_ms": 0, "end_ms": 32, "char_start": 0, "char_end": 1}, {"word": "I", "start_ms": 32, "end_ms": 64, "char_start": 1, "char_end": 2}, {"word": "S", "start_ms": 64, "end_ms": 96, "char_start": 2, "char_end": 3}, {"word": "T", "start_ms": 96, "end_ms": 128, "char_start": 3, "char_end": 4}, {"word": "Special", "start_ms": 128, "end_ms": 160, "char_start": 5, "char_end": 12}, {"word": "Publication", "start_ms": 160, "end_ms": 192, "char_start": 13, "char_end": 24}, {"word": "800-207", "start_ms": 192, "end_ms": 224, "char_start": 25, "char_end": 32}]
+x-duration-ms: 224
+content-length: 10796
+content-type: audio/wav
+
+body bytes:    10796
+cache files for segment 1:
+26924 fake_f1_1.0.wav
+13484 fake_f1_2.0.wav
+10796 fake_f1_2.5.wav
+
+$ GET /audio/41?voice=fake_f1&speed=2.5  (seek: index 40, outside the window)
+HTTP/1.1 200 OK
+body bytes:     1580
+
+$ GET /audio/999?voice=fake_f1&speed=1.0
+{"detail":"segment 999 not found"}
+HTTP 404
+
+$ GET /audio/1?voice=fake_f1&speed=3.1
+{"detail":"speed must be 0.5..3.0 in 0.1 steps"}
+HTTP 422
+
+# audio_cache rows
+1|fake_f1|1.0|ready|560
+2|fake_f1|1.0|ready|240
+3|fake_f1|1.0|ready|320
+4|fake_f1|1.0|ready|320
+5|fake_f1|1.0|ready|560
+6|fake_f1|1.0|ready|240
+1|fake_f1|2.0|ready|280
+2|fake_f1|2.0|ready|120
+3|fake_f1|2.0|ready|160
+4|fake_f1|2.0|ready|160
+5|fake_f1|2.0|ready|280
+41|fake_f1|2.0|ready|40
+42|fake_f1|2.0|ready|1120
+43|fake_f1|2.0|ready|760
+44|fake_f1|2.0|ready|1520
+45|fake_f1|2.0|ready|800
+46|fake_f1|2.0|ready|1320
+1|fake_f1|2.5|ready|224
+2|fake_f1|2.5|ready|96
+3|fake_f1|2.5|ready|128
+4|fake_f1|2.5|ready|128
+5|fake_f1|2.5|ready|224
+41|fake_f1|2.5|ready|32
+42|fake_f1|2.5|ready|896
+43|fake_f1|2.5|ready|608
+44|fake_f1|2.5|ready|1216
+45|fake_f1|2.5|ready|640
+46|fake_f1|2.5|ready|1056
+
+# server log (hearnarro lines + access log)
+2026-10-16 21:42:47,429 INFO hearnarro.synthesis.encode: audio encoder: WavEncoder (default)
+2026-10-16 21:42:47,429 INFO hearnarro.app: TTS backend: fake; lookahead 5; encoder wav
+INFO:     127.0.0.1:59863 - "GET /voices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59864 - "POST /documents HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:59865 - "GET /documents/1 HTTP/1.1" 200 OK
+2026-10-16 21:43:01,429 INFO hearnarro.routes.documents: ingested document 1 in 0.169s
+INFO:     127.0.0.1:59866 - "GET /documents/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59867 - "GET /documents/1/segments?limit=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59868 - "GET /voices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59869 - "GET /audio/1?voice=fake_f1&speed=1.0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59870 - "HEAD /audio/1?voice=fake_f1&speed=1.0 HTTP/1.1" 200 OK
+2026-10-16 21:43:01,509 INFO hearnarro.synthesis.service: seek: document 1 order 0 (voice fake_f1, speed 2.5) outside [0, 5] of (voice fake_f1, speed 1.0); queue cleared (0 dropped)
+INFO:     127.0.0.1:59871 - "GET /audio/1?voice=fake_f1&speed=2.5 HTTP/1.1" 200 OK
+2026-10-16 21:43:01,527 INFO hearnarro.synthesis.service: seek: document 1 order 40 (voice fake_f1, speed 2.5) outside [0, 5] of (voice fake_f1, speed 2.5); queue cleared (1 dropped)
+INFO:     127.0.0.1:59872 - "GET /audio/41?voice=fake_f1&speed=2.5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59873 - "GET /audio/999?voice=fake_f1&speed=1.0 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59874 - "GET /audio/1?voice=fake_f1&speed=3.1 HTTP/1.1" 422 Unprocessable Entity

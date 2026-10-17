@@ -1,0 +1,3 @@
+$ ruff check api; ruff format --check api  (clean worktree, HEAD + this task)
+All checks passed!
+67 files already formatted

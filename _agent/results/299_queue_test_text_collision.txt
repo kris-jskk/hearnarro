@@ -1,0 +1,9 @@
+at(0) text == at(4) text: True
+at(1) text == at(5) text: True
+depth after get(0): 5
+depth after prefetch(30): 5
+seek: ready segment orders: [0, 30, 31, 32, 33, 34]
+seek: spy texts -> orders having that text: [('N I S T Special Publication 800-207', [0, 4]), ('Comments on this publication may be subm', [30]), ('National Institute of Standards and Tech', [31]), ('100 Bureau Drive (Mail Stop 8920) Gaithe', [32]), ('Email: zerotrust-arch@nist.gov', [33]), ('All comments are subject to release unde', [34])]
+jump: elapsed 0.398s
+jump: ready segment orders: [0, 40]
+jump: spy texts -> orders having that text: [('N I S T Special Publication 800-207', [0, 4]), ('Abstract', [40])]

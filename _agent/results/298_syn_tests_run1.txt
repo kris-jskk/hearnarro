@@ -1,0 +1,60 @@
+................................F...F............ss....                  [100%]
+=================================== FAILURES ===================================
+__________ test_syn5_seek_clears_queue_and_refills_from_new_position ___________
+
+    async def test_syn5_seek_clears_queue_and_refills_from_new_position() -> None:
+        spy = SpyBackend(delay_s=0.1)
+        service, _, cache = make_service(spy, lookahead=5)
+        try:
+            await service.get_audio(at(0).id, VOICE, SPEED)  # queues orders 1..5
+            assert service.queue_depth(DOC) >= 1
+            await service.prefetch(DOC, 30, VOICE, SPEED)
+            assert service.queue_depth(DOC) <= 5
+            want = {at(30 + k).id for k in range(5)}
+            await wait_for(lambda: want <= cache.ready_ids())
+            await wait_for(lambda: service.queue_depth(DOC) == 0)
+        finally:
+            await service.shutdown()
+        synthesized = set(spy.texts)
+        # at most the job in flight at the seek ran; the tail of the old window was dropped
+>       assert at(4).normalized_text not in synthesized
+E       AssertionError: assert 'N I S T Special Publication 800-207' not in {'100 Bureau Drive (Mail Stop 8920) Gaithersburg, M D 20899-8920', 'All comments are subject to release under the Free...Institute of Standards and Technology Attn: Advanced Network Technologies Division, Information Technology Laboratory'}
+E        +  where 'N I S T Special Publication 800-207' = Segment(id=10004, document_id=1, block_id=4, order=4, section_id=None, text='NIST Special Publication 800-207', normal... 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]).normalized_text
+E        +    where Segment(id=10004, document_id=1, block_id=4, order=4, section_id=None, text='NIST Special Publication 800-207', normal... 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]) = at(4)
+
+tests/test_syn5_queue.py:97: AssertionError
+___________________ test_syn5_first_request_jumps_the_queue ____________________
+
+    async def test_syn5_first_request_jumps_the_queue() -> None:
+        delay = 0.2
+        spy = SpyBackend(delay_s=delay)
+        service, _, _cache = make_service(spy, lookahead=5)
+        try:
+            await service.prefetch(DOC, 0, VOICE, SPEED)  # five jobs ahead of us
+            await asyncio.sleep(0.02)  # let the first one start
+            t0 = time.perf_counter()
+            entry = await service.get_audio(at(40).id, VOICE, SPEED)
+            elapsed = time.perf_counter() - t0
+        finally:
+            await service.shutdown()
+        assert entry.segment_id == at(40).id
+        # in-flight job + this one, not the five queued before it
+        assert elapsed < 3 * delay, elapsed
+        texts = spy.texts
+        if at(4).normalized_text in texts:
+>           assert texts.index(at(40).normalized_text) < texts.index(at(4).normalized_text)
+E           AssertionError: assert 1 < 0
+E            +  where 1 = <built-in method index of list object at 0x10c577c80>('Abstract')
+E            +    where <built-in method index of list object at 0x10c577c80> = ['N I S T Special Publication 800-207', 'Abstract'].index
+E            +    and   'Abstract' = Segment(id=10040, document_id=1, block_id=28, order=40, section_id=None, text='Abstract', normalized_text='Abstract', char_start=0, char_end=8, char_map=[0, 1, 2, 3, 4, 5, 6, 7]).normalized_text
+E            +      where Segment(id=10040, document_id=1, block_id=28, order=40, section_id=None, text='Abstract', normalized_text='Abstract', char_start=0, char_end=8, char_map=[0, 1, 2, 3, 4, 5, 6, 7]) = at(40)
+E            +  and   0 = <built-in method index of list object at 0x10c577c80>('N I S T Special Publication 800-207')
+E            +    where <built-in method index of list object at 0x10c577c80> = ['N I S T Special Publication 800-207', 'Abstract'].index
+E            +    and   'N I S T Special Publication 800-207' = Segment(id=10004, document_id=1, block_id=4, order=4, section_id=None, text='NIST Special Publication 800-207', normal... 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]).normalized_text
+E            +      where Segment(id=10004, document_id=1, block_id=4, order=4, section_id=None, text='NIST Special Publication 800-207', normal... 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]) = at(4)
+
+tests/test_syn5_queue.py:162: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_syn5_queue.py::test_syn5_seek_clears_queue_and_refills_from_new_position
+FAILED tests/test_syn5_queue.py::test_syn5_first_request_jumps_the_queue - As...
+2 failed, 51 passed, 2 skipped in 6.38s

@@ -1,0 +1,57 @@
+$ ruff check api && ruff format --check api
+PYI041 [*] Use `float` instead of `int | float`
+  --> api/hearnarro/synthesis/compat/num2words.py:58:23
+   |
+58 | def num2words(number: int | float | str, to: str = "cardinal", lang: str = "en", **_: object) -> str:
+   |                       ^^^^^^^^^^^^^^^^^
+59 |     if lang != "en":
+60 |         raise NotImplementedError(f"compat num2words: lang={lang!r} (English only)")
+   |
+help: Remove redundant type
+   |
+57 |
+   - def num2words(number: int | float | str, to: str = "cardinal", lang: str = "en", **_: object) -> str:
+58 + def num2words(number: float | str, to: str = "cardinal", lang: str = "en", **_: object) -> str:
+59 |     if lang != "en":
+   |
+
+SIM905 [*] Consider using a list literal instead of `str.split`
+  --> api/hearnarro/synthesis/g2p_oov/__init__.py:15:49
+   |
+14 |   _GRAPHEMES = ["<pad>", "<unk>", "</s>", *"abcdefghijklmnopqrstuvwxyz"]
+15 |   _PHONEMES = ["<pad>", "<unk>", "<s>", "</s>"] + (
+   |  _________________________________________________^
+16 | |     "AA0 AA1 AA2 AE0 AE1 AE2 AH0 AH1 AH2 AO0 AO1 AO2 AW0 AW1 AW2 AY0 AY1 AY2 B CH D DH "
+17 | |     "EH0 EH1 EH2 ER0 ER1 ER2 EY0 EY1 EY2 F G HH IH0 IH1 IH2 IY0 IY1 IY2 JH K L M N NG "
+18 | |     "OW0 OW1 OW2 OY0 OY1 OY2 P R S SH T TH UH0 UH1 UH2 UW UW0 UW1 UW2 V W Y Z ZH"
+19 | | ).split()
+   | |_________^
+20 |   _G2IDX = {g: i for i, g in enumerate(_GRAPHEMES)}
+21 |   CHECKPOINT = Path(__file__).with_name("checkpoint20.npz")
+   |
+help: Replace with list literal
+   |
+14 | _GRAPHEMES = ["<pad>", "<unk>", "</s>", *"abcdefghijklmnopqrstuvwxyz"]
+   - _PHONEMES = ["<pad>", "<unk>", "<s>", "</s>"] + (
+   -     "AA0 AA1 AA2 AE0 AE1 AE2 AH0 AH1 AH2 AO0 AO1 AO2 AW0 AW1 AW2 AY0 AY1 AY2 B CH D DH "
+   -     "EH0 EH1 EH2 ER0 ER1 ER2 EY0 EY1 EY2 F G HH IH0 IH1 IH2 IY0 IY1 IY2 JH K L M N NG "
+   -     "OW0 OW1 OW2 OY0 OY1 OY2 P R S SH T TH UH0 UH1 UH2 UW UW0 UW1 UW2 V W Y Z ZH"
+   - ).split()
+15 + _PHONEMES = ["<pad>", "<unk>", "<s>", "</s>"] + ["AA0", "AA1", "AA2", "AE0", "AE1", "AE2", "AH0", "AH1", "AH2", "AO0", "AO1", "AO2", "AW0", "AW1", "AW2", "AY0", "AY1", "AY2", "B", "CH", "D", "DH", "EH0", "EH1", "EH2", "ER0", "ER1", "ER2", "EY0", "EY1", "EY2", "F", "G", "HH", "IH0", "IH1", "IH2", "IY0", "IY1", "IY2", "JH", "K", "L", "M", "N", "NG", "OW0", "OW1", "OW2", "OY0", "OY1", "OY2", "P", "R", "S", "SH", "T", "TH", "UH0", "UH1", "UH2", "UW", "UW0", "UW1", "UW2", "V", "W", "Y", "Z", "ZH"]
+16 | _G2IDX = {g: i for i, g in enumerate(_GRAPHEMES)}
+   |
+
+Found 2 errors.
+[*] 2 fixable with `--fix`.
+unformatted: File would be reformatted
+  --> api/hearnarro/synthesis/compat/num2words.py:58:15
+   |
+57 |
+   - def num2words(number: int | float | str, to: str = "cardinal", lang: str = "en", **_: object) -> str:
+58 + def num2words(
+59 +     number: int | float | str, to: str = "cardinal", lang: str = "en", **_: object
+60 + ) -> str:
+61 |     if lang != "en":
+   |
+
+1 file would be reformatted, 70 files already formatted

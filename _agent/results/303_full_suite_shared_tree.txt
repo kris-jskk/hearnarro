@@ -1,0 +1,341 @@
+...........FF........................................................... [ 15%]
+........................................................................ [ 30%]
+........................................................................ [ 45%]
+.......................sssss...........FFF.FF.FFF...F...FF.............. [ 61%]
+.....FF.....................................................F........... [ 76%]
+.....................................................................F.. [ 91%]
+.F...................................ss                                  [100%]
+=================================== FAILURES ===================================
+___________________ test_ing1_segments_paging_segments_table ___________________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-66/test_ing1_segments_paging_segm0')
+
+    async def test_ing1_segments_paging_segments_table(tmp_path: Path) -> None:
+        expected = ingest(REPORT_PDF).segments
+        assert len(expected) > 20
+        async with client_for(tmp_path) as client:
+            doc_id = (await upload(client, REPORT_PDF)).json()["id"]
+            assert (await wait_settled(client, doc_id))["status"] == "ready"
+    
+            page1 = (await client.get(f"/documents/{doc_id}/segments?from=0&limit=20")).json()
+>           assert page1["total"] == len(expected)
+E           AssertionError: assert 50 == 57
+E            +  where 57 = len([Segment(id=0, document_id=0, block_id=0, order=0, section_id=None, text='NIST Special Publication 800-207', normalize...tart=0, char_end=23, char_map=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]), ...])
+
+tests/test_api_documents.py:123: AssertionError
+------------------------------ Captured log call -------------------------------
+WARNING  hearnarro.settings:settings.py:66 TTS backend: fake (kokoro not installed); set HEARNARRO_TTS_BACKEND to choose
+_______ test_ing1_report01_segments_match_ingest_blocks_segments_tables ________
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-66/test_ing1_report01_segments_ma0')
+
+    async def test_ing1_report01_segments_match_ingest_blocks_segments_tables(tmp_path: Path) -> None:
+        result = ingest(REPORT_PDF)
+        async with client_for(tmp_path) as client:
+            t0 = time.perf_counter()
+            doc_id = (await upload(client, REPORT_PDF)).json()["id"]
+            doc = await wait_settled(client, doc_id)
+            elapsed = time.perf_counter() - t0
+            print(f"\nINGEST_WALL report_01 upload->ready {elapsed:.3f}s")
+            assert doc["status"] == "ready", doc
+            assert doc["page_count"] == len(result.pages)
+    
+        db = sqlite3.connect(tmp_path / "hearnarro.db")
+        try:
+            n_blocks = db.execute("SELECT count(*) FROM blocks WHERE document_id=?", (doc_id,))
+            assert n_blocks.fetchone()[0] == len(result.blocks)
+            rows = db.execute(
+                'SELECT "order", text, normalized_text, char_start, char_end, char_map '
+                'FROM segments WHERE document_id=? ORDER BY "order"',
+                (doc_id,),
+            ).fetchall()
+        finally:
+            db.close()
+>       assert len(rows) == len(result.segments)
+E       AssertionError: assert 50 == 57
+E        +  where 50 = len([(0, 'NIST Special Publication 800-207', 'N I S T Special Publication 800-207', 0, 32, b'\x00\x00\x00\x00\x01\x00\x01\...8\x00\t\x00\n\x00\x0b\x00\x0c\x00\r\x00\x0e\x00\x0f\x00\x10\x00\x11\x00\x12\x00\x13\x00\x14\x00\x15\x00\x16\x00'), ...])
+E        +  and   57 = len([Segment(id=0, document_id=0, block_id=0, order=0, section_id=None, text='NIST Special Publication 800-207', normalize...tart=0, char_end=23, char_map=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]), ...])
+E        +    where [Segment(id=0, document_id=0, block_id=0, order=0, section_id=None, text='NIST Special Publication 800-207', normalize...tart=0, char_end=23, char_map=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]), ...] = IngestResult(pages=[Page(number=0, width=612.0, height=792.0, blocks=[Block(page=0, index=0, bbox=BBox(x0=252.78, y0=7... 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69])]).segments
+
+tests/test_api_documents.py:172: AssertionError
+----------------------------- Captured stdout call -----------------------------
+
+INGEST_WALL report_01 upload->ready 0.273s
+------------------------------ Captured log call -------------------------------
+WARNING  hearnarro.settings:settings.py:66 TTS backend: fake (kokoro not installed); set HEARNARRO_TTS_BACKEND to choose
+___________ test_ing5_boundary_rules[appendix_letter_is_a_boundary] ____________
+
+case = 'appendix_letter_is_a_boundary'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['For proofs,... properties.'] == ['For proofs,... properties.']
+E         
+E         At index 0 diff: 'For proofs, see Appendix A. This fact uses two properties.' != 'For proofs, see Appendix A.'
+E         Right contains one more item: 'This fact uses two properties.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+________ test_ing5_boundary_rules[citation_abbreviations_mid_sentence] _________
+
+case = 'citation_abbreviations_mid_sentence'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['This docume... 'Publ.', ...] == ['This docume...'It is free.']
+E         
+E         At index 0 diff: 'This document is Natl.' != 'This document is Natl. Inst. Stand. Technol. Spec. Publ. 800-207, 59 pages (August 2020).'
+E         Left contains 6 more items, first extra item: 'Stand.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+__________ test_ing5_boundary_rules[closing_quote_alone_after_split] ___________
+
+case = 'closing_quote_alone_after_split'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['The motto w...for a while.'] == ['The motto w...for a while.']
+E         
+E         At index 0 diff: 'The motto was “Move fast.' != 'The motto was “Move fast.\n”'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+________________ test_ing5_boundary_rules[equation_references] _________________
+
+case = 'equation_references'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['The approxi...8), we stop.'] == ['The approxi...8), we stop.']
+E         
+E         At index 0 diff: 'The approximation error (Eq.' != 'The approximation error (Eq. (8)).'
+E         Left contains 3 more items, first extra item: '(4) is approximated.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+_________________ test_ing5_boundary_rules[et_seq_then_comma] __________________
+
+case = 'et_seq_then_comma'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['FISMA, 44 U...responsible.'] == ['FISMA, 44 U...responsible.']
+E         
+E         At index 0 diff: 'FISMA, 44 U.S.C. § 3551 et seq.' != 'FISMA, 44 U.S.C. § 3551 et seq., Public Law (P.L.) 113-283.'
+E         Left contains one more item: 'NIST is responsible.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+______________ test_ing5_boundary_rules[initials_run_with_hyphen] ______________
+
+case = 'initials_run_with_hyphen'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['[3] K. Marc...MMLU,” 2024.'] == ['[3] K. Marc...MMLU,” 2024.']
+E         
+E         At index 0 diff: '[3] K. Marchisio, W. Q. Leong, S. Ruder, W. -Y.' != '[3] K. Marchisio, W. Q. Leong, S. Ruder, W. -Y. Lee, and B. Tan, “Global MMLU,” 2024.'
+E         Left contains one more item: 'Lee, and B. Tan, “Global MMLU,” 2024.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+__________________ test_ing5_boundary_rules[latin_and_titles] __________________
+
+case = 'latin_and_titles'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['Also cf.', ....', '3 here.'] == ['Also cf. Sm...Vol. 3 here.']
+E         
+E         At index 0 diff: 'Also cf.' != 'Also cf. Smith on this.'
+E         Left contains 2 more items, first extra item: 'See No. 5 and Vol.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+____________ test_ing5_boundary_rules[list_marker_inside_sentence] _____________
+
+case = 'list_marker_inside_sentence'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['For a verte...raw context.'] == ['For a verte...raw context.']
+E         
+E         At index 1 diff: 'A small model (System' != 'A small model (System\n1) scans raw context.'
+E         Left contains one more item: '1) scans raw context.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+_________ test_ing5_boundary_rules[one_letter_variable_is_a_boundary] __________
+
+case = 'one_letter_variable_is_a_boundary'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['Let X be a ...e is finite.'] == ['Let X be a ...e is finite.']
+E         
+E         At index 0 diff: 'Let X be a chain with transition kernel P. Its measure is finite.' != 'Let X be a chain with transition kernel P.'
+E         Right contains one more item: 'Its measure is finite.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+_______________ test_ing5_boundary_rules[section_number_heading] _______________
+
+case = 'section_number_heading'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['2.1.', 'Exp...ental Design'] == ['2.1. Experimental Design']
+E         
+E         At index 0 diff: '2.1.' != '2.1. Experimental Design'
+E         Left contains one more item: 'Experimental Design'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+___________ test_ing5_boundary_rules[section_number_run_in_heading] ____________
+
+case = 'section_number_run_in_heading'
+
+    @pytest.mark.parametrize("case", sorted(CASES))
+    def test_ing5_boundary_rules(case: str) -> None:
+        text, expected = CASES[case]
+>       assert _texts(text) == expected
+E       AssertionError: assert ['3.1.', 'The...it each one.'] == ['3.1. The ma...it each one.']
+E         
+E         At index 0 diff: '3.1.' != '3.1. The marginals.'
+E         Left contains one more item: 'We fit each one.'
+E         Use -v to get more diff
+
+tests/test_ing5_segment.py:186: AssertionError
+________________ test_ing5_per_document_abbreviation_extension _________________
+
+    def test_ing5_per_document_abbreviation_extension() -> None:
+        extra = DEFAULT_ABBREVIATIONS.extended(non_terminal={"xyzzy."})
+        block = _block("The Xyzzy. Quux report was read. It helped.")
+>       out = split_sentences(block, document_id=0, order_start=0, id_start=0, abbreviations=extra)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: split_sentences() got an unexpected keyword argument 'abbreviations'
+
+tests/test_ing5_segment.py:204: TypeError
+__ test_ing5_split_inside_a_token_is_kept_split_before_punctuation_is_undone ___
+
+    def test_ing5_split_inside_a_token_is_kept_split_before_punctuation_is_undone() -> None:
+        """pysbd's mid-token splits ("PA" | "(i)") stay (D14 golden); "seq." | ", P" is undone."""
+>       from hearnarro.ingestion.segment import _merge
+E       ImportError: cannot import name '_merge' from 'hearnarro.ingestion.segment' (/Users/sowmyajonnalagadda/Documents/Projects/hearnarro/api/hearnarro/ingestion/segment.py)
+
+tests/test_ing5_segment.py:210: ImportError
+__________________ test_environment_has_no_licence_violations __________________
+
+        )
+    
+    
+    def test_environment_has_no_licence_violations() -> None:
+        rows = cl.scan(allow=HAND_CHECKED)
+        bad = cl.violations(rows)
+        known = [r for r in bad if r.name.lower() in KNOWN_VIOLATIONS]
+        for r in known:
+            print(
+                f"KNOWN VIOLATION {r.name} {r.version} [{r.verdict}] {r.licence}: {KNOWN_VIOLATIONS[r.name.lower()]}"
+            )
+>       unexpected = [
+            (r.name, r.verdict, r.licence) for r in bad if r.name.lower() not in KNOWN_VIOLATIONS
+        ]
+E       AssertionError: licence violations: [('regex', 'unknown', 'Apache-2.0 AND CNRI-Python')]
+E       assert not [('regex', 'unknown', 'Apache-2.0 AND CNRI-Python')]
+
+tests/test_licences.py:76: AssertionError
+__________ test_syn5_seek_clears_queue_and_refills_from_new_position ___________
+
+    async def test_syn5_seek_clears_queue_and_refills_from_new_position() -> None:
+        spy = SpyBackend(delay_s=0.1)
+        service, _, cache = make_service(spy, lookahead=5)
+        try:
+            await service.get_audio(at(0).id, VOICE, SPEED)  # queues orders 1..5
+            assert service.queue_depth(DOC) >= 1
+            await service.prefetch(DOC, 30, VOICE, SPEED)
+            assert service.queue_depth(DOC) <= 5
+            want = {at(30 + k).id for k in range(5)}
+            await wait_for(lambda: want <= cache.ready_ids())
+            await wait_for(lambda: service.queue_depth(DOC) == 0)
+        finally:
+            await service.shutdown()
+        synthesized = set(spy.texts)
+        # at most the job in flight at the seek ran; the tail of the old window was dropped
+>       assert at(4).normalized_text not in synthesized
+E       AssertionError: assert 'N I S T Special Publication 800-207' not in {'C O D E N: NSPUE2', 'Certain commercial entities, equipment, or materials may be identified in this document in orde...other publications currently under development by N I S T in accordance with its assigned statutory responsibilities.'}
+E        +  where 'N I S T Special Publication 800-207' = Segment(id=10004, document_id=1, block_id=4, order=4, section_id=None, text='NIST Special Publication 800-207', normal... 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]).normalized_text
+E        +    where Segment(id=10004, document_id=1, block_id=4, order=4, section_id=None, text='NIST Special Publication 800-207', normal... 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]) = at(4)
+
+tests/test_syn5_queue.py:97: AssertionError
+___________________ test_syn5_first_request_jumps_the_queue ____________________
+
+    async def test_syn5_first_request_jumps_the_queue() -> None:
+        delay = 0.2
+        spy = SpyBackend(delay_s=delay)
+        service, _, _cache = make_service(spy, lookahead=5)
+        try:
+            await service.prefetch(DOC, 0, VOICE, SPEED)  # five jobs ahead of us
+            await asyncio.sleep(0.02)  # let the first one start
+            t0 = time.perf_counter()
+            entry = await service.get_audio(at(40).id, VOICE, SPEED)
+            elapsed = time.perf_counter() - t0
+        finally:
+            await service.shutdown()
+        assert entry.segment_id == at(40).id
+        # in-flight job + this one, not the five queued before it
+        assert elapsed < 3 * delay, elapsed
+        texts = spy.texts
+        if at(4).normalized_text in texts:
+>           assert texts.index(at(40).normalized_text) < texts.index(at(4).normalized_text)
+E           AssertionError: assert 1 < 0
+E            +  where 1 = <built-in method index of list object at 0x10b9c2cc0>('Email: zerotrust-arch@nist.gov')
+E            +    where <built-in method index of list object at 0x10b9c2cc0> = ['N I S T Special Publication 800-207', 'Email: zerotrust-arch@nist.gov'].index
+E            +    and   'Email: zerotrust-arch@nist.gov' = Segment(id=10040, document_id=1, block_id=24, order=40, section_id=None, text='Email: zerotrust-arch@nist.gov', normal...har_map=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]).normalized_text
+E            +      where Segment(id=10040, document_id=1, block_id=24, order=40, section_id=None, text='Email: zerotrust-arch@nist.gov', normal...har_map=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]) = at(40)
+E            +  and   0 = <built-in method index of list object at 0x10b9c2cc0>('N I S T Special Publication 800-207')
+E            +    where <built-in method index of list object at 0x10b9c2cc0> = ['N I S T Special Publication 800-207', 'Email: zerotrust-arch@nist.gov'].index
+E            +    and   'N I S T Special Publication 800-207' = Segment(id=10004, document_id=1, block_id=4, order=4, section_id=None, text='NIST Special Publication 800-207', normal... 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]).normalized_text
+E            +      where Segment(id=10004, document_id=1, block_id=4, order=4, section_id=None, text='NIST Special Publication 800-207', normal... 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]) = at(4)
+
+tests/test_syn5_queue.py:162: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_api_documents.py::test_ing1_segments_paging_segments_table
+FAILED tests/test_api_documents.py::test_ing1_report01_segments_match_ingest_blocks_segments_tables
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[appendix_letter_is_a_boundary]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[citation_abbreviations_mid_sentence]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[closing_quote_alone_after_split]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[equation_references]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[et_seq_then_comma]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[initials_run_with_hyphen]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[latin_and_titles]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[list_marker_inside_sentence]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[one_letter_variable_is_a_boundary]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[section_number_heading]
+FAILED tests/test_ing5_segment.py::test_ing5_boundary_rules[section_number_run_in_heading]
+FAILED tests/test_ing5_segment.py::test_ing5_per_document_abbreviation_extension
+FAILED tests/test_ing5_segment.py::test_ing5_split_inside_a_token_is_kept_split_before_punctuation_is_undone
+FAILED tests/test_licences.py::test_environment_has_no_licence_violations - A...
+FAILED tests/test_syn5_queue.py::test_syn5_seek_clears_queue_and_refills_from_new_position
+FAILED tests/test_syn5_queue.py::test_syn5_first_request_jumps_the_queue - As...
+18 failed, 446 passed, 7 skipped in 26.37s
