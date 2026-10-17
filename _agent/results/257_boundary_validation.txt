@@ -1,0 +1,17 @@
+fixture                            exp_segs sentences  words identical
+academic_01_seahelm_audio               169       151   2731 True
+academic_02_memduet                     112       108   1826 True
+academic_03_pruned_reasoning            112       111   2178 True
+academic_04_legislative_xml             118       116   2428 True
+academic_05_sparse_autoencoders         133       132   2148 True
+tables_01_pfn_bayes                     134       118   2537 True
+tables_02_non_gaussian_sem              121       119   2603 True
+tables_03_copula_subspaces              127       124   1934 True
+tables_04_markov_kernel                 105        98   1765 True
+tables_05_decomposing_learner            91        88   1901 True
+report_01_zero_trust                     56        49    754 True
+report_02_patch_mgmt                     63        56    832 True
+report_03_ssdf                           56        49    735 True
+report_04_rmf                            47        40    690 True
+report_05_controls                       46        39    600 True
+identical word streams: 15/15

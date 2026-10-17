@@ -1,0 +1,29 @@
+RUF007 Prefer `itertools.pairwise()` over `zip()` when iterating over successive pairs
+  --> tests/test_fake_backend.py:50:17
+   |
+48 |     assert durations == {80}
+49 |     assert ts[0].start_ms == 0
+50 |     for a, b in zip(ts, ts[1:], strict=False):
+   |                 ^^^
+51 |         assert a.end_ms == b.start_ms  # back to back
+52 |     assert ts[-1].end_ms == result.duration_ms
+   |
+help: Replace `zip()` with `itertools.pairwise()`
+   |
+8  | from hearnarro.synthesis.fake import SAMPLE_RATE, FakeBackend
+9  + import itertools
+10 |
+--------------------------------------------------------------------------------
+50 |     assert ts[0].start_ms == 0
+   -     for a, b in zip(ts, ts[1:], strict=False):
+51 +     for a, b in itertools.pairwise(ts):
+52 |         assert a.end_ms == b.start_ms  # back to back
+   |
+note: This is an unsafe fix and may change runtime behavior
+
+Found 1 error.
+1 unsafe fix available with `--fix --unsafe-fixes`.
+53 files already formatted
+== ruff on files this task changed
+All checks passed!
+3 files already formatted

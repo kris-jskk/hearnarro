@@ -1,0 +1,22 @@
+    Claude-Session: https://claude.ai/code/session_014A3KRW4Zf3qUiGHibUjbTt
+
+ api/tests/boundary_util.py                         | 110 +++++++++++++++
+ api/tests/fixtures/pdfs/README.md                  |  19 +++
+ .../pdfs/academic_01_seahelm_audio.sentences.txt   | 151 +++++++++++++++++++++
+ .../pdfs/academic_02_memduet.sentences.txt         | 108 +++++++++++++++
+ .../academic_03_pruned_reasoning.sentences.txt     | 111 +++++++++++++++
+ .../pdfs/academic_04_legislative_xml.sentences.txt | 116 ++++++++++++++++
+ .../academic_05_sparse_autoencoders.sentences.txt  | 132 ++++++++++++++++++
+ .../pdfs/report_01_zero_trust.sentences.txt        |  49 +++++++
+ .../pdfs/report_02_patch_mgmt.sentences.txt        |  56 ++++++++
+ .../fixtures/pdfs/report_03_ssdf.sentences.txt     |  49 +++++++
+ .../fixtures/pdfs/report_04_rmf.sentences.txt      |  40 ++++++
+ .../fixtures/pdfs/report_05_controls.sentences.txt |  39 ++++++
+ .../pdfs/tables_01_pfn_bayes.sentences.txt         | 118 ++++++++++++++++
+ .../pdfs/tables_02_non_gaussian_sem.sentences.txt  | 119 ++++++++++++++++
+ .../pdfs/tables_03_copula_subspaces.sentences.txt  | 124 +++++++++++++++++
+ .../pdfs/tables_04_markov_kernel.sentences.txt     |  98 +++++++++++++
+ .../tables_05_decomposing_learner.sentences.txt    |  88 ++++++++++++
+ api/tests/test_boundary_util.py                    |  65 +++++++++
+ api/tests/test_syn_boundaries.py                   |  85 ++++++++++++
+ 19 files changed, 1677 insertions(+)
