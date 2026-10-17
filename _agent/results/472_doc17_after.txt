@@ -1,0 +1,33 @@
+== second renormalize run (idempotency) ==
+document 17: 0 segments changed, 0 cache rows removed
+segments changed: 0
+cache rows removed: 0
+orphaned audio files left on disk: 0
+
+== GET /documents/17/segments: PART headings after ==
+32104 heading 'PART I: WEALTH' -> 'Part one: WEALTH'
+32115 heading 'PART II: HAPPINESS' -> 'Part two: HAPPINESS'
+32351 heading 'PART I' -> 'Part one'
+33332 body 'Part of making effective decisions boils down to dealing with reality.' -> 'Part of making effective decisions boils down to dealing with reality.'
+33403 body 'Part of being free means I can say what I think and think what I say.' -> 'Part of being free means I can say what I think and think what I say.'
+33754 heading 'PART II' -> 'Part two'
+
+== segments whose normalized_text changed (before vs after API snapshots) ==
+count 4
+32104 heading 'PART I: WEALTH' -> 'Part one: WEALTH'
+32115 heading 'PART II: HAPPINESS' -> 'Part two: HAPPINESS'
+32351 heading 'PART I' -> 'Part one'
+33754 heading 'PART II' -> 'Part two'
+
+== GET /audio/32115?voice=af_heart&speed=1.00 ==
+HTTP/1.1 200 OK
+words ['Part', 'two:', 'HAPPINESS']
+has two False has II False
+
+== words with trailing punctuation stripped, 32115 ==
+['Part', 'two', 'HAPPINESS'] True False
+
+== GET /audio/33754?voice=af_heart&speed=1.00 (bare 'PART II' heading) ==
+HTTP/1.1 200 OK
+[{'word': 'Part', 'start_ms': 93, 'end_ms': 343, 'char_start': 0, 'char_end': 4}, {'word': 'two', 'start_ms': 418, 'end_ms': 826, 'char_start': 5, 'char_end': 7}]
+has two True has II False

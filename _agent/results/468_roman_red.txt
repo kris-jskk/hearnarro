@@ -1,0 +1,1055 @@
+........................................................................ [ 62%]
+............FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                              [100%]
+=================================== FAILURES ===================================
+___________ test_ing6_roman_after_structural_word[PART II-Part two] ____________
+
+text = 'PART II', expected = 'Part two'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'PART II' == 'Part two'
+E         
+E         - Part two
+E         + PART II
+
+tests/test_ing6_normalize.py:241: AssertionError
+___ test_ing6_roman_after_structural_word[Part II: Wealth-Part two: Wealth] ____
+
+text = 'Part II: Wealth', expected = 'Part two: Wealth'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Part II: Wealth' == 'Part two: Wealth'
+E         
+E         - Part two: Wealth
+E         ?      ^^^
+E         + Part II: Wealth
+E         ?      ^^
+
+tests/test_ing6_normalize.py:241: AssertionError
+________ test_ing6_roman_after_structural_word[Chapter IV-Chapter four] ________
+
+text = 'Chapter IV', expected = 'Chapter four'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Chapter IV' == 'Chapter four'
+E         
+E         - Chapter four
+E         + Chapter IV
+
+tests/test_ing6_normalize.py:241: AssertionError
+_ test_ing6_roman_after_structural_word[CHAPTER XIV. The End-Chapter fourteen. The End] _
+
+text = 'CHAPTER XIV. The End', expected = 'Chapter fourteen. The End'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'CHAPTER XIV. The End' == 'Chapter fourteen. The End'
+E         
+E         - Chapter fourteen. The End
+E         + CHAPTER XIV. The End
+
+tests/test_ing6_normalize.py:241: AssertionError
+__________ test_ing6_roman_after_structural_word[Book III-Book three] __________
+
+text = 'Book III', expected = 'Book three'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Book III' == 'Book three'
+E         
+E         - Book three
+E         + Book III
+
+tests/test_ing6_normalize.py:241: AssertionError
+__ test_ing6_roman_after_structural_word[Act V, Scene ii-Act five, Scene two] __
+
+text = 'Act V, Scene ii', expected = 'Act five, Scene two'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Act V, Scene ii' == 'Act five, Scene two'
+E         
+E         - Act five, Scene two
+E         + Act V, Scene ii
+
+tests/test_ing6_normalize.py:241: AssertionError
+______ test_ing6_roman_after_structural_word[Appendix VII-Appendix seven] ______
+
+text = 'Appendix VII', expected = 'Appendix seven'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Appendix VII' == 'Appendix seven'
+E         
+E         - Appendix seven
+E         + Appendix VII
+
+tests/test_ing6_normalize.py:241: AssertionError
+__________ test_ing6_roman_after_structural_word[Volume I-Volume one] __________
+
+text = 'Volume I', expected = 'Volume one'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Volume I' == 'Volume one'
+E         
+E         - Volume one
+E         ?        ^^^
+E         + Volume I
+E         ?        ^
+
+tests/test_ing6_normalize.py:241: AssertionError
+_ test_ing6_roman_after_structural_word[Vol. IX of the set-Vol. nine of the set] _
+
+text = 'Vol. IX of the set', expected = 'Vol. nine of the set'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Vol. IX of the set' == 'Vol. nine of the set'
+E         
+E         - Vol. nine of the set
+E         ?      ^^^^
+E         + Vol. IX of the set
+E         ?      ^^
+
+tests/test_ing6_normalize.py:241: AssertionError
+_ test_ing6_roman_after_structural_word[Section IX applies.-Section nine applies.] _
+
+text = 'Section IX applies.', expected = 'Section nine applies.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Section IX applies.' == 'Section nine applies.'
+E         
+E         - Section nine applies.
+E         ?         ^^^^
+E         + Section IX applies.
+E         ?         ^^
+
+tests/test_ing6_normalize.py:241: AssertionError
+_ test_ing6_roman_after_structural_word[After World War II ended.-After World War two ended.] _
+
+text = 'After World War II ended.', expected = 'After World War two ended.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'After World War II ended.' == 'After World War two ended.'
+E         
+E         - After World War two ended.
+E         ?                 ^^^
+E         + After World War II ended.
+E         ?                 ^^
+
+tests/test_ing6_normalize.py:241: AssertionError
+_ test_ing6_roman_after_structural_word[World War I ended.-World War one ended.] _
+
+text = 'World War I ended.', expected = 'World War one ended.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'World War I ended.' == 'World War one ended.'
+E         
+E         - World War one ended.
+E         ?           ^^^
+E         + World War I ended.
+E         ?           ^
+
+tests/test_ing6_normalize.py:241: AssertionError
+_____ test_ing6_roman_after_structural_word[Phase XXXIX-Phase thirty-nine] _____
+
+text = 'Phase XXXIX', expected = 'Phase thirty-nine'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Phase XXXIX' == 'Phase thirty-nine'
+E         
+E         - Phase thirty-nine
+E         + Phase XXXIX
+
+tests/test_ing6_normalize.py:241: AssertionError
+_ test_ing6_roman_after_structural_word[see part iv below-see part four below] _
+
+text = 'see part iv below', expected = 'see part four below'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'see part iv below' == 'see part four below'
+E         
+E         - see part four below
+E         ?          ^^^^
+E         + see part iv below
+E         ?          ^^
+
+tests/test_ing6_normalize.py:241: AssertionError
+______ test_ing6_roman_after_structural_word[Step XXI.-Step twenty-one.] _______
+
+text = 'Step XXI.', expected = 'Step twenty-one.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [
+            ("PART II", "Part two"),
+            ("Part II: Wealth", "Part two: Wealth"),
+            ("Chapter IV", "Chapter four"),
+            ("CHAPTER XIV. The End", "Chapter fourteen. The End"),
+            ("Book III", "Book three"),
+            ("Act V, Scene ii", "Act five, Scene two"),
+            ("Appendix VII", "Appendix seven"),
+            ("Volume I", "Volume one"),
+            ("Vol. IX of the set", "Vol. nine of the set"),
+            ("Section IX applies.", "Section nine applies."),
+            ("After World War II ended.", "After World War two ended."),
+            ("World War I ended.", "World War one ended."),
+            ("Phase XXXIX", "Phase thirty-nine"),
+            ("see part iv below", "see part four below"),
+            ("Step XXI.", "Step twenty-one."),
+        ],
+    )
+    def test_ing6_roman_after_structural_word(text: str, expected: str) -> None:
+        out, cmap = normalize(text)
+>       assert out == expected
+E       AssertionError: assert 'Step XXI.' == 'Step twenty-one.'
+E         
+E         - Step twenty-one.
+E         + Step XXI.
+
+tests/test_ing6_normalize.py:241: AssertionError
+_______________ test_ing6_roman_heading_alone_or_leading[II-two] _______________
+
+text = 'II', expected = 'two'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [("II", "two"), ("XIV.", "fourteen."), ("II. Making Money", "two. Making Money")],
+    )
+    def test_ing6_roman_heading_alone_or_leading(text: str, expected: str) -> None:
+>       assert normalize(text, heading=True)[0] == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:251: TypeError
+___________ test_ing6_roman_heading_alone_or_leading[XIV.-fourteen.] ___________
+
+text = 'XIV.', expected = 'fourteen.'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [("II", "two"), ("XIV.", "fourteen."), ("II. Making Money", "two. Making Money")],
+    )
+    def test_ing6_roman_heading_alone_or_leading(text: str, expected: str) -> None:
+>       assert normalize(text, heading=True)[0] == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:251: TypeError
+_ test_ing6_roman_heading_alone_or_leading[II. Making Money-two. Making Money] _
+
+text = 'II. Making Money', expected = 'two. Making Money'
+
+    @pytest.mark.parametrize(
+        ("text", "expected"),
+        [("II", "two"), ("XIV.", "fourteen."), ("II. Making Money", "two. Making Money")],
+    )
+    def test_ing6_roman_heading_alone_or_leading(text: str, expected: str) -> None:
+>       assert normalize(text, heading=True)[0] == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:251: TypeError
+__________ test_ing6_roman_negative_cases[Henry VIII was king.-False] __________
+
+text = 'Henry VIII was king.', heading = False
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+_____________ test_ing6_roman_negative_cases[Mr. X said no.-False] _____________
+
+text = 'Mr. X said no.', heading = False
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+____________________ test_ing6_roman_negative_cases[I-True] ____________________
+
+text = 'I', heading = True
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+_______________ test_ing6_roman_negative_cases[I think so.-True] _______________
+
+text = 'I think so.', heading = True
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+____ test_ing6_roman_negative_cases[It was part I think of the plan.-False] ____
+
+text = 'It was part I think of the plan.', heading = False
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+________________ test_ing6_roman_negative_cases[Louis XIV-True] ________________
+
+text = 'Louis XIV', heading = True
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+________________ test_ing6_roman_negative_cases[Part MMX-False] ________________
+
+text = 'Part MMX', heading = False
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+_______________ test_ing6_roman_negative_cases[Partial II-False] _______________
+
+text = 'Partial II', heading = False
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+________________ test_ing6_roman_negative_cases[Part IIa-False] ________________
+
+text = 'Part IIa', heading = False
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+________________ test_ing6_roman_negative_cases[Part\nII-False] ________________
+
+text = 'Part\nII', heading = False
+
+    @pytest.mark.parametrize(
+        ("text", "heading"),
+        [
+            ("Henry VIII was king.", False),
+            ("Mr. X said no.", False),
+            ("I", True),
+            ("I think so.", True),
+            ("It was part I think of the plan.", False),
+            ("Louis XIV", True),
+            ("Part MMX", False),
+            ("Partial II", False),
+            ("Part IIa", False),
+            ("Part\nII", False),
+        ],
+    )
+    def test_ing6_roman_negative_cases(text: str, heading: bool) -> None:
+>       assert normalize(text, heading=heading) == (text, list(range(len(text))))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: normalize() got an unexpected keyword argument 'heading'
+
+tests/test_ing6_normalize.py:271: TypeError
+_____________________ test_ing6_roman_char_map_round_trip ______________________
+
+    def test_ing6_roman_char_map_round_trip() -> None:
+        text = "PART II: How to Get Rich"
+        out, cmap = normalize(text)
+>       assert out == "Part two: How to Get Rich"
+E       AssertionError: assert 'PART II: How to Get Rich' == 'Part two: How to Get Rich'
+E         
+E         - Part two: How to Get Rich
+E         + PART II: How to Get Rich
+
+tests/test_ing6_normalize.py:277: AssertionError
+________________________ test_syn1_renormalize_document ________________________
+
+self = ArgumentParser(prog='hearnarro', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+args = ['renormalize', '--data-dir', '/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-122/test_syn1_renormalize_document0', '--document-id', '1']
+namespace = Namespace(command=None)
+
+    def parse_known_args(self, args=None, namespace=None):
+        if args is None:
+            # args default to the system args
+            args = _sys.argv[1:]
+        else:
+            # make sure that args are mutable
+            args = list(args)
+    
+        # default Namespace built from parser defaults
+        if namespace is None:
+            namespace = Namespace()
+    
+        # add any action defaults that aren't present
+        for action in self._actions:
+            if action.dest is not SUPPRESS:
+                if not hasattr(namespace, action.dest):
+                    if action.default is not SUPPRESS:
+                        setattr(namespace, action.dest, action.default)
+    
+        # add any parser defaults that aren't present
+        for dest in self._defaults:
+            if not hasattr(namespace, dest):
+                setattr(namespace, dest, self._defaults[dest])
+    
+        # parse the arguments and exit if there are any errors
+        if self.exit_on_error:
+            try:
+>               namespace, args = self._parse_known_args(args, namespace)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:1907: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2110: in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2087: in consume_positionals
+    take_action(action, args)
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:1967: in take_action
+    argument_values = self._get_values(action, argument_strings)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2516: in _get_values
+    self._check_value(action, value[0])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='hearnarro', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+action = _SubParsersAction(option_strings=[], dest='command', nargs='A...', const=None, default=None, type=None, choices={'dump...ss=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)}, required=True, help=None, metavar=None)
+value = 'renormalize'
+
+    def _check_value(self, action, value):
+        # converted value must be one of the choices (if specified)
+        if action.choices is not None and value not in action.choices:
+            args = {'value': value,
+                    'choices': ', '.join(map(repr, action.choices))}
+            msg = _('invalid choice: %(value)r (choose from %(choices)s)')
+>           raise ArgumentError(action, msg % args)
+E           argparse.ArgumentError: argument command: invalid choice: 'renormalize' (choose from 'dump', 'check', 'serve')
+
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2563: ArgumentError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-122/test_syn1_renormalize_document0')
+capsys = <_pytest.capture.CaptureFixture object at 0x1099b0150>
+
+    def test_syn1_renormalize_document(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+        _seed(tmp_path)
+>       assert main(["renormalize", "--data-dir", str(tmp_path), "--document-id", "1"]) == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn1_renormalize_cli.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hearnarro/cli.py:67: in main
+    args = parser.parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:1874: in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:1909: in parse_known_args
+    self.error(str(err))
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2640: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='hearnarro', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = "hearnarro: error: argument command: invalid choice: 'renormalize' (choose from 'dump', 'check', 'serve')\n"
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2627: SystemExit
+----------------------------- Captured stderr call -----------------------------
+usage: hearnarro [-h] {dump,check,serve} ...
+hearnarro: error: argument command: invalid choice: 'renormalize' (choose from 'dump', 'check', 'serve')
+__________________________ test_syn1_renormalize_all ___________________________
+
+self = ArgumentParser(prog='hearnarro', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+args = ['renormalize', '--data-dir', '/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-122/test_syn1_renormalize_all0', '--all']
+namespace = Namespace(command=None)
+
+    def parse_known_args(self, args=None, namespace=None):
+        if args is None:
+            # args default to the system args
+            args = _sys.argv[1:]
+        else:
+            # make sure that args are mutable
+            args = list(args)
+    
+        # default Namespace built from parser defaults
+        if namespace is None:
+            namespace = Namespace()
+    
+        # add any action defaults that aren't present
+        for action in self._actions:
+            if action.dest is not SUPPRESS:
+                if not hasattr(namespace, action.dest):
+                    if action.default is not SUPPRESS:
+                        setattr(namespace, action.dest, action.default)
+    
+        # add any parser defaults that aren't present
+        for dest in self._defaults:
+            if not hasattr(namespace, dest):
+                setattr(namespace, dest, self._defaults[dest])
+    
+        # parse the arguments and exit if there are any errors
+        if self.exit_on_error:
+            try:
+>               namespace, args = self._parse_known_args(args, namespace)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:1907: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2110: in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2087: in consume_positionals
+    take_action(action, args)
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:1967: in take_action
+    argument_values = self._get_values(action, argument_strings)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2516: in _get_values
+    self._check_value(action, value[0])
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='hearnarro', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+action = _SubParsersAction(option_strings=[], dest='command', nargs='A...', const=None, default=None, type=None, choices={'dump...ss=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)}, required=True, help=None, metavar=None)
+value = 'renormalize'
+
+    def _check_value(self, action, value):
+        # converted value must be one of the choices (if specified)
+        if action.choices is not None and value not in action.choices:
+            args = {'value': value,
+                    'choices': ', '.join(map(repr, action.choices))}
+            msg = _('invalid choice: %(value)r (choose from %(choices)s)')
+>           raise ArgumentError(action, msg % args)
+E           argparse.ArgumentError: argument command: invalid choice: 'renormalize' (choose from 'dump', 'check', 'serve')
+
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2563: ArgumentError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/private/var/folders/zl/rpx7zmp17slfvqpyr1x_q_t00000gp/T/pytest-of-sowmyajonnalagadda/pytest-122/test_syn1_renormalize_all0')
+capsys = <_pytest.capture.CaptureFixture object at 0x109a0f650>
+
+    def test_syn1_renormalize_all(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+        _seed(tmp_path)
+>       assert main(["renormalize", "--data-dir", str(tmp_path), "--all"]) == 0
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_syn1_renormalize_cli.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+hearnarro/cli.py:67: in main
+    args = parser.parse_args(argv)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:1874: in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:1909: in parse_known_args
+    self.error(str(err))
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2640: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='hearnarro', usage=None, description=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = "hearnarro: error: argument command: invalid choice: 'renormalize' (choose from 'dump', 'check', 'serve')\n"
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+../../../../.local/share/uv/python/cpython-3.11.16-macos-aarch64-none/lib/python3.11/argparse.py:2627: SystemExit
+----------------------------- Captured stderr call -----------------------------
+usage: hearnarro [-h] {dump,check,serve} ...
+hearnarro: error: argument command: invalid choice: 'renormalize' (choose from 'dump', 'check', 'serve')
+=========================== short test summary info ============================
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[PART II-Part two]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Part II: Wealth-Part two: Wealth]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Chapter IV-Chapter four]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[CHAPTER XIV. The End-Chapter fourteen. The End]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Book III-Book three]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Act V, Scene ii-Act five, Scene two]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Appendix VII-Appendix seven]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Volume I-Volume one]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Vol. IX of the set-Vol. nine of the set]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Section IX applies.-Section nine applies.]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[After World War II ended.-After World War two ended.]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[World War I ended.-World War one ended.]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Phase XXXIX-Phase thirty-nine]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[see part iv below-see part four below]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_after_structural_word[Step XXI.-Step twenty-one.]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_heading_alone_or_leading[II-two]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_heading_alone_or_leading[XIV.-fourteen.]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_heading_alone_or_leading[II. Making Money-two. Making Money]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[Henry VIII was king.-False]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[Mr. X said no.-False]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[I-True]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[I think so.-True]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[It was part I think of the plan.-False]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[Louis XIV-True]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[Part MMX-False]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[Partial II-False]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[Part IIa-False]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_negative_cases[Part\nII-False]
+FAILED tests/test_ing6_normalize.py::test_ing6_roman_char_map_round_trip - As...
+FAILED tests/test_syn1_renormalize_cli.py::test_syn1_renormalize_document - S...
+FAILED tests/test_syn1_renormalize_cli.py::test_syn1_renormalize_all - System...
+31 failed, 84 passed in 0.30s
