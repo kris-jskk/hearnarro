@@ -1,0 +1,5 @@
+# 278 Kokoro spike: audiotsm WSOLA stretch ratio 1.5 (Fri Oct 16 21:28:11 PDT 2026); input 1.0x S1 PCM16 (5.75 s). Script /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/scripts/stretch_try.py; output WAV /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/out/s1_wsola_x1.5.wav
+audiotsm 0.1.2 MIT
+run 1: in 138000 samples (5.750s) -> out 90624 (3.776s); expected 92000; error -1.50%; wall 20.2 ms
+run 2: in 138000 samples (5.750s) -> out 90624 (3.776s); expected 92000; error -1.50%; wall 19.8 ms
+PCM16 bytes out 181248

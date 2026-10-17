@@ -1,0 +1,9 @@
+# 275 Kokoro spike: native speed input (Fri Oct 16 21:26:36 PDT 2026); sentence S1, af_heart, CPU, after warm-up
+import time 1.43s  torch 2.14.1 threads 5
+download/resolve 0.00s  model+G2P load 0.54s  pth size 327.2 MB
+warnings during load: []
+speed 0.5: audio 11.550s wall 0.899s last-token end 11425 ms  tokens [('The', 575, 750), ('quick', 750, 1288), ('brown', 1288, 2050), ('fox', 2050, 2938)]
+speed 1.0: audio 5.750s wall 0.461s last-token end 5650 ms  tokens [('The', 250, 325), ('quick', 325, 575), ('brown', 575, 962), ('fox', 962, 1412)]
+speed 2.0: audio 3.325s wall 0.294s last-token end 3225 ms  tokens [('The', 100, 162), ('quick', 162, 312), ('brown', 312, 525), ('fox', 525, 775)]
+ratio dur(1.0)/dur(0.5) = 0.498 (ideal 0.5); last-end ratio 0.495
+ratio dur(1.0)/dur(2.0) = 1.729 (ideal 2.0); last-end ratio 1.752

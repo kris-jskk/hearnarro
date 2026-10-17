@@ -1,0 +1,67 @@
+# 274 Kokoro spike: import + synthesis + OOV (Fri Oct 16 21:26:31 PDT 2026)
+Scripts: /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/scripts/spike.py (mode synth / oovfb), hn_shims.py, fb_patch.py. WAVs in /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/out/. Voice af_heart, model hexgrad/Kokoro-82M @ f3ff3571791e39611d31c381e3a41a3af07b4987, CPU.
+
+## Import without shims (claim 2) — after attrs installed:
+    from misaki import en, espeak
+  File "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/.venv/lib/python3.11/site-packages/misaki/en.py", line 4, in <module>
+    from num2words import num2words
+ModuleNotFoundError: No module named 'num2words'
+## Import of misaki.espeak alone (what kokoro.pipeline line 5 'from misaki import en, espeak' would hit once num2words is satisfied):
+  File "/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/.venv/lib/python3.11/site-packages/misaki/espeak.py", line 1, in <module>
+    from phonemizer.backend.espeak.wrapper import EspeakWrapper
+ModuleNotFoundError: No module named 'phonemizer'
+
+## With scripts/hn_shims.install() then synthesis (mode synth; espeak fallback = None, no own fallback)
+import time 1.39s  torch 2.14.1 threads 5
+download/resolve 6.72s  model+G2P load 0.72s  pth size 327.2 MB
+warnings during load: []
+
+== s1: 'The quick brown fox jumps over the lazy dog, and 3.2 percent of readers noticed.'
+wall 0.480s first-chunk 0.480s audio 5.750s sr 24000 pcm16 bytes 276000
+tokens 17, with timestamps 17
+   {"text": "The", "ph": "ðə", "start_ms": 250, "end_ms": 325, "char_start": 0, "char_end": 3}
+   {"text": "quick", "ph": "kwˈɪk", "start_ms": 325, "end_ms": 575, "char_start": 4, "char_end": 9}
+   {"text": "brown", "ph": "bɹˈWn", "start_ms": 575, "end_ms": 962, "char_start": 10, "char_end": 15}
+   {"text": "fox", "ph": "fˈɑks", "start_ms": 962, "end_ms": 1412, "char_start": 16, "char_end": 19}
+   {"text": "jumps", "ph": "ʤˈʌmps", "start_ms": 1412, "end_ms": 1738, "char_start": 20, "char_end": 25}
+   {"text": "over", "ph": "ˈOvəɹ", "start_ms": 1738, "end_ms": 1938, "char_start": 26, "char_end": 30}
+   {"text": "the", "ph": "ðə", "start_ms": 1938, "end_ms": 2025, "char_start": 31, "char_end": 34}
+   {"text": "lazy", "ph": "lˈAzi", "start_ms": 2025, "end_ms": 2400, "char_start": 35, "char_end": 39}
+   {"text": "dog", "ph": "dˈɔɡ", "start_ms": 2400, "end_ms": 3025, "char_start": 40, "char_end": 43}
+   {"text": ",", "ph": ",", "start_ms": 3025, "end_ms": 3125, "char_start": 43, "char_end": 44}
+   {"text": "and", "ph": "ænd", "start_ms": 3125, "end_ms": 3262, "char_start": 45, "char_end": 48}
+   {"text": "3.2", "ph": "θɹˈi pYnt tˈu", "start_ms": 3262, "end_ms": 4000, "char_start": 49, "char_end": 52}
+   {"text": "percent", "ph": "pəɹsˈɛnt", "start_ms": 4000, "end_ms": 4338, "char_start": 53, "char_end": 60}
+   {"text": "of", "ph": "ʌv", "start_ms": 4338, "end_ms": 4425, "char_start": 61, "char_end": 63}
+   {"text": "readers", "ph": "ɹˈidəɹz", "start_ms": 4425, "end_ms": 4800, "char_start": 64, "char_end": 71}
+   {"text": "noticed", "ph": "nˈOTəst", "start_ms": 4800, "end_ms": 5500, "char_start": 72, "char_end": 79}
+   {"text": ".", "ph": ".", "start_ms": 5500, "end_ms": 5650, "char_start": 79, "char_end": 80}
+warnings: []
+
+== oov: "Kubernetes orchestrates pods across HearNarro's Zygalski nodes."
+wall 0.235s first-chunk 0.235s audio 2.800s sr 24000 pcm16 bytes 134400
+tokens 8, with timestamps 4
+   {"text": "Kubernetes", "ph": "", "start_ms": null, "end_ms": null, "char_start": 0, "char_end": 10}
+   {"text": "orchestrates", "ph": "ˈɔɹkəstɹˌAts", "start_ms": 300, "end_ms": 1012, "char_start": 11, "char_end": 23}
+   {"text": "pods", "ph": "pˈɑdz", "start_ms": 1012, "end_ms": 1325, "char_start": 24, "char_end": 28}
+   {"text": "across", "ph": "əkɹˈɔs", "start_ms": 1325, "end_ms": 1625, "char_start": 29, "char_end": 35}
+   {"text": "HearNarro's", "ph": "hˈɪɹs", "start_ms": 1625, "end_ms": 1900, "char_start": 36, "char_end": 47}
+   {"text": "Zygalski", "ph": "", "start_ms": null, "end_ms": null, "char_start": 48, "char_end": 56}
+   {"text": "nodes", "ph": "nˈOdz", "start_ms": null, "end_ms": null, "char_start": 57, "char_end": 62}
+   {"text": ".", "ph": ".", "start_ms": null, "end_ms": null, "char_start": 62, "char_end": 63}
+warnings: []
+
+## OOV again with own permissive fallback (scripts/fb_patch.py: lexicon pieces, else spell letters)
+import time 1.43s  torch 2.14.1 threads 5
+download/resolve 0.00s  model+G2P load 0.50s  pth size 327.2 MB
+warnings during load: []
+
+== oov WITH own fallback: wall 0.551s audio 6.775s tokens 8 timed 8
+   {"text": "Kubernetes", "ph": "kˈAjˈubˈiˈiˈɑɹˈɛnˈitˈiˈiˈɛs", "start_ms": 275, "end_ms": 1838, "char_start": 0, "char_end": 10}
+   {"text": "orchestrates", "ph": "ˈɔɹkəstɹˌAts", "start_ms": 1838, "end_ms": 2462, "char_start": 11, "char_end": 23}
+   {"text": "pods", "ph": "pˈɑdz", "start_ms": 2462, "end_ms": 2838, "char_start": 24, "char_end": 28}
+   {"text": "across", "ph": "əkɹˈɔs", "start_ms": 2838, "end_ms": 3150, "char_start": 29, "char_end": 35}
+   {"text": "HearNarro's", "ph": "hˈɪɹˈɛnˈAˈɑɹˈɑɹˈOz", "start_ms": 3150, "end_ms": 4438, "char_start": 36, "char_end": 47}
+   {"text": "Zygalski", "ph": "zˈiwˈIʤˈiˈAˈɛlˈɛskˈAˈI", "start_ms": 4438, "end_ms": 5825, "char_start": 48, "char_end": 56}
+   {"text": "nodes", "ph": "nˈOdz", "start_ms": 5825, "end_ms": 6525, "char_start": 57, "char_end": 62}
+   {"text": ".", "ph": ".", "start_ms": 6525, "end_ms": 6675, "char_start": 62, "char_end": 63}

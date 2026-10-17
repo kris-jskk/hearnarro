@@ -1,0 +1,18 @@
+# 276 Kokoro spike: RTF and first-chunk latency (Fri Oct 16 21:27:30 PDT 2026); unique body lines 100-160 chars: report_01_zero_trust.expected.jsonl has only 8, so rows 9-10 come from report_02_patch_mgmt.expected.jsonl (duplicates of report_01 boilerplate removed). Speed 1.0, af_heart, CPU (torch threads 5), one warm-up; wall = whole sentence; first_s = time to first yielded chunk (= wall for single-chunk sentences)
+Apple M5 Pro
+import time 1.39s  torch 2.14.1 threads 5
+download/resolve 0.00s  model+G2P load 0.50s  pth size 327.2 MB
+warnings during load: []
+ # chars  wall_s first_s audio_s    RTF
+ 1   111   0.634   0.634   8.150  0.078  'This guideline is consistent with the requirements of the Of'
+ 2   136   0.754   0.754   9.525  0.079  'This publication may be used by nongovernmental organization'
+ 3   157   0.830   0.830  10.475  0.079  'Certain commercial entities, equipment, or materials may be '
+ 4   128   0.642   0.642   8.250  0.078  'Thus, until each publication is completed, current requireme'
+ 5   132   0.657   0.657   8.450  0.078  'For planning and transition purposes, federal agencies may w'
+ 6   126   0.656   0.656   8.450  0.078  'National Institute of Standards and Technology Attn: Advance'
+ 7   122   0.705   0.705   9.075  0.078  'A zero trust architecture (ZTA) uses zero trust principles t'
+ 8   150   0.792   0.792  10.300  0.077  'Authentication and authorization (both subject and device) a'
+ 9   118   0.621   0.621   7.975  0.078  'National Institute of Standards and Technology Attn: Applied'
+10   151   0.761   0.761   9.775  0.078  'Preventive maintenance through enterprise patch management h'
+
+n=10 mean RTF 0.078  max RTF 0.079  mean wall 0.705s  max wall 0.830s  max first-chunk 0.830s

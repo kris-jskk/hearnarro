@@ -1,0 +1,197 @@
+# 273 Kokoro spike: install recipe and licence check (Fri Oct 16 21:25:01 PDT 2026)
+## Commands run (scratch venv /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/.venv)
+uv venv --python 3.11 .venv
+uv pip install torch                       # macOS arm64 wheel from PyPI is CPU/MPS (no separate CPU index needed)
+uv pip install --no-deps kokoro==0.9.4 misaki          # misaki 0.9.4 base; NO [en] extra
+uv pip install transformers huggingface-hub loguru numpy addict regex spacy soundfile
+uv pip install "en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl"
+uv pip install attrs                       # kokoro/custom_stft.py does `from attr import attr` (undeclared dep)
+# NOT installed: phonemizer-fork (GPLv3+), espeakng-loader (no licence metadata; bundles espeak-ng GPLv3), num2words (LGPL)
+# Their imports are satisfied by scripts/hn_shims.py (stub misaki.espeak; own num2words implementation)
+# Later steps added: opuscodec (277), audiotsm (278) -- this table is re-run at the end of this file section below.
+
+## PyPI licence of excluded packages (curl pypi.org/pypi/<p>/json)
+num2words 0.5.14 license= LGPL ['License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)']
+phonemizer-fork 3.3.2 license= GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007  Copyrigh ['License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)']
+espeakng-loader 0.2.4 license=  []
+
+## uv pip list
+Using Python 3.11.16 environment at: /private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/.venv
+Package            Version
+------------------ ---------
+addict             2.4.0
+annotated-doc      0.0.5
+annotated-types    0.8.0
+anyio              4.15.1
+attrs              26.1.0
+blis               1.3.3
+catalogue          2.0.10
+certifi            2026.7.22
+cffi               2.1.1
+charset-normalizer 3.5.2
+click              8.5.0
+cloudpathlib       0.26.0
+confection         1.3.3
+cymem              2.0.13
+en-core-web-sm     3.8.0
+filelock           4.2.0
+fsspec             2026.9.0
+h11                0.16.0
+hf-xet             1.7.0
+httpcore           1.0.9
+httpcore2          2.13.1
+httpx              0.28.1
+httpx2             2.13.1
+huggingface-hub    2.2.0
+idna               3.20
+jinja2             3.1.6
+kokoro             0.9.4
+loguru             0.7.3
+markdown-it-py     4.2.0
+markupsafe         3.0.4
+mdurl              0.1.2
+misaki             0.9.4
+mpmath             1.3.0
+murmurhash         1.0.15
+networkx           3.6.1
+numpy              2.4.6
+packaging          26.3
+preshed            3.0.13
+pycparser          3.11
+pydantic           2.14.1
+pydantic-core      2.50.1
+pygments           2.21.0
+pyyaml             6.0.3
+regex              2026.9.29
+requests           2.34.2
+rich               15.0.0
+safetensors        0.8.0
+setuptools         84.0.0
+shellingham        1.5.4
+smart-open         8.0.3
+soundfile          0.14.0
+spacy              3.8.16
+spacy-legacy       3.0.12
+spacy-loggers      1.0.5
+srsly              2.5.4
+sympy              1.14.0
+thinc              8.3.13
+tokenizers         0.23.3
+torch              2.14.1
+tqdm               4.70.1
+transformers       5.20.1
+truststore         0.10.5
+typer              0.27.3
+typing-extensions  4.16.0
+typing-inspection  0.4.4
+urllib3            2.8.0
+wasabi             1.1.3
+weasel             1.0.0
+wrapt              2.5.1
+
+## Licence table (importlib.metadata)
+name                             version        verdict  license | classifiers
+addict                           2.4.0          ok       UNKNOWN | OSI Approved :: MIT License
+annotated-doc                    0.0.5          ok       MIT | -
+annotated-types                  0.8.0          ok       MIT | OSI Approved :: MIT License
+anyio                            4.15.1         ok       MIT | -
+attrs                            26.1.0         ok       MIT | -
+blis                             1.3.3          ok       BSD | OSI Approved :: BSD License
+catalogue                        2.0.10         ok       MIT | OSI Approved :: MIT License
+certifi                          2026.7.22      ok       MPL-2.0 | OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+cffi                             2.1.1          ok       MIT-0 | -
+charset-normalizer               3.5.2          ok       MIT | -
+click                            8.5.0          ok       BSD-3-Clause | -
+cloudpathlib                     0.26.0         ok       - | OSI Approved :: MIT License
+confection                       1.3.3          ok       MIT | OSI Approved :: MIT License
+cymem                            2.0.13         ok       MIT | OSI Approved :: MIT License
+en_core_web_sm                   3.8.0          ok       MIT | -
+filelock                         4.2.0          ok       MIT | OSI Approved :: MIT License
+fsspec                           2026.9.0       ok       BSD-3-Clause | -
+h11                              0.16.0         ok       MIT | OSI Approved :: MIT License
+hf-xet                           1.7.0          ok       Apache-2.0 | OSI Approved :: Apache Software License
+httpcore                         1.0.9          ok       BSD-3-Clause | OSI Approved :: BSD License
+httpcore2                        2.13.1         ok       BSD-3-Clause | OSI Approved :: BSD License
+httpx                            0.28.1         ok       BSD-3-Clause | OSI Approved :: BSD License
+httpx2                           2.13.1         ok       BSD-3-Clause | OSI Approved :: BSD License
+huggingface_hub                  2.2.0          ok       Apache-2.0 | OSI Approved :: Apache Software License
+idna                             3.20           ok       BSD-3-Clause | -
+Jinja2                           3.1.6          ok       - | OSI Approved :: BSD License
+kokoro                           0.9.4          ok       Apache License | OSI Approved :: Apache Software License
+loguru                           0.7.3          ok       - | OSI Approved :: MIT License
+markdown-it-py                   4.2.0          ok       - | OSI Approved :: MIT License
+MarkupSafe                       3.0.4          ok       BSD-3-Clause | -
+mdurl                            0.1.2          ok       - | OSI Approved :: MIT License
+misaki                           0.9.4          ok       Apache License | OSI Approved :: Apache Software License
+mpmath                           1.3.0          ok       BSD | OSI Approved :: BSD License
+murmurhash                       1.0.15         ok       MIT | OSI Approved :: MIT License
+networkx                         3.6.1          ok       BSD-3-Clause | -
+numpy                            2.4.6          ok       BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0 | -
+packaging                        26.3           ok       Apache-2.0 OR BSD-2-Clause | -
+preshed                          3.0.13         ok       MIT | OSI Approved :: MIT License
+pycparser                        3.11           ok       BSD-3-Clause | -
+pydantic                         2.14.1         ok       MIT | -
+pydantic_core                    2.50.1         ok       MIT | -
+Pygments                         2.21.0         ok       BSD-2-Clause | -
+PyYAML                           6.0.3          ok       MIT | OSI Approved :: MIT License
+regex                            2026.9.29      ok       Apache-2.0 AND CNRI-Python | -
+requests                         2.34.2         ok       Apache-2.0 | OSI Approved :: Apache Software License
+rich                             15.0.0         ok       MIT | OSI Approved :: MIT License
+safetensors                      0.8.0          ok       - | OSI Approved :: Apache Software License
+setuptools                       84.0.0         ok       MIT | -
+shellingham                      1.5.4          ok       ISC License | OSI Approved :: ISC License (ISCL)
+smart_open                       8.0.3          ok       - | OSI Approved :: MIT License
+soundfile                        0.14.0         ok       BSD 3-Clause License | OSI Approved :: BSD License
+spacy                            3.8.16         ok       MIT | OSI Approved :: MIT License
+spacy-legacy                     3.0.12         ok       MIT | OSI Approved :: MIT License
+spacy-loggers                    1.0.5          ok       MIT | -
+srsly                            2.5.4          ok       MIT | OSI Approved :: MIT License
+sympy                            1.14.0         ok       BSD | OSI Approved :: BSD License
+thinc                            8.3.13         ok       MIT | OSI Approved :: MIT License
+tokenizers                       0.23.3         ok       - | OSI Approved :: Apache Software License
+torch                            2.14.1         ok       Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT | -
+tqdm                             4.70.1         ok       MPL-2.0 AND MIT | -
+transformers                     5.20.1         ok       Apache 2.0 License | -
+truststore                       0.10.5         ok       MIT | -
+typer                            0.27.3         ok       MIT | -
+typing-inspection                0.4.4          ok       MIT | -
+typing_extensions                4.16.0         ok       PSF-2.0 | -
+urllib3                          2.8.0          ok       MIT | -
+wasabi                           1.1.3          ok       MIT | -
+weasel                           1.0.0          ok       MIT | OSI Approved :: MIT License
+wrapt                            2.5.1          ok       BSD-2-Clause | -
+
+TOTAL 69  BAD []  UNKNOWN []
+absent phonemizer: True
+absent phonemizer-fork: True
+absent espeakng-loader: True
+absent espeak: True
+absent num2words: True
+
+## Strict filter: rows whose licence text mentions something other than Apache/MIT/BSD (MPL, PSF, ISC, BSL, HPND, LLVM-exception...)
+certifi                          2026.7.22      ok       MPL-2.0 | OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+numpy                            2.4.6          ok       BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0 | -
+shellingham                      1.5.4          ok       ISC License | OSI Approved :: ISC License (ISCL)
+torch                            2.14.1         ok       Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT | -
+tqdm                             4.70.1         ok       MPL-2.0 AND MIT | -
+typing_extensions                4.16.0         ok       PSF-2.0 | -
+
+## Re-run after 277/278 added opuscodec + audiotsm (Fri Oct 16 21:28:19 PDT 2026)
+audiotsm                         0.1.2          ok       MIT | OSI Approved :: MIT License
+opuscodec                        0.1.3          ok       Apache-2.0 | -
+TOTAL 71  BAD []  UNKNOWN []
+absent phonemizer: True
+absent phonemizer-fork: True
+absent espeakng-loader: True
+absent espeak: True
+absent num2words: True
+
+## Sizes
+839M	/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/.venv
+558M	/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/.venv/lib/python3.11/site-packages/torch
+ 25M	/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/.venv/lib/python3.11/site-packages/spacy
+ 15M	/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/.venv/lib/python3.11/site-packages/en_core_web_sm
+313M	/private/tmp/claude-502/-Users-sowmyajonnalagadda-Documents-Projects-hearnarro/356b510a-3d2c-414f-9d2b-5b7933bf0436/scratchpad/kokoro_spike/hf
+
+## VERDICT
+No GPL/LGPL/AGPL distribution installed; 0 UNKNOWN (71 distributions after 277/278 additions, see TOTAL line). phonemizer, phonemizer-fork, espeakng-loader, num2words absent. Non-Apache/MIT/BSD but permissive (needs supervisor policy call): certifi MPL-2.0, tqdm MPL-2.0 AND MIT, typing_extensions PSF-2.0, shellingham ISC, torch includes BSL-1.0 + LLVM-exception components, numpy includes Zlib/CC0 components. This recipe REQUIRES scripts/hn_shims.py at runtime (stub misaki.espeak + own num2words) because kokoro.pipeline and misaki.en import the GPL/LGPL modules at module top level.
