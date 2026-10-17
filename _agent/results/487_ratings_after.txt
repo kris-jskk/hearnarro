@@ -1,0 +1,30 @@
+=== run 1: renormalize document 17 (branch m3-fix-ratings-out-of, uncommitted rule), Sat Oct 17 02:33:59 PDT 2026 ===
+document 17: 5 segments changed, 6 cache rows removed
+segments changed: 5
+cache rows removed: 6
+orphaned audio files left on disk: 6
+=== changed segments (before vs after normalized_text via API) ===
+snapshot segments: 3760
+count: 5
+- 32513: 'It’s much better to be at 9/10 or 10/10 on foundations than to try and get super deep into things.'
+    -> 'It’s much better to be at 9 out of 10 or 10 out of 10 on foundations than to try and get super deep into things.'
+- 33760: 'On a scale of 1 to 10, I would have said 2/10 or 3/10.'
+    -> 'On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.'
+- 33761: 'Maybe 4/10 on my best days.'
+    -> 'Maybe 4 out of 10 on my best days.'
+- 33763: 'Today, I am a 9/10.'
+    -> 'Today, I am a 9 out of 10.'
+- 35396: 'Wealth equals Income + Wealth * (Return on Investment)'
+    -> 'Wealth equals Income + Wealth times (Return on Investment)'
+=== audio checks ===
+segment: {'id': 33760, 'order': 1675, 'block_id': 13082, 'type': 'body', 'section_id': None, 'text': 'On a scale of 1–10, I would have said 2/10 or 3/10.', 'normalized_text': 'On a scale of 1 to 10, I would have said 2 out of 10 or 3 out of 10.', 'char_start': 0, 'char_end': 51}
+voice: af_heart audio status: 200 bytes: 204526
+X-Timestamps words: ['On', 'a', 'scale', 'of', '1', 'to', '10,', 'I', 'would', 'have', 'said', '2', 'out', 'of', '10', 'or', '3', 'out', 'of', '10.']
+segment: {'id': 35396, 'order': 3311, 'block_id': 13615, 'type': 'list', 'section_id': None, 'text': '→ Wealth = Income + Wealth * (Return on Investment)', 'normalized_text': 'Wealth equals Income + Wealth times (Return on Investment)', 'char_start': 0, 'char_end': 51}
+voice: af_heart audio status: 200 bytes: 188844
+X-Timestamps words: ['Wealth', 'equals', 'Income', '+', 'Wealth', 'times', '(Return', 'on', 'Investment)']
+=== run 2: renormalize again, Sat Oct 17 02:34:01 PDT 2026 ===
+document 17: 0 segments changed, 0 cache rows removed
+segments changed: 0
+cache rows removed: 0
+orphaned audio files left on disk: 0
